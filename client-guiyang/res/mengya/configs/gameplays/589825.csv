@@ -1,0 +1,10 @@
+id,name,type,setting
+number,string,string,string
+1,局数：,group,10001|10002
+2,人数：,group,131073|131074|131075
+3,玩法：,option,196610|262146|262148|262145|327682
+4,玩法：,group,589828|589826|589827
+5,玩法：,option,589825|589829|589830
+6,托管：,group,65526|65531|65529|65528|65527
+7,关联条件,condition,589825->select{589829->enable|589830->enable} && 589825->unselect{589829->unenable|589830->unenable}
+8,禁用条件,forbid,589825->select{589829->select|589829->unenable|589830->select|589830->unenable} && 589825->unselect{589829->enable|589830->enable}
