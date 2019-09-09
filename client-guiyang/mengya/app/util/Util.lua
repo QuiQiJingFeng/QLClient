@@ -138,6 +138,9 @@ function Util:hash(text)
     return bit.band(hash, 2147483647)
 end
 
+-----------------------------------------------------
+--UI适配
+-----------------------------------------------------
 local function loopallchild(node, callback)
     callback(node)
     local children = node:getChildren()
@@ -228,11 +231,16 @@ function Util:loadCSBNode(csbPath)
     return node
 end
 
+---------------------------------------------------
 --获取从游戏开始到现在总的帧数
+---------------------------------------------------
 function Util:getTotalFramesSinceStart()
    return cc.Director:getInstance():getTotalFrames()
 end
 
+---------------------------------------------------
+--开启一次回调
+---------------------------------------------------
 function Util:scheduleOnce(callback, delay, optActionNode)
     local delay = cc.DelayTime:create(delay)
     local sequence = cc.Sequence:create(delay, cc.CallFunc:create(callback))
@@ -241,11 +249,17 @@ function Util:scheduleOnce(callback, delay, optActionNode)
     return sequence
 end
 
+---------------------------------------------------
+--取消回调
+---------------------------------------------------
 function Util:unscheduleOnce(action, optActionNode)
     local node = optActionNode or cc.Director:getInstance():getRunningScene();
     node:stopAction(action)
 end
 
+---------------------------------------------------
+--开启持续的调度,如果回调方法返回true,会自动取消注册
+---------------------------------------------------
 function Util:scheduleUpdate(callback, intervalSec)
     assert(callback)
     intervalSec = intervalSec or 0
@@ -262,7 +276,10 @@ function Util:scheduleUpdate(callback, intervalSec)
     return scheduleId
 end
 
--- 通过 id 去解绑更新， id 为 scheduleUpdate 的返回值
+---------------------------------------------------
+--取消持续的调度,
+--如果在上一个方法中没有在回调方法中处理取消就需要手动取消
+---------------------------------------------------
 function Util:unscheduleUpdate(scheduleId)
     if scheduleId then
         cc.Director:getInstance():getScheduler():unscheduleScriptEntry(scheduleId)

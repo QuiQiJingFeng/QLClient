@@ -4063,6 +4063,7 @@
             <Project Name="BattleSceneBtns.csd" Type="Layer" />
             <Project Name="UICreateRoom.csd" Type="Layer" />
             <Project Name="UIGamePlayHelp.csd" Type="Layer" />
+            <Project Name="UIHelp.csd" Type="Layer" />
             <Project Name="UILaunch.csd" Type="Layer" />
             <Project Name="UILogin.csd" Type="Layer" />
             <Project Name="UILoginMore.csd" Type="Layer" />
@@ -4072,6 +4073,7 @@
             <Project Name="UIPhoneLogin.csd" Type="Layer" />
             <Project Name="UIPlayerInfo.csd" Type="Layer" />
             <Project Name="UIReverseRoom.csd" Type="Layer" />
+            <Project Name="UISetting.csd" Type="Layer" />
             <Project Name="UIShop.csd" Type="Layer" />
             <Project Name="UISplash.csd" Type="Layer" />
           </Folder>

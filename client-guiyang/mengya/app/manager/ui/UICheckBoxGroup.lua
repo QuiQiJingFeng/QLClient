@@ -36,11 +36,16 @@ function UICheckBoxGroup:onItemSelected(idx,cbx, eventType)
         --如果选中了,那么就不能再点击改复选框了
         self._callBack(cbx,idx)
     end
+    self._currentIndex = idx
 end
 
 function UICheckBoxGroup:setSelectIdx(idx)
     local cbx = self._mutextGroup[idx]
     self:onItemSelected(idx,cbx,ccui.TouchEventType.began)
+end
+
+function UICheckBoxGroup:getSelectIdx()
+    return self._currentIndex or -1
 end
 
 function UICheckBoxGroup:registerEvent()

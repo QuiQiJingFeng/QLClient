@@ -15,7 +15,7 @@ end
 function GameState_Club:enter()
 	self.super:enter()
 	
-	UIManager:getInstance():show("UIClubRoom")	
+	UIManager:getInstance():show("UIClubRoom")
 end
 
 function GameState_Club:exit()

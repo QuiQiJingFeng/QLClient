@@ -47,6 +47,22 @@ function UIMain:init()
 
     self._panelPlayerInfo = Util:seekNodeByName(self,"panelPlayerInfo","ccui.Layout")
     Util:bindTouchEvent(self._panelPlayerInfo,handler(self,self._onPanelPlayerInfoClick))
+
+    self._btnGamePlayHelp = Util:seekNodeByName(self,"btnGamePlayHelp","ccui.Button")
+    Util:bindTouchEvent(self._btnGamePlayHelp,handler(self,self._onBtnGamePlayHelpClick))
+
+    self._btnSetting = Util:seekNodeByName(self,"btnSetting","ccui.Button")
+    Util:bindTouchEvent(self._btnSetting,handler(self,self._onBtnSettingClick))
+
+    
+end
+
+function UIMain:_onBtnSettingClick()
+    UIManager:getInstance():show("UISetting")
+end
+
+function UIMain:_onBtnGamePlayHelpClick()
+    UIManager:getInstance():show("UIHelp")
 end
 
 function UIMain:_onPanelPlayerInfoClick()

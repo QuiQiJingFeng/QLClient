@@ -20,8 +20,11 @@ conf["NetWork"] = "mengya.app.manager.network.NetWork"
 conf["ConfigManager"] = "mengya.app.manager.config.ConfigManager"
 conf["UIAnimationManager"] = "mengya.app.manager.animation.UIAnimationManager"
 conf["AudioManager"] = "mengya.app.manager.audio.AudioManager"
+conf["LocalStorage"] = "mengya.app.manager.storage.LocalStorage"
 
 
+--data mode
+conf["PlayerSettingData"] = "mengya.app.data.PlayerSettingData"
 
 --gamestate
 conf["GameFSM"] = "mengya.app.manager.fsm.GameFSM"
@@ -33,6 +36,12 @@ conf["GameState_InGame"] = "mengya.app.game.gameState.GameState_InGame"
 conf["GameState_Login"] = "mengya.app.game.gameState.GameState_Login"
 conf["GameState_Lobby"] = "mengya.app.game.gameState.GameState_Lobby"
 conf["GameState_Club"] = "mengya.app.game.gameState.GameState_Club"
+
+
+--================================================
+--=================   Service 相关   ==================
+--================================================
+conf["LocalPlayerService"] = "mengya.app.service.LocalPlayerService"
 
 
 --================================================
@@ -96,6 +105,14 @@ conf["UIHeadFrameShop"] = "mengya.app.ui.UIHeadFrameShop"
 conf["UIHeadFrameShopCsb"] = "ui/csb/mengya/headFrameShop/UIHeadFrameShop.csb"
 conf["UIHeadFrameShopItem"] = "mengya.app.ui.UIHeadFrameShopItem"
 
+--玩法说明
+conf["UIHelp"] = "mengya.app.ui.UIHelp"
+conf["UIHelpLeftItem"] = "mengya.app.ui.UIHelpLeftItem"
+conf["UIHelpCsb"] = "ui/csb/mengya/UIHelp.csb"
+
+--玩法設置
+conf["UISetting"] = "mengya.app.ui.UISetting"
+conf["UISettingCsb"] = "ui/csb/mengya/UISetting.csb"
 
 --创建房间
 conf["UICreateRoom"] = "mengya.app.ui.UICreateRoom"
