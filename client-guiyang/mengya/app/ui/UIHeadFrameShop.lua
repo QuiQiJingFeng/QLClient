@@ -2,7 +2,7 @@ local csbPath = app.UIHeadFrameShopCsb
 local super = app.UIBase
 local Util = app.Util
 local UIManager = app.UIManager
-local UITableViewListEx = app.UITableViewListEx
+local UITableViewEx = app.UITableViewEx
 local UICheckBoxGroup = app.UICheckBoxGroup
 local UIHeadFrameShopItem = app.UIHeadFrameShopItem
 local ConfigManager = app.ConfigManager
@@ -25,7 +25,7 @@ function UIHeadFrameShop:ctor()
 
 
     local node = Util:seekNodeByName(self,"scrollListFrame","ccui.ScrollView")
-    self._scrollListFrame = UITableViewListEx.extend(node,UIHeadFrameShopItem,handler(self,self._onItemClick))
+    self._scrollListFrame = UITableViewEx.extend(node,UIHeadFrameShopItem,handler(self,self._onItemClick))
     self._scrollListFrame:perUnitNums(5)
     self._scrollListFrame:setDeltUnitFlix(20)
     self._scrollListFrame:setDeltUnit(20)

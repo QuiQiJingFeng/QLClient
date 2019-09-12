@@ -234,14 +234,14 @@
                         <FileData Type="Normal" Path="art/gaming/z_wxyq.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="-1673345453" Tag="191" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="84.3000" RightMargin="26.7000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="微信邀请" ctype="TextBMFontObjectData">
-                        <Size X="129.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="-1673345453" Tag="191" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="88.3000" RightMargin="30.7000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="微信邀请" ctype="TextBMFontObjectData">
+                        <Size X="121.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="148.8000" Y="38.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.6200" Y="0.5000" />
-                        <PreSize X="0.5375" Y="0.4737" />
+                        <PreSize X="0.5042" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -261,14 +261,14 @@
                   <AbstractNodeData Name="Button_wxyq_copyroom_Scene" Visible="False" ActionTag="1609558828" VisibleForFrame="False" Tag="188" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="375.0000" RightMargin="135.0000" TopMargin="202.0000" BottomMargin="202.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="60" RightEage="60" TopEage="1" BottomEage="1" Scale9OriginX="60" Scale9OriginY="1" Scale9Width="90" Scale9Height="74" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="240.0000" Y="76.0000" />
                     <Children>
-                      <AbstractNodeData Name="BitmapFontLabel_1" ActionTag="-70276654" Tag="190" RotationSkewX="0.8197" RotationSkewY="0.8196" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="60.3000" RightMargin="50.7000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="安全邀请" ctype="TextBMFontObjectData">
-                        <Size X="129.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_1" ActionTag="-70276654" Tag="190" RotationSkewX="0.8197" RotationSkewY="0.8196" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="64.3000" RightMargin="54.7000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="安全邀请" ctype="TextBMFontObjectData">
+                        <Size X="121.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="124.8000" Y="38.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5200" Y="0.5000" />
-                        <PreSize X="0.5375" Y="0.4737" />
+                        <PreSize X="0.5042" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="Image_1" ActionTag="241772809" Tag="170" RotationSkewX="-45.0000" RotationSkewY="-45.0000" IconVisible="False" LeftMargin="-12.7502" RightMargin="182.7502" TopMargin="10.2800" BottomMargin="35.7200" LeftEage="23" RightEage="23" TopEage="9" BottomEage="9" Scale9OriginX="23" Scale9OriginY="9" Scale9Width="1" Scale9Height="28" ctype="ImageViewObjectData">
@@ -309,14 +309,14 @@
                         <FileData Type="Normal" Path="art/gaming/z_qyqyq.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="-1113478049" Tag="144" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="63.2803" RightMargin="15.7197" TopMargin="19.3512" BottomMargin="20.6488" LabelText="亲友圈邀请" ctype="TextBMFontObjectData">
-                        <Size X="161.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="-1113478049" Tag="144" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="68.2373" RightMargin="20.7627" TopMargin="19.3512" BottomMargin="20.6488" LabelText="亲友圈邀请" ctype="TextBMFontObjectData">
+                        <Size X="151.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.4957" ScaleY="0.5242" />
                         <Position X="143.0880" Y="39.5200" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5962" Y="0.5200" />
-                        <PreSize X="0.6708" Y="0.4737" />
+                        <PreSize X="0.6292" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -347,14 +347,14 @@
                         <FileData Type="Normal" Path="art/gaming/hyyq.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="1380831575" Tag="1602" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="80.0547" RightMargin="30.9453" TopMargin="19.3512" BottomMargin="20.6488" LabelText="好友邀请" ctype="TextBMFontObjectData">
-                        <Size X="129.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="1380831575" Tag="1602" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="84.0203" RightMargin="34.9797" TopMargin="19.3512" BottomMargin="20.6488" LabelText="好友邀请" ctype="TextBMFontObjectData">
+                        <Size X="121.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.4957" ScaleY="0.5242" />
                         <Position X="144.0000" Y="39.5200" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.6000" Y="0.5200" />
-                        <PreSize X="0.5375" Y="0.4737" />
+                        <PreSize X="0.5042" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -385,14 +385,14 @@
                         <FileData Type="Normal" Path="art/gaming/ddyq.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="-1233154566" Tag="240" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="80.0547" RightMargin="30.9453" TopMargin="20.8712" BottomMargin="19.1288" LabelText="钉钉邀请" ctype="TextBMFontObjectData">
-                        <Size X="129.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="-1233154566" Tag="240" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="84.0203" RightMargin="34.9797" TopMargin="20.8712" BottomMargin="19.1288" LabelText="钉钉邀请" ctype="TextBMFontObjectData">
+                        <Size X="121.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.4957" ScaleY="0.5242" />
                         <Position X="144.0000" Y="38.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.6000" Y="0.5000" />
-                        <PreSize X="0.5375" Y="0.4737" />
+                        <PreSize X="0.5042" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -423,14 +423,14 @@
                         <FileData Type="Normal" Path="art/gaming/hyyq.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="468290845" Tag="359" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="79.5000" RightMargin="31.5000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="邀请好友" ctype="TextBMFontObjectData">
-                        <Size X="129.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="468290845" Tag="359" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="83.5000" RightMargin="35.5000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="邀请好友" ctype="TextBMFontObjectData">
+                        <Size X="121.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="144.0000" Y="38.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.6000" Y="0.5000" />
-                        <PreSize X="0.5375" Y="0.4737" />
+                        <PreSize X="0.5042" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -581,14 +581,14 @@
                     <PreSize X="0.1867" Y="0.1900" />
                     <FileData Type="Normal" Path="art/gaming/z_4G.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="rankLabel" ActionTag="-767824073" Tag="314" IconVisible="False" LeftMargin="5.5092" RightMargin="-19.5092" TopMargin="31.5372" BottomMargin="32.4628" LabelText="排名:26565" ctype="TextBMFontObjectData">
-                    <Size X="164.0000" Y="36.0000" />
+                  <AbstractNodeData Name="rankLabel" ActionTag="-767824073" Tag="314" IconVisible="False" LeftMargin="5.5092" RightMargin="-9.5092" TopMargin="31.5372" BottomMargin="32.4628" LabelText="排名:26565" ctype="TextBMFontObjectData">
+                    <Size X="154.0000" Y="36.0000" />
                     <AnchorPoint ScaleY="1.0000" />
                     <Position X="5.5092" Y="68.4628" />
                     <Scale ScaleX="0.5000" ScaleY="0.5000" />
                     <CColor A="255" R="255" G="224" B="76" />
                     <PrePosition X="0.0367" Y="0.6846" />
-                    <PreSize X="1.0933" Y="0.3600" />
+                    <PreSize X="1.0267" Y="0.3600" />
                     <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                   </AbstractNodeData>
                 </Children>
@@ -853,14 +853,14 @@
                     <FileData Type="Normal" Path="art/Icon/icon_tuo.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="icon_lx_player2_Scene" ActionTag="-2062453268" Tag="879" IconVisible="False" LeftMargin="45.5001" RightMargin="9.4999" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
-                    <Size X="65.0000" Y="36.0000" />
+                  <AbstractNodeData Name="icon_lx_player2_Scene" ActionTag="-2062453268" Tag="879" IconVisible="False" LeftMargin="47.5001" RightMargin="11.4999" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
+                    <Size X="61.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="78.0001" Y="80.0000" />
                     <Scale ScaleX="0.7000" ScaleY="0.7000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6500" Y="0.6667" />
-                    <PreSize X="0.5417" Y="0.3000" />
+                    <PreSize X="0.5083" Y="0.3000" />
                     <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Image_Offline_palyer2" ActionTag="4455899" Alpha="127" Tag="286" IconVisible="False" LeftMargin="-192.0962" RightMargin="112.0962" TopMargin="52.8006" BottomMargin="17.1994" Scale9Enable="True" LeftEage="57" RightEage="57" TopEage="18" BottomEage="18" Scale9OriginX="57" Scale9OriginY="18" Scale9Width="59" Scale9Height="21" ctype="ImageViewObjectData">
@@ -1157,14 +1157,14 @@
                     <FileData Type="Normal" Path="art/Icon/icon_tuo.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="icon_lx_player1_Scene" ActionTag="1359925136" Tag="880" IconVisible="False" LeftMargin="9.5000" RightMargin="45.5000" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
-                    <Size X="65.0000" Y="36.0000" />
+                  <AbstractNodeData Name="icon_lx_player1_Scene" ActionTag="1359925136" Tag="880" IconVisible="False" LeftMargin="11.5000" RightMargin="47.5000" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
+                    <Size X="61.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="42.0000" Y="80.0000" />
                     <Scale ScaleX="0.7000" ScaleY="0.7000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3500" Y="0.6667" />
-                    <PreSize X="0.5417" Y="0.3000" />
+                    <PreSize X="0.5083" Y="0.3000" />
                     <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Image_Offline_player1" ActionTag="453022012" Alpha="127" Tag="289" IconVisible="False" LeftMargin="123.7147" RightMargin="-203.7147" TopMargin="38.7481" BottomMargin="31.2519" Scale9Enable="True" LeftEage="57" RightEage="57" TopEage="18" BottomEage="18" Scale9OriginX="57" Scale9OriginY="18" Scale9Width="59" Scale9Height="21" ctype="ImageViewObjectData">
@@ -1461,14 +1461,14 @@
                     <FileData Type="Normal" Path="art/Icon/icon_tuo.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="icon_lx_player3_Scene" ActionTag="574073834" Tag="878" IconVisible="False" LeftMargin="9.5000" RightMargin="45.5000" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
-                    <Size X="65.0000" Y="36.0000" />
+                  <AbstractNodeData Name="icon_lx_player3_Scene" ActionTag="574073834" Tag="878" IconVisible="False" LeftMargin="11.5000" RightMargin="47.5000" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
+                    <Size X="61.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="42.0000" Y="80.0000" />
                     <Scale ScaleX="0.7000" ScaleY="0.7000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3500" Y="0.6667" />
-                    <PreSize X="0.5417" Y="0.3000" />
+                    <PreSize X="0.5083" Y="0.3000" />
                     <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Image_Offline_player3" ActionTag="-1024839697" Alpha="127" Tag="292" IconVisible="False" LeftMargin="-198.0974" RightMargin="118.0974" TopMargin="14.8011" BottomMargin="55.1989" Scale9Enable="True" LeftEage="57" RightEage="57" TopEage="18" BottomEage="18" Scale9OriginX="57" Scale9OriginY="18" Scale9Width="59" Scale9Height="21" ctype="ImageViewObjectData">
@@ -1765,14 +1765,14 @@
                     <FileData Type="Normal" Path="art/Icon/icon_tuo.png" Plist="" />
                     <BlendFunc Src="1" Dst="771" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="icon_lx_player4_Scene" ActionTag="-1470608065" Tag="877" IconVisible="False" LeftMargin="9.5000" RightMargin="45.5000" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
-                    <Size X="65.0000" Y="36.0000" />
+                  <AbstractNodeData Name="icon_lx_player4_Scene" ActionTag="-1470608065" Tag="877" IconVisible="False" LeftMargin="11.5000" RightMargin="47.5000" TopMargin="22.0000" BottomMargin="62.0000" LabelText="离线" ctype="TextBMFontObjectData">
+                    <Size X="61.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="42.0000" Y="80.0000" />
                     <Scale ScaleX="0.7000" ScaleY="0.7000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.3500" Y="0.6667" />
-                    <PreSize X="0.5417" Y="0.3000" />
+                    <PreSize X="0.5083" Y="0.3000" />
                     <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                   </AbstractNodeData>
                   <AbstractNodeData Name="Image_Offline_player4" ActionTag="-739459141" Alpha="127" Tag="295" IconVisible="False" LeftMargin="116.8853" RightMargin="-196.8853" TopMargin="44.4859" BottomMargin="25.5141" Scale9Enable="True" LeftEage="57" RightEage="57" TopEage="18" BottomEage="18" Scale9OriginX="57" Scale9OriginY="18" Scale9Width="59" Scale9Height="21" ctype="ImageViewObjectData">
@@ -1825,14 +1825,14 @@
                   <AbstractNodeData Name="Button_jsfj_Scene" ActionTag="-1118302027" Tag="325" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-5.0000" RightMargin="-5.0000" TopMargin="2.0000" BottomMargin="2.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="80" RightEage="80" TopEage="1" BottomEage="1" Scale9OriginX="80" Scale9OriginY="1" Scale9Width="50" Scale9Height="74" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="210.0000" Y="76.0000" />
                     <Children>
-                      <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="1338395025" Tag="1535" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="43.1000" RightMargin="38.9000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="解散房间" ctype="TextBMFontObjectData">
-                        <Size X="128.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="1338395025" Tag="1535" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="47.1000" RightMargin="42.9000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="解散房间" ctype="TextBMFontObjectData">
+                        <Size X="120.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="107.1000" Y="38.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5100" Y="0.5000" />
-                        <PreSize X="0.6095" Y="0.4737" />
+                        <PreSize X="0.5714" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -1852,14 +1852,14 @@
                   <AbstractNodeData Name="Button_fhdt_Scene" Visible="False" ActionTag="456661239" Tag="327" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-20.0000" RightMargin="-20.0000" TopMargin="6.0000" BottomMargin="6.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="150" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="240.0000" Y="68.0000" />
                     <Children>
-                      <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="-64105841" Tag="1533" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="55.5000" RightMargin="55.5000" TopMargin="14.6400" BottomMargin="17.3600" LabelText="返回大厅" ctype="TextBMFontObjectData">
-                        <Size X="129.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="-64105841" Tag="1533" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="59.5000" RightMargin="59.5000" TopMargin="14.6400" BottomMargin="17.3600" LabelText="返回大厅" ctype="TextBMFontObjectData">
+                        <Size X="121.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="120.0000" Y="35.3600" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5000" Y="0.5200" />
-                        <PreSize X="0.5375" Y="0.5294" />
+                        <PreSize X="0.5042" Y="0.5294" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -1879,14 +1879,14 @@
                   <AbstractNodeData Name="Button_fhdt_Scene_0" ActionTag="1176550169" Tag="193" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="-5.0000" RightMargin="-5.0000" TopMargin="-58.0000" BottomMargin="62.0000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="150" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="210.0000" Y="76.0000" />
                     <Children>
-                      <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="1896639961" Tag="194" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="40.5000" RightMargin="40.5000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="返回大厅" ctype="TextBMFontObjectData">
-                        <Size X="129.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="1896639961" Tag="194" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="44.5000" RightMargin="44.5000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="返回大厅" ctype="TextBMFontObjectData">
+                        <Size X="121.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="105.0000" Y="38.0000" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="0.6143" Y="0.4737" />
+                        <PreSize X="0.5762" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -1934,14 +1934,14 @@
                   <AbstractNodeData Name="Button_ljkj1" ActionTag="-712624687" Tag="196" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="142.7750" RightMargin="-132.7750" TopMargin="107.5573" BottomMargin="16.4427" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="30" RightEage="30" TopEage="10" BottomEage="10" Scale9OriginX="30" Scale9OriginY="10" Scale9Width="150" Scale9Height="56" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="240.0000" Y="76.0000" />
                     <Children>
-                      <AbstractNodeData Name="BitmapFontLabel_edg" ActionTag="2112305873" Tag="197" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-0.5000" RightMargin="-0.5000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="立即开局(三丁拐)" ctype="TextBMFontObjectData">
-                        <Size X="241.0000" Y="36.0000" />
+                      <AbstractNodeData Name="BitmapFontLabel_edg" ActionTag="2112305873" Tag="197" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="7.0000" RightMargin="7.0000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="立即开局(三丁拐)" ctype="TextBMFontObjectData">
+                        <Size X="226.0000" Y="36.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="120.0000" Y="38.0000" />
                         <Scale ScaleX="0.9000" ScaleY="0.9000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5000" Y="0.5000" />
-                        <PreSize X="1.0042" Y="0.4737" />
+                        <PreSize X="0.9417" Y="0.4737" />
                         <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                       </AbstractNodeData>
                     </Children>
@@ -2104,10 +2104,10 @@
           <AbstractNodeData Name="Panel_TrustTip" ActionTag="1525619133" UserData="top" Tag="181" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="247.9984" RightMargin="238.0016" TopMargin="-1.0355" BottomMargin="561.0355" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="650.0000" Y="80.0000" />
             <Children>
-              <AbstractNodeData Name="Text_state" ActionTag="1216703676" Tag="182" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1.1464" RightMargin="-1.1464" TopMargin="16.0002" BottomMargin="15.9998" IsCustomSize="True" FontSize="23" LabelText="300秒托管：超过300秒未操作将进入托管状态，托管后本局自动摸打，不做其它操作(如碰杠听胡等)，本局结束后房间自动解散&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_state" ActionTag="1216703676" Tag="182" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1.1700" RightMargin="-1.1700" TopMargin="16.0000" BottomMargin="16.0000" IsCustomSize="True" FontSize="23" LabelText="300秒托管：超过300秒未操作将进入托管状态，托管后本局自动摸打，不做其它操作(如碰杠听胡等)，本局结束后房间自动解散&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="650.0000" Y="48.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                <Position X="326.1464" Y="63.9998" />
+                <Position X="326.1700" Y="64.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5018" Y="0.8000" />

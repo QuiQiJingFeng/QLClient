@@ -4002,6 +4002,10 @@
             <Project Name="UISuperMall.csd" Type="Layer" />
           </Folder>
           <Folder Name="mengya">
+            <Folder Name="battle">
+              <Project Name="UIBattleScene.csd" Type="Layer" />
+              <Project Name="UIBattleSceneBtns.csd" Type="Layer" />
+            </Folder>
             <Folder Name="club">
               <Folder Name="email">
                 <Project Name="UIClubMessage.csd" Type="Layer" />
@@ -4060,7 +4064,6 @@
               <Project Name="UIHeadConfirmTips.csd" Type="Layer" />
               <Project Name="UIHeadFrameShop.csd" Type="Layer" />
             </Folder>
-            <Project Name="BattleSceneBtns.csd" Type="Layer" />
             <Project Name="UICreateRoom.csd" Type="Layer" />
             <Project Name="UIGamePlayHelp.csd" Type="Layer" />
             <Project Name="UIHelp.csd" Type="Layer" />

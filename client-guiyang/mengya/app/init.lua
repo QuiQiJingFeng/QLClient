@@ -58,6 +58,7 @@ conf["UIFreeList"] = "mengya.app.manager.ui.UIFreeList"
 conf["UIFreeListItem"] = "mengya.app.manager.ui.UIFreeListItem"
 conf["UICheckBoxGroup"] = "mengya.app.manager.ui.UICheckBoxGroup"
 conf["UITipManager"] = "mengya.app.manager.ui.UITipManager"
+conf["UITableViewEx2"] = "mengya.app.manager.ui.UITableViewEx2"
 
 
 
@@ -212,3 +213,13 @@ conf["UIClubDataStatisticsItem"] = "mengya.app.ui.club.UIClubDataStatisticsItem"
 --金币场
 conf["UIGoldMain"] = "mengya.app.ui.gold.UIGoldMain"
 conf["UIGoldMainCsb"] = "ui/csb/mengya/gold/UIGoldMain.csb"
+
+
+
+conf["UIBattleScene"] = "mengya.app.ui.battle.UIBattleScene"
+conf["UIBattleSceneCsb"] = "ui/csb/mengya/battle/UIBattleScene.csb"
+
+conf["UIBattleHandleBottomItem"] = "mengya.app.ui.battle.UIBattleHandleBottomItem"
+conf["UIBattleHandleRightItem"] = "mengya.app.ui.battle.UIBattleHandleRightItem"
+conf["UIBattleHandleTopItem"] = "mengya.app.ui.battle.UIBattleHandleTopItem"
+conf["UIBattleHandleLeftItem"] = "mengya.app.ui.battle.UIBattleHandleLeftItem"

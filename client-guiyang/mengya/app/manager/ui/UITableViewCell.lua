@@ -26,7 +26,7 @@ end
 
 function UITableViewCell:setData(data)
     self._data = data
-    self:updateData(data)
+    return self:updateData(data)
 end
 
 function UITableViewCell:updateData(data)
@@ -46,6 +46,15 @@ end
 
 function UITableViewCell:setSelectState(boolean)
     self:setBright(boolean)
+end
+
+--设置偏移 UITableViewEx2 的Item 用
+function UITableViewCell:setDiffDelt(pos)
+    self._diffDelt = pos
+end
+
+function UITableViewCell:getDiffDelt()
+    return self._diffDelt or cc.p(0,0)
 end
 
 

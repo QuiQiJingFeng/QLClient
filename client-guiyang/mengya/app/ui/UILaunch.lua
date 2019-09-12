@@ -32,7 +32,7 @@ function UILaunch:onShow()
 
     Util:hide(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
     self._txtBmfState:setString(STATE.CHECK)
-    ---[[TEST
+    --[[TEST
         self._txtBmfState:setString(STATE.UPDATE)
         Util:show(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
         local progress = 0
@@ -45,6 +45,10 @@ function UILaunch:onShow()
                 return true
             end
         end, 0)
+    --]]
+
+    ---[[test2
+        app.GameFSM.getInstance():enterState("GameState_Login")
     --]]
 end
 
