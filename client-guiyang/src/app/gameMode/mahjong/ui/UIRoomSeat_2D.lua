@@ -1035,8 +1035,6 @@ end
 function UIRoomSeat:_ManageSubLayoutPositions(cards, subCardLayout, setPos, cardsNeedPlaceHolder)
 --	: kodUtil.Map<Card, { pos: KodGames.Point, zOrder: number }> {
 	local placeHolders = {} -- {Card, {pos: point, zOrder: number}}
-	
-	--                                                                                               
 	if cardsNeedPlaceHolder == nil then
 		cardsNeedPlaceHolder = {}
 	end
@@ -1098,7 +1096,7 @@ function UIRoomSeat:_ManageHuaPositions(cardList, cardLayout, setPos, cardsNeedP
 	return self:_ManageSubLayoutPositions(cardList.huaCards, cardLayout.huaLayout, setPos, cardsNeedPlaceHolder);
 end
 
--- 管理胡牌的位置 
+-- 管理胡牌的位置
 -- @param cardLayout: CardLayout
 -- @param setPosition: boolean
 -- @param cardsNeedPlaceHolder: Card[] = []

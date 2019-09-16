@@ -14,7 +14,31 @@ function UITableViewEx2.extend(self, cellTemplate,clickFunc)
     return self
 end
 
+--将Node转换成Widget
+function UITableViewEx2:convertTemplate(template)
+    local children = template:getChildren()
+    for _, child in ipairs(children) do
+        self:convertTemplate(child)
+        local descript = child:getDescription()
+        if string.find(descript,"Node") then
+            local widget = ccui.Widget:create()
+            widget:setName(child:getName())
+            widget:setPosition(cc.p(child:getPosition()))
+            local children2 = child:getChildren()
+            for _, node in ipairs(children2) do
+                node:retain()
+                node:removeSelf()
+                widget:addChild(node)
+                node:release()
+            end
+            child:removeSelf()
+            template:addChild(widget)
+        end
+    end
+end
+
 function UITableViewEx2:initWithCellTemplate(cellTemplate,clickFunc)
+    
     self._cellTemplate = cellTemplate
     self._clickFunc = clickFunc
     local children = self:getChildren()
@@ -23,6 +47,7 @@ function UITableViewEx2:initWithCellTemplate(cellTemplate,clickFunc)
     self._tableViewSize = self:getContentSize()
     self._container = self:getInnerContainer()
     self:setScrollBarEnabled(false)
+    self:convertTemplate(self._cellNode)
 
     --间隔默认0个像素
     self:setDeltUnit(0)
@@ -105,6 +130,7 @@ function UITableViewEx2:dequeueCell(idx)
         self._container:addChild(cell)
     end
     cell:setVisible(true)
+    cell:setDiffDelt(cc.p(0,0))
     local data = self:getDataByIndex(idx)
     cell:setIdx(idx)
     cell:setData(data)

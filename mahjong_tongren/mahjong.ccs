@@ -2428,6 +2428,104 @@
             <Image Name="z_zt.png" />
             <Image Name="zhezhao.png" />
           </Folder>
+          <Folder Name="mahjong">
+            <Folder Name="blue">
+              <Folder Name="bottom">
+                <Folder Name="handBg">
+                  <Image Name="handbg.png" />
+                </Folder>
+                <Folder Name="outBackBg">
+                  <Image Name="mj_bg7.png" />
+                </Folder>
+                <Folder Name="outBg">
+                  <Image Name="mj_bg2.png" />
+                </Folder>
+              </Folder>
+              <Folder Name="left">
+                <Folder Name="handBg">
+                  <Image Name="handbg.png" />
+                </Folder>
+                <Folder Name="outBackBg">
+                  <Image Name="outBackBg.png" />
+                </Folder>
+                <Folder Name="outBg">
+                  <Image Name="outbg.png" />
+                </Folder>
+              </Folder>
+              <Folder Name="right">
+                <Folder Name="handBg">
+                  <Image Name="handbg.png" />
+                </Folder>
+                <Folder Name="outBackBg">
+                  <Image Name="gangback.png" />
+                </Folder>
+                <Folder Name="outBg">
+                  <Image Name="outbg.png" />
+                </Folder>
+              </Folder>
+              <Folder Name="top">
+                <Folder Name="handBg">
+                  <Image Name="mj_bg3.png" />
+                </Folder>
+                <Folder Name="outBackBg">
+                  <Image Name="mj_bg7.png" />
+                </Folder>
+                <Folder Name="outBg">
+                  <Image Name="mj_bg2.png" />
+                </Folder>
+              </Folder>
+            </Folder>
+            <Folder Name="faces">
+              <Image Name="1.png" />
+              <Image Name="11.png" />
+              <Image Name="12.png" />
+              <Image Name="13.png" />
+              <Image Name="14.png" />
+              <Image Name="15.png" />
+              <Image Name="16.png" />
+              <Image Name="17.png" />
+              <Image Name="18.png" />
+              <Image Name="19.png" />
+              <Image Name="2.png" />
+              <Image Name="21.png" />
+              <Image Name="22.png" />
+              <Image Name="23.png" />
+              <Image Name="24.png" />
+              <Image Name="25.png" />
+              <Image Name="26.png" />
+              <Image Name="27.png" />
+              <Image Name="28.png" />
+              <Image Name="29.png" />
+              <Image Name="3.png" />
+              <Image Name="31.png" />
+              <Image Name="32.png" />
+              <Image Name="33.png" />
+              <Image Name="34.png" />
+              <Image Name="35.png" />
+              <Image Name="36.png" />
+              <Image Name="37.png" />
+              <Image Name="4.png" />
+              <Image Name="41.png" />
+              <Image Name="42.png" />
+              <Image Name="43.png" />
+              <Image Name="44.png" />
+              <Image Name="45.png" />
+              <Image Name="46.png" />
+              <Image Name="47.png" />
+              <Image Name="48.png" />
+              <Image Name="5.png" />
+              <Image Name="6.png" />
+              <Image Name="7.png" />
+              <Image Name="8.png" />
+              <Image Name="9.png" />
+            </Folder>
+            <Folder Name="pointer">
+              <Image Name="icon_zs1.png" />
+              <Image Name="icon_zs2.png" />
+              <Image Name="icon_zs3.png" />
+              <Image Name="icon_zs4.png" />
+            </Folder>
+          </Folder>
           <Folder Name="mahjong_card">
             <Folder Name="bg01">
               <Image Name="mj_bg.png" />
@@ -4005,6 +4103,29 @@
             <Folder Name="battle">
               <Project Name="UIBattleScene.csd" Type="Layer" />
               <Project Name="UIBattleSceneBtns.csd" Type="Layer" />
+              <Folder Name="mahjong">
+                <Folder Name="bottom">
+                  <Project Name="HandCard.csd" Type="Node" />
+                  <Project Name="HandOutCard.csd" Type="Node" />
+                  <Project Name="Discard.csd" Type="Node" />
+                  <Project Name="GangCard.csd" Type="Node" />
+                </Folder>
+                <Folder Name="top">
+                  <Project Name="Discard.csd" Type="Node" />
+                  <Project Name="HandCard.csd" Type="Node" />
+                  <Project Name="HandOutCard.csd" Type="Node" />
+                </Folder>
+                <Folder Name="left">
+                  <Project Name="DisCard.csd" Type="Node" />
+                  <Project Name="HandCard.csd" Type="Node" />
+                  <Project Name="HandOutCard.csd" Type="Node" />
+                </Folder>
+                <Folder Name="right">
+                  <Project Name="DisCard.csd" Type="Node" />
+                  <Project Name="HandCard.csd" Type="Node" />
+                  <Project Name="HandOutCard.csd" Type="Node" />
+                </Folder>
+              </Folder>
             </Folder>
             <Folder Name="club">
               <Folder Name="email">
@@ -4299,9 +4420,6 @@
           <Project Name="UIWallet.csd" Type="Layer" />
           <Project Name="UIwj.csd" Type="Layer" />
           <Project Name="UIZf.csd" Type="Layer" />
-        </Folder>
-        <Folder Name="gold">
-          <Project Name="UIGoldMain.csd" Type="Layer" />
         </Folder>
       </RootFolder>
     </Group>

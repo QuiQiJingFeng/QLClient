@@ -133,7 +133,7 @@ function PlayerProcessor_Local:_processStep(recover, stepGroup)
 		-- 统计可以上听的次数
         game.service.DataEyeService.getInstance():onEvent(game.globalConst.StatisticNames.ReadyHand_Number);
 	elseif firstStep:getPlayType() == PlayType.OPERATE_CAN_AUTO_HU then	
-		-- 自动胡牌		
+		-- 自动胡牌
 		Macro.assertFalse(recover == false)
 		self:_sendPlayStep(PlayType.OPERATE_HU, firstStep:getCards());
 	elseif firstStep:getPlayType() == PlayType.DISPLAY_MASK_ALL_HAND_CARD then	

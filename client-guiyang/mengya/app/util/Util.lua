@@ -9,6 +9,16 @@ function Util:seekNodeByName(view, name, property)
     return node
 end
 
+function Util:getNodeByNames(node, ...)
+    local names = {...}
+    local result = node
+    for i, name in ipairs(names) do
+        result = result:getChildByName(name)
+        assert(result,"not exist node by names")
+    end
+    return result
+end
+
 function Util:show(...)
     local nodes = {...}
     for _, node in ipairs(nodes) do
