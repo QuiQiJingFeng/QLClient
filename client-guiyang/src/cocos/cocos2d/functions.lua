@@ -318,6 +318,18 @@ function handlerFix(obj, method,tag)
     end
 end
 
+--绑定lua表到Cocostudio中的Node 
+function bindLuaObjToNode(node,path,...)
+    if node.initSuccess then
+        return
+    end
+    local obj = require(path).new()
+    setmetatableindex(node,obj)
+    node:init(...)
+    --只绑定一次
+    node.initSuccess = true
+end
+
 function math.newrandomseed()
     local ok, socket = pcall(function()
         return require("socket")

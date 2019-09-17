@@ -4101,31 +4101,34 @@
           </Folder>
           <Folder Name="mengya">
             <Folder Name="battle">
-              <Project Name="UIBattleScene.csd" Type="Layer" />
-              <Project Name="UIBattleSceneBtns.csd" Type="Layer" />
               <Folder Name="mahjong">
                 <Folder Name="bottom">
-                  <Project Name="HandCard.csd" Type="Node" />
-                  <Project Name="HandOutCard.csd" Type="Node" />
+                  <Project Name="BottomItem.csd" Type="Node" />
                   <Project Name="Discard.csd" Type="Node" />
                   <Project Name="GangCard.csd" Type="Node" />
-                </Folder>
-                <Folder Name="top">
-                  <Project Name="Discard.csd" Type="Node" />
                   <Project Name="HandCard.csd" Type="Node" />
-                  <Project Name="HandOutCard.csd" Type="Node" />
                 </Folder>
                 <Folder Name="left">
                   <Project Name="DisCard.csd" Type="Node" />
+                  <Project Name="GangCard.csd" Type="Node" />
                   <Project Name="HandCard.csd" Type="Node" />
-                  <Project Name="HandOutCard.csd" Type="Node" />
+                  <Project Name="LeftItem.csd" Type="Node" />
                 </Folder>
                 <Folder Name="right">
                   <Project Name="DisCard.csd" Type="Node" />
                   <Project Name="HandCard.csd" Type="Node" />
-                  <Project Name="HandOutCard.csd" Type="Node" />
+                  <Project Name="GangCard.csd" Type="Node" />
+                  <Project Name="RightItem.csd" Type="Node" />
+                </Folder>
+                <Folder Name="top">
+                  <Project Name="Discard.csd" Type="Node" />
+                  <Project Name="HandCard.csd" Type="Node" />
+                  <Project Name="GangCard.csd" Type="Node" />
+                  <Project Name="TopItem.csd" Type="Node" />
                 </Folder>
               </Folder>
+              <Project Name="UIBattleScene.csd" Type="Layer" />
+              <Project Name="UIBattleSceneBtns.csd" Type="Layer" />
             </Folder>
             <Folder Name="club">
               <Folder Name="email">

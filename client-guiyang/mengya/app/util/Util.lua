@@ -152,11 +152,12 @@ end
 --UI适配
 -----------------------------------------------------
 local function loopallchild(node, callback)
-    callback(node)
     local children = node:getChildren()
     for _, child in ipairs(children) do
         loopallchild(child, callback)
     end
+    --先放到下面试试,深度遍历
+    callback(node)
 end
 
 local function parseChildProperty(self,node)
@@ -212,7 +213,11 @@ local function parseChildProperty(self,node)
 				node:setScale(display.height / contentSize.height)
 			else
 				node:setScale(display.width / contentSize.width)
-			end
+            end
+        elseif string.find(property,"lua:") then
+            local iter = string.gmatch(property,"lua:(.*)")
+            local path = iter()
+            bindLuaObjToNode(node,path)
 		else
 			assert(false, "error adaptation trait: " .. property)
 		end
@@ -220,6 +225,7 @@ local function parseChildProperty(self,node)
 end
 
 function Util:loadCSBNode(csbPath)
+    release_print("load ",csbPath)
     local node = cc.CSLoader:createNode(csbPath)
     --让留黑边的一侧居中
     self._deltX = (display.width - CC_DESIGN_RESOLUTION.width) * 0.5
@@ -295,6 +301,41 @@ function Util:unscheduleUpdate(scheduleId)
         cc.Director:getInstance():getScheduler():unscheduleScriptEntry(scheduleId)
     end
     return nil
+end
+
+--将Node转换成Widget
+function Util:convertNodeToWidget(child)
+    local parent = child:getParent()
+    local descript = child:getDescription()
+    if string.find(descript,"Node") then
+        local widget = ccui.Widget:create()
+        widget:setName(child:getName())
+        widget:setPosition(cc.p(child:getPosition()))
+        widget:setScaleX(child:getScaleX())
+        widget:setScaleY(child:getScaleY())
+        local children = child:getChildren()
+        for _, node in ipairs(children) do
+            node:retain()
+            node:removeSelf()
+            widget:addChild(node)
+            node:release()
+        end
+        child:removeSelf()
+        parent:addChild(widget)
+        return widget
+    end
+    return child
+end
+
+function Util:getChildByNames(node,...)
+    local names = {...}
+    assert(#names > 0 ,"names must be none nil")
+    local result = node
+    for i, name in ipairs(names) do
+        result = result:getChildByName(name)
+        assert(result,"node not exist")
+    end
+    return result
 end
 
 return Util

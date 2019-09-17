@@ -3,10 +3,10 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Node" Tag="226" ctype="GameNodeObjectData">
+      <ObjectData Name="Node" UserData="lua:mengya.app.ui.battle.cards.bottom.CardGroup" Tag="226" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="panelContainer" ActionTag="-1593919711" Tag="235" IconVisible="False" RightMargin="-188.0000" TopMargin="-110.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelCardGroup" ActionTag="-1593919711" UserData="lua:mengya.app.ui.battle.cards.bottom.CardGroup" Tag="235" IconVisible="False" RightMargin="-188.0000" TopMargin="-110.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="188.0000" Y="110.0000" />
             <Children>
               <AbstractNodeData Name="card1" ActionTag="-1112991102" Tag="249" IconVisible="True" RightMargin="188.0000" TopMargin="110.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">

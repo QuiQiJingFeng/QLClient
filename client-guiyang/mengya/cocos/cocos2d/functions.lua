@@ -196,12 +196,14 @@ function class(classname, ...)
                         classname));
                 cls.__create = function() return super:create() end
             else
+                local obj = {}
+                setmetatable(obj, {__index = super})
                 -- super is pure lua class
                 cls.__supers = cls.__supers or {}
-                cls.__supers[#cls.__supers + 1] = super
+                cls.__supers[#cls.__supers + 1] = obj
                 if not cls.super then
                     -- set first super pure lua class as class.super
-                    cls.super = super
+                    cls.super = obj
                 end
             end
         else
@@ -316,6 +318,18 @@ function handlerFix(obj, method,tag)
     return function(...)
         return method(obj,tag, ...)
     end
+end
+
+--绑定lua表到Cocostudio中的Node 
+function bindLuaObjToNode(node,path,...)
+    if node.initSuccess then
+        return
+    end
+    local obj = require(path).new()
+    setmetatableindex(node,obj)
+    node:init(...)
+    --只绑定一次
+    node.initSuccess = true
 end
 
 function math.newrandomseed()

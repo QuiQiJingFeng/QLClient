@@ -14,40 +14,12 @@ function UITableViewEx2.extend(self, cellTemplate,clickFunc)
     return self
 end
 
---将Node转换成Widget
-function UITableViewEx2:convertTemplate(template)
-    local children = template:getChildren()
-    for _, child in ipairs(children) do
-        self:convertTemplate(child)
-        local descript = child:getDescription()
-        if string.find(descript,"Node") then
-            local widget = ccui.Widget:create()
-            widget:setName(child:getName())
-            widget:setPosition(cc.p(child:getPosition()))
-            local children2 = child:getChildren()
-            for _, node in ipairs(children2) do
-                node:retain()
-                node:removeSelf()
-                widget:addChild(node)
-                node:release()
-            end
-            child:removeSelf()
-            template:addChild(widget)
-        end
-    end
-end
-
 function UITableViewEx2:initWithCellTemplate(cellTemplate,clickFunc)
-    
     self._cellTemplate = cellTemplate
     self._clickFunc = clickFunc
-    local children = self:getChildren()
-    self._cellNode = children[1]
-    self._cellNode:setVisible(false)
     self._tableViewSize = self:getContentSize()
     self._container = self:getInnerContainer()
     self:setScrollBarEnabled(false)
-    self:convertTemplate(self._cellNode)
 
     --间隔默认0个像素
     self:setDeltUnit(0)
@@ -126,7 +98,8 @@ function UITableViewEx2:dequeueCell(idx)
     if #self._queue > 0 then
         cell = table.remove(self._queue)
     else
-        cell = self._cellTemplate:extend(self._cellNode:clone(),self)
+        cell = self._cellTemplate.new()
+        cell:init()
         self._container:addChild(cell)
     end
     cell:setVisible(true)
@@ -181,24 +154,6 @@ function UITableViewEx2:getDatas()
     return self._datas
 end
 
-function UITableViewEx2:getCellPosByIndex(idx)
-    local size = self:getInnerContainerSize()
-    local posX,posY = self._cellNode:getPosition()
-    if self._isVertical then
-        local distance = idx * self._cellSize.height + (idx - 1)*self._deltUnit
-        posY = size.height - distance + self._cellNodeAnchor.y * self._cellSize.height
-    else
-        posX = idx * self._cellSize.width + (idx - 1) * self._deltUnit - self._cellNodeAnchor.x * self._cellSize.width
-    end
-
-    local targetPos = cc.p(posX,posY)
-    local boundingBox = {x = posX - self._cellNodeAnchor.x * self._cellSize.width,
-                         y = posY - self._cellNodeAnchor.y *self._cellSize.height,
-                         width = self._cellSize.width, height = self._cellSize.height
-                        }
-    return targetPos,boundingBox
-end
-
 function UITableViewEx2:checkAddCell()
     for idx = 1, #self._datas do
         if not self._usedCell[idx] and self._datas[idx] then
@@ -231,7 +186,6 @@ function UITableViewEx2:checkAddCell()
                 end
                 self._posMap[idx] = cc.p(x,y)
                 self._currentPos = self._posMap[idx]
-                dump(self._currentPos,"idx = "..tostring(idx))
             end
         elseif self._datas[idx] then
             if self._usedCell[idx]:getData() ~= self._datas[idx] then
@@ -251,7 +205,7 @@ function UITableViewEx2:clear()
     end
 
     self._usedCell = {}
-    self._currentPos = cc.p(self._cellNode:getPosition())
+    self._currentPos = cc.p(0,0)
     self._posMap = {}
 end
 

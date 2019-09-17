@@ -219,6 +219,7 @@ conf["UIGoldMainCsb"] = "ui/csb/mengya/gold/UIGoldMain.csb"
 conf["UIBattleScene"] = "mengya.app.ui.battle.UIBattleScene"
 conf["UIBattleSceneCsb"] = "ui/csb/mengya/battle/UIBattleScene.csb"
 
+conf["UIBattleHandleItemBase"] = "mengya.app.ui.battle.UIBattleHandleItemBase"
 conf["UIBattleHandleBottomItem"] = "mengya.app.ui.battle.UIBattleHandleBottomItem"
 conf["UIBattleHandleRightItem"] = "mengya.app.ui.battle.UIBattleHandleRightItem"
 conf["UIBattleHandleTopItem"] = "mengya.app.ui.battle.UIBattleHandleTopItem"
