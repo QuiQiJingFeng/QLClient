@@ -4116,19 +4116,23 @@
                 </Folder>
                 <Folder Name="right">
                   <Project Name="DisCard.csd" Type="Node" />
-                  <Project Name="HandCard.csd" Type="Node" />
                   <Project Name="GangCard.csd" Type="Node" />
+                  <Project Name="HandCard.csd" Type="Node" />
                   <Project Name="RightItem.csd" Type="Node" />
                 </Folder>
                 <Folder Name="top">
                   <Project Name="Discard.csd" Type="Node" />
-                  <Project Name="HandCard.csd" Type="Node" />
                   <Project Name="GangCard.csd" Type="Node" />
+                  <Project Name="HandCard.csd" Type="Node" />
                   <Project Name="TopItem.csd" Type="Node" />
                 </Folder>
               </Folder>
+              <Project Name="UIBattlePlayerMore.csd" Type="Layer" />
+              <Project Name="UIBattlePlayers.csd" Type="Layer" />
+              <Project Name="UIBattlePlayerTwo.csd" Type="Layer" />
               <Project Name="UIBattleScene.csd" Type="Layer" />
               <Project Name="UIBattleSceneBtns.csd" Type="Layer" />
+              <Project Name="UIPlayer.csd" Type="Node" />
             </Folder>
             <Folder Name="club">
               <Folder Name="email">

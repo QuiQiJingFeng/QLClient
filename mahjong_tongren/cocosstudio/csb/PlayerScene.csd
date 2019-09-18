@@ -581,13 +581,13 @@
                     <PreSize X="0.1867" Y="0.1900" />
                     <FileData Type="Normal" Path="art/gaming/z_4G.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="rankLabel" ActionTag="-767824073" Tag="314" IconVisible="False" LeftMargin="5.5092" RightMargin="-9.5092" TopMargin="31.5372" BottomMargin="32.4628" LabelText="排名:26565" ctype="TextBMFontObjectData">
+                  <AbstractNodeData Name="rankLabel" ActionTag="-767824073" Tag="314" IconVisible="False" LeftMargin="-166.8895" RightMargin="162.8895" TopMargin="107.3928" BottomMargin="-43.3928" LabelText="排名:26565" ctype="TextBMFontObjectData">
                     <Size X="154.0000" Y="36.0000" />
                     <AnchorPoint ScaleY="1.0000" />
-                    <Position X="5.5092" Y="68.4628" />
+                    <Position X="-166.8895" Y="-7.3928" />
                     <Scale ScaleX="0.5000" ScaleY="0.5000" />
                     <CColor A="255" R="255" G="224" B="76" />
-                    <PrePosition X="0.0367" Y="0.6846" />
+                    <PrePosition X="-1.1126" Y="-0.0739" />
                     <PreSize X="1.0267" Y="0.3600" />
                     <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
                   </AbstractNodeData>
@@ -2126,6 +2126,17 @@
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="imgLogo" ActionTag="-647023328" Tag="6257" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="338.0000" RightMargin="338.0000" TopMargin="90.0000" BottomMargin="90.0000" ctype="SpriteObjectData">
+            <Size X="460.0000" Y="460.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="568.0000" Y="320.0000" />
+            <Scale ScaleX="0.9000" ScaleY="0.9000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.4049" Y="0.7188" />
+            <FileData Type="Normal" Path="art/gaming/Img_11.png" Plist="" />
+            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

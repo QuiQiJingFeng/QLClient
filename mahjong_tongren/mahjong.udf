@@ -28,14 +28,5 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="csb/mengya/battle/UIBattleScene.csd" />
-          <FilePathData Path="csb/PlayerScene.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="csb/PlayerScene.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>

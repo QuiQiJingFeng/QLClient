@@ -217,10 +217,20 @@ conf["UIGoldMainCsb"] = "ui/csb/mengya/gold/UIGoldMain.csb"
 
 
 conf["UIBattleScene"] = "mengya.app.ui.battle.UIBattleScene"
+conf["UIBattleSceneTwo"] = "mengya.app.ui.battle.UIBattleSceneTwo"
+conf["UIBattleSceneThree"] = "mengya.app.ui.battle.UIBattleSceneThree"
+conf["UIBattleSceneFour"] = "mengya.app.ui.battle.UIBattleSceneFour"
+
 conf["UIBattleSceneCsb"] = "ui/csb/mengya/battle/UIBattleScene.csb"
 
-conf["UIBattleHandleItemBase"] = "mengya.app.ui.battle.UIBattleHandleItemBase"
-conf["UIBattleHandleBottomItem"] = "mengya.app.ui.battle.UIBattleHandleBottomItem"
-conf["UIBattleHandleRightItem"] = "mengya.app.ui.battle.UIBattleHandleRightItem"
-conf["UIBattleHandleTopItem"] = "mengya.app.ui.battle.UIBattleHandleTopItem"
-conf["UIBattleHandleLeftItem"] = "mengya.app.ui.battle.UIBattleHandleLeftItem"
+conf["UIBattleHandleItemBase"] = "mengya.app.ui.battle.players.handcard.UIBattleHandleItemBase"
+conf["UIBattleHandleBottomItem"] = "mengya.app.ui.battle.players.handcard.UIBattleHandleBottomItem"
+conf["UIBattleHandleRightItem"] = "mengya.app.ui.battle.players.handcard.UIBattleHandleRightItem"
+conf["UIBattleHandleTopItem"] = "mengya.app.ui.battle.players.handcard.UIBattleHandleTopItem"
+conf["UIBattleHandleLeftItem"] = "mengya.app.ui.battle.players.handcard.UIBattleHandleLeftItem"
+
+conf["UIBattleDiscardItemBase"] = "mengya.app.ui.battle.players.discard.UIBattleDiscardItemBase"
+conf["UIBattleDiscardLeftItem"] = "mengya.app.ui.battle.players.discard.UIBattleDiscardLeftItem"
+conf["UIBattleDiscardRightItem"] = "mengya.app.ui.battle.players.discard.UIBattleDiscardRightItem"
+conf["UIBattleDiscardTopItem"] = "mengya.app.ui.battle.players.discard.UIBattleDiscardTopItem"
+conf["UIBattleDiscardBottomItem"] = "mengya.app.ui.battle.players.discard.UIBattleDiscardBottomItem"
