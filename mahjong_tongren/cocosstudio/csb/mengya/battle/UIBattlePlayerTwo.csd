@@ -15,7 +15,7 @@
                   <AbstractNodeData Name="item" ActionTag="243396349" Tag="228" IconVisible="False" LeftMargin="-0.0002" RightMargin="850.0002" TopMargin="1.0000" BottomMargin="103.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="40.0000" Y="46.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-1694197447" Tag="229" IconVisible="False" RightMargin="-2.0000" TopMargin="-16.0003" BottomMargin="0.0003" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="imgBg" ActionTag="-1694197447" Tag="229" IconVisible="False" RightMargin="-2.0000" TopMargin="-16.0003" BottomMargin="0.0003" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
                         <Size X="42.0000" Y="62.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="21.0000" Y="31.0003" />
@@ -25,7 +25,7 @@
                         <PreSize X="1.0500" Y="1.3478" />
                         <FileData Type="Normal" Path="art/mahjong/blue/top/outBg/mj_bg2.png" Plist="" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgFace" CanEdit="False" ActionTag="1712210689" Tag="230" IconVisible="False" LeftMargin="-8.0977" RightMargin="-6.9023" TopMargin="-20.2627" BottomMargin="-8.7373" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="imgFace" ActionTag="1712210689" Tag="230" IconVisible="False" LeftMargin="-8.0977" RightMargin="-6.9023" TopMargin="-20.2627" BottomMargin="-8.7373" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">
                         <Size X="55.0000" Y="75.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="19.4023" Y="28.7627" />
