@@ -98,16 +98,7 @@ end
 
 --获取中间位置需要显示的cell 的Idx
 function UITableViewEx:getCenterPosIdx()
-    local worldPos = self:convertToWorldSpace(cc.p(self._tableViewSize.width/2,self._tableViewSize.height/2))
-    local nodePos = self._container:convertToNodeSpace(worldPos)
-    local size = self:getInnerContainerSize()
-    if self._isVertical then
-        local idx = (size.height - nodePos.y + self._deltUnit) / (self._deltUnit + self._cellSize.height)
-        return math.floor(idx) * self._perNum
-    else
-        local idx = (nodePos.x - self._deltUnit) / (self._deltUnit + self._cellSize.width)
-        return math.floor(idx) * self._perNum
-    end
+    return 1
 end
 
 

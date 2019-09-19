@@ -161,7 +161,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="panelHandList" CanEdit="False" Visible="False" ActionTag="-1737273941" Tag="5907" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelHandList" CanEdit="False" Visible="False" ActionTag="-1737273941" Tag="5907" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <Children>
               <AbstractNodeData Name="tableViewListBottom" ActionTag="1688226706" UserData="bottom" Tag="558" IconVisible="False" LeftMargin="39.0000" RightMargin="39.0000" TopMargin="535.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Horizontal" ctype="ScrollViewObjectData">
@@ -251,7 +251,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="csb/mengya/battle/UIBattleSceneBtns.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battlePlayers" CanEdit="False" ActionTag="-218509579" Tag="4355" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="battlePlayers" ActionTag="-218509579" Tag="4355" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />

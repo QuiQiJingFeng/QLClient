@@ -9,7 +9,7 @@
           <AbstractNodeData Name="panelPlayers" ActionTag="-1263821470" Tag="4150" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <Children>
-              <AbstractNodeData Name="playerBottom" ActionTag="148645611" Tag="4151" IconVisible="False" LeftMargin="6.8957" RightMargin="767.1043" TopMargin="313.2195" BottomMargin="126.7805" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="playerBottom" ActionTag="148645611" UserData="left,bottom" Tag="4151" IconVisible="False" LeftMargin="6.8957" RightMargin="767.1043" TopMargin="313.2195" BottomMargin="126.7805" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="362.0000" Y="200.0000" />
                 <Children>
                   <AbstractNodeData Name="playerInfo" ActionTag="-1805490423" Tag="4152" IconVisible="True" LeftMargin="46.8924" RightMargin="315.1076" TopMargin="135.1784" BottomMargin="64.8216" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
@@ -138,7 +138,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="playerRight" ActionTag="449736367" Tag="4174" IconVisible="False" LeftMargin="774.7146" RightMargin="-3.7146" TopMargin="302.7955" BottomMargin="137.2045" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="playerRight" ActionTag="449736367" UserData="right,bottom" Tag="4174" IconVisible="False" LeftMargin="774.7146" RightMargin="-3.7146" TopMargin="302.7955" BottomMargin="137.2045" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="365.0000" Y="200.0000" />
                 <Children>
                   <AbstractNodeData Name="playerInfo" CanEdit="False" ActionTag="-1827216804" Tag="4175" IconVisible="True" LeftMargin="312.0803" RightMargin="52.9197" TopMargin="120.5635" BottomMargin="79.4365" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
@@ -222,10 +222,10 @@
                   <AbstractNodeData Name="panelChat" CanEdit="False" ActionTag="271562410" Tag="4194" IconVisible="False" LeftMargin="35.2095" RightMargin="29.7905" TopMargin="21.5806" BottomMargin="118.4194" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="300.0000" Y="60.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgChatBg" CanEdit="False" ActionTag="-2049539402" Tag="4195" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-319.1943" RightMargin="319.1943" TopMargin="2.3963" BottomMargin="-2.3963" FlipY="True" Scale9Enable="True" LeftEage="30" RightEage="65" TopEage="20" BottomEage="20" Scale9OriginX="30" Scale9OriginY="20" Scale9Width="5" Scale9Height="20" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="imgChatBg" CanEdit="False" ActionTag="-2049539402" Tag="4195" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-319.2000" RightMargin="319.2000" TopMargin="2.3940" BottomMargin="-2.3940" FlipY="True" Scale9Enable="True" LeftEage="30" RightEage="65" TopEage="20" BottomEage="20" Scale9OriginX="30" Scale9OriginY="20" Scale9Width="5" Scale9Height="20" ctype="ImageViewObjectData">
                         <Size X="300.0000" Y="60.0000" />
                         <AnchorPoint ScaleX="1.0000" />
-                        <Position X="-19.1943" Y="-2.3963" />
+                        <Position X="-19.2000" Y="-2.3940" />
                         <Scale ScaleX="-1.0000" ScaleY="-1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="-0.0640" Y="-0.0399" />
@@ -267,10 +267,10 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="playerTop" ActionTag="-1754014684" Tag="4197" IconVisible="False" LeftMargin="672.3945" RightMargin="98.6055" TopMargin="-78.7921" BottomMargin="518.7921" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="playerTop" ActionTag="-1754014684" Tag="4197" IconVisible="False" LeftMargin="672.3945" RightMargin="98.6055" TopMargin="-71.7926" BottomMargin="511.7926" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="365.0000" Y="200.0000" />
                 <Children>
-                  <AbstractNodeData Name="playerInfo" CanEdit="False" ActionTag="-343597085" Tag="4198" IconVisible="True" LeftMargin="312.0803" RightMargin="52.9197" TopMargin="120.5635" BottomMargin="79.4365" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+                  <AbstractNodeData Name="playerInfo" ActionTag="-343597085" Tag="4198" IconVisible="True" LeftMargin="312.0803" RightMargin="52.9197" TopMargin="120.5635" BottomMargin="79.4365" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                     <Size X="0.0000" Y="0.0000" />
                     <AnchorPoint />
                     <Position X="312.0803" Y="79.4365" />
@@ -351,10 +351,10 @@
                   <AbstractNodeData Name="panelChat" ActionTag="-531906339" Tag="4217" IconVisible="False" LeftMargin="40.3149" RightMargin="24.6851" TopMargin="188.3571" BottomMargin="-48.3571" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="300.0000" Y="60.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgChatBg" ActionTag="-2107434901" Tag="4218" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="280.8057" RightMargin="-280.8057" TopMargin="58.3954" BottomMargin="-58.3954" Scale9Enable="True" LeftEage="30" RightEage="65" TopEage="20" BottomEage="20" Scale9OriginX="30" Scale9OriginY="20" Scale9Width="5" Scale9Height="20" ctype="ImageViewObjectData">
+                      <AbstractNodeData Name="imgChatBg" ActionTag="-2107434901" Tag="4218" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="280.8000" RightMargin="-280.8000" TopMargin="58.3980" BottomMargin="-58.3980" Scale9Enable="True" LeftEage="30" RightEage="65" TopEage="20" BottomEage="20" Scale9OriginX="30" Scale9OriginY="20" Scale9Width="5" Scale9Height="20" ctype="ImageViewObjectData">
                         <Size X="300.0000" Y="60.0000" />
                         <AnchorPoint ScaleY="1.0000" />
-                        <Position X="280.8057" Y="1.6046" />
+                        <Position X="280.8000" Y="1.6020" />
                         <Scale ScaleX="-1.0000" ScaleY="-1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.9360" Y="0.0267" />
@@ -386,17 +386,17 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="1.0000" />
-                <Position X="1037.3945" Y="518.7921" />
+                <Position X="1037.3945" Y="511.7926" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9132" Y="0.8106" />
+                <PrePosition X="0.9132" Y="0.7997" />
                 <PreSize X="0.3213" Y="0.3125" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="playerLeft" ActionTag="1903577495" Tag="4220" IconVisible="False" LeftMargin="8.7901" RightMargin="765.2098" TopMargin="51.1631" BottomMargin="388.8369" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="playerLeft" ActionTag="1903577495" UserData="left,top" Tag="4220" IconVisible="False" LeftMargin="8.7901" RightMargin="765.2099" TopMargin="51.1631" BottomMargin="388.8369" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="362.0000" Y="200.0000" />
                 <Children>
                   <AbstractNodeData Name="playerInfo" ActionTag="798530540" Tag="4221" IconVisible="True" LeftMargin="46.8924" RightMargin="315.1076" TopMargin="135.1784" BottomMargin="64.8216" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">

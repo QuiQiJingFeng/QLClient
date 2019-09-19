@@ -36,7 +36,7 @@ end
 
 function UILogin:test()
 
-    UIManager:getInstance():show("UIBattleSceneFour")
+    UIManager:getInstance():show("UIBattleSceneTwo")
 end
 
 function UILogin:_onBtnLoginMoreClick()
