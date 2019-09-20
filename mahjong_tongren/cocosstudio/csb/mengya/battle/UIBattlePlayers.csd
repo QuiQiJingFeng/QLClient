@@ -25,7 +25,7 @@
                   <AbstractNodeData Name="spAudio" ActionTag="-1248049816" Tag="4165" IconVisible="False" LeftMargin="77.3970" RightMargin="250.6030" TopMargin="88.9411" BottomMargin="65.0589" ctype="SpriteObjectData">
                     <Size X="34.0000" Y="46.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgLine1" CanEdit="False" ActionTag="-1487819023" Tag="4166" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine1" ActionTag="-1487819023" Tag="4166" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
                         <Size X="17.0000" Y="7.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7977" Y="23.1709" />
@@ -36,7 +36,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh1.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine2" CanEdit="False" ActionTag="-237951556" Tag="4167" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine2" ActionTag="-237951556" Tag="4167" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
                         <Size X="28.0000" Y="9.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="27.1706" />
@@ -47,7 +47,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh2.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine3" CanEdit="False" ActionTag="-566800314" Tag="4168" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine3" ActionTag="-566800314" Tag="4168" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
                         <Size X="39.0000" Y="11.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="31.1702" />
@@ -154,7 +154,7 @@
                   <AbstractNodeData Name="spAudio" ActionTag="-2144942422" Tag="4188" IconVisible="False" LeftMargin="243.3940" RightMargin="87.6060" TopMargin="88.9412" BottomMargin="65.0588" FlipX="True" ctype="SpriteObjectData">
                     <Size X="34.0000" Y="46.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgLine1" CanEdit="False" ActionTag="-122502203" Tag="4189" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine1" ActionTag="-122502203" Tag="4189" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
                         <Size X="17.0000" Y="7.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7977" Y="23.1709" />
@@ -165,7 +165,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh1.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine2" CanEdit="False" ActionTag="-1900162186" Tag="4190" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine2" ActionTag="-1900162186" Tag="4190" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
                         <Size X="28.0000" Y="9.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="27.1706" />
@@ -176,7 +176,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh2.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine3" CanEdit="False" ActionTag="232295653" Tag="4191" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine3" ActionTag="232295653" Tag="4191" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
                         <Size X="39.0000" Y="11.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="31.1702" />
@@ -267,7 +267,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="playerTop" ActionTag="-1754014684" Tag="4197" IconVisible="False" LeftMargin="672.3945" RightMargin="98.6055" TopMargin="-71.7926" BottomMargin="511.7926" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="playerTop" ActionTag="-1754014684" UserData="top,right" Tag="4197" IconVisible="False" LeftMargin="672.3945" RightMargin="98.6055" TopMargin="-71.7926" BottomMargin="511.7926" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="365.0000" Y="200.0000" />
                 <Children>
                   <AbstractNodeData Name="playerInfo" ActionTag="-343597085" Tag="4198" IconVisible="True" LeftMargin="312.0803" RightMargin="52.9197" TopMargin="120.5635" BottomMargin="79.4365" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
@@ -283,7 +283,7 @@
                   <AbstractNodeData Name="spAudio" ActionTag="169421087" Tag="4211" IconVisible="False" LeftMargin="347.3923" RightMargin="-16.3923" TopMargin="88.9385" BottomMargin="65.0615" ctype="SpriteObjectData">
                     <Size X="34.0000" Y="46.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgLine1" CanEdit="False" ActionTag="-438496959" Tag="4212" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine1" ActionTag="-438496959" Tag="4212" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
                         <Size X="17.0000" Y="7.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7977" Y="23.1709" />
@@ -294,7 +294,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh1.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine2" CanEdit="False" ActionTag="-1767313707" Tag="4213" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine2" ActionTag="-1767313707" Tag="4213" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
                         <Size X="28.0000" Y="9.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="27.1706" />
@@ -305,7 +305,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh2.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine3" CanEdit="False" ActionTag="-1124303171" Tag="4214" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine3" ActionTag="-1124303171" Tag="4214" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
                         <Size X="39.0000" Y="11.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="31.1702" />
@@ -412,7 +412,7 @@
                   <AbstractNodeData Name="spAudio" ActionTag="-1569180014" Tag="4234" IconVisible="False" LeftMargin="77.3970" RightMargin="250.6030" TopMargin="88.9411" BottomMargin="65.0589" ctype="SpriteObjectData">
                     <Size X="34.0000" Y="46.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgLine1" ActionTag="1611012121" Tag="4235" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine1" ActionTag="1611012121" Tag="4235" IconVisible="False" LeftMargin="8.2977" RightMargin="8.7023" TopMargin="19.3291" BottomMargin="19.6709" ctype="SpriteObjectData">
                         <Size X="17.0000" Y="7.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7977" Y="23.1709" />
@@ -423,7 +423,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh1.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine2" ActionTag="1777950180" Tag="4236" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine2" ActionTag="1777950180" Tag="4236" IconVisible="False" LeftMargin="2.7979" RightMargin="3.2021" TopMargin="14.3294" BottomMargin="22.6706" ctype="SpriteObjectData">
                         <Size X="28.0000" Y="9.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="27.1706" />
@@ -434,7 +434,7 @@
                         <FileData Type="Normal" Path="art/gaming/Img_xh2.png" Plist="" />
                         <BlendFunc Src="1" Dst="771" />
                       </AbstractNodeData>
-                      <AbstractNodeData Name="imgLine3" ActionTag="-1870909093" Tag="4237" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
+                      <AbstractNodeData Name="spLine3" ActionTag="-1870909093" Tag="4237" IconVisible="False" LeftMargin="-2.7021" RightMargin="-2.2979" TopMargin="9.3298" BottomMargin="25.6702" ctype="SpriteObjectData">
                         <Size X="39.0000" Y="11.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="16.7979" Y="31.1702" />

@@ -4133,6 +4133,7 @@
               <Project Name="UIBattleScene.csd" Type="Layer" />
               <Project Name="UIBattleSceneBtns.csd" Type="Layer" />
               <Project Name="UIPlayer.csd" Type="Node" />
+              <Project Name="UISteeringWheel.csd" Type="Node" />
             </Folder>
             <Folder Name="club">
               <Folder Name="email">

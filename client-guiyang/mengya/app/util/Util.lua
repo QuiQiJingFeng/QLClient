@@ -280,9 +280,9 @@ function Util:scheduleUpdate(callback, intervalSec)
     assert(callback)
     intervalSec = intervalSec or 0
     local scheduleId = nil
-    scheduleId = cc.Director:getInstance():getScheduler():scheduleScriptFunc(function() 
+    scheduleId = cc.Director:getInstance():getScheduler():scheduleScriptFunc(function(dt) 
         --如果回调方法返回true,那么直接停止调度
-        local isStop = callback()
+        local isStop = callback(dt)
         if isStop then
             if scheduleId then
                 cc.Director:getInstance():getScheduler():unscheduleScriptEntry(scheduleId)

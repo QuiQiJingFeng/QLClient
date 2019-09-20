@@ -1,5 +1,5 @@
 <GameFile>
-  <PropertyGroup Name="BattleSceneBtns" Type="Layer" ID="2505775d-b1ce-41e5-adb7-4e53036d93e1" Version="3.10.0.0" />
+  <PropertyGroup Name="UIBattleSceneBtns" Type="Layer" ID="2505775d-b1ce-41e5-adb7-4e53036d93e1" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="55" Speed="0.5000" ActivedAnimationName="checking">
@@ -195,7 +195,7 @@
                 <PreSize X="0.7386" Y="0.7386" />
                 <FileData Type="Normal" Path="art/effect/radar5.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_8" ActionTag="1681358758" Alpha="204" Tag="1237" IconVisible="False" LeftMargin="16.0997" RightMargin="14.9003" TopMargin="13.3410" BottomMargin="17.6590" LeftEage="18" RightEage="18" TopEage="18" BottomEage="18" Scale9OriginX="18" Scale9OriginY="18" Scale9Width="29" Scale9Height="29" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_8" ActionTag="1681358758" Alpha="0" Tag="1237" IconVisible="False" LeftMargin="16.0997" RightMargin="14.9003" TopMargin="13.3410" BottomMargin="17.6590" LeftEage="18" RightEage="18" TopEage="18" BottomEage="18" Scale9OriginX="18" Scale9OriginY="18" Scale9Width="29" Scale9Height="29" ctype="ImageViewObjectData">
                 <Size X="57.0000" Y="57.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="44.5997" Y="46.1590" />
@@ -205,11 +205,11 @@
                 <PreSize X="0.6477" Y="0.6477" />
                 <FileData Type="Normal" Path="art/effect/radar3.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_1" ActionTag="158213648" Alpha="198" Tag="1238" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="19.5000" RightMargin="19.5000" TopMargin="16.0000" BottomMargin="16.0000" LeftEage="16" RightEage="16" TopEage="18" BottomEage="18" Scale9OriginX="16" Scale9OriginY="18" Scale9Width="17" Scale9Height="20" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_1" ActionTag="158213648" Alpha="0" Tag="1238" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="19.5000" RightMargin="19.5000" TopMargin="16.0000" BottomMargin="16.0000" LeftEage="16" RightEage="16" TopEage="18" BottomEage="18" Scale9OriginX="16" Scale9OriginY="18" Scale9Width="17" Scale9Height="20" ctype="ImageViewObjectData">
                 <Size X="49.0000" Y="56.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="44.0000" Y="44.0000" />
-                <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                <Scale ScaleX="0.8000" ScaleY="0.8000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="0.5568" Y="0.6364" />
@@ -218,13 +218,13 @@
               <AbstractNodeData Name="btnNormalState" ActionTag="-1260185246" Tag="1239" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="12.5000" RightMargin="12.5000" TopMargin="10.0000" BottomMargin="10.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="33" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="63.0000" Y="68.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_8_0" ActionTag="-1237636241" Alpha="204" Tag="1240" IconVisible="False" LeftMargin="8.0000" RightMargin="8.0000" TopMargin="9.1429" BottomMargin="46.8571" LeftEage="18" RightEage="18" TopEage="3" BottomEage="3" Scale9OriginX="18" Scale9OriginY="3" Scale9Width="11" Scale9Height="6" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_8_0" ActionTag="-1237636241" Alpha="0" Tag="1240" IconVisible="False" LeftMargin="8.0000" RightMargin="8.0000" TopMargin="62.0000" BottomMargin="-6.0000" LeftEage="18" RightEage="18" TopEage="3" BottomEage="3" Scale9OriginX="18" Scale9OriginY="3" Scale9Width="11" Scale9Height="6" ctype="ImageViewObjectData">
                     <Size X="47.0000" Y="12.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="31.5000" Y="52.8571" />
-                    <Scale ScaleX="0.9429" ScaleY="-1.7143" />
+                    <Position X="31.5000" />
+                    <Scale ScaleX="0.2000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5000" Y="0.7773" />
+                    <PrePosition X="0.5000" />
                     <PreSize X="0.7460" Y="0.1765" />
                     <FileData Type="Normal" Path="art/effect/radar4.png" Plist="" />
                   </AbstractNodeData>
@@ -238,10 +238,10 @@
                     <PreSize X="0.7460" Y="0.7941" />
                     <FileData Type="Normal" Path="art/effect/radar0.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Image_4_0_0_0" ActionTag="-65217433" Tag="1242" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="14.0000" RightMargin="14.0000" TopMargin="52.7000" BottomMargin="-1.7000" LeftEage="15" RightEage="15" TopEage="7" BottomEage="7" Scale9OriginX="15" Scale9OriginY="7" Scale9Width="5" Scale9Height="3" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_4_0_0_0" ActionTag="-65217433" Tag="1242" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="14.0000" RightMargin="14.0000" TopMargin="52.7017" BottomMargin="-1.7017" LeftEage="15" RightEage="15" TopEage="7" BottomEage="7" Scale9OriginX="15" Scale9OriginY="7" Scale9Width="5" Scale9Height="3" ctype="ImageViewObjectData">
                     <Size X="35.0000" Y="17.0000" />
                     <AnchorPoint ScaleX="0.7016" ScaleY="0.3129" />
-                    <Position X="38.5555" Y="3.6188" />
+                    <Position X="38.5560" Y="3.6176" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.6120" Y="0.0532" />
@@ -326,7 +326,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="listBtns" ActionTag="-1197011575" UserData="right,top" Tag="1247" IconVisible="False" LeftMargin="1068.7400" RightMargin="1.2600" TopMargin="28.6205" BottomMargin="235.3795" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ItemMargin="10" DirectionType="Vertical" ctype="ListViewObjectData">
+          <AbstractNodeData Name="listBtns" ActionTag="-1197011575" UserData="right,top" Tag="1247" IconVisible="False" LeftMargin="1068.7400" RightMargin="1.2600" TopMargin="28.6205" BottomMargin="235.3795" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ItemMargin="10" DirectionType="Vertical" ctype="ListViewObjectData">
             <Size X="66.0000" Y="376.0000" />
             <Children>
               <AbstractNodeData Name="btnSetting" ActionTag="-1603466476" Tag="1248" IconVisible="False" RightMargin="2.0000" BottomMargin="312.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -381,7 +381,6 @@
                 <PreSize X="0.9697" Y="0.1702" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Normal" Path="art/gaming/Btn_yl.png" Plist="" />
-                <PressedFileData Type="Normal" Path="art/gaming/Btn_yl.png" Plist="" />
                 <NormalFileData Type="Normal" Path="art/gaming/Btn_yl.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

@@ -328,6 +328,7 @@ function bindLuaObjToNode(node,path,...)
     node:init(...)
     --只绑定一次
     node.initSuccess = true
+    return node
 end
 
 function math.newrandomseed()

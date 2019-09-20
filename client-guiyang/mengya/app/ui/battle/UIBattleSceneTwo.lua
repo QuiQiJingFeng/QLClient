@@ -16,5 +16,5 @@ function UIBattleSceneTwo:init()
     self._players["LEFT"]:setVisible(false)
     self._players["RIGHT"]:setVisible(false)
 end
- 
+
 return UIBattleSceneTwo
