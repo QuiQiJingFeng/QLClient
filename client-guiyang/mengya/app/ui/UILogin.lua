@@ -29,14 +29,6 @@ end
 
 function UILogin:onShow(...)
     self:playAnimation(csbPath,"login")
-
-    --FYD TEST
-    self:test()
-end
-
-function UILogin:test()
-
-    UIManager:getInstance():show("UIBattleSceneTwo")
 end
 
 function UILogin:_onBtnLoginMoreClick()
@@ -48,7 +40,7 @@ function UILogin:_onBtnWechatLoginClick()
 end
 
 function UILogin:onHide()
- 
+
 end
 
 return UILogin

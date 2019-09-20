@@ -198,5 +198,5 @@ end
 function UIBattleScene:isFullScreen()
     return true
 end
- 
+
 return UIBattleScene
