@@ -69,6 +69,7 @@ conf["UIFreeListItem"] = "mengya.app.manager.ui.UIFreeListItem"
 conf["UICheckBoxGroup"] = "mengya.app.manager.ui.UICheckBoxGroup"
 conf["UITipManager"] = "mengya.app.manager.ui.UITipManager"
 conf["UITableViewEx2"] = "mengya.app.manager.ui.UITableViewEx2"
+conf["UIMessageTips"] = "mengya.app.manager.ui.UITipManager"
 
 
 

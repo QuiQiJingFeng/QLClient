@@ -105,7 +105,7 @@ function UISettingCheckBox:setMutextGroup(group)
 end
 
 function UISettingCheckBox:setSelect(boolean)
-    if self._mutextGroup and boolean then
+    if self._mutextGroup then
         for _, cbx in ipairs(self._mutextGroup) do
             cbx:setSelected(self == cbx)
         end
@@ -121,7 +121,7 @@ function UISettingCheckBox:setSelect(boolean)
             self:setSelected(boolean)
         else
             self:setSelected(false)
-            app.ui.UIMessageTipsMgr.getInstance():showTips("多选一的选项至少要保留一个!")
+            app.UIMessageTips.getInstance():show("多选一的选项至少要保留一个!")
         end
     else 
         self:setSelected(boolean)
