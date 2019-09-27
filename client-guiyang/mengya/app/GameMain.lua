@@ -19,6 +19,7 @@ end
 -- 初始化
 -- @return boolean
 function GameMain:initialize()
+    app.Engine:getInstance()
     app.GameFSM:getInstance():enterState("GameState_Splash")
 end
 

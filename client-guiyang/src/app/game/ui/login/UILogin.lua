@@ -80,60 +80,62 @@ function UILogin:_registerCallBack()
 end
 
 function UILogin:onShow(...)
-    self._textTip:hide()
-    game.service.GlobalSetting.getInstance():loadLaunchPicTextrue(seekNodeByName(self, "imgBackground", "ccui.ImageView"))
-    self._btnLoginMetod:setVisible(true)
-    --提审相关（微信按钮隐藏）
-    if GameMain.getInstance():isReviewVersion() then
-        self._textFieldIP:setVisible(false)
-        self._textFieldUsername:setVisible(false)
-        self._btnLaunch:setVisible(false)
-        self._btnLoginGuest:setVisible(true)
-        self._textFieldUsername:setString("");
-        self._spriteFeedback:setVisible(false)
-        self._btnLoginMetod:setVisible(false)
-    elseif game.plugin.Runtime.isEnabled() then
-        self._textFieldIP:setVisible(false)
-        self._textFieldUsername:setVisible(false)
-        self._btnLaunch:setVisible(true)
-        self._btnLoginGuest:setVisible(false)
-        self._textFieldUsername:setString("");
-    else
-        self._textFieldIP:setVisible(true)
-        self._textFieldUsername:setVisible(true)
-        self._btnLaunch:setVisible(true)
-        self._btnLoginGuest:setVisible(false)
-        self._textFieldUsername:setString(game.service.LoginService.getInstance():getGuestAccount());
-    end
+    -- self._textTip:hide()
+    -- game.service.GlobalSetting.getInstance():loadLaunchPicTextrue(seekNodeByName(self, "imgBackground", "ccui.ImageView"))
+    -- self._btnLoginMetod:setVisible(true)
+    -- --提审相关（微信按钮隐藏）
+    -- if GameMain.getInstance():isReviewVersion() then
+    --     self._textFieldIP:setVisible(false)
+    --     self._textFieldUsername:setVisible(false)
+    --     self._btnLaunch:setVisible(false)
+    --     self._btnLoginGuest:setVisible(true)
+    --     self._textFieldUsername:setString("");
+    --     self._spriteFeedback:setVisible(false)
+    --     self._btnLoginMetod:setVisible(false)
+    -- elseif game.plugin.Runtime.isEnabled() then
+    --     self._textFieldIP:setVisible(false)
+    --     self._textFieldUsername:setVisible(false)
+    --     self._btnLaunch:setVisible(true)
+    --     self._btnLoginGuest:setVisible(false)
+    --     self._textFieldUsername:setString("");
+    -- else
+    --     self._textFieldIP:setVisible(true)
+    --     self._textFieldUsername:setVisible(true)
+    --     self._btnLaunch:setVisible(true)
+    --     self._btnLoginGuest:setVisible(false)
+    --     self._textFieldUsername:setString(game.service.LoginService.getInstance():getGuestAccount());
+    -- end
 
-    self._action = cc.CSLoader:createTimeline(csbPath)
-    self:runAction(self._action)
-    self:setVersion()
+    -- self._action = cc.CSLoader:createTimeline(csbPath)
+    -- self:runAction(self._action)
+    -- self:setVersion()
 
-    -- 尝试自动登录
-    if game.service.LoginService.getInstance():needAutoLogin() and game.plugin.Runtime.isEnabled() then
-        self._action:play("animation1", false)
-        self:_login()
-        self._btnFixGame:setVisible(false) -- 自动登录不显示修复客户端
-    else
-        self._action:gotoFrameAndPlay(0, false)
-    end
+    -- -- 尝试自动登录
+    -- if game.service.LoginService.getInstance():needAutoLogin() and game.plugin.Runtime.isEnabled() then
+    --     self._action:play("animation1", false)
+    --     self:_login()
+    --     self._btnFixGame:setVisible(false) -- 自动登录不显示修复客户端
+    -- else
+    --     self._action:gotoFrameAndPlay(0, false)
+    -- end
 
-    -- 暂时屏蔽
-    self._btnFixGame:setVisible(false)
+    -- -- 暂时屏蔽
+    -- self._btnFixGame:setVisible(false)
 
-    -- 显示不同的游戏名称(产品说不需要代码暂时注释)
-    -- self:showAreaName();	
-    --控制反馈按钮的显隐，潮汕没有这个按钮
-    if config.GlobalConfig.getIsShowFeedback() == false then
-        self._spriteFeedback:setVisible(false);
-        self._spriteFeedback:setPosition(cc.p(-0xFFFF, -0xFFFF))
-    end
+    -- -- 显示不同的游戏名称(产品说不需要代码暂时注释)
+    -- -- self:showAreaName();	
+    -- --控制反馈按钮的显隐，潮汕没有这个按钮
+    -- if config.GlobalConfig.getIsShowFeedback() == false then
+    --     self._spriteFeedback:setVisible(false);
+    --     self._spriteFeedback:setPosition(cc.p(-0xFFFF, -0xFFFF))
+    -- end
 
-    self:_registerCallBack()
+    -- self:_registerCallBack()
 
-    config.configHelper.refreshAllConfigs()
-    local service = game.service.UserEventService:getInstance()
+    -- config.configHelper.refreshAllConfigs()
+    -- local service = game.service.UserEventService:getInstance()
+
+    
 end
 
 function UILogin:onHide()

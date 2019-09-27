@@ -85,7 +85,7 @@ function UIMain:_onBtnShopClick(tag)
 end
 
 function UIMain:_onBtnJoinRoomClick()
- 
+
 end
 
 function UIMain:_onBtnClubClick()

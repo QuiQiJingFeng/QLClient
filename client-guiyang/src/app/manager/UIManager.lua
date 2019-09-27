@@ -129,7 +129,7 @@ function UIManager:clear(state, destoryUnusedUI)
 
     local function isIgnoreDestroy(name)
         if ignores and table.indexof(ignores, name) then return true end
-        return uicaches[name] ~= nil    
+        return uicaches[name] ~= nil
     end
 
     -- 隐藏所有界面

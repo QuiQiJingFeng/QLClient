@@ -19,6 +19,7 @@ function UIBattleSceneThree:init()
     local tableViewDiscardTop = Util:seekNodeByName(self,"tableViewDiscardTop","ccui.ScrollView")
     self._players["TOP"]:setPlayerDiscardList(tableViewDiscardTop,"TOP",12)
     self._players["TOP"]:setVisible(false)
+    self._players["TOP"] = nil
 end
 
  

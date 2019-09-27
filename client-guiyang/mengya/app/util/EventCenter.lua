@@ -1,8 +1,6 @@
 
 local EventCenter = class("EventCenter")
-
 local __listeners = {}
-
 function EventCenter:on(eventName, listener, tag)
     eventName = string.upper(eventName)
     if __listeners[eventName] == nil then

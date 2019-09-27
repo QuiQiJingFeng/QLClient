@@ -68,11 +68,9 @@ function UISetting:_onBtnFixGameClick()
 	app.UITipManager:getInstance():show("敬请期待")
 end
 
-
-
 function UISetting:_onSliderMusicChange(sender)
     local volume = sender:getPercent() * 0.01
-	app.AudioManager.getInstance():getMusicVolume(volume)	
+	app.AudioManager.getInstance():setMusicVolume(volume)	
 end
 
 function UISetting:_onSliderAudioEffectChange(sender)

@@ -40,7 +40,7 @@ function GameFSM:getCurrentState()
 end
 
 --切换状态
-function GameFSM:enterState(stateClassName)
+function GameFSM:enterState(stateClassName,...)
     print("EnterState : %s", stateClassName)
     local oldState = self._currentState
     local stateClass = app[stateClassName]
@@ -61,7 +61,7 @@ function GameFSM:enterState(stateClassName)
     local oldStateClassName = oldState and oldState.__cname or nil
     app.UIManager:getInstance():clear(oldStateClassName, oldStateClassName ~= stateClassName)
 
-    self._currentState:enter()
+    self._currentState:enter(...)
 
     -- Done
     if oldState then

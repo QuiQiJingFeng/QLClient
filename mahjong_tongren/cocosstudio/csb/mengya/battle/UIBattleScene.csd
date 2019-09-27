@@ -62,7 +62,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="8" G="41" B="0" />
               </AbstractNodeData>
-              <AbstractNodeData Name="txtRoomNumber" CanEdit="False" ActionTag="721658593" Alpha="191" Tag="6025" IconVisible="False" LeftMargin="0.3074" RightMargin="26.6926" TopMargin="31.4776" BottomMargin="12.5224" FontSize="17" LabelText="房间号:2656252" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+              <AbstractNodeData Name="txtRoomNumber" ActionTag="721658593" Alpha="191" Tag="6025" IconVisible="False" LeftMargin="0.3074" RightMargin="26.6926" TopMargin="31.4776" BottomMargin="12.5224" FontSize="17" LabelText="房间号:2656252" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
                 <Size X="123.0000" Y="17.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="61.8074" Y="21.0224" />
@@ -150,16 +150,6 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="steeringWheel" CanEdit="False" ActionTag="1043261916" Tag="552" IconVisible="True" LeftMargin="568.0000" RightMargin="568.0000" TopMargin="320.0000" BottomMargin="320.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="568.0000" Y="320.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="csb/mengya/battle/UISteeringWheel.csd" Plist="" />
-          </AbstractNodeData>
           <AbstractNodeData Name="panelHandList" CanEdit="False" Visible="False" ActionTag="-1737273941" Tag="5907" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <Children>
@@ -240,7 +230,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battlePlayers" ActionTag="-218509579" Tag="4355" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="battlePlayers" CanEdit="False" ActionTag="-218509579" Tag="4355" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />
@@ -250,7 +240,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="csb/mengya/battle/UIBattlePlayers.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battleBtns" CanEdit="False" ActionTag="-9026121" Tag="460" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="battleBtns" CanEdit="False" Visible="False" ActionTag="-9026121" Tag="460" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />
@@ -259,6 +249,161 @@
             <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="csb/mengya/battle/UIBattleSceneBtns.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="steeringWheel" ActionTag="1043261916" Tag="552" IconVisible="True" LeftMargin="568.0000" RightMargin="568.0000" TopMargin="320.0000" BottomMargin="320.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="568.0000" Y="320.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csb/mengya/battle/UISteeringWheel.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="btnWechatInvite" ActionTag="-726061020" Alpha="237" Tag="854" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="448.2368" RightMargin="447.7632" TopMargin="283.3784" BottomMargin="280.6216" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="60" RightEage="60" TopEage="1" BottomEage="1" Scale9OriginX="60" Scale9OriginY="1" Scale9Width="90" Scale9Height="74" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="240.0000" Y="76.0000" />
+            <Children>
+              <AbstractNodeData Name="z_wxyq_2" ActionTag="-677194227" Tag="855" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="19.0000" RightMargin="19.0000" TopMargin="12.9800" BottomMargin="16.0200" ctype="SpriteObjectData">
+                <Size X="202.0000" Y="47.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="120.0000" Y="39.5200" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5200" />
+                <PreSize X="0.8417" Y="0.6184" />
+                <FileData Type="Normal" Path="art/gaming/z_wxyq.png" Plist="" />
+                <BlendFunc Src="1" Dst="771" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="BitmapFontLabel_1_0" ActionTag="-1498941547" Tag="856" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="88.3000" RightMargin="30.7000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="微信邀请" ctype="TextBMFontObjectData">
+                <Size X="121.0000" Y="36.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="148.8000" Y="38.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.6200" Y="0.5000" />
+                <PreSize X="0.5042" Y="0.4737" />
+                <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="568.2368" Y="318.6216" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5002" Y="0.4978" />
+            <PreSize X="0.2113" Y="0.1187" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Normal" Path="art/main/Btn_gray_main.png" Plist="" />
+            <PressedFileData Type="Normal" Path="art/main/Btn_green1_main.png" Plist="" />
+            <NormalFileData Type="Normal" Path="art/main/Btn_green0_main.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="txtRoomRules" ActionTag="805282616" Tag="292" IconVisible="False" LeftMargin="272.6632" RightMargin="263.3368" TopMargin="487.8777" BottomMargin="52.1223" IsCustomSize="True" FontSize="20" LabelText="贵阳麻将,8局,二丁拐,翻牌鸡,一扣二" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="600.0000" Y="100.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="572.6632" Y="102.1223" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5041" Y="0.1596" />
+            <PreSize X="0.5282" Y="0.1563" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="listPreStartOption" ActionTag="-994379697" Tag="2603" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="1136.0000" RightMargin="-631.0000" TopMargin="491.6619" BottomMargin="73.3381" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" ScrollDirectionType="0" VerticalType="Align_VerticalCenter" ctype="ListViewObjectData">
+            <Size X="631.0000" Y="75.0000" />
+            <Children>
+              <AbstractNodeData Name="btnDestroyRoom" ActionTag="1522222077" Tag="2720" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" RightMargin="421.0000" TopMargin="-0.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="80" RightEage="80" TopEage="1" BottomEage="1" Scale9OriginX="80" Scale9OriginY="1" Scale9Width="50" Scale9Height="74" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="210.0000" Y="76.0000" />
+                <Children>
+                  <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="-456412506" Tag="2721" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="47.1000" RightMargin="42.9000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="解散房间" ctype="TextBMFontObjectData">
+                    <Size X="120.0000" Y="36.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="107.1000" Y="38.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5100" Y="0.5000" />
+                    <PreSize X="0.5714" Y="0.4737" />
+                    <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="105.0000" Y="37.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1664" Y="0.5000" />
+                <PreSize X="0.3328" Y="1.0133" />
+                <TextColor A="255" R="255" G="255" B="255" />
+                <DisabledFileData Type="Normal" Path="art/main/Btn_gray_main.png" Plist="" />
+                <PressedFileData Type="Normal" Path="art/main/Btn_red1_main.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/main/Btn_red0_main.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="btnEarlyStart" ActionTag="1905948023" ZOrder="1" Tag="2722" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" RightMargin="421.0000" TopMargin="-0.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="80" RightEage="80" TopEage="1" BottomEage="1" Scale9OriginX="80" Scale9OriginY="1" Scale9Width="50" Scale9Height="74" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="210.0000" Y="76.0000" />
+                <Children>
+                  <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="-2087591576" Tag="2723" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="46.6000" RightMargin="42.4000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="提前开局" ctype="TextBMFontObjectData">
+                    <Size X="121.0000" Y="36.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="107.1000" Y="38.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5100" Y="0.5000" />
+                    <PreSize X="0.5762" Y="0.4737" />
+                    <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="315.0000" Y="37.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1664" Y="0.5000" />
+                <PreSize X="0.3328" Y="1.0133" />
+                <TextColor A="255" R="255" G="255" B="255" />
+                <DisabledFileData Type="Normal" Path="art/main/Btn_gray_main.png" Plist="" />
+                <PressedFileData Type="Normal" Path="art/main/Btn_red1_main.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/main/Btn_red0_main.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="btnBackHall" ActionTag="728102242" ZOrder="2" Tag="2600" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" RightMargin="421.0000" TopMargin="-0.5000" BottomMargin="-0.5000" TouchEnable="True" FontSize="30" Scale9Enable="True" LeftEage="80" RightEage="80" TopEage="1" BottomEage="1" Scale9OriginX="80" Scale9OriginY="1" Scale9Width="50" Scale9Height="74" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="210.0000" Y="76.0000" />
+                <Children>
+                  <AbstractNodeData Name="BitmapFontLabel_z_Scene" ActionTag="270492616" Tag="2601" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="46.6000" RightMargin="42.4000" TopMargin="20.0000" BottomMargin="20.0000" LabelText="返回大厅" ctype="TextBMFontObjectData">
+                    <Size X="121.0000" Y="36.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="107.1000" Y="38.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5100" Y="0.5000" />
+                    <PreSize X="0.5762" Y="0.4737" />
+                    <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_Button1.fnt" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="525.0000" Y="37.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1664" Y="0.5000" />
+                <PreSize X="0.3328" Y="1.0133" />
+                <TextColor A="255" R="255" G="255" B="255" />
+                <DisabledFileData Type="Normal" Path="art/main/Btn_gray_main.png" Plist="" />
+                <PressedFileData Type="Normal" Path="art/main/Btn_red1_main.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/main/Btn_red0_main.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="1136.0000" Y="73.3381" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="1.0000" Y="0.1146" />
+            <PreSize X="0.5555" Y="0.1172" />
+            <SingleColor A="255" R="150" G="150" B="255" />
+            <FirstColor A="255" R="150" G="150" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

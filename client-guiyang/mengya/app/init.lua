@@ -21,7 +21,7 @@ conf["ConfigManager"] = "mengya.app.manager.config.ConfigManager"
 conf["UIAnimationManager"] = "mengya.app.manager.animation.UIAnimationManager"
 conf["AudioManager"] = "mengya.app.manager.audio.AudioManager"
 conf["LocalStorage"] = "mengya.app.manager.storage.LocalStorage"
-
+conf["EventCenter"] = "mengya.app.util.EventCenter"
 
 --data mode
 conf["PlayerSettingData"] = "mengya.app.data.PlayerSettingData"
@@ -36,12 +36,22 @@ conf["GameState_InGame"] = "mengya.app.game.gameState.GameState_InGame"
 conf["GameState_Login"] = "mengya.app.game.gameState.GameState_Login"
 conf["GameState_Lobby"] = "mengya.app.game.gameState.GameState_Lobby"
 conf["GameState_Club"] = "mengya.app.game.gameState.GameState_Club"
+conf["GameState_Battle"] = "mengya.app.game.gameState.GameState_Battle"
+
 
 
 --================================================
 --=================   Service 相关   ==================
 --================================================
 conf["LocalPlayerService"] = "mengya.app.service.LocalPlayerService"
+
+
+--================================================
+--=================   Engine 相关   ==================
+--================================================
+conf["Engine"] = "mengya.app.engine.Engine"
+conf["DataSet"] = "mengya.app.engine.DataSet"
+conf["RuleParse"] = "mengya.app.engine.RuleParse"
 
 
 --================================================

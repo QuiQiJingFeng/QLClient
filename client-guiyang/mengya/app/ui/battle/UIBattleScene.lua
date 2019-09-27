@@ -42,7 +42,22 @@ function UIBattleScene:init()
 
     Util:bindTouchEvent(self._btnSetting,handler(self,self._onBtnSettingClick))
 
+    --开局前可以操作的列表
+    self._listPreStartOption = Util:seekNodeByName(self,"listPreStartOption","ccui.ListView")
+    self._listPreStartOption:setScrollBarEnabled(false)
+    --解散房间
+    self._btnDestroyRoom = Util:seekNodeByName(self,"btnDestroyRoom","ccui.Button")
+    --提前开局
+    self._btnEarlyStart = Util:seekNodeByName(self,"btnEarlyStart","ccui.Button")
+    --返回大厅
+    self._btnBackHall = Util:seekNodeByName(self,"btnBackHall","ccui.Button")
 
+    --微信邀请按钮
+    self._btnWechatInvite = Util:seekNodeByName(self,"btnWechatInvite","ccui.Button")
+    --房间号
+    self._txtRoomId = Util:seekNodeByName(self,"txtRoomNumber","ccui.Text")
+    --房间规则
+    self._txtRoomRules = Util:seekNodeByName(self,"txtRoomRules","ccui.Text")
     --电池
     self._spElectricBg = Util:seekNodeByName(self,"spElectricBg","cc.Sprite")
     self._spElectric = Util:seekNodeByName(self,"spElectric","cc.Sprite")
@@ -56,6 +71,15 @@ function UIBattleScene:init()
         ["WIFI"] = self._panelWifi,
         ["NONE"] = self._imgNotNet,
         ["4G"] = self._panel4G}
+end
+
+function UIBattleScene:setGameStart(isStart)
+    for _, player in pairs(self._players) do
+        player:setVisible(isStart)
+    end
+    self._steeringWheel:setVisible(isStart)
+    self._btnWechatInvite:setVisible(not isStart)
+    self._listPreStartOption:setVisible(not isStart)
 end
 
 function UIBattleScene:_onBtnSettingClick()
@@ -134,7 +158,47 @@ end
 
 function UIBattleScene:onShow()
     self:onUpdate()
-    local datas = {
+
+    local textRoomNumberDesc = string.format("房间号:%d",app.DataSet:getInstance():getRoomId())
+    self._txtRoomId:setString(textRoomNumberDesc)
+
+    local parse = app.DataSet:getInstance():getRuleParse()
+    local descript = parse:getDescript()
+    self._txtRoomRules:setString(descript)
+
+    self:setGameStart(false)
+
+    if app.LocalPlayerService:getInstance():getRoleId() == app.DataSet:getInstance():getCreateRoleId() then
+        self._listPreStartOption:removeAllChildren()
+        self._listPreStartOption:addChild(self._btnDestroyRoom)
+        self._listPreStartOption:addChild(self._btnBackHall)
+        self._listPreStartOption:addChild(self._btnEarlyStart)
+    else
+        self._listPreStartOption:removeAllChildren()
+        self._listPreStartOption:addChild(self._btnBackHall)
+        self._listPreStartOption:addChild(self._btnEarlyStart)
+        self._listPreStartOption:addChild(self._btnDestroyRoom)
+        self._btnDestroyRoom:setVisible(false)
+    end
+end
+
+function UIBattleScene:onHide()
+    self:offUpdate()
+    self._steeringWheel:dispose()
+end
+
+function UIBattleScene:getGradeLayerId()
+    return 2
+end
+
+function UIBattleScene:isFullScreen()
+    return true
+end
+
+return UIBattleScene
+
+--[[ 
+local datas = {
         {type = "gang",cardValue = 24,from = 1},
         {type = "angang",cardValue = 22,from = 2},
         {type = "peng",cardValue = 35,from = 3},
@@ -184,19 +248,4 @@ function UIBattleScene:onShow()
     self._players["TOP"]:setDisCardDatas(datas)
 
     self._steeringWheel:setCurrentDirect("BOTTOM")
-end
-
-function UIBattleScene:onHide()
-    self:offUpdate()
-    self._steeringWheel:dispose()
-end
-
-function UIBattleScene:getGradeLayerId()
-    return 2
-end
-
-function UIBattleScene:isFullScreen()
-    return true
-end
-
-return UIBattleScene
+]]

@@ -94,6 +94,19 @@ function Util:getDateInfo(time)
     return os.date("*t",time)
 end
 
+--返回今天是周几, 周1~周7 分别对应数字
+function Util:getWeekDay()
+    local time = self:getCurrentTime()
+    local dateInfo = os.date("*t",time)
+    local realyDay = dateInfo.wday
+    if realyDay == 1 then
+        realyDay = 7
+    else
+        realyDay = realyDay - 1
+    end
+    return realyDay
+end
+
 --服务器时间的时分秒
 function Util:getFormatDate(format,time)
     format = format or "%Y-%m-%d %H:%M:%S"
@@ -336,6 +349,66 @@ function Util:getChildByNames(node,...)
         assert(result,"node not exist")
     end
     return result
+end
+
+function Util:saveNodeToPng(node, callback, name, size)
+	assert(type(node) ~= "userdata")
+    -- clone 一下node，防止对之前的node产生影响
+    local localNode = node
+    local n_visible = localNode:isVisible()
+    local n_pos = cc.p(localNode:getPositionX(), localNode:getPositionY())
+    localNode:setVisible(true)
+
+    -- 如果储存的图片未定义名字，则设置默认名
+    name = name or "saveNodeToPng.png"
+
+    -- 可写路径，截图会存在这里
+    local writablePath = cc.FileUtils:getInstance():getWritablePath()
+    local filePath = writablePath .. name
+    -- 删除之前的
+    if cc.FileUtils:getInstance():isFileExist(filePath) then
+        cc.FileUtils:getInstance():removeFile(filePath)
+    end
+
+    if size == nil then
+        size = node:getContentSize() -- 截图的图片大小
+    end
+
+    -- 创建renderTexture
+    local render = cc.RenderTexture:create(size.width, size.height)
+    localNode:setPosition(cc.p(size.width / 2, size.height / 2))
+    -- 绘制
+    render:begin()
+    localNode:visit()
+    render:endToLua()
+    -- 保存
+    render:saveToFile(name, cc.IMAGE_FORMAT_PNG)
+    localNode:setVisible(n_visible)
+    localNode:setPosition(n_pos)
+
+    -- 返回存好的文件，如果有callback则调用callback，否则返回文件路径
+    if type(callback) == "function" then
+        -- 执行schedule检查文件，保存好就调用callback，可能会出问题，比如回调里的东西被释放了
+        local checkTimer = nil
+        checkTimer = cc.Director:getInstance():getScheduler():scheduleScriptFunc(function ()
+            -- body
+            if cc.FileUtils:getInstance():isFileExist(filePath) then
+                cc.Director:getInstance():getScheduler():unscheduleScriptEntry(checkTimer)
+                callback(filePath)
+
+            end
+        end, 0.01, false)
+    end
+    return filePath
+end
+
+function Util:captureScreen(callBack)
+	local cb = function(success, file)
+        assert(success,file)
+        callBack(file)
+    end
+    -- 分享截图
+    cc.utils:captureScreen(cb, "ScreenShotWithLogo.jpg")
 end
 
 return Util

@@ -11,10 +11,10 @@ function UIBattleSceneTwo:init()
     self._players["BOTTOM"]:setPlayerDiscardList(tableViewDiscardBottom,"BOTTOM",23)
     local tableViewDiscardTop = Util:seekNodeByName(self,"tableViewDiscardTop","ccui.ScrollView")
     self._players["TOP"]:setPlayerDiscardList(tableViewDiscardTop,"TOP",23)
-
- 
     self._players["LEFT"]:setVisible(false)
     self._players["RIGHT"]:setVisible(false)
+    self._players["LEFT"] = nil
+    self._players["RIGHT"] = nil
 end
 
 return UIBattleSceneTwo
