@@ -50,7 +50,6 @@ conf["LocalPlayerService"] = "mengya.app.service.LocalPlayerService"
 --=================   Engine 相关   ==================
 --================================================
 conf["Engine"] = "mengya.app.engine.Engine"
-conf["DataSet"] = "mengya.app.engine.DataSet"
 conf["RuleParse"] = "mengya.app.engine.RuleParse"
 
 

@@ -9,12 +9,13 @@ function Util:seekNodeByName(view, name, property)
     return node
 end
 
-function Util:getNodeByNames(node, ...)
+function Util:getChildByNames(node,...)
     local names = {...}
+    assert(#names > 0 ,"names must be none nil")
     local result = node
     for i, name in ipairs(names) do
         result = result:getChildByName(name)
-        assert(result,"not exist node by names")
+        assert(result,"node not exist")
     end
     return result
 end
@@ -340,17 +341,6 @@ function Util:convertNodeToWidget(child)
     return child
 end
 
-function Util:getChildByNames(node,...)
-    local names = {...}
-    assert(#names > 0 ,"names must be none nil")
-    local result = node
-    for i, name in ipairs(names) do
-        result = result:getChildByName(name)
-        assert(result,"node not exist")
-    end
-    return result
-end
-
 function Util:saveNodeToPng(node, callback, name, size)
 	assert(type(node) ~= "userdata")
     -- clone 一下node，防止对之前的node产生影响
@@ -409,6 +399,136 @@ function Util:captureScreen(callBack)
     end
     -- 分享截图
     cc.utils:captureScreen(cb, "ScreenShotWithLogo.jpg")
+end
+
+--[[
+* 根据两点的经纬度，计算出其之间的距离（返回单位为m）
+* @param lat1 纬度1
+* @param lng1 经度1
+* @param lat2 纬度2
+* @param lng2 经度2
+* @return
+--]]
+function Util:getDistance(lat1, lng1, lat2, lng2)
+	local EARTH_RADIUS = 6378137 --地球半径 米
+	local radLat1 = math.rad(lat1)
+	local radLat2 = math.rad(lat2)
+	local a = math.rad(lat1) - math.rad(lat2)
+	local b = math.rad(lng1) - math.rad(lng2)
+	local _s = 2 * math.asin(math.sqrt(math.pow(math.sin(a/2),2) + math.cos(radLat1)*math.cos(radLat2)*math.pow(math.sin(b/2),2)))
+	_s = _s * EARTH_RADIUS
+	local _z,_y = math.modf(_s * 100)
+	if _y > 0.5 then
+		_s = _z + 1
+	else
+		_s = _z
+	end
+	_s = _s / 100.0
+	return _s
+end
+
+function Util:shaderGray(node)
+    local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+        void main(void)
+        {
+            vec4 c = texture2D(CC_Texture0, v_texCoord);
+            gl_FragColor.xyz = vec3(0.4*c.r + 0.4*c.g +0.4*c.b);
+            gl_FragColor.w = c.w;
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+	node:setGLProgram(pProgram)
+end
+
+--置灰image,sprite
+function Util:shaderImage(imageNode)
+    self:shaderGray(imageNode)
+end
+
+--取消置灰image,sprite
+function Util:shaderImage(imageNode)
+    self:removeNodeShader(imageNode)
+end
+
+--置灰button
+function Util:shaderButton(buttonNode)
+    self:shaderGray(buttonNode:getRendererNormal())
+end
+
+--取消置灰button
+function Util:removeShaderButton(buttonNode)
+    self:removeNodeShader(buttonNode:getRendererNormal())
+end
+
+function Util:removeNodeShader(node)
+    local vertDefaultSource = [[
+    attribute vec4 a_position; 
+    attribute vec2 a_texCoord; 
+    attribute vec4 a_color;                                                     
+    #ifdef GL_ES  
+        varying lowp vec4 v_fragmentColor;
+        varying mediump vec2 v_texCoord;
+    #else                      
+        varying vec4 v_fragmentColor; 
+        varying vec2 v_texCoord;  
+    #endif    
+    void main() 
+    {
+        gl_Position = CC_PMatrix * a_position; 
+        v_fragmentColor = a_color;
+        v_texCoord = a_texCoord;
+    }
+    ]]
+    local pszFragSource = [[
+    #ifdef GL_ES 
+        precision mediump float; 
+    #endif 
+    varying vec4 v_fragmentColor; 
+    varying vec2 v_texCoord; 
+    void main(void) 
+    { 
+        gl_FragColor = texture2D(CC_Texture0, v_texCoord); 
+    }
+    ]]
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+	node:setGLProgram(pProgram)
 end
 
 return Util

@@ -159,16 +159,16 @@ end
 function UIBattleScene:onShow()
     self:onUpdate()
 
-    local textRoomNumberDesc = string.format("房间号:%d",app.DataSet:getInstance():getRoomId())
+    local textRoomNumberDesc = string.format("房间号:%d",app.RoomService:getInstance():getRoomId())
     self._txtRoomId:setString(textRoomNumberDesc)
 
-    local parse = app.DataSet:getInstance():getRuleParse()
+    local parse = app.RoomService:getInstance():getRuleParse()
     local descript = parse:getDescript()
     self._txtRoomRules:setString(descript)
 
     self:setGameStart(false)
 
-    if app.LocalPlayerService:getInstance():getRoleId() == app.DataSet:getInstance():getCreateRoleId() then
+    if app.LocalPlayerService:getInstance():getRoleId() == app.RoomService:getInstance():getCreateRoleId() then
         self._listPreStartOption:removeAllChildren()
         self._listPreStartOption:addChild(self._btnDestroyRoom)
         self._listPreStartOption:addChild(self._btnBackHall)
