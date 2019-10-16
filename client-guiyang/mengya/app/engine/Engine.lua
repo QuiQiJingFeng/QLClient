@@ -14,10 +14,19 @@ function Engine:ctor()
 
 end
 
-function Engine:enterRoom(sceneName)
-    Logger.debug("enterRoom ",sceneName)
-    app.GameFSM:getInstance():enterState("GameState_Battle",sceneName)
+--进入打牌场景
+--@param maxPlayerNum:int 牌桌人数
+function Engine:enterRoom(data)
+    local BATTLE_SCENE = {
+        [2] = "UIBattleSceneTwo",
+        [3] = "UIBattleSceneThree",
+        [4] = "UIBattleSceneFour",
+    }
+    local sceneName = BATTLE_SCENE[data.maxPlayerNum]
+    app.GameFSM:getInstance():enterState("GameState_Battle",sceneName,data)
 end
+
+
 
 function Engine:destroy()
     app.EventCenter:off(self)

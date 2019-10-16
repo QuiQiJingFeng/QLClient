@@ -27,6 +27,11 @@ function UIRoomSetting:clear()
     self._conditions = {}
 end
 
+function UIRoomSetting:getCurrentSettings()
+    local settings = table.keys(self._uiMap)
+    return settings
+end
+
 function UIRoomSetting:parseCondition(config)
     for _, info in ipairs(config) do
         if info.type == "condition" then

@@ -16,6 +16,14 @@ function UICreateRoom:init()
     self._scrollGamePlay = UIRoomSetting.new(scrollGamePlay)
     self._btnBack = Util:seekNodeByName(self,"btnBack","ccui.Button")
     Util:bindTouchEvent(self._btnBack,handler(self,self._onBtnBackClick))
+
+    self._btnCreateRoom = Util:seekNodeByName(self,"btnCreateRoom","ccui.Button")
+    Util:bindTouchEvent(self._btnCreateRoom,handler(self,self._onBtnCreateRoomClick))
+end
+
+function UICreateRoom:_onBtnCreateRoomClick()
+    local settings = self._scrollGamePlay:getCurrentSettings()
+    app.RoomService:getInstance():sendCreaterRoomREQ(settings)
 end
 
 function UICreateRoom:_onBtnBackClick()

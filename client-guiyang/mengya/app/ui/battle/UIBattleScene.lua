@@ -4,6 +4,7 @@ local Util = app.Util
 local UITableViewEx2 = app.UITableViewEx2
 local UITableViewEx = app.UITableViewEx
 local UIManager = app.UIManager
+local UISortListView = app.UISortListView
 
 local UIBattleScene = class("UIBattleScene", super, function() return app.Util:loadCSBNode(csbPath) end)
  
@@ -43,8 +44,8 @@ function UIBattleScene:init()
     Util:bindTouchEvent(self._btnSetting,handler(self,self._onBtnSettingClick))
 
     --开局前可以操作的列表
-    self._listPreStartOption = Util:seekNodeByName(self,"listPreStartOption","ccui.ListView")
-    self._listPreStartOption:setScrollBarEnabled(false)
+    self._listPreStartOption = UISortListView.extend(Util:seekNodeByName(self,"listPreStartOption","ccui.ListView"))
+    
     --解散房间
     self._btnDestroyRoom = Util:seekNodeByName(self,"btnDestroyRoom","ccui.Button")
     --提前开局
@@ -156,29 +157,33 @@ function UIBattleScene:offUpdate()
     self._scheduleId = Util:unscheduleUpdate(self._scheduleId)
 end
 
-function UIBattleScene:onShow()
+--[[
+    data.roomId 房间号
+    data.descript 规则描述
+    data.isCreator 是否是房间的创建者
+]]
+function UIBattleScene:onShow(data)
     self:onUpdate()
 
-    local textRoomNumberDesc = string.format("房间号:%d",app.RoomService:getInstance():getRoomId())
-    self._txtRoomId:setString(textRoomNumberDesc)
-
-    local parse = app.RoomService:getInstance():getRuleParse()
-    local descript = parse:getDescript()
-    self._txtRoomRules:setString(descript)
-
+    --默认设置未开局
     self:setGameStart(false)
 
-    if app.LocalPlayerService:getInstance():getRoleId() == app.RoomService:getInstance():getCreateRoleId() then
-        self._listPreStartOption:removeAllChildren()
-        self._listPreStartOption:addChild(self._btnDestroyRoom)
-        self._listPreStartOption:addChild(self._btnBackHall)
-        self._listPreStartOption:addChild(self._btnEarlyStart)
+    self._data = data
+    --房间号显示
+    local textRoomNumberDesc = string.format("房间号:%d",data.roomId)
+    self._txtRoomId:setString(textRoomNumberDesc)
+    --规则描述
+    self._txtRoomRules:setString(data.descript)
+    
+
+    if data.isCreator then
+        Util:show(self._btnDestroyRoom,self._btnEarlyStart)
+        Util:hide(self._btnBackHall)
+        self._listPreStartOption:sort()
     else
-        self._listPreStartOption:removeAllChildren()
-        self._listPreStartOption:addChild(self._btnBackHall)
-        self._listPreStartOption:addChild(self._btnEarlyStart)
-        self._listPreStartOption:addChild(self._btnDestroyRoom)
-        self._btnDestroyRoom:setVisible(false)
+        Util:show(self._btnBackHall,self._btnEarlyStart)
+        Util:hide(self._btnDestroyRoom)
+        self._listPreStartOption:sort()
     end
 end
 

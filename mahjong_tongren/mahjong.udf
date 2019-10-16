@@ -28,23 +28,5 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="csb/mengya/battle/UIBattleScene.csd" />
-          <FilePathData Path="csb/mengya/battle/UISteeringWheel.csd" />
-          <FilePathData Path="csb/UIApplyVote.csd" />
-          <FilePathData Path="csb/PlayerScene.csd" />
-          <FilePathData Path="csb/UIRoundReport2.csd" />
-          <FilePathData Path="csb/UIFinalReport.csd" />
-          <FilePathData Path="csb/Mall/UISuperMall.csd" />
-          <FilePathData Path="csb/Playertips2.0.csd" />
-          <FilePathData Path="csb/Activity/Christmas/UIChristmasSign.csd" />
-          <FilePathData Path="csb/Activity/Comeback2/UIComebackBeInvited.csd" />
-          <FilePathData Path="csb/Activity/Comeback2/UIComebackInvite.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="csb/Activity/Comeback2/UIComebackInvite.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>

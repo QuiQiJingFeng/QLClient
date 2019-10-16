@@ -12,9 +12,9 @@ function GameState_Battle:isGamingState()
 	return false
 end
 
-function GameState_Battle:enter(sceneName)
+function GameState_Battle:enter(sceneName,data)
 	self.super:enter()
-	UIManager:getInstance():show(sceneName)
+	UIManager:getInstance():show(sceneName,data)
 end
 
 function GameState_Battle:exit()

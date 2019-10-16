@@ -16,7 +16,7 @@ function UILogin:init()
     self._btnFixGame = Util:seekNodeByName(self,"btnFixGame","ccui.Button")
 
     Util:bindTouchEvent(self._btnLoginMore,handler(self,self._onBtnLoginMoreClick))
-    Util:bindTouchEvent(self._btnWechatLogin,handler(self,self._onBtnWechatLoginClick))    
+    Util:bindTouchEvent(self._btnWechatLogin,handler(self,self._onBtnWechatLoginClick)) 
 end
 
 function UILogin:getGradeLayerId()

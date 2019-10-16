@@ -49,12 +49,16 @@ function RoomService:getRuleParse()
 end
 
 function RoomService:sendCreaterRoomREQ(settings)
-    
+    --FYD TEST
+    self:onEnterRoomRES({
+        roomId = 234534,
+        settings = settings,
+        createRoleId = 2345235,
+    })
 end
 
 function RoomService:onCreateRoomRES(proto)
     local roomId = proto.roomId
-    self:sendEnterRoomREQ(roomId)
 end
 
 function RoomService:sendEnterRoomREQ(roomId)
@@ -69,16 +73,16 @@ function RoomService:onEnterRoomRES(proto)
     self._roomType = proto.roomType
     self._createTime = proto.createTime
     self._createRoleId = proto.createRoleId
+     
+    
+    
+    local data = clone(proto)
+    
     self._parse = app.RuleParse.new(self._settings)
-
     local maxPlayerNum = self._parse:getMaxPlayerNum()
-    local BATTLE_SCENE = {
-        [2] = "UIBattleSceneTwo",
-        [3] = "UIBattleSceneThree",
-        [4] = "UIBattleSceneFour",
-    }
-    local sceneName = BATTLE_SCENE[maxPlayerNum]
-    app.Engine:getInstance():enterRoom(sceneName)
+    data.maxPlayerNum = maxPlayerNum
+    data.descript = self._parse:getDescript()
+    app.Engine:getInstance():enterRoom(data)
 end
 
 --获取当前的回合数

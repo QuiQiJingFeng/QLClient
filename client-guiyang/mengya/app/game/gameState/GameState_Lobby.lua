@@ -15,7 +15,7 @@ end
 function GameState_Lobby:enter()
 	self.super:enter()
 	
-	UIManager:getInstance():show("UIMain")	
+	UIManager:getInstance():show("UIMain")
 end
 
 function GameState_Lobby:exit()

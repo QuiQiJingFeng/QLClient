@@ -44,6 +44,7 @@ conf["GameState_Battle"] = "mengya.app.game.gameState.GameState_Battle"
 --=================   Service 相关   ==================
 --================================================
 conf["LocalPlayerService"] = "mengya.app.service.LocalPlayerService"
+conf["RoomService"] = "mengya.app.service.RoomService"
 
 
 --================================================
@@ -69,8 +70,7 @@ conf["UICheckBoxGroup"] = "mengya.app.manager.ui.UICheckBoxGroup"
 conf["UITipManager"] = "mengya.app.manager.ui.UITipManager"
 conf["UITableViewEx2"] = "mengya.app.manager.ui.UITableViewEx2"
 conf["UIMessageTips"] = "mengya.app.manager.ui.UITipManager"
-
-
+conf["UISortListView"] = "mengya.app.manager.ui.UISortListView"
 
 --闪屏界面
 conf["UISplash"] = "mengya.app.ui.UISplash"
