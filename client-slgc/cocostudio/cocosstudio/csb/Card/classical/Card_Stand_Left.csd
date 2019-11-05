@@ -1,0 +1,28 @@
+<GameFile>
+  <PropertyGroup Name="Card_Stand_Left" Type="Node" ID="702913d2-74da-4355-8a44-f082f254def6" Version="3.10.0.0" />
+  <Content ctype="GameProjectContent">
+    <Content>
+      <Animation Duration="0" Speed="1.0000" />
+      <ObjectData Name="Node" Tag="153" ctype="GameNodeObjectData">
+        <Size X="0.0000" Y="0.0000" />
+        <Children>
+          <AbstractNodeData Name="Button_BG" ActionTag="-1470368768" Tag="154" IconVisible="False" LeftMargin="-12.0000" RightMargin="-12.0000" TopMargin="-29.0000" BottomMargin="-29.0000" TouchEnable="True" FontSize="14" LeftEage="7" RightEage="7" TopEage="11" BottomEage="11" Scale9OriginX="7" Scale9OriginY="11" Scale9Width="10" Scale9Height="36" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="24.0000" Y="58.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="MarkedSubImage" Path="art/mahjong_card_classical/bg01/mj_bg5.png" Plist="art/mahjong_card_classical.plist" />
+            <PressedFileData Type="MarkedSubImage" Path="art/mahjong_card_classical/bg01/mj_bg5.png" Plist="art/mahjong_card_classical.plist" />
+            <NormalFileData Type="MarkedSubImage" Path="art/mahjong_card_classical/bg01/mj_bg5.png" Plist="art/mahjong_card_classical.plist" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+        </Children>
+      </ObjectData>
+    </Content>
+  </Content>
+</GameFile>

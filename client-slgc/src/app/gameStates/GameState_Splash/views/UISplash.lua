@@ -1,6 +1,3 @@
---[[
-闪屏界面, 进入游戏时显示, 渐隐之后进入下一个状态
---]]
 local csbPath = "ui/csb/mengya/UISplash.csb"
 local super = game.UIBase
 
@@ -17,7 +14,6 @@ function UISplash:isFullScreen()
     return true
 end
 
--- 获取显示大层层级,需要修改默认层级的，覆盖这个函数
 function UISplash:getGradeLayerId()
     return 2
 end

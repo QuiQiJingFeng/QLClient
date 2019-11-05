@@ -36,13 +36,17 @@ function UILaunch:onShow()
         self._txtBmfState:setString(STATE.UPDATE)
         Util:show(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
         local progress = 0
-        Util:scheduleUpdate(function(dt)
+        local scheduleId
+        scheduleId = Util:scheduleUpdate(function(dt)
             progress = progress + 1
-            self:setProgress(progress)
+            
             if progress >= 100 then
+                Util:unscheduleUpdate(scheduleId)
                 self._txtBmfState:setString(STATE.FINISH)
                 game.GameFSM.getInstance():enterState("GameState_Login")
                 return true
+            else
+                self:setProgress(progress)
             end
         end, 0)
     --]]

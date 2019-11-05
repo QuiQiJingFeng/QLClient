@@ -15,6 +15,7 @@ function UIBase:onShow(...)
 end
 
 function UIBase:onHide()
+    game.EventCenter:off(self)
 end
 
 function UIBase:getName()
@@ -28,11 +29,6 @@ end
 -- 是否全屏显示，如果全屏显示的话，其下面的ui隐藏，该ui关闭时，那些被隐藏的ui恢复原状态
 function UIBase:isFullScreen()
     return false
-end
-
-function UIBase:hide()
-    game.UIManager:getInstance():hide(self._uiName)
-    game.EventCenter:off(self)
 end
 
 function UIBase:destroy()
