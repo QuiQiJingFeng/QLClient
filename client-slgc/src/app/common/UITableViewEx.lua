@@ -1,4 +1,4 @@
-local super = game.UITableView
+local super = require("app.game.util.UITableView")
 local UITableViewEx = class("UITableViewEx",super)
 
 function UITableViewEx.extend(self, cellTemplate,clickFunc)
@@ -138,10 +138,10 @@ end
 --[[
 example:
     Cell编写
-    local UITableViewCell = app.UITableViewCell
+    local UITableViewCell = require("app.game.util.UITableViewCell")
     local UITestSceneCell = class("UITestSceneCell",UITableViewCell)
 
-    function UITestSceneCell:_initialize()
+    function UITestSceneCell:init()
         self._title = seekNodeByName(self,"BitmapFontLabel_PlayType","ccui.TextBMFont")
     end
 

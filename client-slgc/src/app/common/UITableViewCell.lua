@@ -57,6 +57,14 @@ function UITableViewCell:getDiffDelt()
     return self._diffDelt or cc.p(0,0)
 end
 
+function UITableViewCell:setCellType(type)
+    self._type = type
+end
+
+function UITableViewCell:getCellType()
+    return self._type
+end
+
 
 
 return UITableViewCell

@@ -375,4 +375,32 @@ function UITableView:scrollItemToCenter()
     end
 end
 
+--[[
+example:
+    Cell编写
+    local UITableViewCell = require("app.game.util.UITableViewCell")
+    local UITestSceneCell = class("UITestSceneCell",UITableViewCell)
+
+    function UITestSceneCell:init()
+        self._title = seekNodeByName(self,"BitmapFontLabel_PlayType","ccui.TextBMFont")
+    end
+
+    -- 整体设置数据
+    function UITestSceneCell:updateData(data)
+        self._title:setString(data.title)
+    end
+    
+
+    return UITestSceneCell
+
+    单行水平、纵向可重用列表
+    local tbScrollView = seekNodeByName(self,"tbScrollView","ccui.ScrollView")
+    self._tbScrollView = UITableViewE.extend(tbScrollView,UITestSceneCell)
+    self._tbScrollView:updateDatas({
+       {title = 1},{title = 2},{title = 3},
+       {title = 4},{title = 5},{title = 6},
+       {title = 7}
+    })
+]]
+
 return UITableView
