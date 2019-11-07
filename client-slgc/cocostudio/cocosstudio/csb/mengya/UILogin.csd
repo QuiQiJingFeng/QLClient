@@ -123,7 +123,7 @@
           <AbstractNodeData Name="panelRight" ActionTag="-1463266760" Tag="818" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1043.3904" RightMargin="12.6096" TopMargin="12.2720" BottomMargin="377.7280" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="25" RightEage="25" TopEage="76" BottomEage="76" Scale9OriginX="-25" Scale9OriginY="-76" Scale9Width="50" Scale9Height="152" ctype="PanelObjectData">
             <Size X="80.0000" Y="250.0000" />
             <Children>
-              <AbstractNodeData Name="btnFixGame" ActionTag="1191531095" Alpha="0" UserData="top,right" Tag="819" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="6.1200" RightMargin="5.8800" TopMargin="182.7394" BottomMargin="-16.7394" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnFixGame" ActionTag="1191531095" Alpha="127" UserData="top,right" Tag="819" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="6.1200" RightMargin="5.8800" TopMargin="182.7394" BottomMargin="-16.7394" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="68.0000" Y="84.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="40.1200" Y="25.2606" />
@@ -137,7 +137,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnFeekBack" ActionTag="-1415330484" Alpha="0" UserData="top,right" Tag="839" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="6.4640" RightMargin="5.5360" TopMargin="91.8000" BottomMargin="74.2000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnFeekBack" ActionTag="-1415330484" Alpha="127" UserData="top,right" Tag="839" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="6.4640" RightMargin="5.5360" TopMargin="91.8000" BottomMargin="74.2000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="68.0000" Y="84.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="40.4640" Y="116.2000" />
@@ -152,7 +152,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnLoginMore" ActionTag="-1287896765" Alpha="0" UserData="top,right" Tag="821" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="6.1200" RightMargin="5.8800" TopMargin="-0.9500" BottomMargin="166.9500" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnLoginMore" ActionTag="-1287896765" Alpha="127" UserData="top,right" Tag="821" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="6.1200" RightMargin="5.8800" TopMargin="-0.9500" BottomMargin="166.9500" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="68.0000" Y="84.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="40.1200" Y="208.9500" />
@@ -166,7 +166,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnFeekback" ActionTag="-441011605" Alpha="0" UserData="top,right" Tag="822" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="4.5600" RightMargin="7.4400" TopMargin="90.8999" BottomMargin="75.1001" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnFeedback" ActionTag="-441011605" Alpha="127" UserData="top,right" Tag="822" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="4.5600" RightMargin="7.4400" TopMargin="90.8999" BottomMargin="75.1001" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="38" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="68.0000" Y="84.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="38.5600" Y="117.1001" />
@@ -231,7 +231,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="panelAgree" ActionTag="676050019" Alpha="0" UserData="x-center-parent,bottom" Tag="827" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="403.0000" RightMargin="403.0000" TopMargin="497.5000" BottomMargin="97.5000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="57" RightEage="57" TopEage="15" BottomEage="15" Scale9OriginX="57" Scale9OriginY="15" Scale9Width="216" Scale9Height="15" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelAgree" ActionTag="676050019" UserData="x-center-parent,bottom" Tag="827" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="403.0000" RightMargin="403.0000" TopMargin="497.5000" BottomMargin="97.5000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="57" RightEage="57" TopEage="15" BottomEage="15" Scale9OriginX="57" Scale9OriginY="15" Scale9Width="216" Scale9Height="15" ctype="PanelObjectData">
             <Size X="330.0000" Y="45.0000" />
             <Children>
               <AbstractNodeData Name="cbxAgree" ActionTag="152647177" Tag="828" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="2.5000" RightMargin="275.5000" TopMargin="-3.5000" BottomMargin="-3.5000" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
@@ -261,13 +261,13 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnWechatLogin" ActionTag="-2052661459" Alpha="0" UserData="x-percent,bottom" Tag="829" IconVisible="False" LeftMargin="428.0000" RightMargin="428.0000" TopMargin="447.5000" BottomMargin="107.5000" TouchEnable="True" FontSize="14" LeftEage="99" RightEage="163" TopEage="11" BottomEage="11" Scale9OriginX="99" Scale9OriginY="11" Scale9Width="18" Scale9Height="63" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnWechatLogin" ActionTag="-2052661459" UserData="x-percent,bottom" Tag="829" IconVisible="False" LeftMargin="428.0000" RightMargin="428.0000" TopMargin="397.5000" BottomMargin="157.5000" TouchEnable="True" FontSize="14" LeftEage="99" RightEage="163" TopEage="11" BottomEage="11" Scale9OriginX="99" Scale9OriginY="11" Scale9Width="18" Scale9Height="63" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="280.0000" Y="85.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="568.0000" Y="150.0000" />
+            <Position X="568.0000" Y="200.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.2344" />
+            <PrePosition X="0.5000" Y="0.3125" />
             <PreSize X="0.2465" Y="0.1328" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Normal" Path="art/fm/btn_wxdl_fm.png" Plist="" />

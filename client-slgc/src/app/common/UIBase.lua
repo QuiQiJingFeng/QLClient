@@ -36,7 +36,7 @@ function UIBase:destroy()
 end
 
 -- @override 获取显示层层级,需要修改默认层级的，覆盖这个函数
-function UIBase:getGradeLayerLevel()
+function UIBase:getGradeLayerId()
     return 3
 end
 

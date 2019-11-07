@@ -272,6 +272,7 @@ end
 
 -- 通过UI名字隐藏界面
 function UIManager:hide(name)
+    name = __extendPath__(name)
     local ui = self:getUI(name)
     if ui == nil then
         return

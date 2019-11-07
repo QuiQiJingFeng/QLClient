@@ -1,4 +1,4 @@
-local super = require("app.game.util.UITableView")
+local super = game.UITableView
 local UITableViewEx = class("UITableViewEx",super)
 
 function UITableViewEx.extend(self, cellTemplate,clickFunc)
