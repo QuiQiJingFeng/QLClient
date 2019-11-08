@@ -209,7 +209,7 @@ function UITableView:dequeueCell(idx)
                 local selectIdx = cell:getIdx()
                 self:setCurrentSelectIndex(selectIdx)
                 local data = cell:getData()
-                self._clickFunc(cell,data,eventType)
+                self._clickFunc(cell,data)
             end
         end)
         cell:setSelectState(idx == self._currentSelectedIdx)
@@ -219,6 +219,9 @@ function UITableView:dequeueCell(idx)
 end
 
 function UITableView:setCurrentSelectIndex(selectIdx)
+    if self._currentSelectedIdx == selectIdx then
+        return
+    end
     self._currentSelectedIdx = selectIdx
     for idx, ucell in pairs(self._usedCell) do
         ucell:setSelectState(idx == self._currentSelectedIdx)

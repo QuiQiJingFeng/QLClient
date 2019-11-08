@@ -8,7 +8,7 @@ function UIReconnectTip:ctor()
 end
 
 function UIReconnectTip:getGradeLayerId()
-	return 4
+	return game.UIConstant.UILAYER_LEVEL.TOP
 end
 
 function UIReconnectTip:init()

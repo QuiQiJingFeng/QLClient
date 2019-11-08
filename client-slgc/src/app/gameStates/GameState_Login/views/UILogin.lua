@@ -2,7 +2,9 @@ local csbPath = "ui/csb/mengya/UILogin.csb"
 local UILogin = class("UILogin", game.UIBase, function() return game.Util:loadCSBNode(csbPath) end)
 local LoginLogic = import("logics.LoginLogic")
 local Util = game.Util
-
+local UITipManager = game.UITipManager
+local UIManager = game.UIManager
+local GameFSM = game.GameFSM
 function UILogin:ctor()
     
 end
@@ -23,19 +25,19 @@ function UILogin:init()
 end
 
 function UILogin:_onPanelAgreeClick()
-    game.UITipManager:getInstance():show("用户协议")
+    UITipManager:getInstance():show("用户协议")
 end
 
 function UILogin:_onBtnFixGame()
-    game.UITipManager:getInstance():show("修复游戏")
+    UITipManager:getInstance():show("修复游戏")
 end
 
 function UILogin:_onBtnFeedBack()
-    game.UITipManager:getInstance():show("在线客服")
+    UITipManager:getInstance():show("在线客服")
 end
 
 function UILogin:getGradeLayerId()
-    return 2
+    return game.UIConstant.UILAYER_LEVEL.BOTTOM
 end
 
 function UILogin:isFullScreen()
@@ -47,13 +49,15 @@ function UILogin:onShow(...)
 end
 
 function UILogin:_onBtnLoginMoreClick()
-    game.UIManager:getInstance():show("views.UILoginMore")
+    UIManager:getInstance():show("views.UILoginMore")
 end
 
 function UILogin:_onBtnWechatLoginClick()
     if not self._cbxAgree:isSelected() then
-        game.UITipManager:getInstance():show("请查阅用户协议")
+        return UITipManager:getInstance():show("请查阅用户协议")
     end
+    GameFSM:getInstance():enterState("GameState_Lobby")
+
 end
 
 function UILogin:onHide()

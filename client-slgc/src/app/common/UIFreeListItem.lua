@@ -7,16 +7,13 @@ function UIFreeListItem:extend(node,freeList)
         tolua.setpeer(node, peer)
     end
     setmetatable(peer, self)
-    node:setFreeList(freeList)
-    node:init()
+    node:init(freeList)
     return node 
 end
 
-function UIFreeListItem:init()
 
-end
 
-function UIFreeListItem:setFreeList(freeList)
+function UIFreeListItem:init(freeList)
     self._freeList = freeList
 end
 
@@ -43,5 +40,10 @@ end
 function UIFreeListItem:getFreeList()
     return self._freeList
 end
+
+function UIFreeListItem:setSelectState(boolean)
+end
+
+
 
 return UIFreeListItem

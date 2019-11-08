@@ -38,6 +38,9 @@ game.UIAnimationManager = require("app.common.UIAnimationManager")
 -- 提示框管理
 game.UITipManager = require("app.common.UITipManager")
 
+--数据管理
+game.ConfigManager = require("app.configs.ConfigManager")
+
 -- 通用UI组件
 -- 重用列表(支持水平、竖直方向)
 game.UITableView = require("app.common.UITableView")
@@ -56,3 +59,5 @@ game.UISortListView = require("app.common.UISortListView")
 
 --TODO
 game.UIScrollText = require("app.common.UIScrollText")
+
+game.UIConstant = require("app.constants.UIConstant")

@@ -15,7 +15,7 @@ function UISplash:isFullScreen()
 end
 
 function UISplash:getGradeLayerId()
-    return 2
+    return game.UIConstant.UILAYER_LEVEL.BOTTOM
 end
 
 function UISplash:onShow(...)

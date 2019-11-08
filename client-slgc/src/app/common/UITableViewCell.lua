@@ -1,5 +1,5 @@
 local UITableViewCell = class("UITableViewCell")
-
+--这里用双冒号是为了将继承的子类传递过来,而不是是用UITableViewCell这个基类
 function UITableViewCell:extend(node,tableView)
     local peer = tolua.getpeer(node)
     if not peer then
