@@ -92,7 +92,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Icon" ActionTag="2132221358" UserData="top,right" Tag="5369" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-9.5000" RightMargin="122.5000" TopMargin="-3.5000" BottomMargin="-3.5000" Scale9Enable="True" LeftEage="21" RightEage="21" TopEage="15" BottomEage="20" Scale9OriginX="21" Scale9OriginY="15" Scale9Width="10" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Icon" ActionTag="2132221358" Tag="5369" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-9.5000" RightMargin="122.5000" TopMargin="-3.5000" BottomMargin="-3.5000" Scale9Enable="True" LeftEage="21" RightEage="21" TopEage="15" BottomEage="20" Scale9OriginX="21" Scale9OriginY="15" Scale9Width="10" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="52.0000" Y="52.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="16.5000" Y="22.5000" />

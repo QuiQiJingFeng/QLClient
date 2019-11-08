@@ -47,7 +47,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="art/main/img_bg2_main.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="panelTop" CanEdit="False" ActionTag="1465180735" UserData="top,width-scale" Tag="505" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" BottomMargin="540.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="374" RightEage="374" TopEage="29" BottomEage="29" Scale9OriginX="374" Scale9OriginY="29" Scale9Width="388" Scale9Height="42" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelTop" ActionTag="1465180735" UserData="top,width-scale" Tag="505" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" BottomMargin="540.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="374" RightEage="374" TopEage="29" BottomEage="29" Scale9OriginX="374" Scale9OriginY="29" Scale9Width="388" Scale9Height="42" ctype="PanelObjectData">
             <Size X="1136.0000" Y="100.0000" />
             <Children>
               <AbstractNodeData Name="txtBmfTitle" ActionTag="-2026142632" Tag="8224" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="170.4000" RightMargin="851.6000" TopMargin="20.0000" BottomMargin="36.0000" LabelText="金币场" ctype="TextBMFontObjectData">
@@ -75,7 +75,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="imgViewBean" ActionTag="-1082933994" UserData="top,right" Tag="246" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="744.8224" RightMargin="226.1776" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="114" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="114" Scale9OriginY="15" Scale9Width="8" Scale9Height="10" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="imgViewBean" ActionTag="-1082933994" Tag="246" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="744.8224" RightMargin="226.1776" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="114" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="114" Scale9OriginY="15" Scale9Width="8" Scale9Height="10" ctype="ImageViewObjectData">
                 <Size X="165.0000" Y="45.0000" />
                 <Children>
                   <AbstractNodeData Name="btnAddBean" ActionTag="-519006102" Tag="196" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="113.2000" RightMargin="-12.2000" TopMargin="-9.5000" BottomMargin="-9.5000" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -92,7 +92,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Icon" ActionTag="2132221358" UserData="top,right" Tag="5369" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-9.5000" RightMargin="122.5000" TopMargin="-3.5000" BottomMargin="-3.5000" Scale9Enable="True" LeftEage="21" RightEage="21" TopEage="15" BottomEage="20" Scale9OriginX="21" Scale9OriginY="15" Scale9Width="10" Scale9Height="17" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Icon" ActionTag="2132221358" Tag="5369" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-9.5000" RightMargin="122.5000" TopMargin="-3.5000" BottomMargin="-3.5000" Scale9Enable="True" LeftEage="21" RightEage="21" TopEage="15" BottomEage="20" Scale9OriginX="21" Scale9OriginY="15" Scale9Width="10" Scale9Height="17" ctype="ImageViewObjectData">
                     <Size X="52.0000" Y="52.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="16.5000" Y="22.5000" />
@@ -121,7 +121,7 @@
                 <PreSize X="0.1452" Y="0.4500" />
                 <FileData Type="Normal" Path="art/main/Icon_addhbc_main.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ImageViewGold" ActionTag="-1615323432" UserData="top,right" Tag="243" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="925.5599" RightMargin="45.4401" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="116" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="116" Scale9OriginY="15" Scale9Width="6" Scale9Height="10" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="ImageViewGold" ActionTag="-1615323432" Tag="243" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="925.5599" RightMargin="45.4401" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="116" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="116" Scale9OriginY="15" Scale9Width="6" Scale9Height="10" ctype="ImageViewObjectData">
                 <Size X="165.0000" Y="45.0000" />
                 <Children>
                   <AbstractNodeData Name="Icon" ActionTag="-152610333" Tag="2307" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-9.5000" RightMargin="122.5000" TopMargin="-3.5000" BottomMargin="-3.5000" LeftEage="17" RightEage="17" TopEage="17" BottomEage="17" Scale9OriginX="17" Scale9OriginY="17" Scale9Width="18" Scale9Height="18" ctype="ImageViewObjectData">
@@ -167,7 +167,7 @@
                 <PreSize X="0.1452" Y="0.4500" />
                 <FileData Type="Normal" Path="art/main/Icon_addhbc_main.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnHelp" ActionTag="2035427598" UserData="top,left" Tag="1881" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="335.4960" RightMargin="736.5040" TopMargin="10.0000" BottomMargin="26.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnHelp" ActionTag="2035427598" Tag="1881" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="335.4960" RightMargin="736.5040" TopMargin="10.0000" BottomMargin="26.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="64.0000" Y="64.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="367.4960" Y="58.0000" />
@@ -668,7 +668,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="btnQucikMatch" ActionTag="2052765686" UserData="right,bottom" Tag="1876" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="883.6801" RightMargin="-147.6801" TopMargin="556.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="btnQucikMatch" ActionTag="2052765686" UserData="right,bottom" Tag="1876" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="883.6304" RightMargin="-147.6304" TopMargin="556.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="400.0000" Y="84.0000" />
             <Children>
               <AbstractNodeData Name="Particle_1" ActionTag="992065913" Tag="1158" RotationSkewX="25.0000" IconVisible="True" LeftMargin="76.1663" RightMargin="323.8337" TopMargin="41.9165" BottomMargin="42.0835" ctype="ParticleObjectData">
@@ -684,7 +684,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" />
-            <Position X="1083.6801" />
+            <Position X="1083.6304" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.9539" />

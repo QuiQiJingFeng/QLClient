@@ -720,7 +720,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="btnJoinRoom" ActionTag="16033050" UserData="right" Tag="482" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="885.7249" RightMargin="-149.7249" TopMargin="40.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="384" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="btnJoinRoom" ActionTag="16033050" UserData="right" Tag="482" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="885.6752" RightMargin="-149.6752" TopMargin="40.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="384" Scale9Height="62" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="400.0000" Y="84.0000" />
                 <Children>
                   <AbstractNodeData Name="Particle_2" ActionTag="957815951" Tag="483" RotationSkewX="25.0010" IconVisible="True" LeftMargin="72.2466" RightMargin="327.7534" TopMargin="41.7903" BottomMargin="42.2097" ctype="ParticleObjectData">
@@ -736,7 +736,7 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" />
-                <Position X="1085.7249" />
+                <Position X="1085.6752" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.9557" />
@@ -787,7 +787,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="panelMore" ActionTag="1788169481" UserData="bottom" Tag="486" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="317.1431" RightMargin="278.8569" TopMargin="482.9305" BottomMargin="67.0695" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="107" RightEage="220" TopEage="10" BottomEage="10" Scale9OriginX="107" Scale9OriginY="10" Scale9Width="6" Scale9Height="74" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelMore" ActionTag="1788169481" UserData="bottom" Tag="486" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="317.1072" RightMargin="278.8928" TopMargin="482.9280" BottomMargin="67.0720" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="107" RightEage="220" TopEage="10" BottomEage="10" Scale9OriginX="107" Scale9OriginY="10" Scale9Width="6" Scale9Height="74" ctype="PanelObjectData">
             <Size X="540.0000" Y="90.0000" />
             <Children>
               <AbstractNodeData Name="btnGamePlayHelp" ActionTag="271245190" Tag="487" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="10.5240" RightMargin="409.4760" TopMargin="9.2441" BottomMargin="16.7559" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="90" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -848,7 +848,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.8700" />
-            <Position X="786.9431" Y="67.0695" />
+            <Position X="786.9072" Y="67.0720" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.6927" Y="0.1048" />
