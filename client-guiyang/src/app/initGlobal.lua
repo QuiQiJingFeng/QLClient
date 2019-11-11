@@ -1,6 +1,0 @@
-cc.exports.MainScene = require("app.MainScene")
-cc.exports.RequestManager = require("app.net.RequestManager")
---cc.exports.UserDefinedRequest = require("app.net.UserDefinedRequest")
-cc.exports.UIManager = require("app.manager.UIManager")
-cc.exports.GameStateBase = require("app.game.gameState.GameStateBase")
-cc.exports.GameFSM = require("app.manager.GameFSM")
