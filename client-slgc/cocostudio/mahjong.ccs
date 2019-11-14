@@ -4208,6 +4208,7 @@
             <Project Name="UISetting.csd" Type="Layer" />
             <Project Name="UIShop.csd" Type="Layer" />
             <Project Name="UISplash.csd" Type="Layer" />
+            <Project Name="UIUserProtocol.csd" Type="Layer" />
           </Folder>
           <Folder Name="Newshare">
             <Project Name="UIGiftTicket.csd" Type="Node" />

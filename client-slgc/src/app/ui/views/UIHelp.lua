@@ -4,7 +4,7 @@ local Util = game.Util
 local UITableView = game.UITableView
 local UIManager = game.UIManager
 local UIHelpLeftItem = require("app.ui.items.UIHelpLeftItem")
-
+local UIXMLView = game.UIXMLView
 local UIHelp = class("UIHelp", super, function() return Util:loadCSBNode(csbPath) end)
  
 function UIHelp:ctor()
@@ -13,6 +13,9 @@ function UIHelp:ctor()
 
     local node = Util:seekNodeByName(self,"scrollListLeft","ccui.ScrollView")
     self._scrollListLeft = UITableView.extend(node,UIHelpLeftItem,handler(self,self._onItemClick))
+    
+    local node = Util:seekNodeByName(self,"scrollHelp","ccui.ScrollView")
+    self._xmlView = UIXMLView.extend(node)
 end
 
 function UIHelp:_onItemClick(item,data)
@@ -34,6 +37,8 @@ end
 function UIHelp:onShow()
     local datas = game.UIConstant.GAME_TYPES
     self._scrollListLeft:updateDatas(datas)
+    self._xmlView:setContent(game.Languege.GAME_TYPE_R_TONGREN,10)
+    self._xmlView:setContent(des,30)
 end
 
  

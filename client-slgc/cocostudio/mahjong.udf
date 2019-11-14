@@ -31,15 +31,9 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="views/UIReconnectTip.csd" />
-          <FilePathData Path="csb/mengya/UILogin.csd" />
-          <FilePathData Path="csb/mengya/UIMain.csd" />
-          <FilePathData Path="csb/Gold/UIGoldMain.csd" />
-          <FilePathData Path="csb/mengya/gold/UIGoldMain.csd" />
-          <FilePathData Path="csb/Club/UIClubPushGuidance.csd" />
-          <FilePathData Path="csb/Mail/UIMailMain.csd" />
+          <FilePathData Path="csb/mengya/UIUserProtocol.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="csb/Mail/UIMailMain.csd" />
+        <ActiveDocument Path="csb/mengya/UIUserProtocol.csd" />
       </Value>
     </Item>
   </Properties>

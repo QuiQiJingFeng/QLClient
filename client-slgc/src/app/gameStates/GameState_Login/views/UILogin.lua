@@ -25,7 +25,7 @@ function UILogin:init()
 end
 
 function UILogin:_onPanelAgreeClick()
-    UITipManager:getInstance():show("用户协议")
+    UIManager:getInstance():show("UIUserProtocol")
 end
 
 function UILogin:_onBtnFixGame()

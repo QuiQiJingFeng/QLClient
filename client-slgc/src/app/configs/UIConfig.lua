@@ -8,7 +8,8 @@ UIConfig["UIShop"] = "app.ui.views.UIShop"
 UIConfig["UIHelp"] = "app.ui.views.UIHelp"
 --创建房间界面
 UIConfig["UICreateRoom"] = "app.ui.views.UICreateRoom"
-
+--用户协议
+UIConfig["UIUserProtocol"] = "app.ui.views.UIUserProtocol"
 
 
 

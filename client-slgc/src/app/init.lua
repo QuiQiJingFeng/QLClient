@@ -57,7 +57,13 @@ game.UIFreeListItem = require("app.common.UIFreeListItem")
 -- 排序列表<动态更新元素的位置,隐藏的元素后移>
 game.UISortListView = require("app.common.UISortListView")
 
+game.UIXMLView = require("app.common.UIXMLView")
+game.UIXMLText = require("app.common.UIXMLText")
+
 --TODO
 game.UIScrollText = require("app.common.UIScrollText")
 
 game.UIConstant = require("app.constants.UIConstant")
+
+
+game.Languege = require("app.languege.zh_CN")

@@ -67,7 +67,7 @@
             <PreSize X="0.1734" Y="0.8125" />
             <FileData Type="Normal" Path="art/main/Img_list_main.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="scrollListLeft" ActionTag="-1138411506" Tag="47" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.6800" RightMargin="904.3200" TopMargin="114.8000" BottomMargin="25.2000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <AbstractNodeData Name="scrollListLeft" ActionTag="-1138411506" Tag="47" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="5.6800" RightMargin="904.3200" TopMargin="114.8000" BottomMargin="25.2000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Size X="226.0000" Y="500.0000" />
             <Children>
               <AbstractNodeData Name="item" ActionTag="834955432" Tag="48" IconVisible="False" BottomMargin="418.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="60" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
