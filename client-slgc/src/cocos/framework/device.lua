@@ -1,6 +1,6 @@
 --[[
 
-Copyright (c) 2011-2014 chukong-inc.com
+Copyright (c) 2014-2017 Chukong Technologies Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -62,15 +62,17 @@ end
 
 local language_ = app:getCurrentLanguage()
 if language_ == cc.LANGUAGE_CHINESE then
-    language_ = "cn"
+    language_ = "zh-CN"
 elseif language_ == cc.LANGUAGE_FRENCH then
     language_ = "fr"
 elseif language_ == cc.LANGUAGE_ITALIAN then
     language_ = "it"
 elseif language_ == cc.LANGUAGE_GERMAN then
-    language_ = "gr"
+    language_ = "de"
 elseif language_ == cc.LANGUAGE_SPANISH then
-    language_ = "sp"
+    language_ = "es"
+elseif language_ == cc.LANGUAGE_DUTCH then
+    language_ = "nl"
 elseif language_ == cc.LANGUAGE_RUSSIAN then
     language_ = "ru"
 elseif language_ == cc.LANGUAGE_KOREAN then
@@ -83,6 +85,20 @@ elseif language_ == cc.LANGUAGE_PORTUGUESE then
     language_ = "pt"
 elseif language_ == cc.LANGUAGE_ARABIC then
     language_ = "ar"
+elseif language_ == cc.LANGUAGE_NORWEGIAN then
+    language_ = "nb"
+elseif language_ == cc.LANGUAGE_POLISH then
+    language_ = "pl"
+elseif language_ == cc.LANGUAGE_TURKISH then
+    language_ = "tr"
+elseif language_ == cc.LANGUAGE_UKRAINIAN then
+    language_ = "uk"
+elseif language_ == cc.LANGUAGE_ROMANIAN then
+    language_ = "ro"
+elseif language_ == cc.LANGUAGE_BULGARIAN then
+    language_ = "bg"
+elseif language_ == cc.LANGUAGE_TRADITIONAL then
+    language_ = "zh-TW"
 else
     language_ = "en"
 end

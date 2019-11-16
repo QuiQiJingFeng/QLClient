@@ -1,4 +1,5 @@
 {
     "editor.detectIndentation": false,
-    "cSpell.language": "en"
+    "cSpell.language": "en",
+    "git.ignoreLimitWarning": true
 }

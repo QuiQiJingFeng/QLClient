@@ -38,7 +38,6 @@ function UIHelp:onShow()
     local datas = game.UIConstant.GAME_TYPES
     self._scrollListLeft:updateDatas(datas)
     self._xmlView:setContent(game.Languege.GAME_TYPE_R_TONGREN,10)
-    self._xmlView:setContent(des,30)
 end
 
  

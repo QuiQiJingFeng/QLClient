@@ -6,6 +6,10 @@ if not json then
     require "cocos.cocos2d.json"
 end
 
+if not csv then
+    require "cocos.cocos2d.csv"
+end
+
 require "cocos.cocostudio.StudioConstants"
 
 function ccs.sendTriggerEvent(event)

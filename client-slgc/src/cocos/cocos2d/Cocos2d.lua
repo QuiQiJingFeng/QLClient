@@ -88,6 +88,11 @@ function cc.pGetDistance(startP,endP)
     return cc.pGetLength(cc.pSub(startP,endP))
 end
 
+function cc.pGetAngleByPos(self,other)
+    local p = cc.pSub(other, self)
+    return - math.atan2(p.y, p.x) * 180 / math.pi
+end
+
 function cc.pIsLineIntersect(A, B, C, D, s, t)
     if ((A.x == B.x) and (A.y == B.y)) or ((C.x == D.x) and (C.y == D.y))then
         return false, s, t

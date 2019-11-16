@@ -30,8 +30,8 @@ function Event:unbind(target)
 end
 
 function Event:on(eventName, listener, tag)
-    -- assert(type(eventName) == "string" and eventName ~= "",
-        -- "Event:addEventListener() - invalid eventName")
+    assert(type(eventName) == "string" and eventName ~= "",
+        "Event:addEventListener() - invalid eventName")
     eventName = string.upper(eventName)
     if self.listeners_[eventName] == nil then
         self.listeners_[eventName] = {}
@@ -43,8 +43,8 @@ function Event:on(eventName, listener, tag)
     self.listeners_[eventName][handle] = {listener, tag}
 
     if DEBUG > 1 then
-        -- printInfo("%s [Event] addEventListener() - event: %s, handle: %s, tag: \"%s\"",
-                  -- tostring(self.target_), eventName, handle, tostring(tag))
+        printInfo("%s [Event] addEventListener() - event: %s, handle: %s, tag: \"%s\"",
+                  tostring(self.target_), eventName, handle, tostring(tag))
     end
 
     return self.target_, handle
@@ -56,7 +56,7 @@ function Event:dispatchEvent(event)
     event.name = string.upper(tostring(event.name))
     local eventName = event.name
     if DEBUG > 1 then
-        -- printInfo("%s [Event] dispatchEvent() - event %s", tostring(self.target_), eventName)
+        printInfo("%s [Event] dispatchEvent() - event %s", tostring(self.target_), eventName)
     end
 
     if self.listeners_[eventName] == nil then return end
@@ -68,7 +68,7 @@ function Event:dispatchEvent(event)
 
     for handle, listener in pairs(self.listeners_[eventName]) do
         if DEBUG > 1 then
-            -- printInfo("%s [Event] dispatchEvent() - dispatching event %s to listener %s", tostring(self.target_), eventName, handle)
+            printInfo("%s [Event] dispatchEvent() - dispatching event %s to listener %s", tostring(self.target_), eventName, handle)
         end
         -- listener[1] = listener
         -- listener[2] = tag
@@ -76,7 +76,7 @@ function Event:dispatchEvent(event)
         listener[1](event)
         if event.stop_ then
             if DEBUG > 1 then
-                -- printInfo("%s [Event] dispatchEvent() - break dispatching for event %s", tostring(self.target_), eventName)
+                printInfo("%s [Event] dispatchEvent() - break dispatching for event %s", tostring(self.target_), eventName)
             end
             break
         end
@@ -91,7 +91,7 @@ function Event:removeEventListener(handleToRemove)
             if handle == handleToRemove then
                 listenersForEvent[handle] = nil
                 if DEBUG > 1 then
-                    -- printInfo("%s [Event] removeEventListener() - remove listener [%s] for event %s", tostring(self.target_), handle, eventName)
+                    printInfo("%s [Event] removeEventListener() - remove listener [%s] for event %s", tostring(self.target_), handle, eventName)
                 end
                 return self.target_
             end
@@ -109,7 +109,7 @@ function Event:removeEventListenersByTag(tagToRemove)
             if listener[2] == tagToRemove then
                 listenersForEvent[handle] = nil
                 if DEBUG > 1 then
-                    -- printInfo("%s [Event] removeEventListener() - remove listener [%s] for event %s", tostring(self.target_), handle, eventName)
+                    printInfo("%s [Event] removeEventListener() - remove listener [%s] for event %s", tostring(self.target_), handle, eventName)
                 end
             end
         end
@@ -121,7 +121,7 @@ end
 function Event:removeEventListenersByEvent(eventName)
     self.listeners_[string.upper(eventName)] = nil
     if DEBUG > 1 then
-        -- printInfo("%s [Event] removeAllEventListenersForEvent() - remove all listeners for event %s", tostring(self.target_), eventName)
+        printInfo("%s [Event] removeAllEventListenersForEvent() - remove all listeners for event %s", tostring(self.target_), eventName)
     end
     return self.target_
 end
@@ -129,7 +129,7 @@ end
 function Event:removeAllEventListeners()
     self.listeners_ = {}
     if DEBUG > 1 then
-        -- printInfo("%s [Event] removeAllEventListeners() - remove all listeners", tostring(self.target_))
+        printInfo("%s [Event] removeAllEventListeners() - remove all listeners", tostring(self.target_))
     end
     return self.target_
 end
@@ -144,11 +144,11 @@ function Event:hasEventListener(eventName)
 end
 
 function Event:dumpAllEventListeners()
-    -- print("---- Event:dumpAllEventListeners() ----")
+    print("---- Event:dumpAllEventListeners() ----")
     for name, listeners in pairs(self.listeners_) do
-        -- printf("-- event: %s", name)
+        printf("-- event: %s", name)
         for handle, listener in pairs(listeners) do
-            -- printf("--     listener: %s, handle: %s", tostring(listener[1]), tostring(handle))
+            printf("--     listener: %s, handle: %s", tostring(listener[1]), tostring(handle))
         end
     end
     return self.target_

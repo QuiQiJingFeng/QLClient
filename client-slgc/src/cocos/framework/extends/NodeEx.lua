@@ -1,6 +1,6 @@
 --[[
 
-Copyright (c) 2011-2014 chukong-inc.com
+Copyright (c) 2014-2017 Chukong Technologies Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -75,6 +75,15 @@ function Node:move(x, y)
     return self
 end
 
+function Node:scale(x, y)
+    if y then
+        self:setScale(x, y)
+    else
+        self:setScale(x)
+    end
+    return self
+end
+
 function Node:moveTo(args)
     transition.moveTo(self, args)
     return self
@@ -120,12 +129,10 @@ function Node:scaleTo(args)
     return self
 end
 
-function Node:onUpdate(callback)
+function Node:scheduleUpdate(callback)
     self:scheduleUpdateWithPriorityLua(callback, 0)
     return self
 end
-
-Node.scheduleUpdate = Node.onUpdate
 
 function Node:onNodeEvent(eventName, callback)
     if "enter" == eventName then

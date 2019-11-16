@@ -72,7 +72,13 @@ function M.willPlayMusic()
     return cc.SimpleAudioEngine:getInstance():willPlayMusic()
 end
 
+function M.unloadEffect(filename)
+    cc.SimpleAudioEngine:getInstance():unloadEffect(filename)
+end
 
+function M.preloadEffect(filename)
+    cc.SimpleAudioEngine:getInstance():preloadEffect(filename)
+end
 
 function M.setEffectsVolume(volume)
     cc.SimpleAudioEngine:getInstance():setEffectsVolume(volume)

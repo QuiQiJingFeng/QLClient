@@ -1,6 +1,6 @@
 --[[
 
-Copyright (c) 2011-2014 chukong-inc.com
+Copyright (c) 2014-2017 Chukong Technologies Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -33,8 +33,12 @@ function printLog(tag, fmt, ...)
 end
 
 function printError(fmt, ...)
-    printLog("ERR", fmt, ...)
+    printLog("ERROR", fmt, ...)
     print(debug.traceback("", 2))
+end
+
+function printWarning(fmt, ...)
+    printLog("WARNING", fmt, ...)
 end
 
 function printInfo(fmt, ...)
@@ -130,6 +134,22 @@ end
 function isset(hashtable, key)
     local t = type(hashtable)
     return (t == "table" or t == "userdata") and hashtable[key] ~= nil
+end
+
+function isfunction(f)
+    return type(f) == "function"
+end
+
+function istable(t)
+    return type(t) == "table"
+end
+
+function isstring(s)
+    return type(s) == "string"
+end
+
+function isnumber(n)
+    return type(n) == "number"
 end
 
 local setmetatableindex_
@@ -277,34 +297,34 @@ function iskindof(obj, classname)
     return false
 end
 
--- function import(moduleName, currentModuleName)
---     local currentModuleNameParts
---     local moduleFullName = moduleName
---     local offset = 1
+function import(moduleName, currentModuleName)
+    local currentModuleNameParts
+    local moduleFullName = moduleName
+    local offset = 1
 
---     while true do
---         if string.byte(moduleName, offset) ~= 46 then -- .
---             moduleFullName = string.sub(moduleName, offset)
---             if currentModuleNameParts and #currentModuleNameParts > 0 then
---                 moduleFullName = table.concat(currentModuleNameParts, ".") .. "." .. moduleFullName
---             end
---             break
---         end
---         offset = offset + 1
+    while true do
+        if string.byte(moduleName, offset) ~= 46 then -- .
+            moduleFullName = string.sub(moduleName, offset)
+            if currentModuleNameParts and #currentModuleNameParts > 0 then
+                moduleFullName = table.concat(currentModuleNameParts, ".") .. "." .. moduleFullName
+            end
+            break
+        end
+        offset = offset + 1
 
---         if not currentModuleNameParts then
---             if not currentModuleName then
---                 local n,v = debug.getlocal(3, 1)
---                 currentModuleName = v
---             end
+        if not currentModuleNameParts then
+            if not currentModuleName then
+                local n,v = debug.getlocal(3, 1)
+                currentModuleName = v
+            end
 
---             currentModuleNameParts = string.split(currentModuleName, ".")
---         end
---         table.remove(currentModuleNameParts, #currentModuleNameParts)
---     end
+            currentModuleNameParts = string.split(currentModuleName, ".")
+        end
+        table.remove(currentModuleNameParts, #currentModuleNameParts)
+    end
 
---     return require(moduleFullName)
--- end
+    return require(moduleFullName)
+end
 
 function handler(obj, method)
     return function(...)
@@ -312,23 +332,10 @@ function handler(obj, method)
     end
 end
 
-function handlerFix(obj, method,tag)
+function handlerFix(obj, method, tag)
     return function(...)
         return method(obj,tag, ...)
     end
-end
-
---绑定lua表到Cocostudio中的Node 
-function bindLuaObjToNode(node,path,...)
-    if node.initSuccess then
-        return
-    end
-    local obj = require(path).new()
-    setmetatableindex(node,obj)
-    node:init(...)
-    --只绑定一次
-    node.initSuccess = true
-    return node
 end
 
 function math.newrandomseed()
@@ -430,9 +437,6 @@ function io.filesize(path)
     return size
 end
 
-function table.asc(k) return function(a,b) return a[k]<b[k] end end
-function table.desc(k) return function(a,b) return a[k]>b[k] end end
-
 function table.nums(t)
     local count = 0
     for k, v in pairs(t) do
@@ -516,18 +520,6 @@ function table.walk(t, fn)
     end
 end
 
---数组型的filter
-function table.arrayFilter(t, fn)
-    local i = 1
-    while (t[i]) do
-        if not fn(t[i], i) then 
-           table.remove(t,i)
-        else
-            i = i + 1
-        end
-    end
-end
-
 function table.filter(t, fn)
     for k, v in pairs(t) do
         if not fn(v, k) then t[k] = nil end
@@ -552,12 +544,8 @@ function table.unique(t, bArray)
     return n
 end
 
-function table.reverse(t)
-    local ret = {}
-    for i = #t, 1, -1 do
-        table.insert(ret, t[i])
-    end
-    return ret
+function table.empty(t)
+    return next(t) == nil
 end
 
 string._htmlspecialchars_set = {}
@@ -594,63 +582,17 @@ function string.text2html(input)
 end
 
 function string.split(input, delimiter)
-	local arr = {}
-    string.gsub(input, '[^'..delimiter..']+', function(w) table.insert(arr, w) end)
+    input = tostring(input)
+    delimiter = tostring(delimiter)
+    if (delimiter=='') then return false end
+    local pos,arr = 0, {}
+    -- for each divider found
+    for st,sp in function() return string.find(input, delimiter, pos, true) end do
+        table.insert(arr, string.sub(input, pos, st - 1))
+        pos = sp + 1
+    end
+    table.insert(arr, string.sub(input, pos))
     return arr
-end
-
-local function chsize(char)
-    if not char then
-        print("not char")
-        return 0
-    elseif char > 240 then
-        return 4
-    elseif char > 225 then
-        return 3
-    elseif char > 192 then
-        return 2
-    else
-        return 1
-    end
-end
---[[
--- 计算utf8字符串字符数, 各种字符都按一个字符计算
--- 例如utf8len("1你好") => 3
-function string.utf8len(str)
-    local len = 0
-    local currentIndex = 1
-    while currentIndex <= #str do
-        local char = string.byte(str, currentIndex)
-        currentIndex = currentIndex + chsize(char)
-        len = len +1
-    end
-    return len
-end
-]]
--- 截取utf8 字符串
--- str:            要截取的字符串
--- startChar:    开始字符下标,从1开始
--- numChars:    要截取的字符长度
-function string.utf8sub(str, startChar, numChars)
-	local _startChar = startChar
-	local _numChars = numChars
-	if nil == _startChar then _startChar = 1 end
-	if nil == _numChars then _numChars = string.utf8len(str) end
-    local startIndex = 1
-    while _startChar > 1 do
-        local char = string.byte(str, startIndex)
-        startIndex = startIndex + chsize(char)
-        _startChar = _startChar - 1
-    end
- 
-    local currentIndex = startIndex
- 
-    while _numChars > 0 and currentIndex <= #str do
-        local char = string.byte(str, currentIndex)
-        currentIndex = currentIndex + chsize(char)
-        _numChars = _numChars -1
-    end
-    return str:sub(startIndex, currentIndex - 1)
 end
 
 function string.ltrim(input)
@@ -717,4 +659,29 @@ function string.formatnumberthousands(num)
         if k == 0 then break end
     end
     return formatted
+end
+
+function string.formattable(t)
+    local index = {}
+    for k in pairs(t) do
+        table.insert(index, k)
+    end
+    table.sort(index)
+    local result = {}
+    for _,v in ipairs(index) do
+        table.insert(result, string.format("[%s] = %s:%s", v, type(t[v]), tostring(t[v])))
+    end
+    return "{ " .. table.concat(result,", ") .. " }"
+end
+
+if not _G["_override_tostring_"] then
+    _G["_override_tostring_"] = true
+    local _tostring = tostring
+    tostring = function(value)
+        if type(value) == "table" then
+            return string.formattable(value)
+        else
+            return _tostring(value)
+        end
+    end
 end
