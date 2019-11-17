@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework:spring-web:5.+'
+}
+
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor 10, 'minutes'
+}
+
+task copyLibs(type: Copy) {
+    from configurations.compileClasspath
+    into "$buildDir/libs"
+}
