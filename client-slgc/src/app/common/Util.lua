@@ -121,9 +121,7 @@ end
 
 
 function Util:parseCsvWithPath(path)
-    local file = io.open(path,"rb")
-    local content = file:read("*a")
-    file:close()
+    local content = cc.FileUtils:getInstance():getStringFromFile(path)
 
     content = string.gsub(content,"\r","")
 
