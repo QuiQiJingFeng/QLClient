@@ -1,0 +1,3 @@
+[submodule "client-slgc/frameworks"]
+	path = client-slgc/frameworks
+	url = https://github.com/QuiQiJingFeng/QLFramework.git
