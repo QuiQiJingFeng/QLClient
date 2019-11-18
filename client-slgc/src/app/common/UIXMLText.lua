@@ -18,11 +18,19 @@ local function convertColor(s)
     assert(false, "invalid color foramt")
     return cc.WHITE
 end
-
+--[[
+    
+    左对齐,文本占一整行
+    <Text color="#D4714D" size=30 align="left" wholeLine=true>说明说明</Text>
+    居中对齐,文本占一整行
+    <Text color="#D4714D" size=30 align="center" wholeLine=true>说明说明</Text>
+    左对齐
+    <Text color="#D4714D" size=30 align="left">说明说明</Text>
+]]
 function UIXMLText:ctor(delegate,propertyMap,value)
     local contentSize = delegate:getContentSize()
     if propertyMap.size then
-        self:setFontSize(tonumber(propertyMap.size))
+        self:setFontSize(propertyMap.size)
     end
     if propertyMap.color then
         self:setTextColor(convertColor(propertyMap.color))
@@ -34,7 +42,7 @@ function UIXMLText:ctor(delegate,propertyMap,value)
     end
 
     --是否占据整行,并且自适应高度
-    if propertyMap.width and propertyMap.width == "100" then
+    if propertyMap.wholeLine then
         self:getVirtualRenderer():setDimensions(contentSize.width,0)
         self:setString(value)
         local renderSize = self:getVirtualRendererSize()

@@ -59,7 +59,8 @@ game.UISortListView = require("app.common.UISortListView")
 
 game.UIXMLView = require("app.common.UIXMLView")
 game.UIXMLText = require("app.common.UIXMLText")
-
+game.UIXMLImageView = require("app.common.UIXMLImageView")
+game.UIXMLCard = require("app.common.UIXMLCard")
 --TODO
 game.UIScrollText = require("app.common.UIScrollText")
 

@@ -31,6 +31,7 @@ function LuaXML:newParser()
     end
 
     function XmlParser:FromXmlString(value)
+        local _type = type(value)
         value = string.gsub(value, "&#x([%x]+)%;",
             function(h)
                 return string.char(tonumber(h, 16))
@@ -48,8 +49,21 @@ function LuaXML:newParser()
     end
 
     function XmlParser:ParseArgs(node, s)
-        string.gsub(s, "(%w+)=([\"'])(.-)%2", function(w, _, a)
-            node:addProperty(w, self:FromXmlString(a))
+        -- string.gsub(s, "(%w+)=([\"'])(.-)%2", function(w, _, a)
+        --     node:addProperty(w, self:FromXmlString(a))
+        -- end)
+        --FYD FIX: 增加数字类型、bool类型识别
+        string.gsub(s, "(%w+)=([^%s]+)", function(w, value)
+            value = self:FromXmlString(value)
+			if value == "true" or value == "false" then
+				value = value == "true"
+			elseif tonumber(value) then
+				value = tonumber(value)
+			else
+				value = string.gsub(value,"\"","")
+				value = string.gsub(value,"'","")
+			end
+            node:addProperty(w, value)
         end)
     end
 

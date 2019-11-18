@@ -29,7 +29,15 @@ function UIXMLView:parse(name,value,propertyMap)
     local node
     if name == "Text" then
         node = game.UIXMLText.new(self,propertyMap,value)
+    elseif name == "Image" then
+        node = game.UIXMLImageView.new(propertyMap)
+    elseif name == "Cards" then
+        node = game.UIXMLCard.new(propertyMap)
     else
+        if name == "Line" then
+            self._currentPos.y = self._currentPos.y - tonumber(propertyMap.height)
+            self._currentPos.x = 0
+        end
         return
     end
     self._nodeSize = node:getContentSize()
@@ -37,7 +45,7 @@ function UIXMLView:parse(name,value,propertyMap)
     local size = self._nodeSize
     -- assert(size.width <= contentSize.width)
 
-    if propertyMap.width and propertyMap.width == "100" then
+    if propertyMap.wholeLine then
         if self._currentPos.x > 0 then
             self:newLine()
         end
@@ -52,6 +60,7 @@ function UIXMLView:parse(name,value,propertyMap)
             if name ~= "Text" then
                 self:newLine()
                 node:setPosition(cc.p(self._currentPos))
+                self._currentPos.x = self._currentPos.x + size.width
             else
                 --如果是文本则拆成两个文本显示
                 --超出的距离
@@ -63,7 +72,6 @@ function UIXMLView:parse(name,value,propertyMap)
                 node:setPosition(self._currentPos)
                 self._layout:addChild(node)
                 self:newLine()
-                
                 local otherText = string.gsub(value,reduceText,"",1)
                 self:parse(name,otherText,propertyMap)
                 return

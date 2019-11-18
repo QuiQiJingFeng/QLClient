@@ -1,8 +1,8 @@
 local Languege = {}
 
 Languege.AGREEMENG = [[
-<Text color="#D4714D" size="36" align="center" width="100">注册用户须知</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=36 align="center" wholeLine=true>注册用户须知</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     1、您必须以自然人身份申请注册麻友圈铜仁麻将游戏网站正式用户，如果您未满18周岁，请在法定监护人的陪同下阅读以下《麻友圈铜仁麻将用户服务协议》。
 
     2、在注册成为麻友圈铜仁麻将游戏网站正式用户前，请您详细阅读《麻友圈铜仁麻将用户服务协议》中各条款，特别是免除或者限制麻友圈铜仁麻将游戏网站的免责条款及对用户的权利限制条款，并选择是否同意《麻友圈铜仁麻将用户服务协议》。
@@ -13,7 +13,7 @@ Languege.AGREEMENG = [[
 
     5、欢迎您使用麻友圈铜仁麻将的服务，您在使用麻友圈铜仁麻将的服务之前，请慎重对待以下提示：
 </Text>
-<Text color="#8E8151" size="24" align="center" width="100">
+<Text color="#8E8151" size=24 align="center" wholeLine=true>
 《健康游戏忠告》
 抵制不良游戏，拒绝盗版游戏。
 注意自我保护，谨防受骗上当。
@@ -21,13 +21,13 @@ Languege.AGREEMENG = [[
 合理安排时间，享受健康生活。
 倡导理性消费，享受竞技快乐。
 </Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     严禁恶意利用麻友圈铜仁麻将游戏（以下简称“本游戏”）进行赌博等违法犯罪行为，一经发现，麻友圈铜仁麻将将立即封停账号、并向相关司法机关举报。
 </Text>
-<Text color="#D4714D" size="36" align="center" width="100">《麻友圈铜仁麻将用户服务协议》</Text>
+<Text color="#D4714D" size=36 align="center" wholeLine=true>《麻友圈铜仁麻将用户服务协议》</Text>
 
-<Text color="#D4714D" size="30" align="left" width="100">一、定义</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>一、定义</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     1.1 本协议：指《麻友圈铜仁麻将用户服务协议》正文及其修订版本、本游戏的规则及其修订版本。
 
     1.2 游戏规则：指麻友圈铜仁麻将不时发布并修订的关于本游戏的用户服务协议、游戏规则、游戏公告及通知、指引、说明等内容。
@@ -39,8 +39,8 @@ Languege.AGREEMENG = [[
     1.5 房卡：您进入并使用本游戏服务所需购买、消耗的游戏卡。房卡不可在玩家间交易，不能与游戏中的积分相兑换，仅用于进入并使用本游戏。
 </Text>
 
-<Text color="#D4714D" size="30" align="left" width="100">二、用户注册信息</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>二、用户注册信息</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     2.1 用户承诺，其在申请使用麻友圈铜仁麻将服务时，必须以其真实身份注册成为麻友圈铜仁麻将网站的用户，并保证所提供的个人身份资料信息真实、完整、准确、有效，并依据法律规定和本协议条款约定对其所提供的该等信息承担相应的法律责任。经麻友圈铜仁麻将核实，如您提交的帐号名称、头像和简介等注册信息中出现违法和不良信息的，麻友圈铜仁麻将将不予注册；如在注册后发现用户以虚假信息骗取注册的，麻友圈铜仁麻将有权不经通知单方采取限期改正、暂停使用、注销登记、收回等措施。
 
     2.2 用户保证所填写的用户信息是真实、准确、完整的，没有任何引人误解或者虚假的陈述，并且保证麻友圈铜仁麻将网站可以通过用户所填写的联系方式与用户取得联系。
@@ -48,8 +48,8 @@ Languege.AGREEMENG = [[
     2.3 用户承诺，其以其真实身份注册成为麻友圈铜仁麻将网站用户后，将及时更新其用户信息以维持该等信息的准确性、有效性，麻友圈铜仁麻将将及时、有效地为用户提供个人身份资料信息更新服务。麻友圈铜仁麻将网站有权审查用户注册所提供的身份信息是否真实、准确、有效，因用户提供的用户信息中不准确、不真实、或无效的，麻友圈铜仁麻将网站保留取消其用户资格并随时结束为该用户提供服务的权利，并且由此造成的一切后果和损失由用户自行承担，包括但不限于用户因未能及时收到麻友圈铜仁麻将网站相关通告的损失。
 </Text>
 
-<Text color="#D4714D" size="30" align="left" width="100">三、用户帐号、密码和安全性</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>三、用户帐号、密码和安全性</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     3.1 用户在使用麻友圈铜仁麻将服务前需要注册一个用户账号，用户账号应当使用手机号码绑定注册，用户一旦注册成功，成为麻友圈铜仁麻将的合法用户，将得到一个与注册手机号码绑定的用户帐号及由用户自行设定的密码，该用户账号的所有权归麻友圈铜仁麻将，用户仅获得使用权。该用户名和密码由用户负责保管。麻友圈铜仁麻将可以根据用户需求或产品需要对账号注册和绑定的方式进行变更，而无须事先通知用户。
 
     3.2 鉴于，麻友圈铜仁麻将网站系一个游戏用户交流的平台，用户申请注册，即表明同意接受麻友圈铜仁麻将网站通过电子邮件、短信、客户端推送或其他方式向其发送宣传推广或者其他相关商业信息。用户申请注册，即表明同意：在不对外披露单个用户隐私资料的前提下，麻友圈铜仁麻将有权对整个用户数据库进行分析并对用户数据库进行商业上的利用。注册成为麻友圈铜仁麻将用户，需遵守《全国人大常委会关于加强网络信息保护的决定》。
@@ -71,8 +71,8 @@ Languege.AGREEMENG = [[
     3.10 您充分理解并同意：如果您长期连续未登陆用户账号，您在本游戏内的游戏数据可能会由于技术原因被删除，对此麻友圈铜仁麻将不承担任何责任。    
 </Text>
 
-<Text color="#D4714D" size="30" align="left" width="100">四、麻友圈铜仁麻将服务</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>四、麻友圈铜仁麻将服务</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     4.1 麻友圈铜仁麻将将向您提供本游戏作为休闲娱乐之用，麻友圈铜仁麻将严禁一切形式的赌博和其他违法犯罪活动。请您适度游戏，麻友圈铜仁麻将将与您共同打造绿色的休闲平台。
 
     4.2 在您严格遵守本协议及相关法律法规的前提下，麻友圈铜仁麻将给予您一项不可转让及非排他性的许可，以使用麻友圈铜仁麻将服务。您使用麻友圈铜仁麻将服务仅可以非商业目的的使用，包括：
@@ -98,8 +98,8 @@ Languege.AGREEMENG = [[
 </Text>
 
 
-<Text color="#D4714D" size="30" align="left" width="100">五、用户行为规范</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>五、用户行为规范</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     5.1 您充分了解并同意，麻友圈铜仁麻将仅为用户交流的平台，您必须为自己用户帐号下的一切行为负责，包括您所发表的任何内容以及由此产生的任何后果。您应对本游戏中的内容自行加以判断，并承担因使用本游戏而引起的所有风险，包括因对游戏内容的正确性、完整性或实用性的依赖而产生的风险。麻友圈铜仁麻将无法且不会对因用户行为而而导致的任何后果（包括但不限于损失或损害等）承担责任。
 
     5.2 除非法律允许或麻友圈铜仁麻将书面许可，您不得（包括营利或非营利性的在内）从事下列行为：
@@ -158,8 +158,8 @@ Languege.AGREEMENG = [[
     5.12 鉴于互联网络的特殊性，用户在麻友圈铜仁麻将网站的网页上发布信息或者使用麻友圈铜仁麻将网站提供的服务时还必须符合其他有关国家和地区的法律规定以及国际法的有关规定。
 </Text>
 
-<Text color="#D4714D" size="30" align="left" width="100">六、免责声明</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>六、免责声明</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
     6.1 麻友圈铜仁麻将可能因游戏软件BUG、版本更新缺陷、运营BUG、第三方病毒攻击或其他任何因素导致您无法登陆帐号，或导致您的游戏角色、游戏数据等帐号数据发生异常。在数据异常的原因未得到查明前，麻友圈铜仁麻将有权暂时冻结该帐号；若查明数据异常为非正常游戏行为，您游戏帐号数据将可能被恢复至异常发生前的原始状态，麻友圈铜仁麻将对此不承担任何责任，用户应该予以理解。
 
     6.2 对于您从未经麻友圈铜仁麻将官方授权合作方处购买房卡的行为，麻友圈铜仁麻将不承担任何责任；麻友圈铜仁麻将不对未经授权的第三方交易的行为负责，并且不受理因任何未经授权的第三方交易发生纠纷而带来的申诉。
@@ -194,42 +194,43 @@ Languege.AGREEMENG = [[
 
 --铜仁麻将
 Languege.GAME_TYPE_R_TONGREN = [[
-<Text color="#D4714D" size="35" align="left" width="100">铜仁麻将</Text>
+<Text color="#D4714D" size=35 align="left" wholeLine=true>铜仁麻将</Text>
+<Line height=10/>
+<Text color="#D4714D" size=30 align="left" wholeLine=true>(一) 牌型：</Text>
+<Line height=10/>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>1. 平胡，1分。</Text>
+<Cards width=42 height=64 wholeLine=true values="2,2,2,7,8,9,17,18,18,18,19,25,26,0,24"></Cards>
 
-<Text color="#D4714D" size="30" align="left" width="100">(一) 牌型：</Text>
-<Text color="#8E8151" size="24" align="left" width="100">1. 平胡，1分。</Text>
-<Cards values="2,2,2,7,8,9,17,18,18,18,19,25,26,0,24"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>2. 大对子，5分。</Text>
+<Cards width=42 height=64 wholeLine=true values="2,2,2,7,7,7,14,14,14,23,23,23,29,0,29"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">2. 大对子，5分。</Text>
-<Cards values="2,2,2,7,7,7,14,14,14,23,23,23,29,0,29"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>3. 七对，10分。</Text>
+<Cards width=42 height=64 wholeLine=true values="1,1,4,4,7,16,16,18,18,24,24,27,27,0,7"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">3. 七对，10分。</Text>
-<Cards values="1,1,4,4,7,16,16,18,18,24,24,27,27,0,7"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>4. 清一色，10分。</Text>
+<Cards width=42 height=64 wholeLine=true values="1,1,1,2,3,4,5,6,7,8,9,9,9,0,8"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">4. 清一色，10分。</Text>
-<Cards values="1,1,1,2,3,4,5,6,7,8,9,9,9,0,8"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>5. 清大对，15分。</Text>
+<Cards width=42 height=64 wholeLine=true values="21,21,21,22,22,22,23,23,23,25,26,26,26,0,25"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">5. 清大对，15分。</Text>
-<Cards values="21,21,21,22,22,22,23,23,23,25,26,26,26,0,25"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>6. 龙七对，20分。</Text>
+<Cards width=42 height=64 wholeLine=true values="1,1,1,2,2,4,4,21,21,22,22,24,24,0,1"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">6. 龙七对，20分。</Text>
-<Cards values="1,1,1,2,2,4,4,21,21,22,22,24,24,0,1"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>7. 地龙，20分。</Text>
+<Cards width=42 height=64 wholeLine=true values="1,1,1,0,2,2,4,4,21,21,22,22,24,24,0,1"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">7. 地龙，20分。</Text>
-<Cards values="1,1,1,0,2,2,4,4,21,21,22,22,24,24,0,1"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>8. 清地龙，30分。</Text>
+<Cards width=42 height=64 wholeLine=true values="1,1,1,0,2,2,4,4,6,6,8,8,9,9,0,1"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">8. 清地龙，24分。</Text>
-<Cards values="1,1,1,0,2,2,4,4,6,6,8,8,9,9,0,1"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>9. 清七对，20分。</Text>
+<Cards width=42 height=64 wholeLine=true values="11,11,13,13,14,14,16,16,17,17,18,19,19,0,18"></Cards>
 
-<Text color="#8E8151" size="24" align="left" width="100">9. 清七对，20分。</Text>
-<Cards values="11,11,13,13,14,14,16,16,17,17,18,19,19,0,18"></Cards>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>10. 清龙背，30分。</Text>
+<Cards width=42 height=64 wholeLine=true values="21,21,24,24,25,25,26,26,28,28,29,29,29,0,29"></Cards>
+<Line height=30/>
 
-<Text color="#8E8151" size="24" align="left" width="100">10. 清龙背，24分。</Text>
-<Cards values="21,21,24,24,25,25,26,26,28,28,29,29,29,0,29"></Cards>
-
-
-<Text color="#D4714D" size="30" align="left" width="100">(二) 特殊规则如下：</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>(二) 特殊规则如下：</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
 1.平胡接炮需要有通行证，满足以下任一条件即视为有通行证：①有豆 ②热炮 ③抢杠 ④报听 ⑤杀听 ⑥地胡。自摸平胡时，一扣二每家收2分，一扣三每家收3分。
 
 2.杠开（杠上开花）：+1分。
@@ -253,8 +254,8 @@ Languege.GAME_TYPE_R_TONGREN = [[
 11.黄庄查叫：所有牌都摸完之后仍然无人胡牌，则本局记为黄庄。黄庄时所有鸡豆全部作废，所有未叫牌玩家需要按照最大牌型分赔付所有叫牌玩家。
 </Text>
 
-<Text color="#D4714D" size="30" align="left" width="100">(三) 关于“豆”</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>(三) 关于“豆”</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
 1. 闷豆
     玩家摸到4张一样的牌并杠出，为闷豆。结算时，向其他所有人收分，3分/个。
 
@@ -265,8 +266,8 @@ Languege.GAME_TYPE_R_TONGREN = [[
     某玩家打出一张牌，被其他玩家用3张相同的牌杠走，为点豆。结算时，点豆者向接豆者单独付分，3分/个。
 </Text>
 
-<Text color="#D4714D" size="30" align="left" width="100">(四) 关于“鸡”</Text>
-<Text color="#8E8151" size="24" align="left" width="100">
+<Text color="#D4714D" size=30 align="left" wholeLine=true>(四) 关于“鸡”</Text>
+<Text color="#8E8151" size=24 align="left" wholeLine=true>
 1.普通鸡：幺鸡，叫牌时每张计1分；未叫牌时，打出或碰杠的幺鸡需赔付叫牌玩家。（责任鸡作为持有者的普通鸡结算分数）
 
 2.冲锋鸡：在起牌后，所有玩家打出的第一张幺鸡为冲锋鸡，计3分。
