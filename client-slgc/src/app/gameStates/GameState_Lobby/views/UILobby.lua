@@ -60,7 +60,7 @@ function UILobby:_onBtnGamePlayHelpClick()
 end
 
 function UILobby:_onPanelPlayerInfoClick()
-    UIManager:getInstance():show("UIPersonalCenter")
+    UIManager:getInstance():show("views.UIPersonalCenter")
 end
 
 function UILobby:_onBtnMoreClick()
@@ -83,7 +83,7 @@ function UILobby:_onBtnJoinRoomClick()
 end
 
 function UILobby:_onBtnClubClick()
-    UIManager:getInstance():show("UIClubMain")
+    UIManager:getInstance():show("views.UIClubJoin")
 end
 
 function UILobby:_onBtnCreateRoomClick()

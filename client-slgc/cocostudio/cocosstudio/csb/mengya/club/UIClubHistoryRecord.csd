@@ -22,7 +22,7 @@
               <AbstractNodeData Name="panelTop" ActionTag="1033539368" UserData="top,width-scale" Tag="7493" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" BottomMargin="540.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="190" RightEage="111" TopEage="29" BottomEage="27" Scale9OriginX="190" Scale9OriginY="29" Scale9Width="835" Scale9Height="44" ctype="PanelObjectData">
                 <Size X="1136.0000" Y="100.0000" />
                 <Children>
-                  <AbstractNodeData Name="btnViewPlayBack" ActionTag="-696650646" UserData="top,right" Tag="484" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="903.2800" RightMargin="22.7200" TopMargin="11.0000" BottomMargin="27.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="36" RightEage="36" TopEage="22" BottomEage="32" Scale9OriginX="36" Scale9OriginY="22" Scale9Width="78" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="btnViewPlayBack" ActionTag="-696650646" UserData="right" Tag="484" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="903.2800" RightMargin="22.7200" TopMargin="11.0000" BottomMargin="27.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="36" RightEage="36" TopEage="22" BottomEage="32" Scale9OriginX="36" Scale9OriginY="22" Scale9Width="78" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="210.0000" Y="62.0000" />
                     <Children>
                       <AbstractNodeData Name="BitmapFontLabel_5" ActionTag="-976697807" Tag="485" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="14.0000" RightMargin="14.0000" TopMargin="13.0000" BottomMargin="13.0000" LabelText="查看他人回放" ctype="TextBMFontObjectData">
@@ -90,7 +90,7 @@
               <AbstractNodeData Name="panelCenter" ActionTag="-1406169520" Tag="642" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TopMargin="85.4000" BottomMargin="72.6000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="1136.0000" Y="482.0000" />
                 <Children>
-                  <AbstractNodeData Name="panelHistoryTitle" ActionTag="-503270792" Tag="643" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="43.0004" RightMargin="42.9995" TopMargin="9.3504" BottomMargin="428.6496" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="122" Scale9Height="24" ctype="PanelObjectData">
+                  <AbstractNodeData Name="panelHistoryTitle" ActionTag="-503270792" Tag="643" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="43.0000" RightMargin="43.0000" TopMargin="9.3300" BottomMargin="428.6700" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="122" Scale9Height="24" ctype="PanelObjectData">
                     <Size X="1050.0000" Y="44.0000" />
                     <Children>
                       <AbstractNodeData Name="txtTitleStartTime" ActionTag="-285696245" Tag="644" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="18.0000" RightMargin="936.0000" TopMargin="7.6200" BottomMargin="9.3800" FontSize="24" LabelText="开局时间" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -143,7 +143,7 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="568.0004" Y="450.6496" />
+                    <Position X="568.0000" Y="450.6700" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.9350" />
@@ -154,7 +154,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="scrollListHistory" ActionTag="-731764250" Tag="758" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="43.0004" RightMargin="42.9995" TopMargin="49.1842" BottomMargin="10.8158" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+                  <AbstractNodeData Name="scrollListHistory" ActionTag="-731764250" Tag="758" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="43.0000" RightMargin="43.0000" TopMargin="49.1640" BottomMargin="10.8360" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
                     <Size X="1050.0000" Y="422.0000" />
                     <Children>
                       <AbstractNodeData Name="item" ActionTag="1962565190" Tag="649" IconVisible="False" TopMargin="7.0000" BottomMargin="324.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="12" RightEage="12" TopEage="10" BottomEage="54" Scale9OriginX="12" Scale9OriginY="10" Scale9Width="15" Scale9Height="11" ctype="PanelObjectData">
@@ -461,7 +461,7 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-                    <Position X="568.0004" Y="432.8158" />
+                    <Position X="568.0000" Y="432.8360" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="0.5000" Y="0.8980" />
@@ -472,10 +472,10 @@
                     <ColorVector ScaleY="1.0000" />
                     <InnerNodeSize Width="1050" Height="431" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="btnNext" ActionTag="1472399203" Tag="707" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1092.0015" RightMargin="-0.0015" TopMargin="147.6807" BottomMargin="263.3193" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="btnNext" ActionTag="1472399203" Tag="707" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1092.0000" TopMargin="147.6600" BottomMargin="263.3400" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="14" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="44.0000" Y="71.0000" />
                     <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
-                    <Position X="1136.0015" Y="298.8193" />
+                    <Position X="1136.0000" Y="298.8400" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition X="1.0000" Y="0.6200" />
@@ -486,13 +486,13 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="btnPre" ActionTag="949620628" Tag="705" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="0.0002" RightMargin="1091.9998" TopMargin="147.6807" BottomMargin="263.3193" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="16" RightEage="16" TopEage="11" BottomEage="11" Scale9OriginX="16" Scale9OriginY="11" Scale9Width="12" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="btnPre" ActionTag="949620628" Tag="705" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" RightMargin="1092.0000" TopMargin="147.6600" BottomMargin="263.3400" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="16" RightEage="16" TopEage="11" BottomEage="11" Scale9OriginX="16" Scale9OriginY="11" Scale9Width="12" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="44.0000" Y="71.0000" />
                     <AnchorPoint ScaleY="0.5000" />
-                    <Position X="0.0002" Y="298.8193" />
+                    <Position Y="298.8400" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0000" Y="0.6200" />
+                    <PrePosition Y="0.6200" />
                     <PreSize X="0.0387" Y="0.1473" />
                     <TextColor A="255" R="65" G="65" B="70" />
                     <DisabledFileData Type="Normal" Path="art/img/Btn_jt1.png" Plist="" />

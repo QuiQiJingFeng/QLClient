@@ -230,8 +230,6 @@ local function parseChildProperty(self,node)
             local iter = string.gmatch(property,"lua:(.*)")
             local path = iter()
             bindLuaObjToNode(node,path)
-		else
-			assert(false, "error adaptation trait: " .. property)
 		end
 	end
 end
@@ -239,6 +237,7 @@ end
 function Util:loadCSBNode(csbPath)
     release_print("load ",csbPath)
     local node = cc.CSLoader:createNode(csbPath)
+    assert(node)
     --让留黑边的一侧居中
     self._deltX = (display.width - CC_DESIGN_RESOLUTION.width) * 0.5
     self._deltY = (display.height - CC_DESIGN_RESOLUTION.height) * 0.5

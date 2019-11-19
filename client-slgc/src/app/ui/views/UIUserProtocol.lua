@@ -18,11 +18,7 @@ function UIUserProtocol:_onBtnCloseClick()
     UIManager:getInstance():hide("UIUserProtocol")
 end
 
-function UIUserProtocol:getGradeLayerId()
-    return game.UIConstant.UILAYER_LEVEL.BOTTOM
-end
-
-function UIUserProtocol:isFullScreen()
+function UIUserProtocol:needBlackMask()
     return true
 end
 

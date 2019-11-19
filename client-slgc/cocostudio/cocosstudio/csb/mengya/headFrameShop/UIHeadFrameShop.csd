@@ -32,7 +32,7 @@
                     <PreSize X="0.1347" Y="0.4400" />
                     <LabelBMFontFile_CNB Type="Normal" Path="art/font/font_title1.fnt" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="btnBack" ActionTag="1119584717" UserData="left,top" Tag="386" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" RightMargin="985.0000" BottomMargin="13.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="121" Scale9Height="65" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="btnBack" ActionTag="1119584717" UserData="left" Tag="386" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" RightMargin="985.0000" BottomMargin="13.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="121" Scale9Height="65" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="151.0000" Y="87.0000" />
                     <AnchorPoint ScaleY="1.0000" />
                     <Position Y="100.0000" />

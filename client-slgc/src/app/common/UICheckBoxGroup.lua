@@ -1,4 +1,4 @@
-local Util = app.Util
+local Util = game.Util
 local UICheckBoxGroup = class("UICheckBoxGroup")
 
 function UICheckBoxGroup:ctor(mutextGroup,callBack)

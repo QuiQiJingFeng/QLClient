@@ -62,8 +62,7 @@ game.UIXMLView = require("app.common.UIXMLView")
 game.UIXMLText = require("app.common.UIXMLText")
 game.UIXMLImageView = require("app.common.UIXMLImageView")
 game.UIXMLCard = require("app.common.UIXMLCard")
---TODO
-game.UIScrollText = require("app.common.UIScrollText")
+game.UICheckBoxGroup = require("app.common.UICheckBoxGroup")
 
 game.UIConstant = require("app.constants.UIConstant")
 

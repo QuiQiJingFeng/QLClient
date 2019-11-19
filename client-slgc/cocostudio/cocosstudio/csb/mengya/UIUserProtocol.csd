@@ -126,39 +126,6 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Label_Add_3" ActionTag="-86109348" VisibleForFrame="False" Tag="291" IconVisible="False" LeftMargin="1322.2323" RightMargin="-286.2323" TopMargin="141.8800" BottomMargin="478.1200" FontSize="20" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="100.0000" Y="20.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1372.2323" Y="488.1200" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="103" G="86" B="32" />
-            <PrePosition X="1.2080" Y="0.7627" />
-            <PreSize X="0.0880" Y="0.0313" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Label_Add_1" ActionTag="-592289067" VisibleForFrame="False" Tag="292" IconVisible="False" LeftMargin="1332.2323" RightMargin="-296.2323" TopMargin="151.8836" BottomMargin="468.1164" FontSize="20" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="100.0000" Y="20.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1382.2323" Y="478.1164" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="207" G="95" B="58" />
-            <PrePosition X="1.2168" Y="0.7471" />
-            <PreSize X="0.0880" Y="0.0313" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Label_Add_2" ActionTag="-560703842" VisibleForFrame="False" Tag="293" IconVisible="False" LeftMargin="1322.2323" RightMargin="-286.2323" TopMargin="141.8836" BottomMargin="478.1164" FontSize="20" LabelText="Text Label" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="100.0000" Y="20.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="1372.2323" Y="488.1164" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="151" G="86" B="31" />
-            <PrePosition X="1.2080" Y="0.7627" />
-            <PreSize X="0.0880" Y="0.0313" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>
