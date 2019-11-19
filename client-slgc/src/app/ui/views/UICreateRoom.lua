@@ -22,6 +22,7 @@ end
 
 function UICreateRoom:_onBtnCreateRoomClick()
     local settings = self._scrollGamePlay:getCurrentSettings()
+    print("settings = ",table.concat(settings,","))
 end
 
 function UICreateRoom:_onBtnBackClick()

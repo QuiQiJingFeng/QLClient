@@ -3,3 +3,4 @@ client-guiyang/simulator/
 client-slgc/runtime
 tools/gradle/gradle-6.0
 client-slgc/simulator/MahjongClient.pdb
+client-slgc/simulator/win32/

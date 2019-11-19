@@ -28,7 +28,13 @@ function UIRoomSetting:clear()
 end
 
 function UIRoomSetting:getCurrentSettings()
-    local settings = table.keys(self._uiMap)
+    local settings = {}
+    for setting, cbx in pairs(self._uiMap) do
+        if cbx:isEnabled() and cbx:isSelected() then
+            table.insert(settings,setting)
+        end
+    end
+    table.sort(settings)
     return settings
 end
 

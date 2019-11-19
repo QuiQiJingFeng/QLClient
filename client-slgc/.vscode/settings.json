@@ -1,5 +1,8 @@
 {
     "editor.detectIndentation": false,
     "cSpell.language": "en",
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "xlocale": "cpp"
+    }
 }

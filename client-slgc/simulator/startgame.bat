@@ -1,1 +1,1 @@
-start MahjongClient.exe -workdir %CD%/../
+start MahjongClient.exe -workdir %CD%/../ -console enable
