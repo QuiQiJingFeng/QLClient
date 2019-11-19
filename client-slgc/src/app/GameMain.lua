@@ -40,6 +40,7 @@ function GameMain:ctor()
 end
 
 function GameMain:init()
+    game.AudioManager.getInstance():playMusic("sound/BGM/bgm.mp3", true)
     display.runScene(self)
 end
 

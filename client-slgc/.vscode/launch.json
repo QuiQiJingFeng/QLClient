@@ -33,7 +33,7 @@
             "exePathDesc1": "--必填 执行文件路径",
             "exePathDesc2": "--必填 win-> ",
             "exePathDesc3": "--必填 mac ->/Users/k0204/Desktop/quickv3/quickv3 Mac.app/Contents/MacOS/quickv3 Mac",
-            "exePath": "${workspaceRoot}/runtime/win/QLClient-desktop.exe",
+            "exePath": "${workspaceRoot}/simulator/MahjongClient.exe",
             "printTypeDesc": "--必填 print打印方式 1 控制台和系统输出,2 控制台输出,3 系统输出",
             "printType": 1
         },

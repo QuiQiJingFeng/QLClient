@@ -37,7 +37,8 @@ game.UIBase = require("app.common.UIBase")
 game.UIAnimationManager = require("app.common.UIAnimationManager")
 -- 提示框管理
 game.UITipManager = require("app.common.UITipManager")
-
+--音频管理
+game.AudioManager = require("app.common.AudioManager")
 --数据管理
 game.ConfigManager = require("app.configs.ConfigManager")
 
