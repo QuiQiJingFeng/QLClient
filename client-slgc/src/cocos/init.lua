@@ -101,3 +101,10 @@ require "cocos.physics3d.physics3d-constants"
 if CC_USE_FRAMEWORK then
     require "cocos.framework.init"
 end
+
+--luaj luaoc
+if device.platform == "android" then
+    cc.exports.luaj = require("cocos.cocos2d.luaj")
+elseif device.platform == "ios" or device.platform == "mac" then
+    cc.exports.luaoc = require("cocos.cocos2d.luaoc")
+end

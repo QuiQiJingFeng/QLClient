@@ -639,4 +639,5 @@ function Util:getMaxLenString(s, maxLen)
 	return dstString
 end
 
+
 return Util

@@ -6,7 +6,7 @@ local searchPaths = {
     "res/ui",
     "res/ui/art",
     "res/ui/csb",
-    "test",
+    "src/test"
 }
 fileUtils:setSearchPaths(searchPaths)
 local breakInfoFun, xpcallFun = require("LuaDebugjit")("localhost", 7003)

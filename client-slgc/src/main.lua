@@ -6,6 +6,7 @@ local searchPaths = {
     "res/ui",
     "res/ui/art",
     "res/ui/csb",
+    "src/test"
 }
 fileUtils:setSearchPaths(searchPaths)
 -- 全局异常处理, 捕获的异常传递bugly
@@ -29,7 +30,14 @@ local function main()
     end
     cc.Director:getInstance():setAnimationInterval(1/60)
     
+    -- require("app.GameMain").create()
+    --TEST
+    local testCase = require("test.init")
     require("app.GameMain").create()
+    game.Util:scheduleUpdate(function() 
+        testCase:run()
+        return true
+    end,1)
 end
 
 xpcall(main, __G__TRACKBACK__)
