@@ -13,7 +13,6 @@ local person = { -- 我们定义一个addressbook里的 Person 消息
    abc = "asdgg", --不在proto中定义的字段不会被打包进去
 }
 --检查协议message是否存在
-print("FFFFFFFFFFFFFFF",pb.type("tutorial.Person"))
 assert(pb.type "tutorial.Person")
 -- 序列化成二进制数据
 local data = assert(pb.encode("tutorial.Person", person))
@@ -21,7 +20,7 @@ print(pb.tohex(data))
 -- 从二进制数据解析出实际消息
 local msg = assert(pb.decode("tutorial.Person", data))
 dump(msg,"FYD========")
-
+print("FFFFKKKKK  ",msg.AAAK)  --访问不存在的字段不会报错
 --[[
 package tutorial;
 
