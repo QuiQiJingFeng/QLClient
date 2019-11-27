@@ -1,5 +1,4 @@
 local pb = cocos.pb()
-local slice = cocos["pb.slice"]()
 assert(pb.loadfile("res/pb/test.pb"))
 
 local person = { -- 我们定义一个addressbook里的 Person 消息
