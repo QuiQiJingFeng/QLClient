@@ -121,7 +121,7 @@ function UISettingCheckBox:setSelect(boolean)
             self:setSelected(boolean)
         else
             self:setSelected(false)
-            game.UIMessageTips.getInstance():show("多选一的选项至少要保留一个!")
+            game.UITipManager.getInstance():show("多选一的选项至少要保留一个!")
         end
     else 
         self:setSelected(boolean)

@@ -1,0 +1,1 @@
+start MahjongClient.exe -console true -workdir %CD%/../

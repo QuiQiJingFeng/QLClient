@@ -87,7 +87,7 @@ function UIClubMain:_onBtnMemberClick()
 end
 
 function UIClubMain:_onBtnEditClick()
-	UIManager:getInstance():show("UIClubEditNotice")
+	UIManager:getInstance():show("views.UIClubEditNotice")
 end
 
 function UIClubMain:needBlackMask()
