@@ -639,5 +639,257 @@ function Util:getMaxLenString(s, maxLen)
 	return dstString
 end
 
+--[[
+判断线段和矩形框是否有交点
+line = {cc.p, cc.p}
+rect = cc.rect
+返回 true 相交中点
+    false
+]]
+function Util:isLineIntersectRect(line, rect)
+    local lp1 = line[1]
+    local lp2 = line[2]
+
+    if lp1.x == lp2.x then
+        -- 与Y轴平行(计算xy坐标大小)
+        local lpx = lp1.x
+        if lpx < rect.x or lpx > rect.x + rect.width then
+            return false
+        else
+            local minly = min(lp1.y, lp2.y)
+            local maxly = max(lp1.y, lp2.y)
+
+            if minly > rect.y + rect.height or maxly < rect.y then
+                return false
+            else
+                -- 相交
+                local maxiy = min(maxly, rect.y + rect.height)
+                local miniy = max(minly, rect.y)
+
+                local iy = (maxiy + miniy) / 2
+
+                return true, cc.p(lpx, iy)
+            end
+        end
+    else
+        if lp1.y == lp2.y then
+            -- 与X轴平行(计算xy坐标大小)
+            local lpy = lp1.y
+            if lpy < rect.y or lpy > rect.y + rect.height then
+                return false
+            else
+                local minlx = min(lp1.x, lp2.x)
+                local maxlx = max(lp1.x, lp2.x)
+
+                if minlx > rect.x + rect.width or maxlx < rect.x then
+                    return false
+                else
+                    -- 相交
+                    local maxix = min(maxlx, rect.x + rect.width)
+                    local minix = max(minlx, rect.x)
+
+                    local ix = (maxix + minix) / 2
+
+                    return true, cc.p(ix, lpy)
+                end
+            end
+        else
+            -- 不与Y轴平行(计算直线交点是否在区域内)
+            local interPointArray = {}
+
+            -- 计算直线函数
+            local lA = (lp1.y - lp2.y) / (lp1.x - lp2.x)
+            local lB = lp1.y - lA * lp1.x
+
+            -- 区域范围
+            local minrx = rect.x
+            local maxrx = rect.x + rect.width
+            local minry = rect.y
+            local maxry = rect.y + rect.height
+
+            -- 线段范围
+            local minlx = min(lp1.x, lp2.x)
+            local maxlx = max(lp1.x, lp2.x)
+            local minly = min(lp1.y, lp2.y)
+            local maxly = max(lp1.y, lp2.y)
+
+            -- 左交点
+            local ix1 = rect.x
+            if ix1 > minlx and ix1 < maxlx then
+                local iy1 = lA * ix1 + lB
+                if iy1 < maxry and iy1 > minry then
+                    interPointArray[#interPointArray + 1] = cc.p(ix1, iy1)
+                end
+            end
+
+            -- 右交点
+            local ix2 = rect.x + rect.width
+            if ix2 > minlx and ix2 < maxlx then
+                local iy2 = lA * ix2 + lB
+                if iy2 < maxry and iy2 > minry then
+                    interPointArray[#interPointArray + 1] = cc.p(ix2, iy2)
+                end
+            end
+
+            -- 下交点
+            local iy3 = rect.y
+            if iy3 > minly and iy3 < maxly then
+                local ix3 = (iy3 - lB) / lA
+                if ix3 < maxrx and ix3 > minrx then
+                    interPointArray[#interPointArray + 1] = cc.p(ix3, iy3)
+                end
+            end
+
+            -- 上交点
+            local iy4 = rect.y + rect.height
+            if iy4 > minly and iy4 < maxly then
+                local ix4 = (iy4 - lB) / lA
+                if ix4 < maxrx and ix4 > minrx then
+                    interPointArray[#interPointArray + 1] = cc.p(ix4, iy4)
+                end
+            end
+
+            if #interPointArray >= 1 then
+                if #interPointArray == 2 then
+                    -- 有交点
+                    local ip1 = interPointArray[1]
+                    local ip2 = interPointArray[2]
+
+                    return true, cc.p((ip1.x + ip2.x) / 2, (ip1.y + ip2.y) / 2)
+                elseif #interPointArray == 1 then
+                    local ip1 = interPointArray[1]
+
+                    return true, ip1
+                end
+            else
+                return false
+            end
+        end
+    end
+
+    return false
+end
+
+-- 获取2个rect交汇矩形中点
+function Util:rectCenterPoint(rect1, rect2)
+    -- 计算被击中点
+    local xTable = {}
+    xTable[#xTable + 1] = rect1.x
+    xTable[#xTable + 1] = rect1.x + rect1.width
+    xTable[#xTable + 1] = rect2.x
+    xTable[#xTable + 1] = rect2.x + rect2.width
+
+    table.sort(xTable, function(x1, x2)
+        return x1 > x2
+    end)
+
+    local yTable = {}
+    yTable[#yTable + 1] = rect1.y
+    yTable[#yTable + 1] = rect1.y + rect1.height
+    yTable[#yTable + 1] = rect2.y
+    yTable[#yTable + 1] = rect2.y + rect2.height
+
+    table.sort(yTable, function(y1, y2)
+        return y1 > y2
+    end)
+
+    return cc.p((xTable[2] + xTable[3]) / 2, (yTable[2] + yTable[3]) / 2)
+end
+
+--检测矩形和圆是否相交
+function Util:rectIntersectsCircle(rect, circleCenter, circleRadius)
+    local circleRect = cc.rect(circleCenter.x - circleRadius, circleCenter.y - circleRadius, circleRadius * 2, circleRadius * 2)
+    if cc.rectIntersectsRect(rect, circleRect) then
+        -- 矩形相关再具体运算
+        local rectCenter = cc.p(rect.x  + rect.width / 2, rect.y + rect.height / 2)
+        local p1, p2 = nil, nil
+
+        if circleCenter.x == rectCenter.x then
+            if circleCenter.y == rectCenter.y then
+                return true
+            end
+
+            p1 = cc.p(circleCenter.x, rect.y)
+            p2 = cc.p(circleCenter.x, rect.y + rect.height)
+        elseif circleCenter.y == rectCenter.y then
+            if circleCenter.x == rectCenter.x then
+                return true
+            end
+
+            p1 = cc.p(rect.x, circleCenter.y)
+            p2 = cc.p(rect.x + rect.width, circleCenter.y)
+        else
+            local a = (circleCenter.y - rectCenter.y) / (circleCenter.x - rectCenter.x)
+            local b = rectCenter.y - a * rectCenter.x
+
+            local tpArray = {}
+            local tp1 = cc.p(rect.x, a * rect.x + b)
+            if tp1.y > rect.y and tp1.y < rect.y + rect.height then
+                tpArray[#tpArray + 1] = tp1
+            end
+            local tp2 = cc.p(rect.x + rect.width, a * (rect.x + rect.width) + b)
+            if tp2.y > rect.y and tp2.y < rect.y + rect.height then
+                tpArray[#tpArray + 1] = tp2
+            end
+            local tp3 = cc.p((rect.y - b) / a, rect.y)
+            if tp3.x > rect.x and tp3.x < rect.x + rect.width then
+                tpArray[#tpArray + 1] = tp3
+            end
+            local tp4 = cc.p(((rect.y + rect.height) - b) / a, rect.y + rect.height)
+            if tp4.x > rect.x and tp4.x < rect.x + rect.width then
+                tpArray[#tpArray + 1] = tp4
+            end
+
+            if #tpArray < 2 then
+                return false
+            end
+
+            p1 = tpArray[1]
+            p2 = tpArray[2]
+        end
+
+        local circleRadiusSQ = circleRadius * circleRadius
+        local calRadiusSQ1 = (p1.x - circleCenter.x) * (p1.x - circleCenter.x) + (p1.y - circleCenter.y) * (p1.y - circleCenter.y)
+        local calRadiusSQ2 = (p2.x - circleCenter.x) * (p2.x - circleCenter.x) + (p2.y - circleCenter.y) * (p2.y - circleCenter.y)
+        
+        if calRadiusSQ1 < circleRadiusSQ or calRadiusSQ2 < circleRadiusSQ then
+            return true
+        else
+            return false
+        end
+    else
+        return false
+    end
+end
+
+function Util:sendXMLHTTPrequrest(method,url,body,callBack)
+    local xhr = cc.XMLHttpRequest:new()
+    xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_STRING
+    xhr:open(method, url) -- 打开链接
+
+    -- 状态改变时调用
+    local function onReadyStateChange()
+    if xhr.readyState == 4 and (xhr.status >= 200 and xhr.status < 207) then
+                local receive = xhr.response 
+                callBack(receive)  
+                xhr:unregisterScriptHandler()        
+    else
+        print("xhr.readyState is:", xhr.readyState, "xhr.status is: ",xhr.status)
+        xhr:unregisterScriptHandler()
+        callBack()
+    end
+    end
+    local content
+    if method == "POST" then
+    local params = {}
+    for key,value in pairs(body) do
+        table.insert(params,key.."="..value)
+    end
+    content = table.concat(params,"&")
+    end
+    xhr:registerScriptHandler(onReadyStateChange)
+    xhr:send(content)
+end
+
 
 return Util
