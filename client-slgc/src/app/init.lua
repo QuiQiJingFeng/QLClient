@@ -39,8 +39,11 @@ game.UIAnimationManager = require("app.common.UIAnimationManager")
 game.UITipManager = require("app.common.UITipManager")
 --音频管理
 game.AudioManager = require("app.common.AudioManager")
---数据管理
+-- 二维码生成工具
+game.Qrencode = require("app.common.Qrencode")
+-- 数据管理
 game.ConfigManager = require("app.configs.ConfigManager")
+
 
 -- 通用UI组件
 -- 重用列表(支持水平、竖直方向)
