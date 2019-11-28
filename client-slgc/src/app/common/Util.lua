@@ -862,30 +862,30 @@ function Util:rectIntersectsCircle(rect, circleCenter, circleRadius)
     end
 end
 
-function Util:sendXMLHTTPrequrest(method,url,body,callBack)
+function Util:sendXMLHTTPrequrest(method, url, body, callBack)
     local xhr = cc.XMLHttpRequest:new()
     xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_STRING
     xhr:open(method, url) -- 打开链接
 
     -- 状态改变时调用
     local function onReadyStateChange()
-    if xhr.readyState == 4 and (xhr.status >= 200 and xhr.status < 207) then
-                local receive = xhr.response 
-                callBack(receive)  
-                xhr:unregisterScriptHandler()        
-    else
-        print("xhr.readyState is:", xhr.readyState, "xhr.status is: ",xhr.status)
-        xhr:unregisterScriptHandler()
-        callBack()
-    end
+        if xhr.readyState == 4 and (xhr.status >= 200 and xhr.status < 207) then
+            local receive = xhr.response
+            callBack(receive)
+            xhr:unregisterScriptHandler()    
+        else
+            print("xhr.readyState is:", xhr.readyState, "xhr.status is: ", xhr.status)
+            xhr:unregisterScriptHandler()
+            callBack()
+        end
     end
     local content
     if method == "POST" then
-    local params = {}
-    for key,value in pairs(body) do
-        table.insert(params,key.."="..value)
-    end
-    content = table.concat(params,"&")
+        local params = {}
+        for key, value in pairs(body) do
+            table.insert(params, key .. "=" .. value)
+        end
+        content = table.concat(params, "&")
     end
     xhr:registerScriptHandler(onReadyStateChange)
     xhr:send(content)
