@@ -90,7 +90,9 @@ function Util:getTimeNow()
     return require("socket").gettime()
 end
 
---获取服务器时间纳秒 <服务器时间为东八区时间>
+--获取服务器时间纳秒
+--当帧率不稳定的时候,Schedule的时间就会出现误差,
+--所以对于需要绝对时间的情况下使用这个
 function Util:getCurrentTime()
     return self:getTimeNow() + (self._timeDiff or 0)
 end
@@ -872,10 +874,16 @@ function Util:rectIntersectsCircle(rect, circleCenter, circleRadius)
     end
 end
 
-function Util:sendXMLHTTPrequrest(method, url, body, callBack)
+--method GET/POST/PUT
+function Util:sendXMLHTTPrequrest(method,headers, url, body, callBack)
+    headers = headers or {}
     local xhr = cc.XMLHttpRequest:new()
     xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_STRING
     xhr:open(method, url) -- 打开链接
+
+    for key, value in pairs(headers) do
+        xhr:setRequestHeader(key, value);
+    end
 
     -- 状态改变时调用
     local function onReadyStateChange()
@@ -901,5 +909,69 @@ function Util:sendXMLHTTPrequrest(method, url, body, callBack)
     xhr:send(content)
 end
 
+--生成二维码
+function Util:generalQrcode(message,callBack)
+    local layer = cc.LayerColor:create(cc.c3b(255,255,255))
+    local size = {width=250,height=250}
+    local scene = cc.Director:getInstance():getRunningScene()
+    scene:addChild(layer)
+
+    local drawNode = cc.DrawNode:create()
+    layer:addChild(drawNode)
+    local ok, tab_or_message = qrencode.qrcode(message)
+    if not ok then
+        error("qrencode failed")
+    else
+        local unit = 5
+        local start = cc.p(0,0)
+        local len = #tab_or_message
+        size.width = len*unit + unit
+        size.height = len*unit + unit
+        for x,row in ipairs(tab_or_message) do
+            for y,value in ipairs(row) do
+                if value > 0 then
+                    local newX = start.x + x * unit
+                    local newY = start.y + y * unit
+                    drawNode:drawPoint(cc.p(newX,newY),unit,cc.c4f(0,0,0,1))
+                end
+            end
+        end
+    end
+
+    layer:setContentSize(size)
+    self:saveNodeToPng(layer,function(path) 
+        layer:removeFromParent()
+        if callBack then
+            callBack(path)
+        end
+    end)
+end
+
+--A~Z 65-90 所以最高支持format为36进制
+--10进制转换目标进制
+function Util:binaryConversion(format,value)
+    assert(format <= 36,"unsupport format too biger")
+    local list = {}
+    repeat
+        local var = value%format
+        if var > 9 then
+            var = string.char(55+var)
+        end
+        table.insert(list,1,var)
+        value = math.floor(value/format)
+    until (value == 0)
+    return table.concat(list,"")
+end
+
+--生成36进制的玩家ID
+function Util:generalUserId(serverId,instanceId)
+    local id = tonumber(serverId .. string.format("%07d",intId))
+    return self:binaryConversion(36,id)
+end
+
+function Util:encodeURL(s)
+    s = string.gsub(s, "([^%w%.%- ])", function(c) return string.format("%%%02X", string.byte(c)) end)
+    return string.gsub(s, " ", "+")
+end
 
 return Util
