@@ -82,22 +82,32 @@ function Util:replaceTextFieldToEditBox(textField)
 end
 
 function Util:setTimeDiff(serverTime)
-    self._timeDiff = serverTime - os.time()
+    self._timeDiff = serverTime - self:getTimeNow()
 end
 
---获取服务器时间<服务器时间为东八区时间>
-function Util:getCurrentTime()
-    return os.time() + (self._timeDiff or 0)
+--utc时间 纳秒
+function Util:getTimeNow()
+    return require("socket").gettime()
 end
+
+--获取服务器时间纳秒 <服务器时间为东八区时间>
+function Util:getCurrentTime()
+    return self:getTimeNow() + (self._timeDiff or 0)
+end
+
+function Util:getCurrentTimeSecond()
+    return self:getCurrentTimeSecond() / 1000
+end
+
 --[[year、month、day、hour、min、sec、yday、wday、isdst]]
 function Util:getDateInfo(time)
-    time = time or self:getCurrentTime()
+    time = time or self:getCurrentTimeSecond()
     return os.date("*t",time)
 end
 
 --返回今天是周几, 周1~周7 分别对应数字
 function Util:getWeekDay()
-    local time = self:getCurrentTime()
+    local time = self:getCurrentTimeSecond()
     local dateInfo = os.date("*t",time)
     local realyDay = dateInfo.wday
     if realyDay == 1 then
@@ -111,7 +121,7 @@ end
 --服务器时间的时分秒
 function Util:getFormatDate(format,time)
     format = format or "%Y-%m-%d %H:%M:%S"
-    time = time or self:getCurrentTime()
+    time = time or self:getCurrentTimeSecond()
     return os.date(format,time)
 end
 
