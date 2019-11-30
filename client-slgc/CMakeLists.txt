@@ -63,7 +63,9 @@ include_directories(
 if(ANDROID)
     # change APP_NAME to the share library name for Android, it's value depend on AndroidManifest.xml
     set(APP_NAME cocos2dlua)
+    list(APPEND GAME_HEADER ${RUNTIME_SRC_ROOT}/Classes/luaprotobuf/pb.h)
     list(APPEND GAME_SOURCE ${RUNTIME_SRC_ROOT}/proj.android/app/jni/hellolua/main.cpp)
+    list(APPEND GAME_SOURCE ${RUNTIME_SRC_ROOT}/Classes/luaprotobuf/pb.c)
 elseif(LINUX)
     list(APPEND GAME_SOURCE ${RUNTIME_SRC_ROOT}/proj.linux/main.cpp)
 elseif(WINDOWS)

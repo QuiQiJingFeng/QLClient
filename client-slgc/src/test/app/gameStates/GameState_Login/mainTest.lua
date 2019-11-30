@@ -3,9 +3,6 @@ local testCases = {}
 testCases[1] = {
     name = "是否支持GPS",
     func = function()
-        for i = 1, 100 do
-            game.LocationService:getInstance():isSupportGps()
-        end
         local ret = game.LocationService:getInstance():isSupportGps()
         -- 0:开启 1:GPS未开启 2:GPS权限未开启
         local CONVERT = {
@@ -35,13 +32,30 @@ testCases[4] = {
     name = "获取GPS位置",
     func = function()
         game.LocationService:getInstance():start(function(obj) 
-            game.UITipManager:getInstance():show("获取到GPS返回定位数据")
-            dump(obj,"[[获取GPS位置]]")
+            game.UITipManager:getInstance():show("单次定位获取到GPS返回定位数据")
+            dump(obj,"单次定位[[获取GPS位置]]")
         end)
     end
 }
 
 testCases[5] = {
+    name = "开启连续定位回调",
+    func = function()
+        game.LocationService:getInstance():startUpdate(function(obj) 
+            game.UITipManager:getInstance():show("连续定位获取到GPS返回定位数据")
+            dump(obj,"连续定位[[获取GPS位置]]")
+        end)
+    end
+}
+
+testCases[6] = {
+    name = "关闭连续定位回调",
+    func = function()
+        game.LocationService:getInstance():stopUpdate()
+    end
+}
+
+testCases[7] = {
     name = "测试lua-protobuf",
     func = function()
         require("test.app.gameStates.GameState_Login.test")

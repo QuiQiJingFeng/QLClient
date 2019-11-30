@@ -1,5 +1,14 @@
 local pb = cocos.pb()
-assert(pb.loadfile("res/pb/test.pb"))
+local content = cc.FileUtils:getInstance():getStringFromFile("res/pb/test.pb")
+--FYD android 文件,如果是在程序包中,assets目录下,那么是无法用io.open打开的,因为文件在assets.zip中
+local writePath = cc.FileUtils:getInstance():getWritablePath()
+local file = io.open(writePath.."test.pb","wb")
+file:write(content)
+file:close()
+local content1 = cc.FileUtils:getInstance():getStringFromFile(writePath.."test.pb")
+assert(content1 == content,"FALSE=>"..tostring(content1))
+release_print("FYD======>",writePath.."test.pb")
+release_print("AAAAAAAAA",pb.loadfile(writePath.."test.pb"))
 
 local person = { -- 我们定义一个addressbook里的 Person 消息
    name = "Alice",

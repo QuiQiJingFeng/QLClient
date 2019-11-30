@@ -10,7 +10,7 @@ function LocationService:getInstance()
 end
 
 function LocationService:ctor()
-    self:initOptions()
+    
 end
 
 --初始化参数
@@ -36,11 +36,57 @@ end
     OpenGps =>// 可选，默认false，设置是否开启Gps定位  
     (boolean)
     NeedAltitude" =>// 可选，默认false，设置定位时是否需要海拔信息，默认不需要，除基础定位版本都可用
-    
 ]]
-function LocationService:initOptions()
+--[[
+    IOS
+    double a = kCLDistanceFilterNone;
+    double b = kCLLocationAccuracyBestForNavigation;
+    double c = kCLLocationAccuracyBest;
+    double d = kCLLocationAccuracyNearestTenMeters;
+    double e = kCLLocationAccuracyHundredMeters;
+    double f = kCLLocationAccuracyKilometer;
+    double y = kCLLocationAccuracyThreeKilometers;
+]]
+local LOCATION_TYPE = {
+    kCLDistanceFilterNone = -1,
+    kCLLocationAccuracyBest = -1,
+    kCLLocationAccuracyBestForNavigation = -2,
+    kCLLocationAccuracyNearestTenMeters = 10,
+    kCLLocationAccuracyHundredMeters = 100,
+    kCLLocationAccuracyKilometer = 1000,
+    kCLLocationAccuracyThreeKilometers = 3000
+}
+
+function LocationService:initOptionsSingle()
     local options = {
-        -- ScanSpan = 1000,
+        NeedAddress = true,
+        NeedLocationDescribe = true,
+        OpenGps = true,
+    }
+    if device.platform == "android" then
+        --android 提交了keystore的sha1所以不需要填写appKey
+        local ok,ret = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","initOptions",{json.encode(options)})
+        assert(ok,ret)
+    elseif device.platform == "ios" then
+        local args = {}
+        args.appKey = "fd9GPF35tqOqmov9Kb0rh19UlOxXwCCm"
+        --//设置位置获取超时时间
+        args.locationTimeout = 30
+        --//设置获取地址信息超时时间
+        args.reGeocodeTimeout = 30
+        args.distanceFilter = LOCATION_TYPE["kCLDistanceFilterNone"]
+        args.desiredAccuracy = LOCATION_TYPE["kCLLocationAccuracyBest"]
+        args.pausesLocationUpdatesAutomatically = false
+        args.allowsBackgroundLocationUpdates = false --要开启后台权限还要在plist里面添加
+        local ok, ret = luaoc.callStaticMethod("BaiduLocationService", "initOptions", args)
+        assert(ok,ret)
+    end
+end
+
+--连续回调参数设置
+function LocationService:initOptionsUpdate()
+    local options = {
+        ScanSpan = 1000, --1秒回调一次
         NeedAddress = true,
         NeedLocationDescribe = true,
         OpenGps = true,
@@ -56,6 +102,13 @@ function LocationService:initOptions()
         args.locationTimeout = 10
         --//设置获取地址信息超时时间
         args.reGeocodeTimeout = 10
+        args.distanceFilter = LOCATION_TYPE["kCLDistanceFilterNone"]
+        --误差10米 定位时间10s左右
+        args.desiredAccuracy = LOCATION_TYPE["kCLLocationAccuracyBest"]
+        --误差百米 定位时间2s左右
+        -- args.desiredAccuracy = LOCATION_TYPE["kCLLocationAccuracyHundredMeters"]
+        args.pausesLocationUpdatesAutomatically = false
+        args.allowsBackgroundLocationUpdates = false --要开启后台权限还要在plist里面添加
         local ok, ret = luaoc.callStaticMethod("BaiduLocationService", "initOptions", args)
         assert(ok,ret)
     end
@@ -68,7 +121,6 @@ function LocationService:isSupportGps()
         assert(ok,ret)
         return ret
     elseif device.platform == "ios" then
-        --ios不需要动态申请权限,所以无需区分1和2
         local ok, ret = luaoc.callStaticMethod("BaiduLocationService", "isSupportGps")
         assert(ok,ret)
         return ret
@@ -97,7 +149,9 @@ function LocationService:jumpEnableLimitGps()
     end
 end
 
+--开始定位
 function LocationService:start(callBack)
+    self:initOptionsSingle()
     if device.platform == "android" then
         local ok,isStart = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","isStart",{},"()Z")
         assert(ok)
@@ -114,6 +168,41 @@ function LocationService:start(callBack)
         args.callBack = handlerFix(self,self.handleProcessLocation,callBack)
         local ok, ret = luaoc.callStaticMethod("BaiduLocationService", "start", args)
         assert(ok,ret)
+    end
+end
+
+--连续定位
+function LocationService:startUpdate(callBack)
+    self:initOptionsUpdate()
+    if device.platform == "android" then
+        local ok,isStart = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","isStart",{},"()Z")
+        assert(ok)
+        if isStart then
+            ok = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","requestLocation",{handlerFix(self,self.handleProcessLocation,callBack)})
+            assert(ok)
+            return
+        else
+            local ok = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","start",{handlerFix(self,self.handleProcessLocation,callBack)})
+            assert(ok)
+        end
+    elseif device.platform == "ios" then
+        local args = {}
+        args.callBack = handlerFix(self,self.handleProcessLocation,callBack)
+        local ok, ret = luaoc.callStaticMethod("BaiduLocationService", "startUpdate", args)
+        assert(ok,ret)
+    end
+end
+
+--stopUpdate
+function LocationService:stopUpdate()
+    if device.platform == "android" then
+        local ok,ret = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","stop")
+        assert(ok,ret)
+        release_print("停止连续回调成功")
+    elseif device.platform == "ios" then
+        local ok, ret = luaoc.callStaticMethod("BaiduLocationService", "stopUpdate")
+        assert(ok,ret)
+        release_print("停止连续回调成功")
     end
 end
 
@@ -151,7 +240,12 @@ function LocationService:handleProcessLocation(callBack,result)
             callBack(map)
         end
     elseif device.platform == "ios" then
-        callBack(result)
+        if result.errcode then
+            release_print("LocationService:code=",tostring(result.errcode)," message = ",result.descript)
+        else
+            callBack(result)
+        end
+        
     end
 end
 
