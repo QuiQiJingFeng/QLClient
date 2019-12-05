@@ -48,7 +48,7 @@ CHANNEL_CONFIG = [
     }
 ]
 # 更最新包的时候,如果baseVersion比本地版本号大,说明要先更新全量包,在更新增量包
-def generalInfo(info,assetsInfo):
+def generalInfo(targetDir,info,assetsInfo):
     VERSION = info["version"]
     URL = info["host"]
     VERSION_INFO = {
@@ -71,10 +71,10 @@ def generalInfo(info,assetsInfo):
         "engineVersion": "3.15.1"
     }
     # 生成热更的版本号列表
-    with open("version.manifest", 'w') as f:
+    with open(targetDir+"/version.manifest", 'w') as f:
         json.dump(VERSION_INFO, f, indent=4, sort_keys=True)
     # 生成资源MD5列表
-    with open("project.manifest", 'w') as f:
+    with open(targetDir+"/project.manifest", 'w') as f:
         json.dump(ASSETS_INFO, f, indent=4, sort_keys=True)
 
 
@@ -133,11 +133,10 @@ def makePacakge(selectId,inputPath,outputPath):
     Util.encryptFolder(srcDir, targetDir, info["xxteKey"], info["xxteaSign"],['*.lua'])
     print u"src文件夹拷贝成功"
 
-    assetsInfo = Util.getSpecialFolderMD5List(targetDir)
-    generalInfo(info,assetsInfo)
-    print u"热更文件生成成功"
-    Util.zipFolder(targetDir,"pacakge.zip")
+    assetsInfo = Util.zipFolderEx(targetDir)
+    generalInfo(outDir,info,assetsInfo)
     print u"zip压缩成功"
+    print u"热更文件生成成功"
 
     shutil.rmtree(targetDir)
     print u"临时文件夹删除成功"

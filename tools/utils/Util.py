@@ -418,7 +418,7 @@ class Util:
 
 
     @staticmethod
-    def zipFolderEx(rootDir, includes=['*.lua'],excludes=[]):
+    def zipFolderEx(rootDir, includes=['*.*'],excludes=[]):
         originDir = Util.getCurWorkDirectory()
         #切换到目标上一级目录
         Util.changeWorkDirectory(rootDir + "/../")
