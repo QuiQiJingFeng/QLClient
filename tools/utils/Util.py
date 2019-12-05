@@ -389,7 +389,7 @@ class Util:
     # @return md5 所以要通过计算原始文件 来生成MD5,避免两次生成的MD5只不一样
     
     @staticmethod
-    def zipFolder(rootDir, fileName, includes=[],excludes=[]):
+    def zipFolder(rootDir, fileName, includes=["*.*"],excludes=[]):
         originDir = Util.getCurWorkDirectory()
         #切换到目标上一级目录
         Util.changeWorkDirectory(rootDir + "/../")
@@ -415,6 +415,38 @@ class Util:
                     md5.update(s)
         Util.changeWorkDirectory(originDir)
         return md5.hexdigest()
+
+
+    @staticmethod
+    def zipFolder2(rootDir, includes=["*.*"],excludes=[]):
+        originDir = Util.getCurWorkDirectory()
+        #切换到目标上一级目录
+        Util.changeWorkDirectory(rootDir + "/../")
+        baseName = Util.getBaseName(rootDir)
+        
+        assets = {}
+        # 遍历文件夹
+        for root, dirs, files in os.walk(baseName, topdown=True):
+            dirs[:] = [d for d in dirs if d not in excludes]
+            # 文件夹排序
+            dirs.sort()
+            # 文件排序
+            files.sort()
+            md5 = hashlib.md5()
+            # 创建zip文件
+            zf = zipfile.ZipFile(root + ".zip", "w", zipfile.ZIP_DEFLATED)
+            # 添加初始目录
+            zf.write(root + "/")
+            # 筛选指定文件 并添加到zip文件中
+            for pat in includes:
+                for f in fnmatch.filter(files, pat):
+                    filePath = os.path.join(root, f)
+                    s = Util.getStringFromFile(filePath,'rb')
+                    zf.writestr(filePath, s)
+                    md5.update(s)
+            assets[root + ".zip"] = md5.hexdigest()
+        Util.changeWorkDirectory(originDir)
+        return assets
 
     ######################################################################
     #######################################################################
@@ -481,3 +513,58 @@ class Util:
                 return None
 
         return dic_to_lua_str(jsonObj)
+    
+    #Util.splitFile("client-gongsheFinal.zip","client-gongsheFinal",1024 * 1024)
+    @staticmethod
+    def splitFile(srcpath,despath,chunksize = 1024):
+            'split the files into chunks, and save them into despath'
+            if not os.path.exists(despath):
+                os.mkdir(despath)
+            chunknum = 0
+            inputfile = open(srcpath, 'rb') #rb 读二进制文件
+            try:
+                while 1:
+                    chunk = inputfile.read(chunksize)
+                    if not chunk: #文件块是空的
+                        break
+                    chunknum += 1
+                    filename = os.path.join(despath, ("part--%04d" % chunknum))
+                    fileobj = open(filename, 'wb')
+                    fileobj.write(chunk)
+            except IOError:
+                print "read file error\n"
+                raise IOError
+            finally:
+                inputfile.close()
+            return chunknum
+
+    #Util.mergeFile("client-gongsheFinal","./client-gongsheFinal.zip")
+    @staticmethod
+    def mergeFile(srcpath,despath):
+		'将src路径下的所有文件块合并，并存储到des路径下。'
+		if not os.path.exists(srcpath):
+			print "srcpath doesn't exists, you need a srcpath"
+			raise IOError
+		files = os.listdir(srcpath)
+		with open(despath, 'wb') as output:
+			for eachfile in files:
+				filepath = os.path.join(srcpath, eachfile)
+				with open(filepath, 'rb') as infile:
+					data = infile.read()
+					output.write(data)
+
+    #获取指定目录下所有文件的md5码并写入文件
+    @staticmethod
+    def getSpecialFolderMD5List(specialDir):
+        baseName = Util.getBaseName(specialDir)
+        Util.changeWorkDirectory(specialDir + "/../")
+        assets = {}
+        for root, dirs, files in os.walk(baseName, topdown=True):
+            for f in files:
+                sourcePath = os.path.join(root, f)
+                file = open(sourcePath, 'rb')
+                s = file.read()  
+                file.close()
+                md5 = Util.getHash(s)
+                assets[sourcePath] = md5
+        return assets
