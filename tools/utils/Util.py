@@ -418,7 +418,7 @@ class Util:
 
 
     @staticmethod
-    def zipFolder2(rootDir, includes=["*.*"],excludes=[]):
+    def zipFolderEx(rootDir, includes=['*.lua'],excludes=[]):
         originDir = Util.getCurWorkDirectory()
         #切换到目标上一级目录
         Util.changeWorkDirectory(rootDir + "/../")
@@ -434,7 +434,9 @@ class Util:
             files.sort()
             md5 = hashlib.md5()
             # 创建zip文件
-            zf = zipfile.ZipFile(root + ".zip", "w", zipfile.ZIP_DEFLATED)
+            zfileName = root.replace("/","_")
+            zfileName = zfileName.replace("\\\\","_") + ".zip"
+            zf = zipfile.ZipFile(zfileName, "w", zipfile.ZIP_DEFLATED)
             # 添加初始目录
             zf.write(root + "/")
             # 筛选指定文件 并添加到zip文件中
@@ -444,7 +446,7 @@ class Util:
                     s = Util.getStringFromFile(filePath,'rb')
                     zf.writestr(filePath, s)
                     md5.update(s)
-            assets[root + ".zip"] = md5.hexdigest()
+            assets[zfileName] = md5.hexdigest()
         Util.changeWorkDirectory(originDir)
         return assets
 
