@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import oss2
 from os.path import *
 import time
 import json
@@ -571,3 +572,32 @@ class Util:
                 md5 = Util.getHash(s)
                 assets[sourcePath] = md5
         return assets
+    
+    #上传热更包到OSS
+    #https://github.com/aliyun/aliyun-oss-python-sdk
+    @staticmethod
+    def uploadHotPacakge(pacakgeDir,version):
+        def uploadFile(path):
+            accessKey = 'LTAI7X831y2ygKTf'
+            accessSecret = 'kyhihlZhrneTp856smDukaBEbY2foU'
+            endpoint = 'oss-cn-hongkong.aliyuncs.com'
+            bucketName = 'lsjgame'
+            auth = oss2.Auth(accessKey, accessSecret)
+            bucket = oss2.Bucket(auth, endpoint, bucketName)
+            bucket.put_object(path, Util.getStringFromFile(path,'rb'),{'Connection': 'close',})
+        Util.changeWorkDirectory(pacakgeDir)
+        uploadFile("project.manifest")
+        uploadFile("version.manifest")
+        for root, dirs, files in os.walk(version, topdown=True):
+            # 文件夹排序
+            dirs.sort()
+            # 文件排序
+            files.sort()
+            print '[upload hotpacakge start]'
+            for f in files:
+                filePath = os.path.join(root, f)
+                filePath = filePath.replace('\\',"/")
+                print filePath + ' uploading...'
+                uploadFile(filePath)
+                
+        print "total upload finish"

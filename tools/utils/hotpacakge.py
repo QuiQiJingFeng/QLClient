@@ -9,7 +9,7 @@ CHANNEL_CONFIG = [
     {
         "name" : "zh-CN",
         "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
-        "version" : "1.0.1",
+        "version" : "1.0.3",
         "baseVersion" : "1.0.0",
         "xxteKey" : "10cc4fdee2fcd047",
         "xxteaSign" : "gclR3cu9"
@@ -140,7 +140,6 @@ def makePacakge(selectId,inputPath,outputPath):
 
     shutil.rmtree(targetDir)
     print u"临时文件夹删除成功"
-    window.destroy()
 
 def btnExportClick():
     selectId = int(selectVar.get())
@@ -155,6 +154,12 @@ def btnExportClick():
     Util.writeStringToFile("export.db",json_str)
     makePacakge(selectId,inputPath,outputPath)
 
+def btnUploadClick():
+    workDir = localStoryge["outputPath"]
+    info = CHANNEL_CONFIG[localStoryge["selectId"]]
+    Util.uploadHotPacakge(workDir, info["version"])
+
 b = Button(window, text='导出',command=btnExportClick).pack()
+c = Button(window, text='上传',command=btnUploadClick).pack()
 
 window.mainloop()
