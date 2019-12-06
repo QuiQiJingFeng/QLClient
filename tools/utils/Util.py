@@ -435,7 +435,8 @@ class Util:
             md5 = hashlib.md5()
             # 创建zip文件
             zfileName = root.replace("/","_")
-            zfileName = zfileName.replace("\\\\","_") + ".zip"
+            zfileName = zfileName.replace("\\","_")
+            zfileName = zfileName + ".zip"
             zf = zipfile.ZipFile(zfileName, "w", zipfile.ZIP_DEFLATED)
             # 添加初始目录
             zf.write(root + "/")

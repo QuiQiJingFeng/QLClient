@@ -134,7 +134,7 @@ def makePacakge(selectId,inputPath,outputPath):
     print u"src文件夹拷贝成功"
 
     assetsInfo = Util.zipFolderEx(targetDir)
-    generalInfo(outDir,info,assetsInfo)
+    generalInfo(outputPath,info,assetsInfo)
     print u"zip压缩成功"
     print u"热更文件生成成功"
 
