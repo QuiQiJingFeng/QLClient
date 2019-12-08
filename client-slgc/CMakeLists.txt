@@ -54,6 +54,7 @@ set(GAME_SOURCE ${RUNTIME_SRC_ROOT}/Classes/AppDelegate.cpp)
 # sources need to compile info, include dirs and source files
 include_directories(
         ${RUNTIME_SRC_ROOT}/Classes
+        ${RUNTIME_SRC_ROOT}/Classes/common
         ${COCOS2DX_ROOT_PATH}/cocos/scripting/lua-bindings/auto
         ${COCOS2DX_ROOT_PATH}/cocos/scripting/lua-bindings/manual
         ${COCOS2DX_ROOT_PATH}/external/lua/luajit/include
@@ -63,9 +64,24 @@ include_directories(
 if(ANDROID)
     # change APP_NAME to the share library name for Android, it's value depend on AndroidManifest.xml
     set(APP_NAME cocos2dlua)
-    list(APPEND GAME_HEADER ${RUNTIME_SRC_ROOT}/Classes/luaprotobuf/pb.h)
-    list(APPEND GAME_SOURCE ${RUNTIME_SRC_ROOT}/proj.android/app/jni/hellolua/main.cpp)
-    list(APPEND GAME_SOURCE ${RUNTIME_SRC_ROOT}/Classes/luaprotobuf/pb.c)
+    list(APPEND GAME_HEADER 
+        ${RUNTIME_SRC_ROOT}/Classes/luaprotobuf/pb.h
+        ${RUNTIME_SRC_ROOT}/Classes/common/FValue.h
+        ${RUNTIME_SRC_ROOT}/Classes/common/FYDC.h
+        ${RUNTIME_SRC_ROOT}/Classes/common/FYDHeaders.h
+        ${RUNTIME_SRC_ROOT}/Classes/common/JSONManager.h
+        ${RUNTIME_SRC_ROOT}/Classes/common/LuaCBridge.h
+        ${RUNTIME_SRC_ROOT}/Classes/common/Utils.h
+    )
+    list(APPEND GAME_SOURCE 
+        ${RUNTIME_SRC_ROOT}/proj.android/app/jni/hellolua/main.cpp
+        ${RUNTIME_SRC_ROOT}/Classes/luaprotobuf/pb.c
+        ${RUNTIME_SRC_ROOT}/Classes/common/FValue.cpp
+        ${RUNTIME_SRC_ROOT}/Classes/common/FYDC.cpp
+        ${RUNTIME_SRC_ROOT}/Classes/common/JSONManager.cpp
+        ${RUNTIME_SRC_ROOT}/Classes/common/LuaCBridge.cpp
+        ${RUNTIME_SRC_ROOT}/Classes/common/Utils.cpp
+    )
 elseif(LINUX)
     list(APPEND GAME_SOURCE ${RUNTIME_SRC_ROOT}/proj.linux/main.cpp)
 elseif(WINDOWS)
