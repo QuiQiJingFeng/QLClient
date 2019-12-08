@@ -1,10 +1,15 @@
+#!/usr/bin/python
 # -*- encoding=utf8 -*-
 import os
 import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 from Tkinter import *
 from Util import Util
 import json
 import shutil
+
+Util.changeWorkDirectory(os.path.split(os.path.realpath(__file__))[0])
 
 CHANNEL_CONFIG = [
     {
@@ -88,9 +93,10 @@ if Util.isExist("export.db"):
 	content = Util.getStringFromFile("export.db")
 	localStoryge = json.loads(content)
 
-def makePacakge(selectId,inputPath,outDir):
+
+def makePackage(selectId,inputPath,outDir):
     info = CHANNEL_CONFIG[selectId]
-    print '当前渠道信息'
+    print u'当前渠道信息'
     print info
 
     srcDir = inputPath + "/src"
@@ -98,10 +104,10 @@ def makePacakge(selectId,inputPath,outDir):
     if(not os.path.exists(outDir)):  
         os.makedirs(outDir)
     else:
-        print "清理旧的数据"
+        print u"清理旧的数据"
         shutil.rmtree(outDir)
 
-    targetDir = outDir + "/pacakge"
+    targetDir = outDir + "/package"
     #将资源目录拷贝到指定目录
     shutil.copytree(resDir,targetDir + "/res/")
     print u"res文件夹拷贝成功"
@@ -128,6 +134,5 @@ elif inputPath == "":
 elif selectId < 0:
     raise RuntimeError(u'渠道错误')
 
-makePacakge(selectId,inputPath,outputPath)
 
-
+makePackage(selectId,inputPath,outputPath)
