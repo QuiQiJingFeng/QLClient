@@ -74,4 +74,5 @@ game.Languege = require("app.languege.zh_CN")
 
 
 --公共服务类
-game.LocationService = require("app.services.LocationService")
+game.BaiduLocationService = require("app.services.BaiduLocationService")
+game.GVoiceService = require("app.services.GVoiceService")

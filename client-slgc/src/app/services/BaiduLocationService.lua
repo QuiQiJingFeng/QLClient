@@ -1,15 +1,15 @@
-local LocationService = class("LocationService")
+local BaiduLocationService = class("BaiduLocationService")
 
 local _instance = nil
-function LocationService:getInstance()
+function BaiduLocationService:getInstance()
     if not _instance then
-        _instance = LocationService.new()
+        _instance = BaiduLocationService.new()
     end
 
     return _instance
 end
 
-function LocationService:ctor()
+function BaiduLocationService:ctor()
     
 end
 
@@ -57,7 +57,7 @@ local LOCATION_TYPE = {
     kCLLocationAccuracyThreeKilometers = 3000
 }
 
-function LocationService:initOptionsSingle()
+function BaiduLocationService:initOptionsSingle()
     local options = {
         NeedAddress = true,
         NeedLocationDescribe = true,
@@ -84,7 +84,7 @@ function LocationService:initOptionsSingle()
 end
 
 --连续回调参数设置
-function LocationService:initOptionsUpdate()
+function BaiduLocationService:initOptionsUpdate()
     local options = {
         ScanSpan = 1000, --1秒回调一次
         NeedAddress = true,
@@ -115,7 +115,7 @@ function LocationService:initOptionsUpdate()
 end
 
 --code 0:开启 1:GPS未开启 2:GPS权限未开启
-function LocationService:isSupportGps()
+function BaiduLocationService:isSupportGps()
     if device.platform == "android" then
         local ok,ret = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","isSupportGps",{},"()I")
         assert(ok,ret)
@@ -128,7 +128,7 @@ function LocationService:isSupportGps()
 end
 
 --跳转到开启GPS的面板
-function LocationService:jumpEnableGps()
+function BaiduLocationService:jumpEnableGps()
     if device.platform == "android" then
         local ok,ret = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","jumpEnableGps")
         assert(ok,ret)
@@ -139,7 +139,7 @@ function LocationService:jumpEnableGps()
 end
 
 --动态申请GPS权限
-function LocationService:jumpEnableLimitGps()
+function BaiduLocationService:jumpEnableLimitGps()
     if device.platform == "android" then
         local ok,ret = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","jumpEnableLimitGps")
         assert(ok,ret)
@@ -150,7 +150,7 @@ function LocationService:jumpEnableLimitGps()
 end
 
 --开始定位
-function LocationService:start(callBack)
+function BaiduLocationService:start(callBack)
     self:initOptionsSingle()
     if device.platform == "android" then
         local ok,isStart = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","isStart",{},"()Z")
@@ -172,7 +172,7 @@ function LocationService:start(callBack)
 end
 
 --连续定位
-function LocationService:startUpdate(callBack)
+function BaiduLocationService:startUpdate(callBack)
     self:initOptionsUpdate()
     if device.platform == "android" then
         local ok,isStart = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","isStart",{},"()Z")
@@ -194,7 +194,7 @@ function LocationService:startUpdate(callBack)
 end
 
 --stopUpdate
-function LocationService:stopUpdate()
+function BaiduLocationService:stopUpdate()
     if device.platform == "android" then
         local ok,ret = luaj.callStaticMethod("com/mengya/game/BaiduLocationService","stop")
         assert(ok,ret)
@@ -229,19 +229,19 @@ local RESULT_CODE = {
 --     "latitude"  = 37.793197631836
 --     "longitude" = 37.793197631836
 -- }
-function LocationService:handleProcessLocation(callBack,result)
+function BaiduLocationService:handleProcessLocation(callBack,result)
     if device.platform == "android" then
         local map = json.decode(result)
         local resultType = map.locType
         local str = RESULT_CODE[resultType] or 'AK验证失败，请按照说明文档重新申请AK。'
-        release_print("LocationService:code=",tostring(resultType)," message = ",str)
+        release_print("BaiduLocationService:code=",tostring(resultType)," message = ",str)
 
         if resultType == 61 or resultType == 161 then
             callBack(map)
         end
     elseif device.platform == "ios" then
         if result.errcode then
-            release_print("LocationService:code=",tostring(result.errcode)," message = ",result.descript)
+            release_print("BaiduLocationService:code=",tostring(result.errcode)," message = ",result.descript)
         else
             callBack(result)
         end
@@ -249,4 +249,4 @@ function LocationService:handleProcessLocation(callBack,result)
     end
 end
 
-return LocationService
+return BaiduLocationService
