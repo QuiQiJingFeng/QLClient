@@ -601,3 +601,30 @@ class Util:
                 uploadFile(filePath)
                 
         print "total upload finish"
+
+    #指定目录上传文件
+    @staticmethod
+    def uploadSpecailFolder(pacakgeDir):
+        def uploadFile(path):
+            accessKey = 'LTAI7X831y2ygKTf'
+            accessSecret = 'kyhihlZhrneTp856smDukaBEbY2foU'
+            endpoint = 'oss-cn-hongkong.aliyuncs.com'
+            bucketName = 'lsjgame'
+            auth = oss2.Auth(accessKey, accessSecret)
+            bucket = oss2.Bucket(auth, endpoint, bucketName)
+            bucket.put_object(path, Util.getStringFromFile(path,'rb'),{'Connection': 'close',})
+        
+        baseName = Util.getBaseName(pacakgeDir)
+        Util.changeWorkDirectory(pacakgeDir + "/../")
+        for root, dirs, files in os.walk(baseName, topdown=True):
+            # 文件夹排序
+            dirs.sort()
+            # 文件排序
+            files.sort()
+            print '[upload hotpacakge start]'
+            for f in files:
+                filePath = os.path.join(root, f)
+                filePath = filePath.replace('\\',"/")
+                print filePath + ' uploading...'
+                uploadFile(filePath)
+        print "total upload finish"
