@@ -574,7 +574,7 @@ class Util:
     #上传热更包到OSS
     #https://github.com/aliyun/aliyun-oss-python-sdk
     @staticmethod
-    def uploadHotPacakge(pacakgeDir,version):
+    def uploadHotPackage(packageDir,version):
         def uploadFile(path):
             accessKey = 'LTAI7X831y2ygKTf'
             accessSecret = 'kyhihlZhrneTp856smDukaBEbY2foU'
@@ -583,7 +583,7 @@ class Util:
             auth = oss2.Auth(accessKey, accessSecret)
             bucket = oss2.Bucket(auth, endpoint, bucketName)
             bucket.put_object(path, Util.getStringFromFile(path,'rb'),{'Connection': 'close',})
-        Util.changeWorkDirectory(pacakgeDir)
+        Util.changeWorkDirectory(packageDir)
         uploadFile("project.manifest")
         uploadFile("version.manifest")
         for root, dirs, files in os.walk(version, topdown=True):
@@ -591,7 +591,7 @@ class Util:
             dirs.sort()
             # 文件排序
             files.sort()
-            print '[upload hotpacakge start]'
+            print '[upload hotpackage start]'
             for f in files:
                 filePath = os.path.join(root, f)
                 filePath = filePath.replace('\\',"/")
@@ -602,7 +602,7 @@ class Util:
 
     #指定目录上传文件
     @staticmethod
-    def uploadSpecailFolder(pacakgeDir):
+    def uploadSpecailFolder(packageDir):
         def uploadFile(path):
             accessKey = 'LTAI7X831y2ygKTf'
             accessSecret = 'kyhihlZhrneTp856smDukaBEbY2foU'
@@ -612,14 +612,14 @@ class Util:
             bucket = oss2.Bucket(auth, endpoint, bucketName)
             bucket.put_object(path, Util.getStringFromFile(path,'rb'),{'Connection': 'close',})
         
-        baseName = Util.getBaseName(pacakgeDir)
-        Util.changeWorkDirectory(pacakgeDir + "/../")
+        baseName = Util.getBaseName(packageDir)
+        Util.changeWorkDirectory(packageDir + "/../")
         for root, dirs, files in os.walk(baseName, topdown=True):
             # 文件夹排序
             dirs.sort()
             # 文件排序
             files.sort()
-            print '[upload hotpacakge start]'
+            print '[upload hotpackage start]'
             for f in files:
                 filePath = os.path.join(root, f)
                 filePath = filePath.replace('\\',"/")
