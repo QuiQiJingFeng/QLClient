@@ -89,8 +89,8 @@ localStoryge = {
     "inputPath":"",
     "outputPath":""
 }
-if Util.isExist("export.db"):
-	content = Util.getStringFromFile("export.db")
+if Util.isExist("config.json"):
+	content = Util.getStringFromFile("config.json")
 	localStoryge = json.loads(content)
 
 
