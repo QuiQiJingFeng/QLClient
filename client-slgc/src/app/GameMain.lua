@@ -42,6 +42,17 @@ end
 function GameMain:init()
     game.AudioManager.getInstance():playMusic("sound/BGM/bgm.mp3", true)
     display.runScene(self)
+
+    if device.platform == "android" then
+        self.touchLayer = display.newLayer()
+        self.touchLayer:addNodeEventListener(cc.KEYPAD_EVENT, function(event)
+            if event.key == "back" then  
+                luaj.callStaticMethod("com/mengya/game", "checkExitGame")
+            end
+        end)
+        self.touchLayer:setKeypadEnabled(true)
+        self:addChild(self.touchLayer)
+    end 
 end
 
 function GameMain:dispose()
