@@ -22,6 +22,8 @@ end
 
 --网络
 game.NetWork = require("app.network.Connection").new()
+game.HeartBeatPacketHandler = require("app.network.HeartBeatPacketHandler").new()
+
 --输出类
 game.Logger = require("app.comon.Logger")
 -- 工具类
