@@ -14,6 +14,7 @@ local CONNECTING_TIMEOUT = 5
 local DISCONNECT_REASON = {
     UNKOWN = 0,   --未知原因
     CONNECT_TIME_OUT = 1,   --连接超时
+    PROTO_TIMEOUT = 2,          --协议超时
 }
 -- 数据包头长度
 local HEADER_SIZE = 2
@@ -96,6 +97,27 @@ function Connection:closeSchedule()
     end
 end
 
+function Connection:_checkTimeout()
+    for _, content in pairs(self._sendMap) do
+        if luasocket.gettime() > content.timeOutPoint then
+            local requestName,requestMessage
+            for k,v in pairs(content) do
+                if k ~= "session_id" then
+                    requestName = k
+                    requestMessage = v
+                end
+            end
+
+            local tip = string.format("[Request timeout], request name is %s", requestName)
+            Logger.error(tip)
+            game.UITipManager:getInstance():show(tip)
+            return true
+        end
+    end
+
+    return false
+end
+
 function Connection:onUpdate()
     --检测连接超时
     if self:equalState(NETSTATE.CONNECTING) and luasocket.gettime() - self._connectTime > CONNECTING_TIMEOUT then
@@ -103,6 +125,11 @@ function Connection:onUpdate()
         return
     end
     
+    if self:_checkTimeout() then
+        self:disconnect(DISCONNECT_REASON.PROTO_TIMEOUT)
+       return
+    end
+
     local arr = {self._socket}
     local recvt, sendt, status = luasocket.select(arr, self:equalState(NETSTATE.CONNECTING) and arr or nil, 0)
     if self:equalState(NETSTATE.CONNECTING) then
@@ -222,7 +249,7 @@ function Connection:send(key,dataContent,ignoreSession)
             return self:disconnect(DISCONNECT_REASON.UNKOWN)
         end
         if sessionId then
-            self._sendMap[sessionId] = { content = content, outTime = luasocket.gettime() + CONNECTING_TIMEOUT}
+            self._sendMap[sessionId] = { content = content, timeOutPoint = luasocket.gettime() + CONNECTING_TIMEOUT}
         end
     end
 end
