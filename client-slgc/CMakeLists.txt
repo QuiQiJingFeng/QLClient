@@ -55,6 +55,9 @@ set(GAME_SOURCE ${RUNTIME_SRC_ROOT}/Classes/AppDelegate.cpp)
 include_directories(
         ${RUNTIME_SRC_ROOT}/Classes
         ${RUNTIME_SRC_ROOT}/Classes/common
+        ${RUNTIME_SRC_ROOT}/Classes/bit
+        ${RUNTIME_SRC_ROOT}/Classes/md5
+        ${RUNTIME_SRC_ROOT}/Classes/crypt
         ${COCOS2DX_ROOT_PATH}/cocos/scripting/lua-bindings/auto
         ${COCOS2DX_ROOT_PATH}/cocos/scripting/lua-bindings/manual
         ${COCOS2DX_ROOT_PATH}/external/lua/luajit/include
@@ -72,6 +75,7 @@ if(ANDROID)
         ${RUNTIME_SRC_ROOT}/Classes/common/JSONManager.h
         ${RUNTIME_SRC_ROOT}/Classes/common/LuaCBridge.h
         ${RUNTIME_SRC_ROOT}/Classes/common/Utils.h
+        ${RUNTIME_SRC_ROOT}/Classes/md5/md5.h
     )
     list(APPEND GAME_SOURCE 
         ${RUNTIME_SRC_ROOT}/proj.android/app/jni/hellolua/main.cpp
@@ -81,6 +85,12 @@ if(ANDROID)
         ${RUNTIME_SRC_ROOT}/Classes/common/JSONManager.cpp
         ${RUNTIME_SRC_ROOT}/Classes/common/LuaCBridge.cpp
         ${RUNTIME_SRC_ROOT}/Classes/common/Utils.cpp
+
+        ${RUNTIME_SRC_ROOT}/Classes/bit/bit.c
+        ${RUNTIME_SRC_ROOT}/Classes/crypt/lsha1.c
+        ${RUNTIME_SRC_ROOT}/Classes/crypt/lua-crypt.c
+        ${RUNTIME_SRC_ROOT}/Classes/md5/md5.c
+        ${RUNTIME_SRC_ROOT}/Classes/md5/md5lib.c
     )
 elseif(LINUX)
     list(APPEND GAME_SOURCE ${RUNTIME_SRC_ROOT}/proj.linux/main.cpp)

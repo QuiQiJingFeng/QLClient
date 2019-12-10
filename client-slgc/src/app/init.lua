@@ -20,10 +20,6 @@ cc.exports.import = function(filePath)
     return require(path)
 end
 
---网络
-game.NetWork = require("app.network.Connection").new()
-game.HeartBeatPacketHandler = require("app.network.HeartBeatPacketHandler").new()
-
 --输出类
 game.Logger = require("app.common.Logger")
 -- 工具类
@@ -49,6 +45,10 @@ game.AudioManager = require("app.common.AudioManager")
 game.Qrencode = require("app.common.Qrencode")
 -- 数据管理
 game.ConfigManager = require("app.configs.ConfigManager")
+
+--网络
+game.NetWork = require("app.network.Connection").new()
+game.HeartBeatPacketHandler = require("app.network.HeartBeatPacketHandler").new()
 
 
 -- 通用UI组件

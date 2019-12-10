@@ -13,7 +13,6 @@ end
  
 
 function EventCenter:dispatch(eventName,...)
-    eventName = string.upper(tostring(eventName))
     assert(__listeners[eventName],"not register event "..eventName)
  
     for handle, listener in pairs(__listeners[eventName]) do

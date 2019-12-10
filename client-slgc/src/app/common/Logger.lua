@@ -32,8 +32,8 @@ local function _print(level, format, ...)
 	local args = {...}
 	format = #args == 0 and format or string.format(format, ...)
 
-    local s, ms = math.modf(kod.util.Time.now() / 1);
-    local _msg = string.format("[%s.%03d-%d-%s] %s", os.date("%X", kod.util.Time.now()),
+    local s, ms = math.modf(os.time() / 1);
+    local _msg = string.format("[%s.%03d-%d-%s] %s", os.date("%X", os.time()),
         math.modf(ms * 1000 / 1), cc.Director:getInstance():getTotalFrames(), levelStr, format)
     -- buglyLog(levelValue,levelStr, string.gsub(_msg, "%%", "_"))
     release_print(_msg);

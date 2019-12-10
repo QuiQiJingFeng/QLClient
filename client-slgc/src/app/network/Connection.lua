@@ -2,7 +2,7 @@ local luasocket = require "socket"
 local crypt = require "crypt"
 local bit = require "bit"
 local protobuf = cocos.pb()
-local Connection = {}
+local Connection = class("Connection")
 local NETSTATE = {
 	--未连接状态
 	UN_CONNECTED = 0,
@@ -26,6 +26,7 @@ function Connection:ctor()
     local pbPath = cc.FileUtils:getInstance():fullPathForFilename("pb/protocol.pb")
     assert(protobuf.loadfile(pbPath))
     self._sessionId = 0
+    self._sendMap = {}
 end
 
 function Connection:isIPV6(host)
@@ -41,10 +42,10 @@ end
 --47.52.99.120:8888
 function Connection:connect(adress)
     Logger.debug("Connection:connect")
-    local iter = string.gmatch(adress,"(%d+):(%d+)")
-    self._host = iter()
-    self._port = iter()  
-
+    local iter = string.gmatch(adress,"(.+):(.+)")
+    local host,port = iter()
+    self._host = host
+    self._port = tonumber(port)
     if self:isIPV6(self._host) then
     	self._socket = luasocket.tcp6()
     else
@@ -72,14 +73,18 @@ function Connection:updateState(state,reason)
     if self._netState == state then
         return
     end
-    
     self._netState = state
+    print("netState = ",state)
     if NETSTATE.CONNECTING == state then
         self._connectTime = luasocket.gettime()
         self:openSchedule()
     elseif NETSTATE.UN_CONNECTED == state then
         self:closeSchedule()
         game.EventCenter:dispatch("EVENT_CONNECTION_LOST")
+    end
+
+    if NETSTATE.VERIFYPASS == state then
+        game.EventCenter:dispatch("EVENT_CONNECTION_VERIFYPASS")
     end
 end
 
@@ -156,7 +161,7 @@ function Connection:onUpdate()
             end
             local data = self:unpackData()
             if data then
-                local content, err = protobuf.decode2("S2C", data)
+                local content, err = protobuf.decode("S2C", data)
                 if err then
                     return Logger.error("encode Protobuf Error: %s", err)
                 end
@@ -195,9 +200,8 @@ function Connection:processHandShake(responseMessage)
     local reqMessage = {}
     reqMessage["v1"] = crypt.base64encode(crypt.dhexchange(self._clientkey))
     reqMessage["v2"] = crypt.base64encode(crypt.hmac64(self._challenge, secret))
-
     --发送回应包
-    self:send("handshake",reqMessage)
+    self:send("handshake",reqMessage,true)
     self._secret = secret
     self:updateState(NETSTATE.VERIFYPASS)
 end
@@ -222,7 +226,9 @@ function Connection:unpackData()
 end
 
 function Connection:send(key,dataContent,ignoreSession)
-    if not (self:equalState(NETSTATE.CONNECTED) and self:equalState(NETSTATE.VERIFYPASS)) then
+    if  not (self:equalState(NETSTATE.CONNECTED) or self:equalState(NETSTATE.VERIFYPASS)) then
+        print("netState ==:::::",self._netState)
+        assert(false)
         return Logger.warn("network state not connected")
     end
     local sessionId
@@ -254,6 +260,7 @@ function Connection:send(key,dataContent,ignoreSession)
             return self:disconnect(DISCONNECT_REASON.UNKOWN)
         end
         if sessionId then
+            print("sessionId =",sessionId, " luasocket.gettime() = ",luasocket.gettime())
             self._sendMap[sessionId] = { content = content, timeOutPoint = luasocket.gettime() + CONNECTING_TIMEOUT}
         end
     end

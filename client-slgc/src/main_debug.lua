@@ -33,12 +33,7 @@ local function main()
         cc.Director:getInstance():setDisplayStats(true)
     end
     cc.Director:getInstance():setAnimationInterval(1/60)
-    local testCase = require("test.init")
     require("app.GameMain").create()
-    game.Util:scheduleUpdate(function() 
-        testCase:run()
-        return true
-    end,1)
 end
 
 local status, msg = xpcall(main, __G__TRACKBACK__)

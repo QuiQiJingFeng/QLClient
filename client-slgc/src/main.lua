@@ -3,10 +3,11 @@ fileUtils:setPopupNotify(false)
 local searchPaths = {
     "src",
     "res",
+    "src/test",
     "res/ui",
     "res/ui/art",
     "res/ui/csb",
-    "src/test"
+    
 }
 local downloadPath = fileUtils:getWritablePath() .. "package/"
 for i = 1, #searchPaths do
