@@ -62,4 +62,18 @@ testCases[7] = {
     end
 }
 
+testCases[8] = {
+    name = "测试登陆",
+    func = function()
+        game.EventCenter:on("EVENT_CONNECTION_VERIFYPASS",function() 
+            print("connect success")
+            game.NetWork:send("login",{user_id = 10001,token="226729048d7752f63dc2afc0ada1be116c513382"},true)
+        end)
+        game.EventCenter:on("login",function(responseMessage) 
+            dump(responseMessage,"FYD=====")
+        end)
+        game.NetWork:connect("192.168.0.101:8888")
+    end
+}
+
 return testCases

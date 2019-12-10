@@ -44,14 +44,14 @@ function GameMain:init()
     display.runScene(self)
 
     if device.platform == "android" then
-        self.touchLayer = display.newLayer()
-        self.touchLayer:addNodeEventListener(cc.KEYPAD_EVENT, function(event)
-            if event.key == "back" then  
-                luaj.callStaticMethod("com/mengya/game", "checkExitGame")
-            end
-        end)
-        self.touchLayer:setKeypadEnabled(true)
-        self:addChild(self.touchLayer)
+        -- self.touchLayer = display.newLayer()
+        -- self.touchLayer:addTouchEventListener(cc.KEYPAD_EVENT, function(event)
+        --     if event.key == "back" then  
+        --         luaj.callStaticMethod("com/mengya/game", "checkExitGame")
+        --     end
+        -- end)
+        -- self.touchLayer:setKeypadEnabled(true)
+        -- self:addChild(self.touchLayer)
     end 
 end
 

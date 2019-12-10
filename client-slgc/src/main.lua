@@ -1,13 +1,12 @@
 local fileUtils = cc.FileUtils:getInstance()
 fileUtils:setPopupNotify(false)
 local searchPaths = {
+    "src/test",
     "src",
     "res",
-    "src/test",
     "res/ui",
     "res/ui/art",
     "res/ui/csb",
-    
 }
 local downloadPath = fileUtils:getWritablePath() .. "package/"
 for i = 1, #searchPaths do
@@ -15,7 +14,6 @@ for i = 1, #searchPaths do
 	searchPaths[i] = downloadPath .. searchPaths[i]
 end
 searchPaths[#searchPaths] = downloadPath
-
 fileUtils:setSearchPaths(searchPaths)
 -- 全局异常处理, 捕获的异常传递bugly
 __G__TRACKBACK__ = function(msg)

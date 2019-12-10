@@ -6,8 +6,7 @@ local UITipManager = game.UITipManager
 local UIManager = game.UIManager
 local GameFSM = game.GameFSM
 function UILogin:ctor()
-    game.EventCenter:on("EVENT_CONNECTION_VERIFYPASS",handler(self,self._onConnectionVerifyPass))
-    game.EventCenter:on("login",handler(self,self._onLogin))
+
 end
 
 function UILogin:init()
@@ -57,19 +56,7 @@ function UILogin:_onBtnWechatLoginClick()
     if not self._cbxAgree:isSelected() then
         return UITipManager:getInstance():show("请查阅用户协议")
     end
-    -- GameFSM:getInstance():enterState("GameState_Lobby")
-
-    
-    game.NetWork:connect("127.0.0.1:8888")
-end
-
-function UILogin:_onConnectionVerifyPass()
-    print("connect success")
-    game.NetWork:send("login",{user_id = 10001,token="226729048d7752f63dc2afc0ada1be116c513382"},true)
-end
-
-function UILogin:_onLogin(responseMessage)
-    dump(responseMessage,"FYD=====")
+    GameFSM:getInstance():enterState("GameState_Lobby")
 end
 
 function UILogin:onHide()
