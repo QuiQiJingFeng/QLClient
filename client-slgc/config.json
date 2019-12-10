@@ -4,7 +4,7 @@
        "isWindowTop": false,
        "name": "mahjong",
        "width": 800,
-       "height": 480,
+       "height": 400,
        "entry": "main.lua",
        "consolePort": 6050,
        "uploadPort": 6060

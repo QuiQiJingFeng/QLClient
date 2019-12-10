@@ -25,7 +25,7 @@ game.NetWork = require("app.network.Connection").new()
 game.HeartBeatPacketHandler = require("app.network.HeartBeatPacketHandler").new()
 
 --输出类
-game.Logger = require("app.comon.Logger")
+game.Logger = require("app.common.Logger")
 -- 工具类
 game.Util = require("app.common.Util")
 -- 事件中心

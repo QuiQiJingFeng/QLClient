@@ -210,20 +210,21 @@ function UIManager:createMaskLayer(ui)
         local mask = ccui.Layout:create()
         mask:setBackGroundColorType(ccui.LayoutBackGroundColorType.solid)
         mask:setBackGroundColor(cc.c3b(0, 0, 0))
-        mask:setContentSize(cc.size(display.width, display.height))
+        local widthDesigned = CC_DESIGN_RESOLUTION.width
+        local heightDesigned = CC_DESIGN_RESOLUTION.height
+        mask:setContentSize(cc.size(widthDesigned, heightDesigned))
         mask:setBackGroundImageScale9Enabled(true)
         mask:setName(maskName)
         mask:setOpacity(178)
- 
-
-        local offset = cc.p(CC_DESIGN_RESOLUTION.screen.offsetPoint().x, CC_DESIGN_RESOLUTION.screen.offsetPoint().y)
-        offset.x = offset.x - CC_DESIGN_RESOLUTION.screen._safeAreaOffset_x
-        mask:setPosition(cc.p(0,0))
+        mask:setAnchorPoint(cc.p(0.5,0.5))
+        mask:setPosition(cc.p(widthDesigned/2,heightDesigned/2))
+        
         local contentSize = mask:getContentSize()
-        if contentSize.width / contentSize.height > display.width / display.height then
-            mask:setScale(display.height / contentSize.height)
+        local width, height = display.width, display.height
+        if contentSize.width / contentSize.height > width / height then
+            mask:setScale(height / contentSize.height)
         else
-            mask:setScale(display.width / contentSize.width)
+            mask:setScale(width / contentSize.width)
         end
 
         -- 设置遮罩的点击事件

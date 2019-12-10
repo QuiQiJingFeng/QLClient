@@ -75,7 +75,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="imgViewBean" ActionTag="-1082933994" Tag="246" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="744.8224" RightMargin="226.1776" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="114" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="114" Scale9OriginY="15" Scale9Width="8" Scale9Height="10" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="imgViewBean" ActionTag="-1082933994" UserData="right" Tag="246" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="744.8224" RightMargin="226.1776" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="114" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="114" Scale9OriginY="15" Scale9Width="8" Scale9Height="10" ctype="ImageViewObjectData">
                 <Size X="165.0000" Y="45.0000" />
                 <Children>
                   <AbstractNodeData Name="btnAddBean" ActionTag="-519006102" Tag="196" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="113.2000" RightMargin="-12.2000" TopMargin="-9.5000" BottomMargin="-9.5000" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="34" Scale9Height="42" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -121,7 +121,7 @@
                 <PreSize X="0.1452" Y="0.4500" />
                 <FileData Type="Normal" Path="art/main/Icon_addhbc_main.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ImageViewGold" ActionTag="-1615323432" Tag="243" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="925.5599" RightMargin="45.4401" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="116" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="116" Scale9OriginY="15" Scale9Width="6" Scale9Height="10" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="ImageViewGold" ActionTag="-1615323432" UserData="right" Tag="243" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="925.5599" RightMargin="45.4401" TopMargin="19.5000" BottomMargin="35.5000" TouchEnable="True" Scale9Enable="True" LeftEage="116" RightEage="30" TopEage="15" BottomEage="20" Scale9OriginX="116" Scale9OriginY="15" Scale9Width="6" Scale9Height="10" ctype="ImageViewObjectData">
                 <Size X="165.0000" Y="45.0000" />
                 <Children>
                   <AbstractNodeData Name="Icon" ActionTag="-152610333" Tag="2307" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="-9.5000" RightMargin="122.5000" TopMargin="-3.5000" BottomMargin="-3.5000" LeftEage="17" RightEage="17" TopEage="17" BottomEage="17" Scale9OriginX="17" Scale9OriginY="17" Scale9Width="18" Scale9Height="18" ctype="ImageViewObjectData">

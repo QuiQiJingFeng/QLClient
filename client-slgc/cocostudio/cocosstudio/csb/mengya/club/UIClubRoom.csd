@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="art/main/img_bg2_main.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="panelClubTop" CanEdit="False" ActionTag="-753651450" UserData="top,width-scale" Tag="1482" IconVisible="False" PositionPercentYEnabled="True" BottomMargin="540.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="190" RightEage="111" TopEage="29" BottomEage="27" Scale9OriginX="190" Scale9OriginY="29" Scale9Width="835" Scale9Height="44" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelClubTop" ActionTag="-753651450" UserData="top,width-scale" Tag="1482" IconVisible="False" PositionPercentYEnabled="True" BottomMargin="540.0000" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="190" RightEage="111" TopEage="29" BottomEage="27" Scale9OriginX="190" Scale9OriginY="29" Scale9Width="835" Scale9Height="44" ctype="PanelObjectData">
             <Size X="1136.0000" Y="100.0000" />
             <Children>
               <AbstractNodeData Name="panelClubInfo" CanEdit="False" ActionTag="237764967" Tag="1483" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="150.0000" RightMargin="686.0000" TopMargin="3.0000" BottomMargin="19.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="236" Scale9Height="48" ctype="PanelObjectData">
@@ -145,127 +145,6 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="listRight" CanEdit="False" ActionTag="-1907670826" Tag="1519" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="1123.5314" RightMargin="-466.5314" TopMargin="-87.0922" BottomMargin="102.0922" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ItemMargin="5" VerticalType="Align_VerticalCenter" ctype="ListViewObjectData">
-                <Size X="479.0000" Y="85.0000" />
-                <Children>
-                  <AbstractNodeData Name="btnManager" ActionTag="147397089" Tag="1501" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" RightMargin="409.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="70.0000" Y="74.0000" />
-                    <Children>
-                      <AbstractNodeData Name="imgRed" ActionTag="-1831837025" Tag="1502" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-5.0000" RightMargin="49.0000" TopMargin="11.0000" BottomMargin="37.0000" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="10" Scale9Height="10" ctype="ImageViewObjectData">
-                        <Size X="26.0000" Y="26.0000" />
-                        <AnchorPoint />
-                        <Position X="-5.0000" Y="37.0000" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.0714" Y="0.5000" />
-                        <PreSize X="0.3714" Y="0.3514" />
-                        <FileData Type="Normal" Path="art/img/Img_red.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="35.0000" Y="42.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0731" Y="0.5000" />
-                    <PreSize X="0.1461" Y="0.8706" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="art/club/btn_gl_club.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="art/club/btn_gl_club.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="btnMember" ActionTag="217244950" ZOrder="1" Tag="1497" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="75.0000" RightMargin="334.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="70.0000" Y="74.0000" />
-                    <Children>
-                      <AbstractNodeData Name="imgRed" ActionTag="899371982" Tag="1498" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-5.0000" RightMargin="49.0000" TopMargin="11.0000" BottomMargin="37.0000" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="10" Scale9Height="10" ctype="ImageViewObjectData">
-                        <Size X="26.0000" Y="26.0000" />
-                        <AnchorPoint />
-                        <Position X="-5.0000" Y="37.0000" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.0714" Y="0.5000" />
-                        <PreSize X="0.3714" Y="0.3514" />
-                        <FileData Type="Normal" Path="art/img/Img_red.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="110.0000" Y="42.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2296" Y="0.5000" />
-                    <PreSize X="0.1461" Y="0.8706" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="art/club/btn_cy.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="art/club/btn_cy_club.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="btnHistory" ActionTag="-829656003" ZOrder="2" Tag="1499" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="150.0000" RightMargin="259.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="70.0000" Y="74.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="185.0000" Y="42.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3862" Y="0.5000" />
-                    <PreSize X="0.1461" Y="0.8706" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="art/club/btn_zj_club.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="art/club/btn_zj_club.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="btnEmail" ActionTag="-644986320" ZOrder="3" Tag="1503" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="225.0000" RightMargin="184.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="70.0000" Y="74.0000" />
-                    <Children>
-                      <AbstractNodeData Name="imgRed" ActionTag="-852015914" Tag="1504" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-5.0000" RightMargin="49.0000" TopMargin="11.0000" BottomMargin="37.0000" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="10" Scale9Height="10" ctype="ImageViewObjectData">
-                        <Size X="26.0000" Y="26.0000" />
-                        <AnchorPoint />
-                        <Position X="-5.0000" Y="37.0000" />
-                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                        <CColor A="255" R="255" G="255" B="255" />
-                        <PrePosition X="-0.0714" Y="0.5000" />
-                        <PreSize X="0.3714" Y="0.3514" />
-                        <FileData Type="Normal" Path="art/img/Img_red.png" Plist="" />
-                      </AbstractNodeData>
-                    </Children>
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="260.0000" Y="42.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5428" Y="0.5000" />
-                    <PreSize X="0.1461" Y="0.8706" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="art/club/btn_xx_club.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="art/club/btn_xx_club.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="btnDataStatistics" ActionTag="2071256695" ZOrder="4" Tag="1505" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="300.0000" RightMargin="109.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="70.0000" Y="74.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="335.0000" Y="42.5000" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6994" Y="0.5000" />
-                    <PreSize X="0.1461" Y="0.8706" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="art/club/btn_ph_club.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="art/club/btn_ph_club.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint />
-                <Position X="1123.5314" Y="102.0922" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9890" Y="1.0209" />
-                <PreSize X="0.4217" Y="0.8500" />
-                <SingleColor A="255" R="150" G="150" B="255" />
-                <FirstColor A="255" R="150" G="150" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
               <AbstractNodeData Name="btnBack" ActionTag="-363177156" Tag="1518" IconVisible="False" PositionPercentYEnabled="True" RightMargin="985.0000" BottomMargin="13.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="121" Scale9Height="65" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="151.0000" Y="87.0000" />
                 <AnchorPoint ScaleY="1.0000" />
@@ -294,7 +173,128 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="panelNotice" ActionTag="-190792515" Tag="1526" IconVisible="False" LeftMargin="44.0011" RightMargin="894.9989" TopMargin="117.9995" BottomMargin="86.0005" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="65" RightEage="65" TopEage="171" BottomEage="171" Scale9OriginX="65" Scale9OriginY="171" Scale9Width="67" Scale9Height="178" ctype="PanelObjectData">
+          <AbstractNodeData Name="listRight" ActionTag="-1907670826" UserData="right" Tag="1519" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="1133.1722" RightMargin="-476.1722" TopMargin="-83.8693" BottomMargin="638.8693" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ItemMargin="5" VerticalType="Align_VerticalCenter" ctype="ListViewObjectData">
+            <Size X="479.0000" Y="85.0000" />
+            <Children>
+              <AbstractNodeData Name="btnManager" ActionTag="147397089" Tag="1501" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" RightMargin="409.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="70.0000" Y="74.0000" />
+                <Children>
+                  <AbstractNodeData Name="imgRed" ActionTag="-1831837025" Tag="1502" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-5.0000" RightMargin="49.0000" TopMargin="11.0000" BottomMargin="37.0000" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="10" Scale9Height="10" ctype="ImageViewObjectData">
+                    <Size X="26.0000" Y="26.0000" />
+                    <AnchorPoint />
+                    <Position X="-5.0000" Y="37.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="-0.0714" Y="0.5000" />
+                    <PreSize X="0.3714" Y="0.3514" />
+                    <FileData Type="Normal" Path="art/img/Img_red.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="35.0000" Y="42.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0731" Y="0.5000" />
+                <PreSize X="0.1461" Y="0.8706" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="art/club/btn_gl_club.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/club/btn_gl_club.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="btnMember" ActionTag="217244950" ZOrder="1" Tag="1497" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="75.0000" RightMargin="334.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="70.0000" Y="74.0000" />
+                <Children>
+                  <AbstractNodeData Name="imgRed" ActionTag="899371982" Tag="1498" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-5.0000" RightMargin="49.0000" TopMargin="11.0000" BottomMargin="37.0000" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="10" Scale9Height="10" ctype="ImageViewObjectData">
+                    <Size X="26.0000" Y="26.0000" />
+                    <AnchorPoint />
+                    <Position X="-5.0000" Y="37.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="-0.0714" Y="0.5000" />
+                    <PreSize X="0.3714" Y="0.3514" />
+                    <FileData Type="Normal" Path="art/img/Img_red.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="110.0000" Y="42.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2296" Y="0.5000" />
+                <PreSize X="0.1461" Y="0.8706" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="art/club/btn_cy.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/club/btn_cy_club.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="btnHistory" ActionTag="-829656003" ZOrder="2" Tag="1499" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="150.0000" RightMargin="259.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="70.0000" Y="74.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="185.0000" Y="42.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.3862" Y="0.5000" />
+                <PreSize X="0.1461" Y="0.8706" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="art/club/btn_zj_club.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/club/btn_zj_club.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="btnEmail" ActionTag="-644986320" ZOrder="3" Tag="1503" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="225.0000" RightMargin="184.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="70.0000" Y="74.0000" />
+                <Children>
+                  <AbstractNodeData Name="imgRed" ActionTag="-852015914" Tag="1504" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="-5.0000" RightMargin="49.0000" TopMargin="11.0000" BottomMargin="37.0000" LeftEage="8" RightEage="8" TopEage="8" BottomEage="8" Scale9OriginX="8" Scale9OriginY="8" Scale9Width="10" Scale9Height="10" ctype="ImageViewObjectData">
+                    <Size X="26.0000" Y="26.0000" />
+                    <AnchorPoint />
+                    <Position X="-5.0000" Y="37.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="-0.0714" Y="0.5000" />
+                    <PreSize X="0.3714" Y="0.3514" />
+                    <FileData Type="Normal" Path="art/img/Img_red.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="260.0000" Y="42.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5428" Y="0.5000" />
+                <PreSize X="0.1461" Y="0.8706" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="art/club/btn_xx_club.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/club/btn_xx_club.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="btnDataStatistics" ActionTag="2071256695" ZOrder="4" Tag="1505" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="300.0000" RightMargin="109.0000" TopMargin="5.5000" BottomMargin="5.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="52" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="70.0000" Y="74.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="335.0000" Y="42.5000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.6994" Y="0.5000" />
+                <PreSize X="0.1461" Y="0.8706" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="art/club/btn_ph_club.png" Plist="" />
+                <NormalFileData Type="Normal" Path="art/club/btn_ph_club.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="1133.1722" Y="638.8693" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9975" Y="0.9982" />
+            <PreSize X="0.4217" Y="0.1328" />
+            <SingleColor A="255" R="150" G="150" B="255" />
+            <FirstColor A="255" R="150" G="150" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="panelNotice" ActionTag="-190792515" UserData="left" Tag="1526" IconVisible="False" LeftMargin="44.0011" RightMargin="894.9989" TopMargin="117.9995" BottomMargin="86.0005" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="65" RightEage="65" TopEage="171" BottomEage="171" Scale9OriginX="65" Scale9OriginY="171" Scale9Width="67" Scale9Height="178" ctype="PanelObjectData">
             <Size X="197.0000" Y="436.0000" />
             <Children>
               <AbstractNodeData Name="imgTitle" ActionTag="-2143926312" Tag="1522" IconVisible="False" PositionPercentXEnabled="True" LeftMargin="8.0863" RightMargin="8.9137" TopMargin="9.8118" BottomMargin="391.1882" LeftEage="59" RightEage="59" TopEage="11" BottomEage="11" Scale9OriginX="59" Scale9OriginY="11" Scale9Width="62" Scale9Height="13" ctype="ImageViewObjectData">
@@ -307,7 +307,7 @@
                 <PreSize X="0.9137" Y="0.0803" />
                 <FileData Type="Normal" Path="art/club/img_qyqgg_club.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelContentBg" ActionTag="-2016786453" UserData="left" Tag="1521" IconVisible="False" LeftMargin="9.7065" RightMargin="7.2935" TopMargin="50.3800" BottomMargin="39.6200" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="4" RightEage="4" TopEage="10" BottomEage="10" Scale9OriginX="4" Scale9OriginY="10" Scale9Width="24" Scale9Height="12" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelContentBg" ActionTag="-2016786453" Tag="1521" IconVisible="False" LeftMargin="9.7065" RightMargin="7.2935" TopMargin="50.3800" BottomMargin="39.6200" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="4" RightEage="4" TopEage="10" BottomEage="10" Scale9OriginX="4" Scale9OriginY="10" Scale9Width="24" Scale9Height="12" ctype="PanelObjectData">
                 <Size X="180.0000" Y="346.0000" />
                 <Children>
                   <AbstractNodeData Name="txtClubNotice" ActionTag="-1638903360" Tag="1523" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="8.0443" RightMargin="1.9557" TopMargin="10.2602" BottomMargin="90.7398" IsCustomSize="True" FontSize="20" LabelText="通知,通知。" ShadowOffsetX="0.5000" ShadowOffsetY="-0.5000" ShadowEnabled="True" ctype="TextObjectData">
