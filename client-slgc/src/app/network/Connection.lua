@@ -10,12 +10,15 @@ local NETSTATE = {
     CONNECTED = 2,
     VERIFYPASS = 3, --校验通过
 }
+
 local CONNECTING_TIMEOUT = 5
 local DISCONNECT_REASON = {
     UNKOWN = 0,   --未知原因
     CONNECT_TIME_OUT = 1,   --连接超时
     PROTO_TIMEOUT = 2,          --协议超时
+    HEART_BEAT_TIME_OUT = 3,    --心跳超时
 }
+Connection.DISCONNECT_REASON = DISCONNECT_REASON
 -- 数据包头长度
 local HEADER_SIZE = 2
 
@@ -61,6 +64,7 @@ function Connection:disconnect(reason)
         self._socket:close()
         self._socket = nil
         self:updateState(NETSTATE.UN_CONNECTED,reason)
+        game.EventCenter:dispatch("EVENT_CONNECTION_LOST")
     end
 end
 
@@ -168,6 +172,7 @@ function Connection:onUpdate()
                 end
                 if responseName == "handshake" then
                     self:processHandShake(responseMessage)
+                    game.EventCenter:dispatch("EVENT_CONNECTION_HANDLED")
                 elseif responseName == "heartbeat" then 
                     game.EventCenter:dispatch("EVENT_CONNECTION_HEART")
                 elseif self._sendMap[sessionId] then
