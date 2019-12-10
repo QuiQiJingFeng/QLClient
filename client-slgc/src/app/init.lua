@@ -20,6 +20,10 @@ cc.exports.import = function(filePath)
     return require(path)
 end
 
+--网络
+game.NetWork = require("app.network.Connection").new()
+--输出类
+game.Logger = require("app.comon.Logger")
 -- 工具类
 game.Util = require("app.common.Util")
 -- 事件中心

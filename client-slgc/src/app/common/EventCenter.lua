@@ -1,10 +1,7 @@
 
 local EventCenter = {}
-local EventConfig = require("app.configs.EventConfig")
 local __listeners = {}
 function EventCenter:on(eventName, listener, tag)
-    eventName = string.upper(eventName)
-    assert(EventConfig[eventName],"EVENT NAME NOT REGISTER")
     if __listeners[eventName] == nil then
         __listeners[eventName] = {}
     end

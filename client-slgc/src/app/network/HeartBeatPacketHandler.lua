@@ -7,23 +7,22 @@ local HEART_BEAT_MESSAGE_TYPE  = 0x05
 local HEART_BEAT_MAX_TRY_TIMES = 2  -- 心跳包丢失多少个触发断线
 local HEART_BEAT_TRY_INTERVAL  = 5  -- 每个心跳包检测周期
 
-function HeartBeatPacketHandler:ctor(connection)	
-	self._connection = connection;
-	self._beatheartTask = nil;
+function HeartBeatPacketHandler:ctor()	
+	self._beatheartTask = nil
 		
-	self._connection:addEventListener("EVENT_CONNECTION_CREATED", handler(self, self._onConnectionCreated), self);
-	self._connection:addEventListener("EVENT_CONNECTION_LOST", handler(self, self._onConnectionLost), self);
-	self._connection:addEventListener("EVENT_CONNECTION_RECEIVE_PACKET", handler(self, self._connectionReceivePacket), self);	
+	game.EventCenter:on("EVENT_CONNECTION_CREATED", handler(self, self._onConnectionCreated), self);
+	game.EventCenter:on("EVENT_CONNECTION_LOST", handler(self, self._onConnectionLost), self);
+	game.EventCenter:on("EVENT_CONNECTION_HEART", handler(self, self._connectionReceiveHeartPacket), self);	
 end
 
 function HeartBeatPacketHandler:dispose()
-	self:_endHeartbeatTask();
+	self:_endHeartbeatTask()
 	
-	self._connection:removeEventListenersByTag(self);
+	game.EventCenter:off(self)
 end
 
 function HeartBeatPacketHandler:reset()
-	self:_endHeartbeatTask();
+	self:_endHeartbeatTask()
 end
 
 -- 链接成功的内部回调函数
@@ -37,7 +36,7 @@ function HeartBeatPacketHandler:_onConnectionLost()
 end
 
 -- 收到网络消息
-function HeartBeatPacketHandler:_connectionReceivePacket()
+function HeartBeatPacketHandler:_connectionReceiveHeartPacket()
 	self:_restartHeartbeatTask()
 end
 

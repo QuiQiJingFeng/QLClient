@@ -1,2 +1,0 @@
-7,关联条件,condition,589825->select{589829->enable|589830->enable}&589825->unselect{589829->unenable|589830->unenable}
-8,禁用条件,forbid,[589825->select{589829->select|589829->unenable|589830->select|589830->unenable}&589825->unselect{589829->enable|589830->enable}
