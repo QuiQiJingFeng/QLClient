@@ -4,6 +4,7 @@ import os
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
+
 from Tkinter import *
 from Util import Util
 import json
@@ -11,11 +12,12 @@ import shutil
 
 Util.changeWorkDirectory(os.path.split(os.path.realpath(__file__))[0])
 
+# content = Util.getStringFromFile("channelConfig.json")
 CHANNEL_CONFIG = [
     {
         "name" : "zh-CN",
         "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
-        "version" : "1.0.3",
+        "version" : "1.0.5",
         "baseVersion" : "1.0.0",
         "xxteKey" : "10cc4fdee2fcd047",
         "xxteaSign" : "gclR3cu9"
@@ -53,6 +55,7 @@ CHANNEL_CONFIG = [
         "xxteaSign" : "gclR3cu9"
     }
 ]
+
 # 更最新包的时候,如果baseVersion比本地版本号大,说明要先更新全量包,在更新增量包
 def generalInfo(targetDir,info,assetsInfo):
     VERSION = info["version"]
