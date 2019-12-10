@@ -914,7 +914,7 @@ function Util:generalQrcode(message,callBack)
     local layer = cc.LayerColor:create(cc.c3b(255,255,255))
     local size = {width=250,height=250}
     local scene = cc.Director:getInstance():getRunningScene()
-    scene:addChild(layer)
+    scene:addChild(layer,-1)
 
     local drawNode = cc.DrawNode:create()
     layer:addChild(drawNode)
