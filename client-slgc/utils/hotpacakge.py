@@ -4,39 +4,22 @@ from Tkinter import *
 from Util import Util
 import json
 import shutil
+from AssetSetting import AssetSetting
 
-content = Util.getStringFromFile("channelConfig.json")
-CHANNEL_CONFIG = json.loads(content)
+CHANNEL_CONFIG = AssetSetting.getChanelConfig()
 
 # 更最新包的时候,如果baseVersion比本地版本号大,说明要先更新全量包,在更新增量包
 def generalInfo(targetDir,info,assetsInfo):
-    VERSION = info["version"]
-    URL = info["host"]
-    VERSION_INFO = {
-        "packageUrl": URL,
-        "version": VERSION,
-        "remoteVersionUrl": URL + "version.manifest",
-        "remoteManifestUrl": URL + "project.manifest",
-        "engineVersion": "3.15.1",
-        "baseVersion" : info["baseVersion"]
-    }
-
-    ASSETS_INFO = {
-        "searchPath": [], 
-        "packageUrl": URL+"{0}/".format(VERSION), 
-        "version": VERSION, 
-        "assets": assetsInfo,
-        "remoteVersionUrl": URL + "version.manifest", 
-        "operator": "android", 
-        "remoteManifestUrl": URL + "project.manifest", 
-        "engineVersion": "3.15.1"
-    }
+    version = info["version"]
+    host = info["host"]
+    versionInfo = AssetSetting.getVersionInfo(host,version)
+    assetsInfo = AssetSetting.getAssetInfo(host,version,assetsInfo)
     # 生成热更的版本号列表
     with open(targetDir+"/version.manifest", 'w') as f:
-        json.dump(VERSION_INFO, f, indent=4, sort_keys=True)
+        json.dump(versionInfo, f, indent=4, sort_keys=True)
     # 生成资源MD5列表
     with open(targetDir+"/project.manifest", 'w') as f:
-        json.dump(ASSETS_INFO, f, indent=4, sort_keys=True)
+        json.dump(assetsInfo, f, indent=4, sort_keys=True)
 
 
 localStoryge = {
