@@ -54,32 +54,12 @@ function UILaunch:onShow()
     Util:hide(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
     self._txtBmfState:setString(STATE.CHECK)
     self:setProgress(0)
-
-    self:createAssetsManager()
-    self._assetsManager:update()
-    
-    --[[TEST
-        self._txtBmfState:setString(STATE.UPDATE)
-        Util:show(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
-        local progress = 0
-        local scheduleId
-        scheduleId = Util:scheduleUpdate(function(dt)
-            progress = progress + 1
-            
-            if progress >= 100 then
-                Util:unscheduleUpdate(scheduleId)
-                self._txtBmfState:setString(STATE.FINISH)
-                game.GameFSM.getInstance():enterState("GameState_Login")
-                return true
-            else
-                self:setProgress(progress)
-            end
-        end, 0)
-    --]]
-
-    ---[[test2
-        -- game.GameFSM.getInstance():enterState("GameState_Login")
-    --]]
+    if device.platform == "android" or device.platform == "ios" then
+        self:createAssetsManager()
+        self._assetsManager:update()
+    else
+        game.GameFSM.getInstance():enterState("GameState_Login")
+    end
 end
 
 function UILaunch:onUpdateEvent(event,code)
@@ -141,6 +121,11 @@ function UILaunch:onUpdateEvent(event,code)
 end
 
 function UILaunch:setProgress(percent)
+    if percent >= 100 then
+        self._txtBmfState:setString(STATE.FINISH)
+    else
+        self._txtBmfState:setString(STATE.UPDATE)
+    end
     self._loadingBar:setPercent(percent)
     self._txtBmfValue:setString(string.format("%.1f%%", percent))
     local box = self._loadingBar:getBoundingBox()
