@@ -57,7 +57,7 @@ textVarOutPut.set(localStoryge["outputPath"])
 inputBoxOutPut = Entry(window,width =200,borderwidth=3,textvariable=textVarOutPut)
 inputBoxOutPut.pack()
 
-def makePacakge(selectId,inputPath,outputPath):
+def makePackage(selectId,inputPath,outputPath):
     info = CHANNEL_CONFIG[selectId]
     srcDir = inputPath + "/src"
     resDir = inputPath + "/res"
@@ -67,7 +67,7 @@ def makePacakge(selectId,inputPath,outputPath):
     else:
         print u"该版本号的包已经存在"
         return window.destroy()
-    targetDir = outDir + "/pacakge"
+    targetDir = outDir + "/package"
 
     #将资源目录拷贝到指定目录
     shutil.copytree(resDir,targetDir + "/res/")
@@ -96,7 +96,7 @@ def btnExportClick():
     localStoryge["selectId"] = selectId
     json_str = json.dumps(localStoryge)
     Util.writeStringToFile("export.db",json_str)
-    makePacakge(selectId,inputPath,outputPath)
+    makePackage(selectId,inputPath,outputPath)
 
 def btnUploadClick():
     workDir = localStoryge["outputPath"]

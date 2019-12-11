@@ -39,7 +39,7 @@ end
 function UILaunch:createAssetsManager()
     local storePath = cc.FileUtils:getInstance():getWritablePath() 
     self._storePath = storePath
-    local manifestPath = storePath.."package/project.manifest"
+    local manifestPath = storePath.."project.manifest"
     self._assetsManager = cc.AssetsManagerEx:create(manifestPath, storePath)
     self._assetsManager:retain()
 
@@ -81,6 +81,7 @@ function UILaunch:onUpdateEvent(event,code)
         elseif assetId == cc.AssetsManagerExStatic.MANIFEST_ID then
             Logger.debug('manifest 文件下载成功')
         else
+            Logger.debug('percent %f',percent)
             self:setProgress(percent)
         end
     elseif eventCode == EVENT_CODE.ERROR_DOWNLOAD_MANIFEST or 
@@ -108,12 +109,30 @@ function UILaunch:onUpdateEvent(event,code)
         game.UITipManager:getInstance():dispose()
         --之前所依赖的脚本都必须重新加载
         if eventCode == EVENT_CODE.UPDATE_FINISHED then
+            Logger.debug("UPDATE_FINISHED")
             local moduleNameList = game.loadedNames or {}
+            local skipModle = {
+                ["string"] = true,
+                ["crypt"] = true,
+                ["bit"] = true,
+                ["socket.core"] = true,
+                ["math"] = true,
+                ["socket"] = true,
+            }
             for module_name,_ in pairs(moduleNameList) do
-                package.loaded[module_name] = nil
+                if not skipModle[module_name] then
+                    print("清理module=>",module_name)
+                    package.loaded[module_name] = nil
+                end
             end
+            package.loaded["main"] = nil
+            package.loaded["config"] = nil
+            package.loaded["cocos.init"] = nil
+            package.loaded["app.init"] = nil
+
             require("main")
         else
+            Logger.debug("ALREADY_UP_TO_DATE")
             game.GameFSM.getInstance():enterState("GameState_Login")
         end
     end
@@ -121,6 +140,13 @@ function UILaunch:onUpdateEvent(event,code)
 end
 
 function UILaunch:setProgress(percent)
+    percent = tonumber(string.format("%.1f",percent))
+    if not self._percent or self._percent < percent and self._percent < 100 then
+        self._percent = percent
+    else
+        return
+    end
+    Util:show(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
     if percent >= 100 then
         self._txtBmfState:setString(STATE.FINISH)
     else

@@ -10,35 +10,35 @@ class AssetSetting:
 		config = [
 		    {
 		        "name" : "zh-CN",
-		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
-		        "version" : "1.0.2",
+		        "host" : "https://lsjgame.oss-cn-hongkong.aliyuncs.com/",
+		        "version" : "1.0.1",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
 		    {
 		        "name" : "zh-TW",
-		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
+		        "host" : "https://lsjgame.oss-cn-hongkong.aliyuncs.com/",
 		        "version" : "1.0.1",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
 		    {
 		        "name" : "zh-HK",
-		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
+		        "host" : "https://lsjgame.oss-cn-hongkong.aliyuncs.com/",
 		        "version" : "1.0.1",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
 		    {
 		        "name" : "R2",
-		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
+		        "host" : "https://lsjgame.oss-cn-hongkong.aliyuncs.com/",
 		        "version" : "1.0.1",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
 		    {
 		        "name" : "QIKU",
-		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
+		        "host" : "https://lsjgame.oss-cn-hongkong.aliyuncs.com/",
 		        "version" : "1.0.1",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
