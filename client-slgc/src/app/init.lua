@@ -1,4 +1,13 @@
 cc.exports.game = {}
+
+local loadedNames = {}
+local _require = require
+require = function(path)
+    loadedNames[path] = true
+    return _require(path)
+end
+game.loadedNames = loadedNames
+
 local UIConfig = require("app.configs.UIConfig")
 cc.exports.__extendPath__ = function(filePath)
     --如果是绝对路径直接返回,否则拼接当前插件路径
@@ -19,6 +28,8 @@ cc.exports.import = function(filePath)
     local path = __extendPath__(filePath)
     return require(path)
 end
+
+
 
 --输出类
 game.Logger = require("app.common.Logger")
@@ -45,7 +56,8 @@ game.AudioManager = require("app.common.AudioManager")
 game.Qrencode = require("app.common.Qrencode")
 -- 数据管理
 game.ConfigManager = require("app.configs.ConfigManager")
-
+--弹框管理
+game.UIMessageBoxMgr = require("app.common.UIMessageBoxMgr")
 --网络
 game.NetWork = require("app.network.Connection").new()
 game.HeartBeatPacketHandler = require("app.network.HeartBeatPacketHandler").new()
