@@ -295,9 +295,11 @@ end
 -- 清空当前的所有数据，释放box，instance
 function UIMessageBoxMgr:dispose()
 	self._boxDataStack = {}
-	self._boxIdStack = {}
-	self._box:stopAllActions()
-	self._box:release()
+    self._boxIdStack = {}
+    if self._box then
+        self._box:stopAllActions()
+        self._box:release()
+    end
 	self._box = nil
 	instance = nil
 end

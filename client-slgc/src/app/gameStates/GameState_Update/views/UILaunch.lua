@@ -37,9 +37,9 @@ end
 
 --创建更新器
 function UILaunch:createAssetsManager()
-    local storePath = cc.FileUtils:getInstance():getWritablePath()
+    local storePath = cc.FileUtils:getInstance():getWritablePath() 
     self._storePath = storePath
-    local manifestPath = storePath.."project.manifest"
+    local manifestPath = storePath.."package/project.manifest"
     self._assetsManager = cc.AssetsManagerEx:create(manifestPath, storePath)
     self._assetsManager:retain()
 

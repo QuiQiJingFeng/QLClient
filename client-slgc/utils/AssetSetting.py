@@ -11,7 +11,7 @@ class AssetSetting:
 		    {
 		        "name" : "zh-CN",
 		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
-		        "version" : "1.0.1",
+		        "version" : "1.0.2",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
