@@ -46,7 +46,7 @@ function UILaunch:createAssetsManager()
     --获取本地manifest
     local manifest = self._assetsManager:getLocalManifest()
     self._listener = cc.EventListenerAssetsManagerEx:create(self._assetsManager, handler(self,self.onUpdateEvent))
-    cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(listener, 1)
+    cc.Director:getInstance():getEventDispatcher():addEventListenerWithFixedPriority(self._listener, 1)
     
 end
 

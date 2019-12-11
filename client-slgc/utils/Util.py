@@ -446,7 +446,12 @@ class Util:
                     s = Util.getStringFromFile(filePath,'rb')
                     zf.writestr(filePath, s)
                     md5.update(s)
-            assets[zfileName] = md5.hexdigest()
+            code = md5.hexdigest()
+            entity = {}
+            entity['size'] = Util.getFileSize(zfileName)
+            entity['md5'] = code
+            entity['compressed'] = True
+            assets[zfileName] = entity
         Util.changeWorkDirectory(originDir)
         return assets
 
