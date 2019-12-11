@@ -12,7 +12,6 @@ class AssetSetting:
 		        "name" : "zh-CN",
 		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
 		        "version" : "1.0.5",
-		        "baseVersion" : "1.0.0",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
@@ -20,7 +19,6 @@ class AssetSetting:
 		        "name" : "zh-TW",
 		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
 		        "version" : "1.0.1",
-		        "baseVersion" : "1.0.0",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
@@ -28,7 +26,6 @@ class AssetSetting:
 		        "name" : "zh-HK",
 		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
 		        "version" : "1.0.1",
-		        "baseVersion" : "1.0.0",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
@@ -36,7 +33,6 @@ class AssetSetting:
 		        "name" : "R2",
 		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
 		        "version" : "1.0.1",
-		        "baseVersion" : "1.0.0",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },
@@ -44,7 +40,6 @@ class AssetSetting:
 		        "name" : "QIKU",
 		        "host" : "http://lsjgame.oss-cn-hongkong.aliyuncs.com/HotUpdate/",
 		        "version" : "1.0.1",
-		        "baseVersion" : "1.0.0",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    }
