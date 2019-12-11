@@ -101,7 +101,7 @@ def btnExportClick():
 def btnUploadClick():
     workDir = localStoryge["outputPath"]
     info = CHANNEL_CONFIG[localStoryge["selectId"]]
-    Util.uploadHotPacakge(workDir, info["version"])
+    Util.uploadHotPackage(workDir, info["version"])
 
 b = Button(window, text='导出',command=btnExportClick).pack()
 c = Button(window, text='上传',command=btnUploadClick).pack()
