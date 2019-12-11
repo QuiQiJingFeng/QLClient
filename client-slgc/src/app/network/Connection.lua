@@ -11,7 +11,11 @@ local NETSTATE = {
     VERIFYPASS = 3, --校验通过
 }
 
-local CONNECTING_TIMEOUT = 5
+--连接超时时间
+local CONNECTING_TIMEOUT_TIME = 0.2
+--协议超时时间
+local PROTOCOL_TIMEOUT_TIME = 5
+
 local DISCONNECT_REASON = {
     UNKOWN = 0,   --未知原因
     CONNECT_TIME_OUT = 1,   --连接超时
@@ -74,7 +78,7 @@ function Connection:updateState(state,reason)
         return
     end
     self._netState = state
-    print("netState = ",state)
+    print("netState = ",state," reason = ",reason)
     if NETSTATE.CONNECTING == state then
         self._connectTime = luasocket.gettime()
         self:openSchedule()
@@ -129,7 +133,7 @@ end
 
 function Connection:onUpdate()
     --检测连接超时
-    if self:equalState(NETSTATE.CONNECTING) and luasocket.gettime() - self._connectTime > CONNECTING_TIMEOUT then
+    if self:equalState(NETSTATE.CONNECTING) and luasocket.gettime() - self._connectTime > CONNECTING_TIMEOUT_TIME then
         self:disconnect(DISCONNECT_REASON.CONNECT_TIME_OUT)
         return
     end
@@ -261,7 +265,7 @@ function Connection:send(key,dataContent,ignoreSession)
         end
         if sessionId then
             print("sessionId =",sessionId, " luasocket.gettime() = ",luasocket.gettime())
-            self._sendMap[sessionId] = { content = content, timeOutPoint = luasocket.gettime() + CONNECTING_TIMEOUT}
+            self._sendMap[sessionId] = { content = content, timeOutPoint = luasocket.gettime() + PROTOCOL_TIMEOUT_TIME}
         end
     end
 end
