@@ -26,38 +26,53 @@
             <PreSize X="0.7606" Y="0.6250" />
             <FileData Type="Normal" Path="art/fm/img_logo.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="loadingBar" ActionTag="-679882714" Tag="769" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="118.0000" RightMargin="118.0000" TopMargin="494.9920" BottomMargin="133.0080" ProgressInfo="41" ctype="LoadingBarObjectData">
-            <Size X="900.0000" Y="12.0000" />
-            <AnchorPoint ScaleY="0.5000" />
-            <Position X="118.0000" Y="139.0080" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1039" Y="0.2172" />
-            <PreSize X="0.7923" Y="0.0188" />
-            <ImageFileData Type="Normal" Path="art/fm/img_loadingz_fm.png" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="imgLaunchMark" ActionTag="-885483296" Tag="770" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="377.5584" RightMargin="623.4416" TopMargin="493.0040" BottomMargin="129.9960" LeftEage="46" RightEage="46" TopEage="5" BottomEage="5" Scale9OriginX="46" Scale9OriginY="5" Scale9Width="43" Scale9Height="7" ctype="ImageViewObjectData">
-            <Size X="135.0000" Y="17.0000" />
+          <AbstractNodeData Name="panelLoding" ActionTag="1803004074" Tag="10" IconVisible="False" TopMargin="490.0000" BottomMargin="130.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="1136.0000" Y="20.0000" />
             <Children>
-              <AbstractNodeData Name="Particle_1" ActionTag="-337523561" Tag="771" IconVisible="True" LeftMargin="124.2102" RightMargin="10.7898" TopMargin="8.8459" BottomMargin="8.1541" ctype="ParticleObjectData">
-                <Size X="0.0000" Y="0.0000" />
-                <AnchorPoint />
-                <Position X="124.2102" Y="8.1541" />
-                <Scale ScaleX="0.3000" ScaleY="0.3000" />
+              <AbstractNodeData Name="loadingBar" ActionTag="-679882714" Tag="769" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="118.0304" RightMargin="117.9696" TopMargin="9.6560" BottomMargin="-1.6560" ProgressInfo="100" ctype="LoadingBarObjectData">
+                <Size X="900.0000" Y="12.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="118.0304" Y="4.3440" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9201" Y="0.4797" />
-                <PreSize X="0.0000" Y="0.0000" />
-                <FileData Type="Default" Path="Default/defaultParticle.plist" Plist="" />
-                <BlendFunc Src="775" Dst="1" />
+                <PrePosition X="0.1039" Y="0.2172" />
+                <PreSize X="0.7923" Y="0.6000" />
+                <ImageFileData Type="Normal" Path="art/fm/img_loadingz_fm.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="imgLaunchMark" ActionTag="-885483296" Tag="770" IconVisible="False" PositionPercentYEnabled="True" LeftMargin="377.5584" RightMargin="623.4416" TopMargin="7.1720" BottomMargin="-4.1720" LeftEage="46" RightEage="46" TopEage="5" BottomEage="5" Scale9OriginX="46" Scale9OriginY="5" Scale9Width="43" Scale9Height="7" ctype="ImageViewObjectData">
+                <Size X="135.0000" Y="17.0000" />
+                <Children>
+                  <AbstractNodeData Name="Particle_1" ActionTag="-337523561" Tag="771" IconVisible="True" LeftMargin="124.2102" RightMargin="10.7898" TopMargin="8.8459" BottomMargin="8.1541" ctype="ParticleObjectData">
+                    <Size X="0.0000" Y="0.0000" />
+                    <AnchorPoint />
+                    <Position X="124.2102" Y="8.1541" />
+                    <Scale ScaleX="0.3000" ScaleY="0.3000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.9201" Y="0.4797" />
+                    <PreSize X="0.0000" Y="0.0000" />
+                    <FileData Type="Default" Path="Default/defaultParticle.plist" Plist="" />
+                    <BlendFunc Src="775" Dst="1" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
+                <Position X="512.5584" Y="4.3280" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4512" Y="0.2164" />
+                <PreSize X="0.1188" Y="0.8500" />
+                <FileData Type="Normal" Path="art/fm/img_loadingg.png" Plist="" />
               </AbstractNodeData>
             </Children>
-            <AnchorPoint ScaleX="1.0000" ScaleY="0.5000" />
-            <Position X="512.5584" Y="138.4960" />
+            <AnchorPoint />
+            <Position Y="130.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4512" Y="0.2164" />
-            <PreSize X="0.1188" Y="0.0266" />
-            <FileData Type="Normal" Path="art/fm/img_loadingg.png" Plist="" />
+            <PrePosition Y="0.2031" />
+            <PreSize X="1.0000" Y="0.0313" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
           <AbstractNodeData Name="pannelTips" ActionTag="-661767077" Tag="782" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="118.0000" RightMargin="118.0000" TopMargin="517.6000" BottomMargin="82.4000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="12" Scale9Height="12" ctype="PanelObjectData">
             <Size X="900.0000" Y="40.0000" />

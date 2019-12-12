@@ -129,7 +129,7 @@ function UILaunch:onUpdateEvent(event,code)
             package.loaded["config"] = nil
             package.loaded["cocos.init"] = nil
             package.loaded["app.init"] = nil
-
+            cc.Director:getInstance():getTextureCache():removeAllTextures()
             require("main")
         else
             Logger.debug("ALREADY_UP_TO_DATE")
