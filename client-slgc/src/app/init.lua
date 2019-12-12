@@ -34,7 +34,7 @@ end
 --输出类
 game.Logger = require("app.common.Logger")
 -- 工具类
-game.Util = require("app.common.Util")
+game.Util = require("Util")
 -- 事件中心
 game.EventCenter = require("app.common.EventCenter")
 -- 状态机
