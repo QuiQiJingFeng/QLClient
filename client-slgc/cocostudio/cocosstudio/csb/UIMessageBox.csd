@@ -6,7 +6,7 @@
       <ObjectData Name="MessageBoxPage" Tag="287" ctype="GameLayerObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="Panel_1" Visible="False" ActionTag="2135395068" UserData="background" Tag="2158" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="159" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_1" ActionTag="2135395068" UserData="background" Tag="2158" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="159" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="568.0000" Y="320.0000" />
@@ -22,7 +22,7 @@
           <AbstractNodeData Name="Panel_BG" ActionTag="981033779" Tag="293" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <Children>
-              <AbstractNodeData Name="Panel_Node" ActionTag="-391873791" Tag="295" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="228.0000" RightMargin="228.0000" TopMargin="70.0000" BottomMargin="70.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="140" RightEage="110" TopEage="80" BottomEage="70" Scale9OriginX="140" Scale9OriginY="80" Scale9Width="318" Scale9Height="132" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelContainer" ActionTag="-391873791" Tag="295" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="228.0000" RightMargin="228.0000" TopMargin="70.0000" BottomMargin="70.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Enable="True" LeftEage="140" RightEage="110" TopEage="80" BottomEage="70" Scale9OriginX="140" Scale9OriginY="80" Scale9Width="318" Scale9Height="132" ctype="PanelObjectData">
                 <Size X="680.0000" Y="500.0000" />
                 <Children>
                   <AbstractNodeData Name="forNM" ActionTag="-1589422172" Tag="3722" IconVisible="False" RightMargin="20.0000" BottomMargin="438.0000" Scale9Enable="True" LeftEage="60" RightEage="60" TopEage="20" BottomEage="20" Scale9OriginX="60" Scale9OriginY="20" Scale9Width="5" Scale9Height="22" ctype="ImageViewObjectData">

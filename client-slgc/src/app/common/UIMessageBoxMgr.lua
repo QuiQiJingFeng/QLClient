@@ -1,7 +1,7 @@
 local csbPath = "ui/csb/UIMessageBox.csb"
 local super = game.UIBase
-
-local UIMessageBox = class("UIMessageBox", super, function () return kod.LoadCSBNode(csbPath) end)
+local Util = game.Util
+local UIMessageBox = class("UIMessageBox", super, function () return Util:loadCSBNode(csbPath) end)
 
 function UIMessageBox:ctor()
 	-- 每次弹出都会有个全局唯一id
@@ -32,27 +32,27 @@ end
 
 -- 获取显示大层层级,需要修改默认层级的，覆盖这个函数
 function UIMessageBox:getGradeLayerId()
-	return config.UIConstants.UI_LAYER_ID.Top;
+	return game.UIConstant.UILAYER_LEVEL.TOP
 end
 
 function UIMessageBox:init()
-	self._btnOK  = seekNodeByName(self, "Button_qd_messagebox",  "ccui.Button") -- 左边的按钮
-	self._btnOK_Img = seekNodeByName(self, "BitmapFontLabel_1",  "ccui.TextBMFont") -- 左边的按钮显示的文字
-	self._btnCancel  = seekNodeByName(self, "Button_qx_messagebox",  "ccui.Button") -- 右边按钮
-	self._btnCancel_Img  = seekNodeByName(self, "BitmapFontLabel_1_0",  "ccui.TextBMFont") -- 右边按钮显示的文字
-	self._btnOkSingle = seekNodeByName(self, "Button_qd2_messagebox", "ccui.Button") -- 中间的按钮
-	self._btnOkSingle_Img = seekNodeByName(self, "BitmapFontLabel_1_0_0", "ccui.TextBMFont") -- 中间的按钮显示的文字
-	self._textInfo = seekNodeByName(self, "Text_messagebox", "ccui.Text") -- 内容
-	self._btnClose = seekNodeByName(self, "Button_1", "ccui.Button") --"X"按钮
+	self._btnOK  = Util:seekNodeByName(self, "Button_qd_messagebox",  "ccui.Button") -- 左边的按钮
+	self._btnOK_Img = Util:seekNodeByName(self, "BitmapFontLabel_1",  "ccui.TextBMFont") -- 左边的按钮显示的文字
+	self._btnCancel  = Util:seekNodeByName(self, "Button_qx_messagebox",  "ccui.Button") -- 右边按钮
+	self._btnCancel_Img  = Util:seekNodeByName(self, "BitmapFontLabel_1_0",  "ccui.TextBMFont") -- 右边按钮显示的文字
+	self._btnOkSingle = Util:seekNodeByName(self, "Button_qd2_messagebox", "ccui.Button") -- 中间的按钮
+	self._btnOkSingle_Img = Util:seekNodeByName(self, "BitmapFontLabel_1_0_0", "ccui.TextBMFont") -- 中间的按钮显示的文字
+	self._textInfo = Util:seekNodeByName(self, "Text_messagebox", "ccui.Text") -- 内容
+	self._btnClose = Util:seekNodeByName(self, "Button_1", "ccui.Button") --"X"按钮
 
 	self:_registerCallBack()
 end
 
 function UIMessageBox:_registerCallBack()
-	bindEventCallBack(self._btnOK, handler(self, self.onOK),ccui.TouchEventType.ended);
-	bindEventCallBack(self._btnCancel, handler(self, self.onCancel),ccui.TouchEventType.ended);
-	bindEventCallBack(self._btnOkSingle, handler(self, self.onOK),ccui.TouchEventType.ended);
-	bindEventCallBack(self._btnClose, handler(self, self.onClose), ccui.TouchEventType.ended)
+	Util:bindTouchEvent(self._btnOK, handler(self, self.onOK));
+	Util:bindTouchEvent(self._btnCancel, handler(self, self.onCancel));
+	Util:bindTouchEvent(self._btnOkSingle, handler(self, self.onOK));
+	Util:bindTouchEvent(self._btnClose, handler(self, self.onClose))
 end
 
 function UIMessageBox:_addCallBack(beforeCallback, callback )
@@ -112,18 +112,11 @@ function UIMessageBox:onShow(playAni, strInfo, buttonParams, onOkCallBack, onCan
 		self._textInfo:setTextHorizontalAlignment(textHAlign)
 	end
 
-	self:setLocalZOrder(config.UIConstants.UIZorder + self.getGradeLayerId())
+	self:setLocalZOrder(50 + self.getGradeLayerId())
 	
 	if playAni then
 		-- 弹出动画
-		local node = ccui.Helper:seekNodeByName(self, "Panel_messagebox")
-		node:setScale(0.5)
-		--node:setOpacity(0)
-		node:runAction(cc.Sequence:create(
-			cc.ScaleTo:create(0.06, 1.05),
-			cc.ScaleTo:create(0.08, 1)
-		))
-		--node:runAction(cc.FadeIn:create(0.14))
+		self:playShowAction()
 	end
 end
 
@@ -235,10 +228,9 @@ function UIMessageBoxMgr:show(...)
 		self._box = self:createBox()
 	end
 
-	if #self._boxDataStack == 0 then
-		if nil ~= GameMain:getInstance() then
-			GameMain:getInstance():addChild(self._box);
-		end
+    if #self._boxDataStack == 0 then
+        local scene = cc.Director:getInstance():getRunningScene()
+		scene:addChild(self._box)
 	end
 
 	local args = {...}
@@ -261,7 +253,7 @@ function UIMessageBoxMgr:showAlert(content, horizontalAlign)
 end
 
 function UIMessageBoxMgr:_showUI(playAnim, ...)
-	if Macro.assetTrue(#self._boxDataStack == 0) then
+	if #self._boxDataStack == 0 then
 		return -- 没有数据就无视
 	end
 
@@ -306,7 +298,7 @@ end
 
 -- 当每一个box显示结束后的回调
 function UIMessageBoxMgr:_popBox(box)
-	Macro.assetTrue(self._box ~= box)
+	assert(self._box == box)
 	table.remove( self._boxDataStack, #self._boxDataStack )
 	table.remove( self._boxIdStack, #self._boxIdStack )
 	
