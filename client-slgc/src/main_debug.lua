@@ -36,11 +36,9 @@ local function main()
     -- require("app.GameMain").create()
     --TEST
     local testCase = require("test.init")
-    require("app.GameMain").create()
-    game.Util:scheduleUpdate(function() 
+    require("app.GameMain").create(function() 
         testCase:run()
-        return true
-    end,1)
+    end)
 end
 
 local status, msg = xpcall(main, __G__TRACKBACK__)

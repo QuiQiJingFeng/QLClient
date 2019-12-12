@@ -3509,7 +3509,6 @@
           <PlistInfo Name="mahjong_card.csi" Type="Plist" />
           <PlistInfo Name="mahjong_card_3d_new.csi" Type="Plist" />
           <PlistInfo Name="mahjong_card_classical.csi" Type="Plist" />
-          <File Name="v.txt" />
         </Folder>
         <Folder Name="csb">
           <Folder Name="Activity">
@@ -3991,7 +3990,6 @@
             <Folder Name="common">
               <Project Name="UILack.csd" Type="Layer" />
             </Folder>
-            <Folder Name="guizhou" />
             <Folder Name="guizhoudiy">
               <Project Name="UI_GAME_TYPE_R_ANLONG.csd" Type="Layer" />
               <Project Name="UI_GAME_TYPE_R_ANSHUN.csd" Type="Layer" />
@@ -4434,6 +4432,13 @@
             <Image Name="imgDice.png" />
             <Image Name="imgRotationBg.png" />
           </Folder>
+        </Folder>
+        <Folder Name="uncompress">
+          <Fnt Name="font_Button1.fnt" />
+          <Image Name="img_logo.png" />
+          <Image Name="imgbackground.png" />
+          <PlistParticleFile Name="progress.plist" />
+          <Project Name="UIUcompress.csd" Type="Layer" />
         </Folder>
         <Folder Name="views">
           <Project Name="UIReconnectTip.csd" Type="Layer" />

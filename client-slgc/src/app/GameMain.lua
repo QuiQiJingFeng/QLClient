@@ -6,13 +6,13 @@ local GameMain = class("GameMain",function() return cc.Scene:create() end)
 -- 单例支持
 local _instance = nil
 
-function GameMain.create()
+function GameMain.create(callBack)
     if _instance ~= nil then
         return false
     end
 
     _instance = GameMain.new()
-    _instance:init()
+    _instance:init(callBack)
 end
 
 function GameMain.destroy()
@@ -28,11 +28,11 @@ function GameMain.getInstance()
     return _instance
 end
 
-function GameMain:ctor()
+function GameMain:ctor(callBack)
     -- 注册场景回调
 	self:registerScriptHandler(function(event)
         if "enter" == event then
-            self:onEnter()
+            self:onEnter(callBack)
         elseif "exit" == event then
             self:onExit()
         end
@@ -58,7 +58,10 @@ end
 function GameMain:dispose()
 end
 
-function GameMain:onEnter()
+function GameMain:onEnter(callBack)
+    if callBack then
+        callBack()
+    end
     game.GameFSM:getInstance():enterState("GameState_Splash")
 end
 
