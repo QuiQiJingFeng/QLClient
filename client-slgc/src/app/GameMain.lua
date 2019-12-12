@@ -6,13 +6,13 @@ local GameMain = class("GameMain",function() return cc.Scene:create() end)
 -- 单例支持
 local _instance = nil
 
-function GameMain.create(callBack)
+function GameMain.create()
     if _instance ~= nil then
         return false
     end
 
     _instance = GameMain.new()
-    _instance:init(callBack)
+    _instance:init()
 end
 
 function GameMain.destroy()
@@ -28,11 +28,11 @@ function GameMain.getInstance()
     return _instance
 end
 
-function GameMain:ctor(callBack)
+function GameMain:ctor()
     -- 注册场景回调
 	self:registerScriptHandler(function(event)
         if "enter" == event then
-            self:onEnter(callBack)
+            self:onEnter()
         elseif "exit" == event then
             self:onExit()
         end
@@ -40,28 +40,33 @@ function GameMain:ctor(callBack)
 end
 
 function GameMain:init()
+    require "app.init"
+    local searchPaths = {
+        "src/test",
+        "src",
+        "res",
+        "res/ui",
+        "res/ui/art",
+        "res/ui/csb",
+    }
+    local fileUtils = cc.FileUtils:getInstance()
+    local downloadPath = fileUtils:getWritablePath() .. "package/"
+    for i = 1, #searchPaths do
+    	table.insert(searchPaths, searchPaths[i])
+    	searchPaths[i] = downloadPath .. searchPaths[i]
+    end
+    searchPaths[#searchPaths] = downloadPath
+    fileUtils:setSearchPaths(searchPaths)
+
     game.AudioManager.getInstance():playMusic("sound/BGM/bgm.mp3", true)
     display.runScene(self)
-
-    if device.platform == "android" then
-        -- self.touchLayer = display.newLayer()
-        -- self.touchLayer:addTouchEventListener(cc.KEYPAD_EVENT, function(event)
-        --     if event.key == "back" then  
-        --         luaj.callStaticMethod("com/mengya/game", "checkExitGame")
-        --     end
-        -- end)
-        -- self.touchLayer:setKeypadEnabled(true)
-        -- self:addChild(self.touchLayer)
-    end 
 end
 
 function GameMain:dispose()
 end
 
-function GameMain:onEnter(callBack)
-    if callBack then
-        callBack()
-    end
+function GameMain:onEnter()
+    require("test.init"):run()
     game.GameFSM:getInstance():enterState("GameState_Splash")
 end
 
