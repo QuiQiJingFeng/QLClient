@@ -111,22 +111,22 @@ function UILaunch:onUpdateEvent(event,code)
         if eventCode == EVENT_CODE.UPDATE_FINISHED then
             Logger.debug("UPDATE_FINISHED")
             local moduleNameList = game.loadedNames or {}
-            -- local skipModle = {
-            --     ["string"] = true,
-            --     ["crypt"] = true,
-            --     ["bit"] = true,
-            --     ["socket.core"] = true,
-            --     ["math"] = true,
-            --     ["socket"] = true,
-            -- }
+            local skipModle = {
+                ["string"] = true,
+                ["crypt"] = true,
+                ["bit"] = true,
+                ["socket.core"] = true,
+                ["math"] = true,
+                ["socket"] = true,
+            }
             for moduleName,_ in pairs(moduleNameList) do
-                local fullPath = cc.FileUtils:getInstance():fullPathForFileName(moduleName)
                 --如果没有全路径的话可能是些C++导入的表
-                if fullPath then
+                if not skipModle[moduleName] then
                     print("清理module=>",moduleName)
                     package.loaded[moduleName] = nil
                 end
             end
+            package.loaded["app.GameMain"] = nil
             package.loaded["main"] = nil
             package.loaded["config"] = nil
             package.loaded["cocos.init"] = nil
@@ -142,7 +142,7 @@ function UILaunch:onUpdateEvent(event,code)
 end
 
 function UILaunch:setProgress(percent)
-    percent = tonumber(string.format("%.1f",percent))
+    percent = math.ceil(percent) > 100 and 100 or math.ceil(percent) 
     if not self._percent or self._percent < percent and self._percent < 100 then
         self._percent = percent
     else
@@ -155,7 +155,7 @@ function UILaunch:setProgress(percent)
         self._txtBmfState:setString(STATE.UPDATE)
     end
     self._loadingBar:setPercent(percent)
-    self._txtBmfValue:setString(string.format("%.1f%%", percent))
+    self._txtBmfValue:setString(tostring(percent))
     local box = self._loadingBar:getBoundingBox()
     local posX = box.x + box.width * percent * 0.01
     self._imgLaunchMark:setPositionX(posX)
