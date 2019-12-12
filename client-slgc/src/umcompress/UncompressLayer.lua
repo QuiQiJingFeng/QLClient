@@ -1,26 +1,29 @@
 --------------------------------------------
 -- 资源解压场景
 --------------------------------------------
-local Util = require("app.common.Util")
-local csbPath = "ui/UIUcompress.csb"
+local Util = require("Util")
+local csbPath = "ui/uncompress/UIUcompress.csb"
 local STATE = {
     UPDATE = "资源解压中，请稍后...",
     FINISH = "解压完毕",
     LOAD = "资源加载中...",
 }
-local UncompressLayer = class("UncompressLayer",function() return Util:loadCSBNode(csbPath) end)
 
-function UncompressLayer:ctor()
+local UncompressLayer = class("UncompressLayer",function() 
+    return Util:loadCSBNode(csbPath)
+end)
+
+function UncompressLayer:ctor(callFunc)
     self:registerScriptHandler(function(event)
         if "enter" == event then
-            self:onEnter()
+            self:onEnter(callFunc)
         elseif "exit" == event then
             self:onExit()
         end
     end)
 end
 
-function UncompressLayer:onEnter()
+function UncompressLayer:onEnter(callFunc)
     self._loadingBar = Util:seekNodeByName(self, "loadingBar", "ccui.LoadingBar")
     self._imgLaunchMark = Util:seekNodeByName(self, "imgLaunchMark", "ccui.ImageView")
     self._txtBmfState = Util:seekNodeByName(self,"txtBmfState","ccui.TextBMFont")
@@ -28,39 +31,46 @@ function UncompressLayer:onEnter()
     self:setProgress(0)
 
     Util:scheduleOnce(function() 
-        self:onShow()
+        self:onShow(callFunc)
     end,0)
 end
 
-function UncompressLayer:onShow()
+function UncompressLayer:onShow(callFunc)
     local writePath = cc.FileUtils:getInstance():getWritablePath()
     local projectPath = writePath .. "project.manifest"
     local content = cc.FileUtils:getInstance():getDataFromFile(projectPath)
-    local projectInfo = json.decode(content)
-    local assets = projectInfo.assets
-    local skipAssets = {
-        ["package/package_src.zip"] = true,
-        ["package/package_res_ui_uncompress.zip"] = true
-    }
-    local totalNum = #table.values(assets) - #table.values(skipAssets)
-    local index = 0
-    for fileName, _ in pairs(assets) do
-        local zipPath = "package/" .. fileName
-        if not skipAssets[zipPath] then
-            self:unzipFile(zipPath,writePath)
-            index = index + 1
-            self:setProgress(index/totalNum * 100)
-        end
+    local assets = {}
+    local iter = string.gmatch(content,'([%w_]+).zip')
+    for name in iter do
+        table.insert(assets,name .. ".zip")
     end
 
-    local testCase = require("test.init")
-    require("app.GameMain").create(function() 
-        testCase:run()
-    end)
+    --这几个zip包能保证解压过场动画能够顺利进行
+    local skipAssets = {
+        ["package/package_src.zip"] = true,
+        ["package/package_src_uncompress.zip"] = true,
+        ["package/package_res_ui_uncompress.zip"] = true,
+    }
+    local totalNum = #assets - #table.values(skipAssets)
+    local index = 0
+    for _, fileName in ipairs(assets) do
+        local zipPath = "package/" .. fileName
+        if not skipAssets[zipPath] then
+            if self:unzipFile(zipPath,writePath) then
+                Logger.debug("unzipFile [%s]",zipPath)
+                index = index + 1
+                self:setProgress(index/totalNum * 100)
+            end
+        end
+    end
+    if callFunc then
+        callFunc()
+    end
+    self:removeFromParent()
 end
 
 function UncompressLayer:unzipFile(zipPath,storePath)
-    --call C
+    return FYDC.excute("Utils","unzipFile",zipPath,storePath)
 end
 
 function UncompressLayer:setProgress(percent)
