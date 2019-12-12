@@ -1,6 +1,8 @@
 --------------------------------------------
 -- 游戏总入口, 控制整个游戏生命周期.
 --------------------------------------------
+require "cocos.init"
+require "app.init"
 local GameMain = class("GameMain",function() return cc.Scene:create() end)
 
 -- 单例支持
@@ -40,7 +42,6 @@ function GameMain:ctor()
 end
 
 function GameMain:init()
-    require "app.init"
     local searchPaths = {
         "src/test",
         "src",

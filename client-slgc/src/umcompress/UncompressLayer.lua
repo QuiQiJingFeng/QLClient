@@ -9,25 +9,26 @@ local STATE = {
     LOAD = "资源加载中...",
 }
 
-local UncompressLayer = class("UncompressLayer",function() 
-    return Util:loadCSBNode(csbPath)
-end)
+local UncompressLayer = {}
 
-function UncompressLayer:ctor(callFunc)
-    self:registerScriptHandler(function(event)
+function UncompressLayer.new(callFunc)
+    local layer = Util:loadCSBNode(csbPath)
+    layer:registerScriptHandler(function(event)
         if "enter" == event then
-            self:onEnter(callFunc)
+            UncompressLayer:onEnter(callFunc)
         elseif "exit" == event then
-            self:onExit()
+            UncompressLayer:onExit()
         end
     end)
+    UncompressLayer._layer = layer
+    return layer
 end
 
 function UncompressLayer:onEnter(callFunc)
-    self._loadingBar = Util:seekNodeByName(self, "loadingBar", "ccui.LoadingBar")
-    self._imgLaunchMark = Util:seekNodeByName(self, "imgLaunchMark", "ccui.ImageView")
-    self._txtBmfState = Util:seekNodeByName(self,"txtBmfState","ccui.TextBMFont")
-    self._txtBmfValue = Util:seekNodeByName(self,"txtBmfValue","ccui.TextBMFont")
+    self._loadingBar = Util:seekNodeByName(self._layer, "loadingBar", "ccui.LoadingBar")
+    self._imgLaunchMark = Util:seekNodeByName(self._layer, "imgLaunchMark", "ccui.ImageView")
+    self._txtBmfState = Util:seekNodeByName(self._layer,"txtBmfState","ccui.TextBMFont")
+    self._txtBmfValue = Util:seekNodeByName(self._layer,"txtBmfValue","ccui.TextBMFont")
     self:setProgress(0)
 
     Util:scheduleOnce(function() 
@@ -51,7 +52,11 @@ function UncompressLayer:onShow(callFunc)
         ["package/package_src_uncompress.zip"] = true,
         ["package/package_res_ui_uncompress.zip"] = true,
     }
-    local totalNum = #assets - #table.values(skipAssets)
+    local skipNum = 0
+    for k, v in pairs(skipAssets) do
+        skipNum = skipNum + 1
+    end
+    local totalNum = #assets - skipNum
     local index = 0
     for _, fileName in ipairs(assets) do
         local zipPath = "package/" .. fileName
@@ -66,7 +71,7 @@ function UncompressLayer:onShow(callFunc)
     if callFunc then
         callFunc()
     end
-    self:removeFromParent()
+    self._layer:removeFromParent()
 end
 
 function UncompressLayer:unzipFile(zipPath,storePath)

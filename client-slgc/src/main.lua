@@ -12,7 +12,6 @@ __G__TRACKBACK__ = function(msg)
 end
 
 require "config"
-require "cocos.init"
 local function main()
     math.randomseed(os.time())
     if CC_SHOW_FPS then
