@@ -26,7 +26,6 @@ local function main()
     local callFunc = function()
         require("app.GameMain").create()
     end
-    local a = string.format("%s","asdfads")
     --如果是第一次启动,解密资源
     if not cc.FileUtils:getInstance():isFileExist("test/init.lua") then
         local scene = cc.Scene:create()

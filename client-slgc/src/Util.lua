@@ -1,5 +1,35 @@
 local Util = {}
 
+--为了避免解压之前无法调用这些方法,将这些方法放到Util里面
+----------------------------BEGIN--------------------
+function string.split(input, delimiter)
+    input = tostring(input)
+    delimiter = tostring(delimiter)
+    if (delimiter=='') then return false end
+    local pos,arr = 0, {}
+    -- for each divider found
+    for st,sp in function() return string.find(input, delimiter, pos, true) end do
+        table.insert(arr, string.sub(input, pos, st - 1))
+        pos = sp + 1
+    end
+    table.insert(arr, string.sub(input, pos))
+    return arr
+end
+
+function handler(obj, method)
+    return function(...)
+        return method(obj, ...)
+    end
+end
+
+function cc.p(_x,_y)
+    if nil == _y then
+         return { x = _x.x, y = _x.y }
+    else
+         return { x = _x, y = _y }
+    end
+end
+----------------------------END--------------------
 -- 通过名字查找子控件
 function Util:seekNodeByName(view, name, property)
     local node = ccui.Helper:seekNodeByName(view, name)
@@ -211,37 +241,33 @@ local function parseChildProperty(self,node)
 			local p = node:getPositionPercent()
 			node:setPositionPercent(cc.p(p.x, 0.5))
 		elseif property == "width-scale" then -- 刘海屏幕
-			if display.width > CC_DESIGN_RESOLUTION.width then -- 在x方向超过设计比例
+			if self._winSize.width > CC_DESIGN_RESOLUTION.width then -- 在x方向超过设计比例
 				local contentSize = node:getContentSize()
-				node:setContentSize(cc.size(display.width - (CC_DESIGN_RESOLUTION.width - contentSize.width), contentSize.height))
+				node:setContentSize(cc.size(self._winSize.width - (CC_DESIGN_RESOLUTION.width - contentSize.width), contentSize.height))
 			end
 		elseif property == "height-scale" then
-			if display.height > CC_DESIGN_RESOLUTION.height then  -- 在y方向超过设计比例
+			if self._winSize.height > CC_DESIGN_RESOLUTION.height then  -- 在y方向超过设计比例
 				local contentSize = node:getContentSize()
-				node:setContentSize(cc.size(contentSize.width, display.height - (CC_DESIGN_RESOLUTION.height - contentSize.height)))
+				node:setContentSize(cc.size(contentSize.width, self._winSize.height - (CC_DESIGN_RESOLUTION.height - contentSize.height)))
 			end
 		elseif property == "x-percent" then
-			if display.width >  CC_DESIGN_RESOLUTION.width then -- 在x方向超过设计比例
-                local x = pos.x /  CC_DESIGN_RESOLUTION.width * (display.width - self._safeAreaOffset_x * 2) - self._deltX + self._safeAreaOffset_x
+			if self._winSize.width >  CC_DESIGN_RESOLUTION.width then -- 在x方向超过设计比例
+                local x = pos.x /  CC_DESIGN_RESOLUTION.width * (self._winSize.width - self._safeAreaOffset_x * 2) - self._deltX + self._safeAreaOffset_x
 				node:setPositionX(x)
 			end
 		elseif property == "y-percent" then
-			if display.height > CC_DESIGN_RESOLUTION.height then  -- 在y方向超过设计比例
-				local y = pos.y / CC_DESIGN_RESOLUTION.height * display.height
+			if self._winSize.height > CC_DESIGN_RESOLUTION.height then  -- 在y方向超过设计比例
+				local y = pos.y / CC_DESIGN_RESOLUTION.height * self._winSize.height
 				local p = node:getParent():convertToNodeSpace(cc.p(0, y - self._deltY))
 				node:setPositionY(p.y)
 			end
 		elseif property == "background" then
 			local contentSize = node:getContentSize()
-			if contentSize.width / contentSize.height > display.width / display.height then
-				node:setScale(display.height / contentSize.height)
+			if contentSize.width / contentSize.height > self._winSize.width / self._winSize.height then
+				node:setScale(self._winSize.height / contentSize.height)
 			else
-				node:setScale(display.width / contentSize.width)
+				node:setScale(self._winSize.width / contentSize.width)
             end
-        elseif string.find(property,"lua:") then
-            local iter = string.gmatch(property,"lua:(.*)")
-            local path = iter()
-            bindLuaObjToNode(node,path)
 		end
 	end
 end
@@ -250,9 +276,10 @@ function Util:loadCSBNode(csbPath)
     release_print("load ",csbPath)
     local node = cc.CSLoader:createNode(csbPath)
     assert(node)
+    self._winSize = cc.Director:getInstance():getWinSize()
     --让留黑边的一侧居中
-    self._deltX = (display.width - CC_DESIGN_RESOLUTION.width) * 0.5
-    self._deltY = (display.height - CC_DESIGN_RESOLUTION.height) * 0.5
+    self._deltX = (self._winSize.width - CC_DESIGN_RESOLUTION.width) * 0.5
+    self._deltY = (self._winSize.height - CC_DESIGN_RESOLUTION.height) * 0.5
     node:setPosition(self._deltX, self._deltY)
 
     self._safeAreaOffset_x = 0

@@ -24,11 +24,13 @@ local function main()
         require("app.GameMain").create()
     end
     --如果是第一次启动,解密资源
-    if not cc.FileUtils:getInstance():isFileExist("test.init") then
+    if not cc.FileUtils:getInstance():isFileExist("test/init.lua") then
         local scene = cc.Scene:create()
-        display.runScene(scene)
-        local uncompressLayer = require("uncompress.UncompressLayer").new(callFunc)
-        scene:addChild(uncompressLayer)
+        cc.Director:getInstance():runWithScene(scene)
+        --src\umcompress\UncompressLayer.lua
+        local uncompressLayer = require("umcompress.UncompressLayer")
+        local layer = uncompressLayer.new(callFunc)
+        scene:addChild(layer)
     else
         callFunc()
     end

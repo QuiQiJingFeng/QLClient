@@ -57,7 +57,7 @@ function UncompressLayer:onShow(callFunc)
         local zipPath = "package/" .. fileName
         if not skipAssets[zipPath] then
             if self:unzipFile(zipPath,writePath) then
-                Logger.debug("unzipFile [%s]",zipPath)
+                release_print("unzipFile [%s]",zipPath)
                 index = index + 1
                 self:setProgress(index/totalNum * 100)
             end
