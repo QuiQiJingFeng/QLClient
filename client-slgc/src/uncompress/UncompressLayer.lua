@@ -46,6 +46,7 @@ function UncompressLayer:onShow(callFunc)
         table.insert(assets,name .. ".zip")
     end
 
+
     --这几个zip包能保证解压过场动画能够顺利进行
     local skipAssets = {
         ["package/package_src.zip"] = true,
@@ -83,8 +84,8 @@ function UncompressLayer:unzipFile(zipPath,storePath)
 end
 
 function UncompressLayer:setProgress(percent)
-    percent = math.ceil(percent) > 100 and 100 or math.ceil(percent) 
-    if not self._percent or self._percent < percent and self._percent < 100 then
+    percent = percent > 100 and 100 or percent
+    if not self._percent or self._percent < percent then
         self._percent = percent
     else
         return
@@ -96,7 +97,7 @@ function UncompressLayer:setProgress(percent)
         self._txtBmfState:setString(STATE.UPDATE)
     end
     self._loadingBar:setPercent(percent)
-    self._txtBmfValue:setString(tostring(percent))
+    self._txtBmfValue:setString(string.format("%.1f%%",percent))
     local box = self._loadingBar:getBoundingBox()
     local posX = box.x + box.width * percent * 0.01
     self._imgLaunchMark:setPositionX(posX)

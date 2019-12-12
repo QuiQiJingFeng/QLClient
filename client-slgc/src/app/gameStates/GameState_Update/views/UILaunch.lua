@@ -142,8 +142,8 @@ function UILaunch:onUpdateEvent(event,code)
 end
 
 function UILaunch:setProgress(percent)
-    percent = math.ceil(percent) > 100 and 100 or math.ceil(percent) 
-    if not self._percent or self._percent < percent and self._percent < 100 then
+    percent = percent > 100 and 100 or percent
+    if not self._percent or self._percent < percent then
         self._percent = percent
     else
         return
@@ -155,7 +155,7 @@ function UILaunch:setProgress(percent)
         self._txtBmfState:setString(STATE.UPDATE)
     end
     self._loadingBar:setPercent(percent)
-    self._txtBmfValue:setString(tostring(percent))
+    self._txtBmfValue:setString(string.format("%.1f%%",percent))
     local box = self._loadingBar:getBoundingBox()
     local posX = box.x + box.width * percent * 0.01
     self._imgLaunchMark:setPositionX(posX)
