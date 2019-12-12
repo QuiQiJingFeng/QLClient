@@ -164,7 +164,12 @@ function UILaunch:processError(eventCode)
         self:onUpdateEvent(nil,EVENT_CODE.ALREADY_UP_TO_DATE)
     elseif eventCode == EVENT_CODE.UPDATE_FAILED then
         --部分文件下载成功
-        self._assetsManager:downloadFailedAssets()
+        
+        game.ui.UIMessageBoxMgr.getInstance():show("下载失败,点击重新下载", { "确定" },
+            function()
+                self._assetsManager:downloadFailedAssets()
+            end
+        )
     else
         Logger.debug("processError code = " .. eventCode)
     end
