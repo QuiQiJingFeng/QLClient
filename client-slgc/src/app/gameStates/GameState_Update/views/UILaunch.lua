@@ -53,7 +53,7 @@ end
 function UILaunch:onShow()
     Util:hide(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
     self._txtBmfState:setString(STATE.CHECK)
-    self:setProgress(0)
+    Util:hide(self._loadingBar,self._imgLaunchMark,self._txtBmfValue)
     if device.platform == "android" or device.platform == "ios" then
         self:createAssetsManager()
         self._assetsManager:update()

@@ -41,7 +41,7 @@ function UncompressLayer:onShow(callFunc)
     local projectPath = writePath .. "project.manifest"
     local content = cc.FileUtils:getInstance():getDataFromFile(projectPath)
     local assets = {}
-    local iter = string.gmatch(content,'([%w_]+).zip')
+    local iter = string.gmatch(content,'([%w_%.]+).zip')
     for name in iter do
         table.insert(assets,name .. ".zip")
     end
@@ -73,7 +73,10 @@ function UncompressLayer:onShow(callFunc)
             if self:unzipFile(zipPath,writePath) then
                 release_print("unzipFile ",zipPath)
                 index = index + 1
+                release_print("index = ",index," totalNum = ",totalNum)
                 self:setProgress(index/totalNum * 100)
+            else
+                assert(false,"解压缩失败->"..zipPath)
             end
         end
     end,0)
@@ -85,6 +88,7 @@ end
 
 function UncompressLayer:setProgress(percent)
     percent = percent > 100 and 100 or percent
+    release_print("percent==>>",percent)
     if not self._percent or self._percent < percent then
         self._percent = percent
     else
