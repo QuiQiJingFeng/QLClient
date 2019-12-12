@@ -111,18 +111,20 @@ function UILaunch:onUpdateEvent(event,code)
         if eventCode == EVENT_CODE.UPDATE_FINISHED then
             Logger.debug("UPDATE_FINISHED")
             local moduleNameList = game.loadedNames or {}
-            local skipModle = {
-                ["string"] = true,
-                ["crypt"] = true,
-                ["bit"] = true,
-                ["socket.core"] = true,
-                ["math"] = true,
-                ["socket"] = true,
-            }
-            for module_name,_ in pairs(moduleNameList) do
-                if not skipModle[module_name] then
-                    print("清理module=>",module_name)
-                    package.loaded[module_name] = nil
+            -- local skipModle = {
+            --     ["string"] = true,
+            --     ["crypt"] = true,
+            --     ["bit"] = true,
+            --     ["socket.core"] = true,
+            --     ["math"] = true,
+            --     ["socket"] = true,
+            -- }
+            for moduleName,_ in pairs(moduleNameList) do
+                local fullPath = cc.FileUtils:getInstance():fullPathForFileName(moduleName)
+                --如果没有全路径的话可能是些C++导入的表
+                if fullPath then
+                    print("清理module=>",moduleName)
+                    package.loaded[moduleName] = nil
                 end
             end
             package.loaded["main"] = nil
