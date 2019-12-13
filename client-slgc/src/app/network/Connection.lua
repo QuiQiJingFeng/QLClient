@@ -31,6 +31,15 @@ function Connection:ctor()
     assert(protobuf.loadfile(pbPath))
     self._sessionId = 0
     self._sendMap = {}
+    --注册服务器接收的事件名到EventConfig中
+    for name in protobuf.fields("S2C") do
+        game.ConfigManager:getInstance():updateEventConfig(name)
+    end
+    --请求事件名列表,检测发送事件是否符合规范
+    self._requestNameMap = {}
+    for name in protobuf.fields("C2S") do
+        self._requestNameMap[name] = true
+    end
 end
 
 function Connection:isIPV6(host)
@@ -230,7 +239,8 @@ function Connection:unpackData()
 end
 
 function Connection:send(key,dataContent,ignoreSession)
-    if  not (self:equalState(NETSTATE.CONNECTED) or self:equalState(NETSTATE.VERIFYPASS)) then
+    assert(self._requestNameMap[key],"request name not define in proto")
+    if not (self:equalState(NETSTATE.CONNECTED) or self:equalState(NETSTATE.VERIFYPASS)) then
         print("netState ==:::::",self._netState)
         assert(false)
         return Logger.warn("network state not connected")

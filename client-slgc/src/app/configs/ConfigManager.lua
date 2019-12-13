@@ -15,6 +15,17 @@ function ConfigManager:ctor()
     self._gamePlayRuleConfig = {}
     self._headFrameShopData = table.values(Util:parseCsvWithPath('res/mengya/configs/frames.csv'))
     self._roomSettingConfig = Util:parseCsvWithPath('res/mengya/configs/roomsetting.csv')
+    self._eventConfig = require("app.configs.EventConfig")
+end
+
+function ConfigManager:getEventConfig()
+    return self._eventConfig
+end
+
+function ConfigManager:updateEventConfig(eventName)
+    eventName = string.upper(eventName)
+    assert(not self._eventConfig[eventName],"event name already register")
+    self._eventConfig[eventName] = eventName
 end
 
 function ConfigManager:getHeadFrameShopData()

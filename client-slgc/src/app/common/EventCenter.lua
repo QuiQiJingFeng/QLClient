@@ -1,7 +1,11 @@
 
 local EventCenter = {}
 local __listeners = {}
+
 function EventCenter:on(eventName, listener, tag)
+    eventName = string.upper(eventName)
+    local EventConfig = game.ConfigManager:getInstance():getEventConfig()
+    assert(EventConfig[eventName],"must be register event name = "..tostring(eventName))
     if __listeners[eventName] == nil then
         __listeners[eventName] = {}
     end
@@ -10,10 +14,10 @@ function EventCenter:on(eventName, listener, tag)
  
     return #__listeners[eventName]
 end
- 
 
 function EventCenter:dispatch(eventName,...)
-    assert(__listeners[eventName],"not register event "..eventName)
+    eventName = string.upper(eventName)
+    assert(__listeners[eventName],"not register event ".. tostring(eventName))
  
     for handle, listener in pairs(__listeners[eventName]) do
         -- listener[1] = listener
