@@ -12,7 +12,7 @@ local NETSTATE = {
 }
 
 --连接超时时间
-local CONNECTING_TIMEOUT_TIME = 0.2
+local CONNECTING_TIMEOUT_TIME = 5
 --协议超时时间
 local PROTOCOL_TIMEOUT_TIME = 5
 
@@ -53,6 +53,7 @@ function Connection:isIPV6(host)
     return false
 end
 --47.52.99.120:8888
+--http://w3.impa.br/~diego/software/luasocket/socket.html#select
 function Connection:connect(adress)
     Logger.debug("Connection:connect")
     local iter = string.gmatch(adress,"(.+):(.+)")
