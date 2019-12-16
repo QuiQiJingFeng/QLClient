@@ -23,6 +23,7 @@ end
 function UICreateRoom:_onBtnCreateRoomClick()
     local settings = self._scrollGamePlay:getCurrentSettings()
     print("settings = ",table.concat(settings,","))
+    game.GameFSM.getInstance():enterState("GameState_Mahjong")
 end
 
 function UICreateRoom:_onBtnBackClick()

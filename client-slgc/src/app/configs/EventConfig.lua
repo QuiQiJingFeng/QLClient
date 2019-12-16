@@ -19,4 +19,8 @@ EventConfig["USER_DATA_RETRIVED"] = "USER_DATA_RETRIVED"
 --用户登出
 EventConfig["USER_LOGOUT"] = "USER_LOGOUT"
 
+
+--同步推送数据操作
+EventConfig["PLACESTEPSYN"] = "PLACESTEPSYN"
+
 return EventConfig

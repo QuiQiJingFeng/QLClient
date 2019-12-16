@@ -1,10 +1,10 @@
-local Util = app.Util
-local UITableViewCell = app.UITableViewCell
+local Util = game.Util
+local UITableViewCell = game.UITableViewCell
 local UIBattleDiscardItemBase = class("UIBattleDiscardItemBase",UITableViewCell)
 
 function UIBattleDiscardItemBase:init()
-    self._imgFace = app.Util:seekNodeByName(self,"imgFace","ccui.ImageView")
-    self._imgBack = app.Util:seekNodeByName(self,"imgBack","ccui.ImageView")
+    self._imgFace = Util:seekNodeByName(self,"imgFace","ccui.ImageView")
+    self._imgBack = Util:seekNodeByName(self,"imgBack","ccui.ImageView")
 end
 
 function UIBattleDiscardItemBase:updateData(data)

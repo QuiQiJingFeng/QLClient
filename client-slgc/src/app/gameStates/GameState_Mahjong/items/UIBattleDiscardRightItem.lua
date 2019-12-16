@@ -1,4 +1,4 @@
-local super = app.UIBattleDiscardItemBase
+local super = import("items.UIBattleDiscardItemBase")
 local UIBattleDiscardRightItem = class("UIBattleDiscardRightItem",super)
 
 function UIBattleDiscardRightItem:updateData(data)

@@ -1,4 +1,4 @@
-local csbPath = "ui/csb/mengya/battle/UIBattlePlayerTwo.csb"
+local csbPath = "ui/csb/mengya/battle/UIBattlePlayerMore.csb"
 local super = import("views.UIBattleBase")
 local Util = game.Util
 local UITableViewEx = game.UITableViewEx

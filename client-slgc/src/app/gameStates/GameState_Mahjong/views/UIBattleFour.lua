@@ -1,4 +1,4 @@
-local csbPath = "ui/csb/mengya/battle/UIBattlePlayerTwo.csb"
+local csbPath = "ui/csb/mengya/battle/UIBattlePlayerMore.csb"
 local super = import("views.UIBattleBase")
 local Util = game.Util
 local UITableViewEx = game.UITableViewEx
@@ -57,8 +57,172 @@ function UIBattleFour:getGradeLayerId()
     return game.UIConstant.UILAYER_LEVEL.BOTTOM
 end
 
-function UIBattleFour:onShow()
+function UIBattleFour:onShow(data)
+    local data = {roomId = 99988547,descript = "房间规则描述啊啊啊",isCreator = true}
+    super.onShow(self,data)
 
+    local data = {
+        {
+            pos = 1,
+            handList = {
+                {type = "gang",cardValue = 24,from = 1},
+                {type = "angang",cardValue = 22,from = 2},
+                {type = "peng",cardValue = 35,from = 3},
+                {type = "handCard",cardValue = 2,output = true},
+                {type = "handCard",cardValue = 3,output = true},
+                {type = "handCard",cardValue = 4},
+                {type = "handCard",cardValue = 9},
+                {type = "handCard",cardValue = 255,isLastCard = true},
+            },
+            discardList = {
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+            }
+        },
+        {
+            pos = 2,
+            handList = {
+                {type = "gang",cardValue = 24,from = 1},
+                {type = "angang",cardValue = 22,from = 2},
+                {type = "peng",cardValue = 35,from = 3},
+                {type = "handCard",cardValue = 2,output = true},
+                {type = "handCard",cardValue = 3,output = true},
+                {type = "handCard",cardValue = 4},
+                {type = "handCard",cardValue = 9},
+                {type = "handCard",cardValue = 255,isLastCard = true},
+            },
+            discardList = {
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+            }
+        },
+        {
+            pos = 3,
+            handList = {
+                {type = "gang",cardValue = 24,from = 1},
+                {type = "angang",cardValue = 22,from = 2},
+                {type = "peng",cardValue = 35,from = 3},
+                {type = "handCard",cardValue = 2,output = true},
+                {type = "handCard",cardValue = 3,output = true},
+                {type = "handCard",cardValue = 4},
+                {type = "handCard",cardValue = 9},
+                {type = "handCard",cardValue = 255,isLastCard = true},
+            },
+            discardList = {
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+            }
+        },
+        {
+            pos = 4,
+            handList = {
+                {type = "gang",cardValue = 24,from = 1},
+                {type = "angang",cardValue = 22,from = 2},
+                {type = "peng",cardValue = 35,from = 3},
+                {type = "handCard",cardValue = 2,output = true},
+                {type = "handCard",cardValue = 3,output = true},
+                {type = "handCard",cardValue = 4},
+                {type = "handCard",cardValue = 9},
+                {type = "handCard",cardValue = 255,isLastCard = true},
+            },
+            discardList = {
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+                {cardValue = 2},
+            }
+        },
+    }
+    for idx, place in ipairs(self._places) do
+        place:getHandList():updateDatas(data[idx].handList)
+        place:getDiscardList():updateDatas(data[idx].discardList)
+    end
 end
 
 return UIBattleFour
