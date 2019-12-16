@@ -6,6 +6,16 @@
       <ObjectData Name="Layer" Tag="5191" ctype="GameLayerObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
+          <AbstractNodeData Name="battleBase" ActionTag="-737582826" Tag="1411" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="1136.0000" Y="640.0000" />
+            <AnchorPoint />
+            <Position />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="csb/mengya/battle/UIBattleScene.csd" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="panelDiscard" ActionTag="-1742061380" Tag="6374" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <Children>

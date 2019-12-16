@@ -16,7 +16,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="art/gaming/destop1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="panelBaseInfo" CanEdit="False" ActionTag="457065731" UserData="left,top" Tag="6020" IconVisible="False" LeftMargin="8.4727" RightMargin="977.5273" TopMargin="8.3871" BottomMargin="570.6129" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="panelBaseInfo" ActionTag="457065731" UserData="left,top" Tag="6020" IconVisible="False" LeftMargin="8.4727" RightMargin="977.5273" TopMargin="8.3871" BottomMargin="570.6129" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="150.0000" Y="61.0000" />
             <Children>
               <AbstractNodeData Name="imgTimeBg" ActionTag="-22915945" Tag="6021" IconVisible="False" LeftMargin="-3.7868" RightMargin="3.7868" TopMargin="-2.3590" BottomMargin="33.3590" Scale9Enable="True" LeftEage="5" RightEage="5" TopEage="5" BottomEage="5" Scale9OriginX="5" Scale9OriginY="5" Scale9Width="124" Scale9Height="20" ctype="ImageViewObjectData">
@@ -240,7 +240,7 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="csb/mengya/battle/UIBattlePlayers.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="battleBtns" CanEdit="False" Visible="False" ActionTag="-9026121" Tag="460" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="battleBtns" Visible="False" ActionTag="-9026121" Tag="460" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <AnchorPoint />
             <Position />

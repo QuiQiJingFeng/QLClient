@@ -6,7 +6,17 @@
       <ObjectData Name="Layer" Tag="5563" ctype="GameLayerObjectData">
         <Size X="1136.0000" Y="640.0000" />
         <Children>
-          <AbstractNodeData Name="panelDiscard" CanEdit="False" ActionTag="-570842798" Tag="5676" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="battleBase" ActionTag="-1363577347" Tag="1572" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="1136.0000" Y="640.0000" />
+            <AnchorPoint />
+            <Position />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="csb/mengya/battle/UIBattleScene.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="panelDiscard" ActionTag="-570842798" Tag="5676" IconVisible="False" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="1136.0000" Y="640.0000" />
             <Children>
               <AbstractNodeData Name="tableViewDiscardTop" ActionTag="-404073585" Tag="5677" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="753.6566" RightMargin="-115.6566" TopMargin="-1.0320" BottomMargin="531.0320" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
