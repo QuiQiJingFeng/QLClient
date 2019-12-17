@@ -1,7 +1,7 @@
 --------------------------------------------
 -- 资源解压场景
 --------------------------------------------
-local Util = require("Util")
+local Util = require("app.common.Util")
 local csbPath = "ui/uncompress/UIUcompress.csb"
 local STATE = {
     UPDATE = "资源解压中，请稍后...",
@@ -46,10 +46,10 @@ function UncompressLayer:onShow(callFunc)
         table.insert(assets,name .. ".zip")
     end
 
-
     --这几个zip包能保证解压过场动画能够顺利进行
     local skipAssets = {
         ["package/package_src.zip"] = true,
+        ["package/package_src_common.zip"] = true,
         ["package/package_src_uncompress.zip"] = true,
         ["package/package_res_ui_uncompress.zip"] = true,
     }
