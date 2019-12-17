@@ -105,8 +105,8 @@ testCases[9] = {
             PENGGANG = 3
         }
         local data = {
-            type = GROUP_TYPE.GANG,
-            gangType = GANG_TYPE.PENGGANG,
+            type = GROUP_TYPE.CHI,
+            gangType = nil,
             cardValue = 5,
             from = 4,
             pos = 1

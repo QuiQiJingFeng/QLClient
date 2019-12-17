@@ -57,6 +57,9 @@ function CardGroup:updateData(data)
         if idx == 4 and data.type == GROUP_TYPE.GANG and data.gangType == GANG_TYPE.ANGANG then
             cardValue = 255
         end
+        if data.type == GROUP_TYPE.CHI then
+            cardValue = cardValue + (idx - 1)
+        end
         card:setData({cardValue=cardValue})
     end
 end
