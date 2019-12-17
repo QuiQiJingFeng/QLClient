@@ -49,7 +49,7 @@ function UncompressLayer:onShow(callFunc)
     --这几个zip包能保证解压过场动画能够顺利进行
     local skipAssets = {
         ["package/package_src.zip"] = true,
-        ["package/package_src_common.zip"] = true,
+        ["package/package_src_app_common.zip"] = true,
         ["package/package_src_uncompress.zip"] = true,
         ["package/package_res_ui_uncompress.zip"] = true,
     }
