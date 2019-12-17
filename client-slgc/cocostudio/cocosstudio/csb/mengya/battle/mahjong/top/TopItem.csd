@@ -26,7 +26,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csb/mengya/battle/mahjong/top/HandCard.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="pengGangGroup" ActionTag="-1514920359" Tag="756" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="pengGangGroup" Visible="False" ActionTag="-1514920359" Tag="756" IconVisible="True" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position />

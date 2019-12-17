@@ -76,4 +76,45 @@ testCases[8] = {
     end
 }
 
+testCases[9] = {
+    name = "测试牌创建Bottom",
+    func = function()
+        local scene = cc.Director:getInstance():getRunningScene()
+        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","HANDCARD",{cardValue = 255})
+        card:setPosition(cc.p(200,200))
+        scene:addChild(card)
+    
+        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","OUTCARD",{cardValue = 255})
+        card:setPosition(cc.p(300,200))
+        scene:addChild(card)
+    
+        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","DISCARD",{cardValue = 255})
+        card:setPosition(cc.p(400,200))
+        scene:addChild(card)
+    
+    
+        local GROUP_TYPE = {
+            CHI = 1,
+            PENG = 2,
+            GANG = 3,
+        }
+    
+        local GANG_TYPE = {
+            ANGANG = 1,
+            MINGGANG = 2,
+            PENGGANG = 3
+        }
+        local data = {
+            type = GROUP_TYPE.GANG,
+            gangType = GANG_TYPE.PENGGANG,
+            cardValue = 5,
+            from = 4,
+            pos = 1
+        }
+        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","GROUPCARD",data)
+        card:setPosition(cc.p(600,200))
+        scene:addChild(card)
+    end
+}
+
 return testCases

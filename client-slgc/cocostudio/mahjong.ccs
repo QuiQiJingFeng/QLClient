@@ -4124,6 +4124,7 @@
                   <Project Name="HandCard.csd" Type="Node" />
                   <Project Name="TopItem.csd" Type="Node" />
                 </Folder>
+                <Project Name="UICardFactory.csd" Type="Layer" />
               </Folder>
               <Project Name="UIBattlePlayerMore.csd" Type="Layer" />
               <Project Name="UIBattlePlayers.csd" Type="Layer" />

@@ -62,7 +62,6 @@ game.UIMessageBoxMgr = require("app.common.UIMessageBoxMgr")
 game.NetWork = require("app.network.Connection").new()
 game.HeartBeatPacketHandler = require("app.network.HeartBeatPacketHandler").new()
 
-
 -- 通用UI组件
 -- 重用列表(支持水平、竖直方向)
 game.UITableView = require("app.common.UITableView")
@@ -94,3 +93,9 @@ game.Languege = require("app.languege.zh_CN")
 --公共服务类
 game.BaiduLocationService = require("app.services.BaiduLocationService")
 game.GVoiceService = require("app.services.GVoiceService")
+
+
+
+
+--牌池
+game.CardFactory = require("app.factory.CardFactory")
