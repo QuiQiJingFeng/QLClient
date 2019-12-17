@@ -1,0 +1,31 @@
+syntax = "proto2";
+import "msg/common.proto";
+import "msg/login.proto";
+import "msg/user.proto";
+import "msg/ddz.proto";
+
+message C2S {
+	optional uint32 sessionId = 1;                                 // 会话ID
+    // ===================通用====================
+    optional msg.login.Handshake Handshake = 2;                   // 握手
+    optional msg.login.Heartbeat Heartbeat = 3;                   // 心跳
+
+    // ===================登录====================
+    optional msg.login.LoginReq LoginReq = 20;                         // 登录
+
+     
+    
+
+
+}
+
+message S2C {
+    optional uint32 sessionId = 1;                                 // 会话ID
+    // ===================通用====================
+    optional msg.login.Handshake Handshake = 10;                   // 握手
+    optional msg.login.Heartbeat Heartbeat = 11;                   // 心跳
+
+    // ===================登录====================
+    optional msg.login.LoginRsp LoginRsp = 20;                      // 登录
+
+}

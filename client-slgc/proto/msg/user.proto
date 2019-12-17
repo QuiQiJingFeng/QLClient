@@ -1,0 +1,573 @@
+syntax = "proto2";
+package msg.user;
+
+enum Result {
+	success = 1;		  //成功
+	paramater_error = 2;  //客户端参数错误
+	server_error = 3;     //服务器错误
+	key_exchange_failed = 4; //密钥交换失败
+	other_player_login = 5;  //其他玩家登陆
+	auth_faild = 6;			//校验失败
+	gold_not_enough = 7;    //金币不足
+	current_in_game = 8;    //当前在游戏当中
+	not_exist_room = 9;     //不存在的房间
+	not_in_room = 10;       //当前不在房间中
+	sit_already_has = 11;   //已经有人坐下
+	round_not_enough = 12;  //圈数不足
+	pos_has_player = 13;    //位置已经有人坐了
+	already_sit = 14;       //当前已经坐下了,不需要发送多次
+	invaild_operator = 15;  //无效的操作
+	no_support_command = 16;//无效的命令
+	no_permission_distroy = 17;//没有权限解散房间
+	current_in_room = 18;     //当前在房间当中
+	no_position = 19;         //没有位置了
+	operator_error = 20;      //操作错误, 可能是数据异常 也可能是逻辑异常 也有可能是操作异常
+	in_four_cardlist = 21;    //当前牌不能出
+	already_ting_card = 22;   //已经听牌了不能再次听牌
+	must_zimo = 23;           //必须自摸胡牌
+	can_not_hui_card = 24;    //不能出癞子牌
+	not_allow_ting = 25;        //不允许听牌
+}
+
+
+message FastSpakeReq {
+	required int32  user_pos = 1;	  // 快捷发言的玩家
+	required string fast_index = 2;   // 快捷发言的下标或者字符串【客户端自己下个定义， 前端传什么， 后端就返回什么】
+}
+
+message NoticeFastSpake {
+	required int32  user_pos = 1;	  // 快捷发言的玩家
+	required string fast_index = 2;   // 快捷发言的下标或者字符串【客户端自己下个定义， 前端传什么， 后端就返回什么】
+}
+
+//	AN_GANG
+//	MING_GANG
+//	PENG_GANG
+message GPItem {
+	optional int32 value = 1;
+	optional int32 from = 2;     //来自哪个玩家
+	optional int32 type = 3;      //<1 吃 2 碰 3 碰杠 4明杠 5 暗杠 6 胡 7 听 9 硬扣>
+}
+
+message UserInfo {
+	required int32 user_id = 1;		//玩家ID
+	required string user_name = 2;		//玩家名称
+	required string user_pic = 3;		//玩家图片
+	required string user_ip = 4;		//玩家IP
+	required int32  user_pos = 5;		//玩家位置
+	required bool is_sit = 6;			//是否入座
+	required float gold_num = 7;		//玩家金币的数量
+	required float score = 8;           //玩家的积分
+	required float cur_score = 9;       //玩家当前局的积分
+	required bool disconnect = 10;
+	optional int32  sex = 11;            //sex = 1 为男
+	optional double latitude = 12;     // 当前的维度
+    optional double lontitude = 13;    // 当前的经度
+}
+
+message RoomSetting {
+	required int32 game_type = 1; 	 //游戏的类型
+	required int32 round = 2;        //游戏的圈数
+	required int32 pay_type = 3;     //支付类型 房主出资还是平摊
+	required int32 seat_num = 4;     //游戏的人数
+	required bool is_friend_room = 5; //是否只让好友进入
+	required bool is_open_voice = 6; //是否开启语音聊天
+	required bool is_open_gps = 7;   //是否开启GPS防作弊
+	required int32 owner_id = 8;	  // 房主UESRID 
+	repeated int32 other_setting = 9; //具体游戏的设置	
+
+}
+
+/*--------------------创建房间----------------------*/
+message CreateRoomReq {
+	required RoomSetting room_setting = 1;
+}
+
+message CreateRoomRsp {
+	required Result result = 1;
+}
+/*-------------------------------------------------*/
+ 
+/*------------------加入房间----------------------*/
+
+message JoinRoomReq {
+	required int32 room_id = 1;
+}
+
+message JoinRoomRsp {
+	required Result result = 1;
+}
+/*-------------------------------------------------*/
+
+
+/*------------------离开房间----------------------*/
+
+message LeaveRoomReq {
+}
+
+message LeaveRoomRsp {
+	required Result result = 1;
+}
+/*-------------------------------------------------*/
+
+
+/*-----------------玩家入座-----------------------*/
+message SitDownReq {
+	required int32 pos = 1;
+}
+
+message SitDownRsp {
+	required Result result = 1;
+}
+/*-------------------------------------------------*/
+
+
+/*-------------------------------------------------*/
+// DEAL_FINISH  发牌完毕
+// PLAY_CARD  出牌
+// PENG    碰
+// GANG    杠
+// GUO     过
+// HU      胡牌
+// DEMAND 	叫分
+// BACK_ROOM  //返回房间
+// TING_CARD    //听牌
+// YING_KOU     //硬扣  不需要传递其他参数,只需要传递command就可以了
+// PAO       下跑
+
+// demandPoint 		// ddz当前玩家叫分(斗地主，0,1,2,3 表示分数， 欢乐斗地主只有0和1, 叫或者不叫)
+// SendCards  	// ddz出牌的数组
+
+// nowType 		// ddz当前出的牌的类型。(-1 是过)
+// nowValue		// ddz当前牌的最大类型值(飞机，最大值应该是飞机的最大的那个值， 而不是取最大的牌值)
+// cardList 	// ddz出牌消息 sizeof(cardList) == 20 最长是20个长度
+
+message GameCmdReq {
+	required string command = 1;
+	optional int32  card = 2;
+	// --------ddz---------------
+	optional int32 demandPoint = 5;  
+	optional int32 nowType = 6;
+	optional int32 nowValue = 7;
+	repeated int32 cardList = 8;
+	optional int32 cardNums = 9;
+	// -------ddz_end------------
+
+	// -------商丘麻将添加字段
+	optional int32 pao_num = 10;    //跑的个数 为0 则不跑 为1 则跑
+}
+
+message GameCmdRsp {
+	required Result result = 1;
+}
+
+/*-------------------游戏命令-----------------------*/
+
+message RoomItem {
+	required int32 room_id = 1;
+	required int32 state = 2;          //房间的状态 1 未开始游戏 (2 游戏中 3 某局游戏结束) 客户端只用判断是否为1就好
+	optional float expire_time = 3;    //房间销毁的时间 未开始游戏则显示时间,否则显示游戏中
+	optional bool  is_sit = 4;         //如果state==1 但是玩家处于坐下的状态,则需要显示返回房间的按钮
+	optional int32 game_type = 5;      //游戏的类型
+	optional string owner_id = 6;       //房主
+}
+
+/*--------------------请求最新的房间列表信息----------*/
+message GetMyRoomListReq {
+	
+}
+
+message GetMyRoomListRsp {
+	required Result result = 1;
+	repeated RoomItem  room_list = 2;   //玩家创建或加入过的房间的显示信息
+	optional int32  room_id = 3;        //如果玩家在游戏当中，则返回这个room_id
+}
+/*------------------------------------------------*/
+//-------------------推送消息------------------------------//
+
+
+message PushUserInfo {
+	optional int32 user_id = 1;
+	optional string user_name = 2;
+	optional string user_pic = 3;
+	optional string user_ip = 4;
+	optional int32  gold_num = 5;
+	repeated RoomItem  room_list = 6;   //玩家创建或加入过的房间的显示信息
+	optional int32  room_id = 7;        //如果玩家在游戏当中，则返回这个room_id
+}
+
+//刷新房间的状态,用来显示界面用
+message UpdateRoomState {
+	required int32 room_id = 1;
+	required int32 state = 2;
+}
+
+/*-------------------刷新房间信息-------------------*/
+
+message RefreshRoomInfo {
+	required int32 room_id = 1;
+	repeated UserInfo players = 2;
+	required RoomSetting room_setting = 3;
+	required int32 state = 4;
+	required int32 cur_round = 5;     //当前游戏的局数
+}
+/*-------------------------------------------------*/
+
+
+/*-------------------推送玩家入座信息-------------------*/
+message SitItem {
+	required int32 user_id = 1;
+	required int32 user_pos = 2;
+}
+message PushSitDown {
+	required int32 room_id = 1;
+	repeated SitItem sit_list = 2;
+	required int32 cur_round = 3;	// 当前局数
+}
+/*-------------------------------------------------*/
+
+/*-------------------发牌-----------------*/
+
+message FourCardItem {
+	required int32 user_pos = 1;
+	repeated int32 cards = 2;            // 亮4打1 的四张牌
+}
+
+message DealCard {
+	required int32 zpos = 1;                   //庄家的位置
+	required int32 user_pos = 2;               //玩家的位置
+	repeated int32 cards = 3;		           //玩家发到手里的牌
+	repeated int32 random_nums = 4;            //两个骰子的数字
+	required int32 cur_round = 5;                  //当前局数
+
+	//商丘麻将的额外参数
+	repeated FourCardItem four_card_list = 6;            // 亮4打1 的四张牌
+	//飘癞子需要发一个癞子牌
+	optional int32 huicard = 7;  					//癞子牌 
+}
+/*-------------------------------------------------*/
+
+
+/*---------------通知其他人有人摸牌-----------------*/
+
+message PushDrawCard {
+	optional int32 user_id = 1;
+	optional int32 card = 2;	//如果不是本人摸牌,则没有card
+	optional int32 user_pos = 3;
+	optional bool in_liangsidayi = 4;	
+}
+/*-------------------------------------------------*/
+
+/*-------------------通知玩家该出牌了-----------------*/
+
+message PushPlayCard {
+	required int32 user_id = 1;
+	optional int32 user_pos = 2;
+	optional int32 operator = 3;   		// 2代表碰牌之后的出牌 1代表摸牌之后的出牌
+	repeated int32 card_list = 4;  		//玩家的手牌
+	repeated GPItem card_stack = 5;		//碰、杠、吃列表
+
+	// ddz
+	repeated int32 userCardNum = 6;
+
+	repeated FourCardItem four_card_list = 7;
+}
+
+/*-------------------------------------------------*/
+
+/*-------------------通知其他人有人出牌-----------------*/
+message NoticePlayCard {
+	required int32 user_id = 1;
+	required int32 card = 2;
+	optional int32 user_pos = 3;
+}
+/*-------------------------------------------------*/
+
+/*-------------------通知其他人有人碰牌-----------------*/
+message NoticePengCard {
+	required int32 user_id = 1;
+	optional int32 user_pos = 2;
+	optional GPItem item = 3;
+}
+/*-------------------------------------------------*/
+
+/*-------------------通知其他人有人杠牌-----------------*/
+enum GangType {
+	AN_GANG = 1;
+	MING_GANG = 2;
+	PENG_GANG = 3;
+}
+
+message NoticeGangCard {
+	required int32 user_id = 1;	  //如果有user_id 的话 不是本人出牌
+	optional int32 user_pos = 2;
+	optional GPItem item = 3;
+}
+
+message NoticeSpecailEvent {
+	required int32 user_id = 1;	  //如果有user_id 的话 不是本人出牌
+	optional int32 user_pos = 2;
+	optional GPItem item = 3;
+}
+/*-------------------------------------------------*/
+
+
+/*-------------------通知客户端是否 碰/杠/胡 -----------------*/
+// oparator=> PENG/GANG/HU
+message PushPlayerOperatorState {
+	repeated string operator_list = 1;
+	optional int32 user_pos = 2;
+	optional int32 user_id = 3;
+	optional int32 card = 4;
+}
+/*-------------------------------------------------*/
+
+/*-------------通知所有人 有人听牌 如果是暗听card为99----*/
+message NoticeTingCard {
+	optional int32 user_pos = 1;
+	optional int32 card = 2;
+}
+
+/*-------------------通知客户端 本局结束-----------------*/
+message Item {
+	required int32 user_id = 1;   //玩家ID
+	required int32 user_pos = 2;   //玩家的位置
+	required float  cur_score = 3; //玩家当前局的积分
+	required float  score = 4;     //玩家的总积分
+	repeated int32  card_list = 5; //玩家手里的牌
+}
+
+message NoticeGameOver {
+	required int32 over_type = 1;     // 1 正常结束 2 流局 3 房间解散会发送一个结算
+	repeated Item players = 2;        //玩家的信息
+	repeated int32 award_list = 3;    //奖码列表
+	optional int32  winner_type = 4;  //胜利的类型 自摸 1 抢杠 2
+	optional bool last_round = 5;     //是否最后一局
+	optional int32 winner_pos = 6;    //自摸的玩家位置
+}
+
+/*-------------------------------------------------*/
+
+/*-------------------通知玩家有人掉线-----------------*/
+
+message NoticePlayerConnectState {
+	required int32 user_id = 1;
+	optional int32 user_pos = 2;
+	optional bool is_connect = 3;
+}
+/*-------------------------------------------------*/
+
+/*-----------------重新返回房间的时候推送所有的数据-----------------------*/
+
+message PutCard {
+	optional int32 user_pos = 1;
+	repeated int32 cards = 2;	
+}
+
+message HandleNum {
+	optional int32 user_pos = 1;
+	optional int32 handle_num = 2;
+}
+
+message ItemStack {
+	repeated GPItem	item = 1;          //碰杠吃列表
+	optional int32 user_pos = 2;
+}
+
+message MarkItem {
+	optional int32 user_pos = 1;
+	repeated int32 cards = 2;
+}
+
+message TingItem{
+	optional int32 user_pos = 1;
+	optional bool ting = 2;
+}
+
+message PaoItem{
+	optional int32 user_pos = 1;
+	optional bool pao = 2;
+}
+
+message KouItem{
+	optional int32 user_pos = 1;
+	optional bool kou = 2;
+}
+
+message PushAllRoomInfo {
+	required RefreshRoomInfo refresh_room_info = 1;
+	repeated int32 card_list = 2;           	// 玩家的手牌
+	optional string operator = 3;           	// 如果当前是本人操作,则返回,否则不返回
+	optional int32 cur_play_pos = 4;        	// 当前的出牌人
+	optional int32 zpos = 5;					// 庄家位置(地主位置)
+	repeated PutCard put_cards = 6;         	// 玩家出的牌
+	optional int32 reduce_num = 7;          	// 剩余牌数
+	repeated HandleNum handle_nums = 8;   		// 玩家手牌的个数
+	optional int32 put_card = 9;            	// 牌桌上最后出的一张牌
+	optional string cur_play_operator = 10;  	// 当前出牌人的操作
+	optional int32 put_pos = 11;            	// 最后一个出牌人
+
+	//新增字段 将操作从字符串改为数组,红中麻将仍沿用之前的字段
+	repeated string operators = 12;           	// 如果当前是本人操作,则返回,否则不返回
+	repeated string cur_play_operators = 13;  	// 当前出牌人的操作
+	optional int32 card = 14;                 	// 如果有card则说明是摸牌出牌,否则是碰牌出牌
+
+	repeated ItemStack card_stack = 15;         // 碰杠吃列表
+
+	//--------------------ddz---------------------------
+	repeated int32 cur_table_cards = 16;		// 当前3个人在桌面上出的牌
+	repeated int32 cur_table_Demand = 17; 		// 当前玩家叫的分， 注意欢乐斗地主应该有2
+	repeated int32 cur_table_bDouble = 18;		// 是否有加倍
+	repeated int32 cur_table_time = 19;			// 当前房间倍数
+	repeated int32 cur_last_CardNums = 20;		// 当前桌面上3个人剩余的排数
+	repeated int32 cBaseCards = 21;				// 当前房间的底牌，（没有地主的时候底牌为空）
+
+ 
+	optional int32 huicard = 22;              //癞子牌
+	repeated FourCardItem four_card_list = 23;            // 亮4打1 的四张牌
+	repeated MarkItem mark_list = 24;  
+	repeated TingItem ting_list = 25;           // 听牌状态列表
+	optional int32 ting_card = 26;              // 当前听的牌    
+
+	repeated PaoItem pao_list = 27;             // 跑列表
+	repeated KouItem kou_list = 28;             // 扣列表
+
+}
+/*-------------------------------------------------*/
+
+
+/*----------------扣费推送---------------*/
+message GoldItem {
+	optional int32 user_id = 1;
+	optional int32 user_pos = 2;
+	optional float gold_num = 3;  //最新金币数量
+}
+
+message UpdateCostGold {
+	repeated GoldItem gold_list = 1;
+}
+/*-----------------------------------*/
+
+
+/*-------------------刷新玩家积分-----------------*/
+
+message ScoreItem {
+	optional int32 user_id = 1;
+	optional int32 user_pos = 2;
+	optional float delt_score = 3;
+	optional float score = 4;
+}
+
+message RefreshPlayerCurScore {
+	repeated ScoreItem cur_score_list = 1; 
+}
+/*-------------------------------------------------*/
+
+
+
+/*-------------------玩家错误处理-----------------*/
+
+message HandleError {
+	optional string result = 1; 
+}
+/*-------------------------------------------------*/
+
+
+/*-------------------更新资源-----------------*/
+
+message UpdateResource {
+	optional int32 gold_num = 1; 
+}
+/*-------------------------------------------------*/
+
+
+/*-----------------------------------*/
+
+//解散房间 分两种 1种是房主解散(可以在游戏未开始的时候解散) 2种是申请解散
+message DistroyRoomReq {
+	required int32  room_id = 1;
+	required int32 type = 2;    //解散类型  1 玩家申请解散  2、房主解散
+}
+
+message DistroyRoomRsp {
+	required string result = 1; 
+}
+
+//通知其他人有人申请解散房间
+message NoticeOtherDistoryRoom {
+	optional double distroy_time = 1;  //解散的结束时间
+	repeated int32 confirm_map = 2;  //确定解散的所有人
+}
+
+//是否同意解散房间
+message ConfirmDistroyRoomReq {
+	required bool   confirm = 1;
+}
+
+message ConfirmDistroyRoomRsp {
+	required string result = 1; 
+}
+
+//通知所有人  有人拒绝解散房间
+message NoticeOtherRefuse {
+	required int32 user_id = 1;
+	required int32  room_id = 2;
+	optional int32 user_pos = 3;
+}
+
+//通知玩家房间已经解散
+message NoticePlayerDistroyRoom{
+	required int32 room_id = 1;
+	required int32 type = 2;    //解散类型 1 玩家申请解散  2、房主解散 3、牌局打完解散 4 时间到了解散
+}
+
+message SattleItem{
+	optional int32 user_id = 1;
+	optional int32 user_pos = 2;
+	optional int32 hu_num = 3;
+	optional int32 ming_gang_num = 4;
+	optional int32 an_gang_num = 5;
+	optional int32 reward_num = 6;
+	optional int32 score = 7;
+}
+//总结算
+message NoticeTotalSattle {
+	required int32 room_id = 1;
+	repeated SattleItem sattle_list = 2;
+	required string begin_time = 3;
+}
+
+// 传输声音
+message SendAudio{
+	required bytes data = 1; 
+}
+
+message SendAudioRsp{
+	required string result = 1; 
+}
+
+// 传输声音
+message NoticeSendAudio{
+	required bytes data = 1;
+	required int32 user_pos = 2;
+}
+
+// 硬扣
+message NoticeYingKou{
+	required int32 user_pos = 1;
+	required int32 card = 2;
+}
+
+//  通知跑
+message NoticePao{
+	
+}
+
+// 有人跑
+message PushPlayerPao{
+	required int32 user_pos = 1;
+	required bool pao = 2;
+}
+
+
+

@@ -1,0 +1,34 @@
+syntax = "proto2";
+package msg.login;
+
+enum LoginType {
+    test = 1;
+    weixin = 2;
+    reconnect = 3;
+}
+
+enum Result {
+    success = 1;            // 登陆成功
+    authFaile = 2;          //校验失败
+}
+
+message LoginReq {
+    required LoginType loginType = 1;                   //登陆类型
+    required int32  userId = 2;                         //用户的ID
+    required string token = 3;                          //登陆的令牌
+}
+
+message LoginRsp {
+    required Result result = 1;                //登陆的结果
+    required int64 serverTime = 2;             //服务器时间
+    required string reconnectToken = 3;        //断线重连的token
+}
+
+message Handshake {
+    required string v1 = 1;
+    required string v2 = 2;
+}
+
+message Heartbeat {
+
+}
