@@ -58,7 +58,7 @@ testCases[6] = {
 testCases[7] = {
     name = "测试lua-protobuf",
     func = function()
-        require("test.app.gameStates.GameState_Login.test")
+        require("test.protoTest")
     end
 }
 

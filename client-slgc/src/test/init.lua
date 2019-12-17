@@ -7,31 +7,7 @@
 --  4. 提供各种接口
 --------------------------------
 local testCase = {}
-_G.testCase = testCase
 release_print("[TEST INIT] The Unit Test Initializing")
-
-local _require = require
-local function addfile ( module )
-    release_print("file required " .. module)
-    local filePath = string.gsub("test." .. module .. "Test","%.","/") .. ".lua"
-    release_print(filePath)
-    --test.app.GameMainTest.lua
-    local isExist = cc.FileUtils:getInstance():isFileExist(filePath)
-    if isExist then
-        release_print("TEST FILE EXISTS %s", module)
-        local testmodule = module .. "Test"
-        local datas = _require(testmodule)
-        game.EventCenter:dispatch("TEST_CASE_FILE_REFRESH",datas)
-    end
-end
-
-require = function ( module )
-    if string.find( module, "app.%a+" ) then
-        addfile(module)
-    end
-    return _require(module)
-end
-
 --[[
     @desc: 创建testlayer
     author:{author}
@@ -41,6 +17,9 @@ end
 local function createtestlayer()
     local layer = require("test.core.TestLayer").new()
     cc.Director:getInstance():getRunningScene():addChild(layer)
+
+    local datas = require("test.testCase")
+    game.EventCenter:dispatch("TEST_CASE_FILE_REFRESH",datas)
 end
 
 -- 测试框架启动方法
