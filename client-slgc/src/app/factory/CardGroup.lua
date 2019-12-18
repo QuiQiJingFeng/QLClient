@@ -3,18 +3,6 @@ local UITableViewCell = game.UITableViewCell
 local Discard = require("app.factory.Discard")
 local CardGroup = class("CardGroup",UITableViewCell)
 
-local GROUP_TYPE = {
-    CHI = 1,
-    PENG = 2,
-    GANG = 3,
-}
-
-local GANG_TYPE = {
-    ANGANG = 1,
-    MINGGANG = 2,
-    PENGGANG = 3
-}
-
 function CardGroup:init()
     self._imgFrom = Util:seekNodeByName(self,"imgFrom","ccui.ImageView")
     self._cards = {}
@@ -32,6 +20,7 @@ end
     pos:number
 ]]
 function CardGroup:updateData(data)
+    local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
     self._cards[4]:setVisible(data.type ~= GROUP_TYPE.CHI and data.type ~= GROUP_TYPE.PENG)
     self._imgFrom:setVisible(data.type ~= GROUP_TYPE.CHI and data.type ~= GROUP_TYPE.PENG)
     if self._imgFrom:isVisible() then

@@ -69,6 +69,9 @@ game.UITableView = require("app.common.UITableView")
 game.UITableViewEx = require("app.common.UITableViewEx")
 -- 多模板重用列表
 game.UITableViewEx2 = require("app.common.UITableViewEx2")
+--牌列表
+game.UIHandCardList = require("app.common.UIHandCardList")
+
 -- 重用列表单元格基类
 game.UITableViewCell = require("app.common.UITableViewCell")
 -- 散列表

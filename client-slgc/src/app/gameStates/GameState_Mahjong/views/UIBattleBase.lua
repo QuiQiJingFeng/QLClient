@@ -1,5 +1,4 @@
 local Util = game.Util
-local UITableViewEx3 = game.UITableViewEx3
 local UIBattleHandleItemBase = import("items.UIBattleHandleItemBase")
 local UIBattleHandleBottomItem = import("items.UIBattleHandleBottomItem")
 local UIBattleHandleRightItem = import("items.UIBattleHandleRightItem")
@@ -10,6 +9,7 @@ local UISortListView = game.UISortListView
 local UIPlayer = import("component.UIPlayer")
 local super = game.UIBase
 local UIManager = game.UIManager
+local UIHandCardList = game.UIHandCardList
 local UIBattleBase = class("UIBattleBase",super)
 
 function UIBattleBase:ctor()
@@ -25,17 +25,17 @@ function UIBattleBase:ctor()
     self._playerLeft = UIPlayer.extend(playerLeft)
 
     --手牌相关
-    local node = Util:seekNodeByName(self,"tableViewListBottom","ccui.ScrollView")
-    self._handListBottom = UITableViewEx3.extend(node,UIBattleHandleBottomItem)
+    local node = Util:seekNodeByName(self,"tableViewListBottom","ccui.ListView")
+    self._handListBottom = UIHandCardList.extend(node,"Bottom")
 
-    local node = Util:seekNodeByName(self,"tableViewListRight","ccui.ScrollView")
-    self._handListRight = UITableViewEx3.extend(node,UIBattleHandleRightItem)
+    local node = Util:seekNodeByName(self,"tableViewListRight","ccui.ListView")
+    self._handListRight = UIHandCardList.extend(node,"Right")
 
-    local node = Util:seekNodeByName(self,"tableViewListTop","ccui.ScrollView")
-    self._handListTop = UITableViewEx3.extend(node,UIBattleHandleTopItem)
+    local node = Util:seekNodeByName(self,"tableViewListTop","ccui.ListView")
+    self._handListTop = UIHandCardList.extend(node,"Top")
 
-    local node = Util:seekNodeByName(self,"tableViewListLeft","ccui.ScrollView")
-    self._handListLeft = UITableViewEx3.extend(node,UIBattleHandleLeftItem)
+    local node = Util:seekNodeByName(self,"tableViewListLeft","ccui.ListView")
+    self._handListLeft = UIHandCardList.extend(node,"Left")
 
     Util:hide(self._handListBottom,self._handListRight,self._handListTop,self._handListLeft)
 

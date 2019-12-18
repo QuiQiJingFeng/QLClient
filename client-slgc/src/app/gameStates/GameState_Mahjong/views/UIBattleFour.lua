@@ -21,13 +21,13 @@ function UIBattleFour:ctor(...)
 
     --左边出牌区域
     local discardLeft = Util:seekNodeByName(self,"tableViewDiscardLeft","ccui.ScrollView")
-    self._discardListTop = UITableViewEx.extend(discardLeft,UIBattleDiscardLeftItem)
-    self._discardListTop:perUnitNums(9)
+    self._discardListLeft = UITableViewEx.extend(discardLeft,UIBattleDiscardLeftItem)
+    self._discardListLeft:perUnitNums(9)
 
     --右边出牌区域
     local discardRight = Util:seekNodeByName(self,"tableViewDiscardRight","ccui.ScrollView")
-    self._discardListBottom = UITableViewEx.extend(discardRight,UIBattleDiscardRightItem)
-    self._discardListBottom:perUnitNums(9)
+    self._discardListRight = UITableViewEx.extend(discardRight,UIBattleDiscardRightItem)
+    self._discardListRight:perUnitNums(9)
 
     --顶部出牌区域
     local discardTop = Util:seekNodeByName(self,"tableViewDiscardTop","ccui.ScrollView")
@@ -35,7 +35,7 @@ function UIBattleFour:ctor(...)
     self._discardListTop:perUnitNums(9)
 
     self._places = {}
-    local directions = {"Left","Down","Right","Top"}
+    local directions = {"Left","Bottom","Right","Top"}
     for _, name in ipairs(directions) do
         local processor = PlaceProcessor.new()
         processor:setHandList(self["_handList"..name])
@@ -43,6 +43,7 @@ function UIBattleFour:ctor(...)
         processor:setPlayer(self["_player"..name])
         table.insert(self._places,processor)
     end
+    Util:show(self._handListBottom,self._handListRight,self._handListTop,self._handListLeft)
 end
 
 function UIBattleFour:needBlackMask()
@@ -60,162 +61,63 @@ end
 function UIBattleFour:onShow(data)
     local data = {roomId = 99988547,descript = "房间规则描述啊啊啊",isCreator = true}
     super.onShow(self,data)
-
+    local CART_TYPE = game.CardFactory:getInstance():getCardType()
+    local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
     local data = {
         {
             pos = 1,
             handList = {
-                {type = "gang",cardValue = 24,from = 1},
-                {type = "angang",cardValue = 22,from = 2},
-                {type = "peng",cardValue = 35,from = 3},
-                {type = "handCard",cardValue = 2,output = true},
-                {type = "handCard",cardValue = 3,output = true},
-                {type = "handCard",cardValue = 4},
-                {type = "handCard",cardValue = 9},
-                {type = "handCard",cardValue = 255,isLastCard = true},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
             },
             discardList = {
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
             }
         },
         {
             pos = 2,
             handList = {
-                {type = "gang",cardValue = 24,from = 1},
-                {type = "angang",cardValue = 22,from = 2},
-                {type = "peng",cardValue = 35,from = 3},
-                {type = "handCard",cardValue = 2,output = true},
-                {type = "handCard",cardValue = 3,output = true},
-                {type = "handCard",cardValue = 4},
-                {type = "handCard",cardValue = 9},
-                {type = "handCard",cardValue = 255,isLastCard = true},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
             },
             discardList = {
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
             }
         },
         {
             pos = 3,
             handList = {
-                {type = "gang",cardValue = 24,from = 1},
-                {type = "angang",cardValue = 22,from = 2},
-                {type = "peng",cardValue = 35,from = 3},
-                {type = "handCard",cardValue = 2,output = true},
-                {type = "handCard",cardValue = 3,output = true},
-                {type = "handCard",cardValue = 4},
-                {type = "handCard",cardValue = 9},
-                {type = "handCard",cardValue = 255,isLastCard = true},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
             },
             discardList = {
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
             }
         },
         {
             pos = 4,
             handList = {
-                {type = "gang",cardValue = 24,from = 1},
-                {type = "angang",cardValue = 22,from = 2},
-                {type = "peng",cardValue = 35,from = 3},
-                {type = "handCard",cardValue = 2,output = true},
-                {type = "handCard",cardValue = 3,output = true},
-                {type = "handCard",cardValue = 4},
-                {type = "handCard",cardValue = 9},
-                {type = "handCard",cardValue = 255,isLastCard = true},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
             },
             discardList = {
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
-                {cardValue = 2},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
             }
         },
     }

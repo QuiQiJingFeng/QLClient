@@ -77,13 +77,13 @@
                     <PreSize X="0.9452" Y="0.8319" />
                     <FileData Type="Normal" Path="art/mahjong/faces/11.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgBack" ActionTag="735902991" Tag="150" IconVisible="False" LeftMargin="-0.6041" RightMargin="-0.3959" TopMargin="8.0000" BottomMargin="0.0000" LeftEage="38" RightEage="38" TopEage="56" BottomEage="56" Scale9OriginX="38" Scale9OriginY="56" Scale9Width="42" Scale9Height="60" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBack" ActionTag="735902991" Tag="150" IconVisible="False" LeftMargin="-0.6041" RightMargin="-0.3959" TopMargin="8.0000" LeftEage="38" RightEage="38" TopEage="56" BottomEage="56" Scale9OriginX="38" Scale9OriginY="56" Scale9Width="42" Scale9Height="60" ctype="ImageViewObjectData">
                     <Size X="74.0000" Y="105.0000" />
                     <AnchorPoint />
-                    <Position X="-0.6041" Y="0.0000" />
+                    <Position X="-0.6041" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="-0.0083" Y="0.0000" />
+                    <PrePosition X="-0.0083" />
                     <PreSize X="1.0137" Y="0.9292" />
                     <FileData Type="Normal" Path="art/mahjong/blue/bottom/outBackBg/mj_bg7.png" Plist="" />
                   </AbstractNodeData>
@@ -327,7 +327,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgFrom" CanEdit="False" ActionTag="-620802920" ZOrder="5" Tag="101" IconVisible="False" LeftMargin="70.0176" RightMargin="81.9824" TopMargin="74.2510" BottomMargin="0.7490" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgFrom" ActionTag="-620802920" ZOrder="5" Tag="101" IconVisible="False" LeftMargin="70.0176" RightMargin="81.9824" TopMargin="74.2510" BottomMargin="0.7490" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
                     <Size X="36.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="88.0176" Y="18.2490" />
@@ -997,7 +997,7 @@
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgFrom5" CanEdit="False" ActionTag="1792921003" ZOrder="5" Tag="174" IconVisible="False" LeftMargin="25.2464" RightMargin="38.7536" TopMargin="47.6917" BottomMargin="-11.6917" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgFrom" ActionTag="1792921003" ZOrder="5" Tag="174" IconVisible="False" LeftMargin="25.2464" RightMargin="38.7536" TopMargin="47.6917" BottomMargin="-11.6917" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
                     <Size X="36.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="43.2464" Y="5.8083" />

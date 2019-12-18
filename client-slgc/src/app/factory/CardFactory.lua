@@ -1,28 +1,26 @@
 local Util = game.Util
+local CARD_TYPE = {
+    HANDCARD = 1,  --手牌
+    OUTCARD = 2,   --推到的手牌
+    DISCARD = 3,   --打出的手牌
+    GROUPCARD = 4, -- 吃碰杠的手牌
+}
+
+local GROUP_TYPE = {
+    CHI = 1,
+    PENG = 2,
+    ANGANG = 3,
+    MINGGANG = 4,
+    PENGGANG = 5,
+}
+
 local CONVERT_TO_OBJECT = {
-    ["HANDCARD"] = require("app.factory.HandCard"),
-    ["OUTCARD"] = require("app.factory.HandOutCard"),
-    ["DISCARD"] = require("app.factory.Discard"),
-    ["GROUPCARD"] = require("app.factory.CardGroup")
+    [CARD_TYPE.HANDCARD] = require("app.factory.HandCard"),
+    [CARD_TYPE.OUTCARD] = require("app.factory.HandOutCard"),
+    [CARD_TYPE.DISCARD] = require("app.factory.Discard"),
+    [CARD_TYPE.GROUPCARD] = require("app.factory.CardGroup")
 }
 local CardFactory = class("CardFactory")
-
-local CARD_TYPE = {
-    HAND_CARD = 1,
-    HAND_OUTCARD = 2,
-    DISCARD = 3,
-    CARD_GROUP_PENG = 4,
-    CARD_GROUP_ANGANG = 5,
-    CARD_GROUP_MINGGANG = 6,
-}
-
-local PLACE_DIRECTION = {
-    LEFT = 1,
-    BOTTOM = 2,
-    RIGHT = 3,
-    TOP = 4,
-}
-
 local _instance = nil
 function CardFactory:getInstance()
     if not _instance then
@@ -30,6 +28,14 @@ function CardFactory:getInstance()
     end
 
     return _instance
+end
+
+function CardFactory:getCardType()
+    return CARD_TYPE
+end
+
+function CardFactory:getGroupType()
+    return GROUP_TYPE
 end
 
 function CardFactory:ctor()
@@ -45,12 +51,11 @@ function CardFactory:ctor()
         self._map[direction] = {}
         local name = "list" .. direction
         local node = Util:seekNodeByName(self._cacheNode,name,"ccui.ListView")
-        self._map[direction]["HANDCARD"] = Util:seekNodeByName(node,"panelHandCard","ccui.Layout")
-        self._map[direction]["OUTCARD"] = Util:seekNodeByName(node,"panelOutCard","ccui.Layout")
-        self._map[direction]["DISCARD"] = Util:seekNodeByName(node,"panelDiscard","ccui.Layout")
-        self._map[direction]["GROUPCARD"] = Util:seekNodeByName(node,"panelGroup","ccui.Layout")
+        self._map[direction][CARD_TYPE.HANDCARD] = Util:seekNodeByName(node,"panelHandCard","ccui.Layout")
+        self._map[direction][CARD_TYPE.OUTCARD] = Util:seekNodeByName(node,"panelOutCard","ccui.Layout")
+        self._map[direction][CARD_TYPE.DISCARD] = Util:seekNodeByName(node,"panelDiscard","ccui.Layout")
+        self._map[direction][CARD_TYPE.GROUPCARD] = Util:seekNodeByName(node,"panelGroup","ccui.Layout")
     end
-
 end
 
 function CardFactory:createCardWithOptions(direction,type,data)
