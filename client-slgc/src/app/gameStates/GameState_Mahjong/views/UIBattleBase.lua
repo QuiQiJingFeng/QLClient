@@ -27,10 +27,10 @@ function UIBattleBase:ctor()
     --手牌相关
     local node = Util:seekNodeByName(self,"tableViewListBottom","ccui.ListView")
     self._handListBottom = UIHandCardList.extend(node,"Bottom")
-
+    self._handListBottom:setLocalZOrder(1)
     local node = Util:seekNodeByName(self,"tableViewListRight","ccui.ListView")
     self._handListRight = UIHandCardList.extend(node,"Right")
-
+    
     local node = Util:seekNodeByName(self,"tableViewListTop","ccui.ListView")
     self._handListTop = UIHandCardList.extend(node,"Top")
 
@@ -75,6 +75,8 @@ function UIBattleBase:ctor()
     --微信邀请按钮
     self._btnWechatInvite = Util:seekNodeByName(self,"btnWechatInvite","ccui.Button")
 
+    Util:hide(self._btnDestroyRoom,self._btnEarlyStart,self._btnBackHall,self._btnWechatInvite)
+
     --按钮相关节点
     self._battleBtns = Util:seekNodeByName(self,"battleBtns","cc.Node")
     self._btnSetting = Util:seekNodeByName(self,"btnSetting","ccui.Button")
@@ -100,19 +102,31 @@ function UIBattleBase:onShow(data)
     self._txtRoomId:setString(textRoomNumberDesc)
     --规则描述
     self._txtRoomRules:setString(data.descript)
-    if data.isCreator then
-        Util:show(self._btnDestroyRoom,self._btnEarlyStart)
-        Util:hide(self._btnBackHall)
-        self._listPreStartOption:sort()
-    else
-        Util:show(self._btnBackHall,self._btnEarlyStart)
-        Util:hide(self._btnDestroyRoom)
-        self._listPreStartOption:sort()
+    -- if data.isCreator then
+    --     Util:show(self._btnDestroyRoom,self._btnEarlyStart)
+    --     Util:hide(self._btnBackHall)
+    --     self._listPreStartOption:sort()
+    -- else
+    --     Util:show(self._btnBackHall,self._btnEarlyStart)
+    --     Util:hide(self._btnDestroyRoom)
+    --     self._listPreStartOption:sort()
+    -- end
+
+    game.EventCenter:on("REFRESH_HANDLE_CARDS",handler(self,self._refreshHandleCards))
+end
+
+function UIBattleBase:_refreshHandleCards(direction,datas)
+    for _, place in ipairs(self._places) do
+        if place:getDirection() == direction then
+            place:updateHandListDatas(datas)
+            return
+        end
     end
 end
 
 function UIBattleBase:onHide()
     self:offUpdate()
+    game.EventCenter:off(self)
     self._steeringWheel:dispose()
 end
 

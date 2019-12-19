@@ -43,7 +43,7 @@ function CardGroup:updateData(data)
     end
     for idx, card in ipairs(self._cards) do
         local cardValue = data.cardValue
-        if idx == 4 and data.type == GROUP_TYPE.GANG and data.gangType == GANG_TYPE.ANGANG then
+        if idx == 4 and data.type == GROUP_TYPE.ANGANG then
             cardValue = 255
         end
         if data.type == GROUP_TYPE.CHI then

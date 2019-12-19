@@ -16,6 +16,9 @@ end
 function UIHandCardList:init(direction,clickFunc)
     self._direction = direction
     self._clickFunc = clickFunc
+    if direction == "Right" then
+        self:enableOrderByTag(true)
+    end
 end
 --[[
     local CART_TYPE = game.CardFactory:getInstance():getCardType()
@@ -26,6 +29,9 @@ function UIHandCardList:updateDatas(datas)
     for i, data in ipairs(datas) do
         local card = game.CardFactory:getInstance():createCardWithOptions(self._direction,data.optype,data.opdata)
         self:pushBackCustomItem(card)
+        if self._direction == "Right" then
+            card:setTag(#datas - i)
+        end
     end
 end
 

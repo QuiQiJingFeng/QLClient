@@ -18,7 +18,7 @@ function UIBattleFour:ctor(...)
     local discardBottom = Util:seekNodeByName(self,"tableViewDiscardBottom","ccui.ScrollView")
     self._discardListBottom = UITableViewEx.extend(discardBottom,UIBattleDiscardBottomItem)
     self._discardListBottom:perUnitNums(12)
-
+    self._discardListBottom:setLocalZOrder(999)
     --左边出牌区域
     local discardLeft = Util:seekNodeByName(self,"tableViewDiscardLeft","ccui.ScrollView")
     self._discardListLeft = UITableViewEx.extend(discardLeft,UIBattleDiscardLeftItem)
@@ -37,7 +37,7 @@ function UIBattleFour:ctor(...)
     self._places = {}
     local directions = {"Left","Bottom","Right","Top"}
     for _, name in ipairs(directions) do
-        local processor = PlaceProcessor.new()
+        local processor = PlaceProcessor.new(name)
         processor:setHandList(self["_handList"..name])
         processor:setDiscardList(self["_discardList"..name])
         processor:setPlayer(self["_player"..name])
@@ -61,70 +61,6 @@ end
 function UIBattleFour:onShow(data)
     local data = {roomId = 99988547,descript = "房间规则描述啊啊啊",isCreator = true}
     super.onShow(self,data)
-    local CART_TYPE = game.CardFactory:getInstance():getCardType()
-    local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
-    local data = {
-        {
-            pos = 1,
-            handList = {
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-            },
-            discardList = {
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-            }
-        },
-        {
-            pos = 2,
-            handList = {
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-            },
-            discardList = {
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-            }
-        },
-        {
-            pos = 3,
-            handList = {
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-            },
-            discardList = {
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-            }
-        },
-        {
-            pos = 4,
-            handList = {
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENGGANG,cardValue = 5,from = 4,pos = 1}},
-            },
-            discardList = {
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-            }
-        },
-    }
-    for idx, place in ipairs(self._places) do
-        place:getHandList():updateDatas(data[idx].handList)
-        place:getDiscardList():updateDatas(data[idx].discardList)
-    end
 end
 
 return UIBattleFour

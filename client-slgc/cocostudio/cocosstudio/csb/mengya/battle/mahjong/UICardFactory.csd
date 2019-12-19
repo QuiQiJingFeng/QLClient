@@ -9,7 +9,7 @@
           <AbstractNodeData Name="listBottom" ActionTag="-1409631769" Tag="11" IconVisible="False" RightMargin="749.0000" TopMargin="525.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
             <Size X="387.0000" Y="115.0000" />
             <Children>
-              <AbstractNodeData Name="panelHandCard" CanEdit="False" ActionTag="1209955116" Tag="270" IconVisible="False" RightMargin="319.0000" TopMargin="5.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelHandCard" ActionTag="1209955116" Tag="270" IconVisible="False" RightMargin="311.0000" TopMargin="5.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="76.0000" Y="110.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="2403144" Tag="8" IconVisible="False" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">
@@ -48,13 +48,13 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
-                <PreSize X="0.1924" Y="0.9565" />
+                <PreSize X="0.1964" Y="0.9565" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelOutCard" CanEdit="False" ActionTag="-456861567" ZOrder="1" Tag="147" IconVisible="False" LeftMargin="76.0000" RightMargin="246.0000" TopMargin="2.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelOutCard" CanEdit="False" ActionTag="-456861567" ZOrder="1" Tag="147" IconVisible="False" LeftMargin="76.0000" RightMargin="238.0000" TopMargin="2.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="73.0000" Y="113.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" ActionTag="-899617203" Tag="148" IconVisible="False" RightMargin="-2.0000" TopMargin="6.0000" BottomMargin="-6.0000" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
@@ -92,14 +92,14 @@
                 <Position X="76.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1924" />
-                <PreSize X="0.1848" Y="0.9826" />
+                <PrePosition X="0.1964" />
+                <PreSize X="0.1886" Y="0.9826" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelDiscard" ActionTag="-1469922346" ZOrder="2" Tag="271" IconVisible="False" LeftMargin="149.0000" RightMargin="188.0000" TopMargin="25.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelDiscard" ActionTag="-1469922346" ZOrder="2" Tag="271" IconVisible="False" LeftMargin="149.0000" RightMargin="180.0000" TopMargin="25.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="58.0000" Y="90.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" ActionTag="1313905668" Tag="19" IconVisible="False" RightMargin="-2.0000" TopMargin="4.0000" BottomMargin="-4.0000" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
@@ -137,17 +137,17 @@
                 <Position X="149.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3772" />
-                <PreSize X="0.1468" Y="0.7826" />
+                <PrePosition X="0.3850" />
+                <PreSize X="0.1499" Y="0.7826" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelGroup" ActionTag="1698346986" ZOrder="3" Tag="145" IconVisible="False" LeftMargin="207.0000" TopMargin="5.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="188.0000" Y="110.0000" />
+              <AbstractNodeData Name="panelGroup" CanEdit="False" ActionTag="1698346986" ZOrder="3" Tag="145" IconVisible="False" LeftMargin="207.0000" RightMargin="2.0000" TopMargin="5.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="178.0000" Y="110.0000" />
                 <Children>
-                  <AbstractNodeData Name="card1" ActionTag="-1632363240" ZOrder="3" Tag="272" IconVisible="False" RightMargin="130.0000" TopMargin="20.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card1" ActionTag="-1632363240" ZOrder="3" Tag="272" IconVisible="False" RightMargin="120.0000" TopMargin="20.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="58.0000" Y="90.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" ActionTag="-820006162" Tag="273" IconVisible="False" RightMargin="-2.0000" TopMargin="4.0000" BottomMargin="-4.0000" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
@@ -186,13 +186,13 @@
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
                     <PrePosition />
-                    <PreSize X="0.3085" Y="0.8182" />
+                    <PreSize X="0.3258" Y="0.8182" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card2" ActionTag="-1086464779" ZOrder="3" Tag="276" IconVisible="False" LeftMargin="56.0000" RightMargin="74.0000" TopMargin="20.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card2" ActionTag="-1086464779" ZOrder="3" Tag="276" IconVisible="False" LeftMargin="56.0000" RightMargin="64.0000" TopMargin="20.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="58.0000" Y="90.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" ActionTag="126647111" Tag="277" IconVisible="False" RightMargin="-2.0000" TopMargin="4.0000" BottomMargin="-4.0000" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
@@ -230,14 +230,14 @@
                     <Position X="56.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2979" />
-                    <PreSize X="0.3085" Y="0.8182" />
+                    <PrePosition X="0.3146" />
+                    <PreSize X="0.3258" Y="0.8182" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card3" ActionTag="-636329090" ZOrder="3" Tag="280" IconVisible="False" LeftMargin="114.0000" RightMargin="14.0000" TopMargin="20.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card3" ActionTag="-636329090" ZOrder="3" Tag="280" IconVisible="False" LeftMargin="114.0000" RightMargin="4.0000" TopMargin="20.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="60.0000" Y="90.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="209575981" Tag="281" IconVisible="False" TopMargin="4.0000" BottomMargin="-4.0000" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
@@ -275,14 +275,14 @@
                     <Position X="114.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6064" />
-                    <PreSize X="0.3191" Y="0.8182" />
+                    <PrePosition X="0.6404" />
+                    <PreSize X="0.3371" Y="0.8182" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card4" ActionTag="2126884807" ZOrder="3" Tag="284" IconVisible="False" LeftMargin="56.0000" RightMargin="74.0000" TopMargin="-1.0000" BottomMargin="21.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card4" ActionTag="2126884807" ZOrder="3" Tag="284" IconVisible="False" LeftMargin="56.0000" RightMargin="64.0000" TopMargin="-1.0000" BottomMargin="21.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="58.0000" Y="90.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-2091621931" Tag="285" IconVisible="False" RightMargin="-2.0000" TopMargin="4.0000" BottomMargin="-4.0000" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
@@ -320,21 +320,21 @@
                     <Position X="56.0000" Y="21.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2979" Y="0.1909" />
-                    <PreSize X="0.3085" Y="0.8182" />
+                    <PrePosition X="0.3146" Y="0.1909" />
+                    <PreSize X="0.3258" Y="0.8182" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgFrom" ActionTag="-620802920" ZOrder="5" Tag="101" IconVisible="False" LeftMargin="70.0176" RightMargin="81.9824" TopMargin="74.2510" BottomMargin="0.7490" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgFrom" ActionTag="-620802920" ZOrder="5" Tag="101" IconVisible="False" LeftMargin="70.0176" RightMargin="71.9824" TopMargin="74.2510" BottomMargin="0.7490" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
                     <Size X="36.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="88.0176" Y="18.2490" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4682" Y="0.1659" />
-                    <PreSize X="0.1915" Y="0.3182" />
+                    <PrePosition X="0.4945" Y="0.1659" />
+                    <PreSize X="0.2022" Y="0.3182" />
                     <FileData Type="Normal" Path="art/mahjong/pointer/icon_zs1.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
@@ -342,8 +342,8 @@
                 <Position X="207.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5241" />
-                <PreSize X="0.4759" Y="0.9565" />
+                <PrePosition X="0.5349" />
+                <PreSize X="0.4599" Y="0.9565" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -361,7 +361,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="listTop" CanEdit="False" ActionTag="-1276724101" Tag="33" IconVisible="False" RightMargin="936.0000" TopMargin="450.9149" BottomMargin="119.0851" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
+          <AbstractNodeData Name="listTop" ActionTag="-1276724101" Tag="33" IconVisible="False" RightMargin="936.0000" TopMargin="450.9149" BottomMargin="119.0851" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
             <Size X="200.0000" Y="70.0000" />
             <Children>
               <AbstractNodeData Name="panelHandCard" CanEdit="False" ActionTag="299551176" Tag="54" IconVisible="False" RightMargin="208.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -479,7 +479,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelGroup" CanEdit="False" ActionTag="573769504" ZOrder="3" Tag="158" IconVisible="False" LeftMargin="120.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelGroup" ActionTag="573769504" ZOrder="3" Tag="158" IconVisible="False" LeftMargin="120.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="128.0000" Y="60.0000" />
                 <Children>
                   <AbstractNodeData Name="card1" CanEdit="False" ActionTag="-638790306" ZOrder="4" Tag="184" IconVisible="False" RightMargin="88.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
@@ -699,10 +699,10 @@
           <AbstractNodeData Name="listLeft" ActionTag="675643405" Tag="62" IconVisible="False" RightMargin="936.0000" TopMargin="369.0000" BottomMargin="196.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
             <Size X="200.0000" Y="75.0000" />
             <Children>
-              <AbstractNodeData Name="panelHandCard" CanEdit="False" ActionTag="866084589" Tag="68" IconVisible="False" RightMargin="170.0000" TopMargin="49.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelHandCard" ActionTag="866084589" Tag="68" IconVisible="False" RightMargin="170.0000" TopMargin="49.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="30.0000" Y="26.0000" />
                 <Children>
-                  <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-1473408671" Tag="67" IconVisible="False" RightMargin="-28.0000" TopMargin="2.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="33" Scale9Height="14" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBg" ActionTag="-1473408671" Tag="67" IconVisible="False" RightMargin="-28.0000" TopMargin="2.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="33" Scale9Height="14" ctype="ImageViewObjectData">
                     <Size X="58.0000" Y="24.0000" />
                     <AnchorPoint />
                     <Position />
@@ -724,7 +724,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelOutCard" CanEdit="False" ActionTag="221107192" ZOrder="1" Tag="78" IconVisible="False" LeftMargin="30.0000" RightMargin="139.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelOutCard" ActionTag="221107192" ZOrder="1" Tag="78" IconVisible="False" LeftMargin="30.0000" RightMargin="139.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="31.0000" Y="53.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="1834850911" Tag="75" IconVisible="False" RightMargin="-13.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="10" Scale9Height="57" ctype="ImageViewObjectData">
@@ -814,10 +814,10 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelGroup" CanEdit="False" ActionTag="-27602648" ZOrder="3" UserData="lua:mengya.app.ui.battle.cards.left.CardGroup" Tag="149" IconVisible="False" LeftMargin="92.0000" RightMargin="8.0000" TopMargin="4.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="100.0000" Y="71.0000" />
+              <AbstractNodeData Name="panelGroup" ActionTag="-27602648" ZOrder="3" UserData="lua:mengya.app.ui.battle.cards.left.CardGroup" Tag="149" IconVisible="False" LeftMargin="92.0000" RightMargin="5.0000" TopMargin="4.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="103.0000" Y="71.0000" />
                 <Children>
-                  <AbstractNodeData Name="card1" CanEdit="False" ActionTag="-519148956" ZOrder="1" Tag="175" IconVisible="False" RightMargin="69.0000" TopMargin="18.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card1" ActionTag="-519148956" ZOrder="1" Tag="175" IconVisible="False" LeftMargin="1.0000" RightMargin="71.0000" TopMargin="18.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="31.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="2098434113" Tag="176" IconVisible="False" RightMargin="-13.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="10" Scale9Height="57" ctype="ImageViewObjectData">
@@ -852,17 +852,17 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position />
+                    <Position X="1.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition />
-                    <PreSize X="0.3100" Y="0.7465" />
+                    <PrePosition X="0.0097" />
+                    <PreSize X="0.3010" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card2" CanEdit="False" ActionTag="-876399856" ZOrder="2" Tag="187" IconVisible="False" LeftMargin="30.0000" RightMargin="39.0000" TopMargin="18.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card2" ActionTag="-876399856" ZOrder="2" Tag="187" IconVisible="False" LeftMargin="31.0000" RightMargin="41.0000" TopMargin="18.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="31.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-1807401618" Tag="188" IconVisible="False" RightMargin="-13.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="10" Scale9Height="57" ctype="ImageViewObjectData">
@@ -897,17 +897,17 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="30.0000" />
+                    <Position X="31.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.3000" />
-                    <PreSize X="0.3100" Y="0.7465" />
+                    <PrePosition X="0.3010" />
+                    <PreSize X="0.3010" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card3" CanEdit="False" ActionTag="-1684668172" ZOrder="3" Tag="183" IconVisible="False" LeftMargin="61.0000" RightMargin="8.0000" TopMargin="18.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card3" ActionTag="-1684668172" ZOrder="3" Tag="183" IconVisible="False" LeftMargin="62.0000" RightMargin="10.0000" TopMargin="18.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="31.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-387799454" Tag="184" IconVisible="False" RightMargin="-13.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="10" Scale9Height="57" ctype="ImageViewObjectData">
@@ -942,17 +942,17 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="61.0000" />
+                    <Position X="62.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6100" />
-                    <PreSize X="0.3100" Y="0.7465" />
+                    <PrePosition X="0.6019" />
+                    <PreSize X="0.3010" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card4" CanEdit="False" ActionTag="-1110660807" ZOrder="4" Tag="179" IconVisible="False" LeftMargin="17.5000" RightMargin="51.5000" TopMargin="1.0000" BottomMargin="17.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card4" ActionTag="-1110660807" ZOrder="4" Tag="179" IconVisible="False" LeftMargin="18.5000" RightMargin="53.5000" TopMargin="1.0000" BottomMargin="17.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="31.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-1082789859" Tag="180" IconVisible="False" RightMargin="-13.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="10" Scale9Height="57" ctype="ImageViewObjectData">
@@ -987,24 +987,24 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="17.5000" Y="17.0000" />
+                    <Position X="18.5000" Y="17.0000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.1750" Y="0.2394" />
-                    <PreSize X="0.3100" Y="0.7465" />
+                    <PrePosition X="0.1796" Y="0.2394" />
+                    <PreSize X="0.3010" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgFrom" ActionTag="1792921003" ZOrder="5" Tag="174" IconVisible="False" LeftMargin="25.2464" RightMargin="38.7536" TopMargin="47.6917" BottomMargin="-11.6917" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgFrom" ActionTag="1792921003" ZOrder="5" Tag="174" IconVisible="False" LeftMargin="26.2464" RightMargin="40.7536" TopMargin="47.6917" BottomMargin="-11.6917" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
                     <Size X="36.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="43.2464" Y="5.8083" />
+                    <Position X="44.2464" Y="5.8083" />
                     <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4325" Y="0.0818" />
-                    <PreSize X="0.3600" Y="0.4930" />
+                    <PrePosition X="0.4296" Y="0.0818" />
+                    <PreSize X="0.3495" Y="0.4930" />
                     <FileData Type="Normal" Path="art/mahjong/pointer/icon_zs1.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
@@ -1013,7 +1013,7 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4600" />
-                <PreSize X="0.5000" Y="0.9467" />
+                <PreSize X="0.5150" Y="0.9467" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
@@ -1031,10 +1031,10 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="listRight" CanEdit="False" ActionTag="1949631695" Tag="91" IconVisible="False" RightMargin="936.0000" TopMargin="287.7465" BottomMargin="277.2535" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
+          <AbstractNodeData Name="listRight" ActionTag="1949631695" Tag="91" IconVisible="False" RightMargin="936.0000" TopMargin="287.7465" BottomMargin="277.2535" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
             <Size X="200.0000" Y="75.0000" />
             <Children>
-              <AbstractNodeData Name="panelHandCard" CanEdit="False" ActionTag="-705357503" Tag="97" IconVisible="False" RightMargin="170.0000" TopMargin="49.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelHandCard" ActionTag="-705357503" Tag="97" IconVisible="False" RightMargin="170.0000" TopMargin="49.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="30.0000" Y="26.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-991427337" Tag="96" IconVisible="False" RightMargin="-28.0000" TopMargin="2.0000" LeftEage="31" RightEage="31" TopEage="12" BottomEage="12" Scale9OriginX="31" Scale9OriginY="12" Scale9Width="33" Scale9Height="14" ctype="ImageViewObjectData">
@@ -1059,37 +1059,37 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelOutCard" ActionTag="1641052812" ZOrder="1" Tag="108" IconVisible="False" LeftMargin="30.0000" RightMargin="137.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="33.0000" Y="53.0000" />
+              <AbstractNodeData Name="panelOutCard" ActionTag="1641052812" ZOrder="1" Tag="108" IconVisible="False" LeftMargin="30.0000" RightMargin="139.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="31.0000" Y="53.0000" />
                 <Children>
-                  <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="1707654094" Tag="109" IconVisible="False" LeftMargin="-12.0000" RightMargin="1.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBg" ActionTag="1707654094" Tag="109" IconVisible="False" LeftMargin="-14.0000" RightMargin="1.0000" TopMargin="0.0001" BottomMargin="-0.0001" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
                     <Size X="44.0000" Y="53.0000" />
                     <AnchorPoint />
-                    <Position X="-12.0000" />
+                    <Position X="-14.0000" Y="-0.0001" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="-0.3636" />
-                    <PreSize X="1.3333" Y="1.0000" />
+                    <PrePosition X="-0.4516" Y="0.0000" />
+                    <PreSize X="1.4194" Y="1.0000" />
                     <FileData Type="Normal" Path="art/mahjong/blue/right/outBg/outbg.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgFace" CanEdit="False" ActionTag="-736552604" Tag="110" IconVisible="False" LeftMargin="-47.0827" RightMargin="-48.9173" TopMargin="-72.0369" BottomMargin="-60.9631" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgFace" ActionTag="-736552604" Tag="110" IconVisible="False" LeftMargin="-49.0827" RightMargin="-48.9173" TopMargin="-72.0369" BottomMargin="-60.9631" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">
                     <Size X="129.0000" Y="186.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="17.4173" Y="32.0369" />
+                    <Position X="15.4173" Y="32.0369" />
                     <Scale ScaleX="0.2800" ScaleY="0.2800" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5278" Y="0.6045" />
-                    <PreSize X="3.9091" Y="3.5094" />
+                    <PrePosition X="0.4973" Y="0.6045" />
+                    <PreSize X="4.1613" Y="3.5094" />
                     <FileData Type="Normal" Path="art/mahjong/faces/11.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgBack" CanEdit="False" Visible="False" ActionTag="762657045" Tag="111" IconVisible="False" LeftMargin="-11.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="25" Scale9Height="29" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBack" Visible="False" ActionTag="762657045" Tag="111" IconVisible="False" LeftMargin="-13.0000" TopMargin="0.0001" BottomMargin="-0.0001" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="25" Scale9Height="29" ctype="ImageViewObjectData">
                     <Size X="44.0000" Y="53.0000" />
                     <AnchorPoint />
-                    <Position X="-11.0000" />
+                    <Position X="-13.0000" Y="-0.0001" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="-0.3333" />
-                    <PreSize X="1.3333" Y="1.0000" />
+                    <PrePosition X="-0.4194" Y="0.0000" />
+                    <PreSize X="1.4194" Y="1.0000" />
                     <FileData Type="Normal" Path="art/mahjong/blue/right/outBackBg/gangback.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
@@ -1098,13 +1098,13 @@
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1500" />
-                <PreSize X="0.1650" Y="0.7067" />
+                <PreSize X="0.1550" Y="0.7067" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelDiscard" ActionTag="265125167" ZOrder="2" Tag="107" IconVisible="False" LeftMargin="63.0000" RightMargin="104.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelDiscard" CanEdit="False" ActionTag="265125167" ZOrder="2" Tag="107" IconVisible="False" LeftMargin="61.0000" RightMargin="106.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="33.0000" Y="53.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="1464433219" Tag="104" IconVisible="False" LeftMargin="-12.0000" RightMargin="1.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
@@ -1139,20 +1139,20 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="63.0000" />
+                <Position X="61.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3150" />
+                <PrePosition X="0.3050" />
                 <PreSize X="0.1650" Y="0.7067" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelGroup" ActionTag="-1914335073" ZOrder="3" UserData="lua:mengya.app.ui.battle.cards.right.CardGroup" Tag="178" IconVisible="False" LeftMargin="96.0000" RightMargin="4.0000" TopMargin="4.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-                <Size X="100.0000" Y="71.0000" />
+              <AbstractNodeData Name="panelGroup" ActionTag="-1914335073" ZOrder="3" UserData="lua:mengya.app.ui.battle.cards.right.CardGroup" Tag="178" IconVisible="False" LeftMargin="94.0000" RightMargin="3.0000" TopMargin="4.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="103.0000" Y="71.0000" />
                 <Children>
-                  <AbstractNodeData Name="card1" ActionTag="408967014" ZOrder="4" Tag="204" IconVisible="False" LeftMargin="-5.0000" RightMargin="72.0000" TopMargin="17.4000" BottomMargin="0.6000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card1" ActionTag="408967014" ZOrder="4" Tag="204" IconVisible="False" LeftMargin="7.9999" RightMargin="62.0001" TopMargin="17.4002" BottomMargin="0.5998" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="33.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" ActionTag="-424928742" Tag="205" IconVisible="False" LeftMargin="-12.0000" RightMargin="1.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
@@ -1187,17 +1187,17 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="-5.0000" Y="0.6000" />
+                    <Position X="7.9999" Y="0.5998" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="-0.0500" Y="0.0085" />
-                    <PreSize X="0.3300" Y="0.7465" />
+                    <PrePosition X="0.0777" Y="0.0084" />
+                    <PreSize X="0.3204" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card2" CanEdit="False" ActionTag="785948523" ZOrder="3" Tag="208" IconVisible="False" LeftMargin="25.0000" RightMargin="42.0000" TopMargin="17.4000" BottomMargin="0.6000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card2" ActionTag="785948523" ZOrder="3" Tag="208" IconVisible="False" LeftMargin="37.9999" RightMargin="32.0001" TopMargin="17.4002" BottomMargin="0.5998" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="33.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-331562295" Tag="209" IconVisible="False" LeftMargin="-12.0000" RightMargin="1.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
@@ -1232,17 +1232,17 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="25.0000" Y="0.6000" />
+                    <Position X="37.9999" Y="0.5998" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2500" Y="0.0085" />
-                    <PreSize X="0.3300" Y="0.7465" />
+                    <PrePosition X="0.3689" Y="0.0084" />
+                    <PreSize X="0.3204" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card3" CanEdit="False" ActionTag="1855120990" ZOrder="2" Tag="212" IconVisible="False" LeftMargin="56.0000" RightMargin="11.0000" TopMargin="17.4000" BottomMargin="0.6000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card3" ActionTag="1855120990" ZOrder="2" Tag="212" IconVisible="False" LeftMargin="68.9999" RightMargin="1.0001" TopMargin="17.4002" BottomMargin="0.5998" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="33.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="1478981106" Tag="213" IconVisible="False" LeftMargin="-12.0000" RightMargin="1.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
@@ -1277,17 +1277,17 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="56.0000" Y="0.6000" />
+                    <Position X="68.9999" Y="0.5998" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5600" Y="0.0085" />
-                    <PreSize X="0.3300" Y="0.7465" />
+                    <PrePosition X="0.6699" Y="0.0084" />
+                    <PreSize X="0.3204" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="card4" CanEdit="False" ActionTag="1406571607" ZOrder="5" Tag="216" IconVisible="False" LeftMargin="25.0000" RightMargin="42.0000" TopMargin="3.0000" BottomMargin="15.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                  <AbstractNodeData Name="card4" ActionTag="1406571607" ZOrder="5" Tag="216" IconVisible="False" LeftMargin="49.9999" RightMargin="20.0001" TopMargin="3.0004" BottomMargin="14.9996" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                     <Size X="33.0000" Y="53.0000" />
                     <Children>
                       <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-489050349" Tag="217" IconVisible="False" LeftMargin="-12.0000" RightMargin="1.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
@@ -1322,33 +1322,33 @@
                       </AbstractNodeData>
                     </Children>
                     <AnchorPoint />
-                    <Position X="25.0000" Y="15.0000" />
+                    <Position X="49.9999" Y="14.9996" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.2500" Y="0.2113" />
-                    <PreSize X="0.3300" Y="0.7465" />
+                    <PrePosition X="0.4854" Y="0.2113" />
+                    <PreSize X="0.3204" Y="0.7465" />
                     <SingleColor A="255" R="150" G="200" B="255" />
                     <FirstColor A="255" R="150" G="200" B="255" />
                     <EndColor A="255" R="255" G="255" B="255" />
                     <ColorVector ScaleY="1.0000" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgFrom" CanEdit="False" ActionTag="12332625" ZOrder="6" Tag="203" IconVisible="False" LeftMargin="23.3033" RightMargin="40.6967" TopMargin="45.0741" BottomMargin="-9.0741" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgFrom" ActionTag="12332625" ZOrder="6" Tag="203" IconVisible="False" LeftMargin="36.3031" RightMargin="30.6969" TopMargin="45.0744" BottomMargin="-9.0744" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="13" ctype="ImageViewObjectData">
                     <Size X="36.0000" Y="35.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="41.3033" Y="8.4259" />
+                    <Position X="54.3031" Y="8.4256" />
                     <Scale ScaleX="0.6000" ScaleY="0.6000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.4130" Y="0.1187" />
-                    <PreSize X="0.3600" Y="0.4930" />
+                    <PrePosition X="0.5272" Y="0.1187" />
+                    <PreSize X="0.3495" Y="0.4930" />
                     <FileData Type="Normal" Path="art/mahjong/pointer/icon_zs1.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="96.0000" />
+                <Position X="94.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4800" />
-                <PreSize X="0.5000" Y="0.9467" />
+                <PrePosition X="0.4700" />
+                <PreSize X="0.5150" Y="0.9467" />
                 <SingleColor A="255" R="150" G="200" B="255" />
                 <FirstColor A="255" R="150" G="200" B="255" />
                 <EndColor A="255" R="255" G="255" B="255" />

@@ -11,10 +11,14 @@ end
 function HandCard:setData(data)
     local cardValue = data.cardValue
     if cardValue == 255 then
-        self._imgBack:setVisible(true)
+        if self._imgBack then
+            self._imgBack:setVisible(true)
+        end
     else
-        self._imgBack:setVisible(false)
-        self._imgFace:loadTexture("art/mahjong/faces/"..tostring(cardValue)..".png")
+        if self._imgFace then
+            self._imgBack:setVisible(false)
+            self._imgFace:loadTexture("art/mahjong/faces/"..tostring(cardValue)..".png")
+        end
     end
 end
 

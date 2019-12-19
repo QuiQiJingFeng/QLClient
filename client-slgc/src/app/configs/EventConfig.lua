@@ -23,4 +23,7 @@ EventConfig["USER_LOGOUT"] = "USER_LOGOUT"
 --同步推送数据操作
 EventConfig["PLACESTEPSYN"] = "PLACESTEPSYN"
 
+--刷新手牌数据
+EventConfig["REFRESH_HANDLE_CARDS"] = "REFRESH_HANDLE_CARDS"
+
 return EventConfig

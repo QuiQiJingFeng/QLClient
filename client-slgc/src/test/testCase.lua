@@ -117,4 +117,92 @@ testCases[9] = {
     end
 }
 
+
+--[[
+discardList = {
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+            }
+]]
+testCases[10] = {
+    name = "测试手牌显示1",
+    func = function()
+        local CART_TYPE = game.CardFactory:getInstance():getCardType()
+        local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
+        local handList = {
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.PENG,cardValue = 2,from = 4,pos = 2}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.ANGANG,cardValue = 3,from = 4,pos = 4}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.MINGGANG,cardValue = 4,from = 4,pos = 3}},
+                {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.CHI,cardValue = 1,from = 4,pos = 1}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+            }
+        game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Bottom",handList)
+        game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Top",handList)
+        game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Right",handList)
+        game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Left",handList)
+    end
+}
+
+testCases[11] = {
+    name = "测试手牌显示2",
+    func = function()
+        local CART_TYPE = game.CardFactory:getInstance():getCardType()
+        local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
+        local handList = {
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+            }
+            
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Top",handList)
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Right",handList)
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Left",handList)
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Bottom",handList)
+    end
+}
+
+testCases[12] = {
+    name = "测试手牌显示3",
+    func = function()
+        local CART_TYPE = game.CardFactory:getInstance():getCardType()
+        local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
+        local handList = {
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+            }
+            
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Top",handList)
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Right",handList)
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Left",handList)
+            game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Bottom",handList)
+    end
+}
+
+
 return testCases

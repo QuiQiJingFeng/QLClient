@@ -63,6 +63,7 @@ function CardFactory:createCardWithOptions(direction,type,data)
     local cls = CONVERT_TO_OBJECT[type]
     local obj = cls:extend(node:clone())
     obj:setData(data)
+
     return obj
 end
 

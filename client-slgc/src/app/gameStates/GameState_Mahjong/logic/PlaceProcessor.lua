@@ -1,10 +1,11 @@
 local PlaceBase = class("PlaceBase")
 
-function PlaceBase:ctor()
+function PlaceBase:ctor(direction)
     self._roleId = nil
     self._name = nil
     self._headUrl = nil
     self._score = 0
+    self._direction = direction
     game.EventCenter:on("PlaceStepSYN",handler(self,self.handlePlaceStepSYN),self)
 end
 
@@ -23,6 +24,8 @@ end
 ]]
 function PlaceBase:handlePlaceStepSYN(step)
 end
+
+function PlaceBase:getDirection() return self._direction end
 
 --玩家ID
 function PlaceBase:setRoleId(roleId) self._roleId = roleId end
@@ -48,5 +51,10 @@ function PlaceBase:getDiscardList() return self._discardList end
 --玩家对象
 function PlaceBase:setPlayer(player) self._player = player end
 function PlaceBase:getPlayer() return self._player end
+
+--刷新手牌数据
+function PlaceBase:updateHandListDatas(datas)
+    self._handList:updateDatas(datas)
+end
 
 return PlaceBase
