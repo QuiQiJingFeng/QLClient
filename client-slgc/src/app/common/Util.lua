@@ -128,7 +128,7 @@ function Util:getCurrentTime()
 end
 
 function Util:getCurrentTimeSecond()
-    return self:getCurrentTimeSecond() / 1000
+    return self:getCurrentTime() / 1000
 end
 
 --[[year、month、day、hour、min、sec、yday、wday、isdst]]
