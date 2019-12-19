@@ -52,8 +52,9 @@ function CardFactory:ctor()
 
 
     local layoutSpace = ccui.Layout:create()
-    layoutSpace:retain()
     layoutSpace:setContentSize(cc.size(10,10))
+    layoutSpace:setVisible(false)
+    scene:addChild(layoutSpace)
 
 
     self._map = {}
