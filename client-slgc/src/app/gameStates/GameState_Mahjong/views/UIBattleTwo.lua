@@ -2,8 +2,6 @@ local csbPath = "ui/csb/mengya/battle/UIBattlePlayerTwo.csb"
 local super = import("views.UIBattleBase")
 local Util = game.Util
 local UITableViewEx = game.UITableViewEx
-local UIBattleDiscardBottomItem = import("items.UIBattleDiscardBottomItem")
-local UIBattleDiscardTopItem = import("items.UIBattleDiscardTopItem")
 local PlaceProcessor = import("logic.PlaceProcessor")
 local UIBattleTwo = class("UIBattleTwo", super, function () return Util:loadCSBNode(csbPath) end)
 

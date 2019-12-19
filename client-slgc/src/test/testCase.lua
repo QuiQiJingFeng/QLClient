@@ -77,41 +77,26 @@ testCases[8] = {
 }
 
 testCases[9] = {
-    name = "测试牌创建Bottom",
+    name = "测试牌创建Top",
     func = function()
+        local CART_TYPE = game.CardFactory:getInstance():getCardType()
+        local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
         local scene = cc.Director:getInstance():getRunningScene()
-        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","HANDCARD",{cardValue = 255})
+        local card = game.CardFactory:getInstance():createCardWithOptions("Top",CART_TYPE.HANDCARD,{cardValue = 255})
         card:setPosition(cc.p(200,200))
         scene:addChild(card)
     
-        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","OUTCARD",{cardValue = 255})
+        local card = game.CardFactory:getInstance():createCardWithOptions("Top",CART_TYPE.OUTCARD,{cardValue = 255})
         card:setPosition(cc.p(300,200))
         scene:addChild(card)
     
-        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","DISCARD",{cardValue = 255})
+        local card = game.CardFactory:getInstance():createCardWithOptions("Top",CART_TYPE.DISCARD,{cardValue = 255})
         card:setPosition(cc.p(400,200))
         scene:addChild(card)
     
     
-        local GROUP_TYPE = {
-            CHI = 1,
-            PENG = 2,
-            GANG = 3,
-        }
-    
-        local GANG_TYPE = {
-            ANGANG = 1,
-            MINGGANG = 2,
-            PENGGANG = 3
-        }
-        local data = {
-            type = GROUP_TYPE.CHI,
-            gangType = nil,
-            cardValue = 5,
-            from = 4,
-            pos = 1
-        }
-        local card = game.CardFactory:getInstance():createCardWithOptions("Bottom","GROUPCARD",data)
+        local data = {type = GROUP_TYPE.PENG,cardValue = 2,from = 4,pos = 2}
+        local card = game.CardFactory:getInstance():createCardWithOptions("Top",CART_TYPE.GROUPCARD,data)
         card:setPosition(cc.p(600,200))
         scene:addChild(card)
     end
@@ -128,6 +113,7 @@ testCases[10] = {
                 {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.MINGGANG,cardValue = 4,from = 4,pos = 3}},
                 {optype = CART_TYPE.GROUPCARD,opdata = {type = GROUP_TYPE.CHI,cardValue = 1,from = 4,pos = 1}},
                 {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.WHITE_SPACE},
                 {optype = CART_TYPE.OUTCARD,opdata = {cardValue = 11}},
             }
         game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Bottom",handList)
@@ -156,6 +142,7 @@ testCases[11] = {
                 {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
                 {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
                 {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
+                {optype = CART_TYPE.WHITE_SPACE},
                 {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 11}},
             }
             

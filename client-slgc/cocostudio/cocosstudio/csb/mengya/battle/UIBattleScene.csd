@@ -192,7 +192,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tableViewListTop" ActionTag="1594862959" Tag="873" RotationSkewX="-180.0000" RotationSkewY="-180.0000" IconVisible="False" LeftMargin="870.5600" RightMargin="-357.5601" TopMargin="-77.4700" BottomMargin="638.4700" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
+              <AbstractNodeData Name="tableViewListTop" ActionTag="1594862959" Tag="873" RotationSkewX="180.0000" RotationSkewY="180.0000" IconVisible="False" LeftMargin="870.5600" RightMargin="-357.5601" TopMargin="-77.4700" BottomMargin="638.4700" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
                 <Size X="623.0000" Y="79.0000" />
                 <AnchorPoint />
                 <Position X="870.5600" Y="638.4700" />

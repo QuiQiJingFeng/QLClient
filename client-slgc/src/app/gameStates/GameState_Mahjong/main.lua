@@ -10,7 +10,7 @@ end
 
 function GameState_Mahjong:enter()
 	super.enter(self)
-	game.UIManager:getInstance():show("views.UIBattleTwo")
+	game.UIManager:getInstance():show("views.UIBattleTree")
 end
 
 function GameState_Mahjong:exit()

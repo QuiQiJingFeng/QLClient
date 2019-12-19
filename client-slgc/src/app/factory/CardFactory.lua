@@ -4,6 +4,7 @@ local CARD_TYPE = {
     OUTCARD = 2,   --推到的手牌
     DISCARD = 3,   --打出的手牌
     GROUPCARD = 4, -- 吃碰杠的手牌
+    WHITE_SPACE = 5, --空格
 }
 
 local GROUP_TYPE = {
@@ -49,6 +50,12 @@ function CardFactory:ctor()
     scene:addChild(self._cacheNode,-1000)
     self._cacheNode:setVisible(false)
 
+
+    local layoutSpace = ccui.Layout:create()
+    layoutSpace:retain()
+    layoutSpace:setContentSize(cc.size(10,10))
+
+
     self._map = {}
     local directions = {"Left","Bottom","Right","Top"}
     for i, direction in ipairs(directions) do
@@ -59,15 +66,20 @@ function CardFactory:ctor()
         self._map[direction][CARD_TYPE.OUTCARD] = Util:seekNodeByName(node,"panelOutCard","ccui.Layout")
         self._map[direction][CARD_TYPE.DISCARD] = Util:seekNodeByName(node,"panelDiscard","ccui.Layout")
         self._map[direction][CARD_TYPE.GROUPCARD] = Util:seekNodeByName(node,"panelGroup","ccui.Layout")
+        self._map[direction][CARD_TYPE.WHITE_SPACE] = layoutSpace
     end
 end
 
 function CardFactory:createCardWithOptions(direction,type,data)
     local node = self._map[direction][type]
-    local cls = CONVERT_TO_OBJECT[type]
-    local obj = cls:extend(node:clone())
-    obj:setData(data)
-
+    local obj
+    if CARD_TYPE.WHITE_SPACE ~= type then
+        local cls = CONVERT_TO_OBJECT[type]
+        obj = cls:extend(node:clone())
+        obj:setData(data)
+    else
+        obj = node:clone()
+    end
     return obj
 end
 

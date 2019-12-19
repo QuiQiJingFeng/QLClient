@@ -364,10 +364,10 @@
           <AbstractNodeData Name="listTop" ActionTag="-1276724101" Tag="33" IconVisible="False" RightMargin="936.0000" TopMargin="450.9149" BottomMargin="119.0851" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" VerticalType="Align_Bottom" ctype="ListViewObjectData">
             <Size X="200.0000" Y="70.0000" />
             <Children>
-              <AbstractNodeData Name="panelHandCard" CanEdit="False" ActionTag="299551176" Tag="54" IconVisible="False" RightMargin="208.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelHandCard" ActionTag="299551176" Tag="54" IconVisible="False" RightMargin="208.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="40.0000" Y="60.0000" />
                 <Children>
-                  <AbstractNodeData Name="imgBack" CanEdit="False" ActionTag="708509243" Tag="53" IconVisible="False" TopMargin="-2.0000" BottomMargin="2.0000" LeftEage="21" RightEage="21" TopEage="31" BottomEage="31" Scale9OriginX="21" Scale9OriginY="31" Scale9Width="22" Scale9Height="34" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBack" ActionTag="708509243" Tag="53" IconVisible="False" TopMargin="-2.0000" BottomMargin="2.0000" LeftEage="21" RightEage="21" TopEage="31" BottomEage="31" Scale9OriginX="21" Scale9OriginY="31" Scale9Width="22" Scale9Height="34" ctype="ImageViewObjectData">
                     <Size X="40.0000" Y="60.0000" />
                     <AnchorPoint />
                     <Position Y="2.0000" />
@@ -389,10 +389,10 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelOutCard" CanEdit="False" ActionTag="-1448571761" ZOrder="1" Tag="94" IconVisible="False" LeftMargin="40.0000" RightMargin="168.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelOutCard" ActionTag="-1448571761" ZOrder="1" Tag="94" IconVisible="False" LeftMargin="40.0000" RightMargin="168.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="40.0000" Y="60.0000" />
                 <Children>
-                  <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-115922095" Tag="95" IconVisible="False" RightMargin="-2.0000" TopMargin="-2.0003" BottomMargin="0.0003" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBg" ActionTag="-115922095" Tag="95" IconVisible="False" RightMargin="-2.0000" TopMargin="-2.0003" BottomMargin="0.0003" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
                     <Size X="42.0000" Y="62.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="21.0000" Y="31.0003" />
@@ -402,7 +402,7 @@
                     <PreSize X="1.0500" Y="1.0333" />
                     <FileData Type="Normal" Path="art/mahjong/blue/top/outBg/mj_bg2.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgFace" CanEdit="False" ActionTag="-1476192264" Tag="96" IconVisible="False" LeftMargin="-8.0977" RightMargin="-6.9023" TopMargin="-6.2627" BottomMargin="-8.7373" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgFace" ActionTag="-1476192264" Tag="96" IconVisible="False" LeftMargin="-8.0977" RightMargin="-6.9023" TopMargin="-6.2627" BottomMargin="-8.7373" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">
                     <Size X="55.0000" Y="75.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="19.4023" Y="28.7627" />
@@ -412,14 +412,14 @@
                     <PreSize X="1.3750" Y="1.2500" />
                     <FileData Type="Normal" Path="art/mahjong/faces/11.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgBack" CanEdit="False" Visible="False" ActionTag="-1505412447" Tag="97" IconVisible="False" LeftMargin="-0.0002" RightMargin="-0.9998" TopMargin="1.9997" BottomMargin="0.0003" LeftEage="38" RightEage="38" TopEage="56" BottomEage="56" Scale9OriginX="38" Scale9OriginY="56" Scale9Width="42" Scale9Height="60" ctype="ImageViewObjectData">
-                    <Size X="41.0000" Y="58.0000" />
+                  <AbstractNodeData Name="imgBack" ActionTag="-1505412447" Tag="97" IconVisible="False" LeftMargin="-0.0002" RightMargin="-1.9998" TopMargin="0.9997" BottomMargin="1.0003" LeftEage="38" RightEage="38" TopEage="56" BottomEage="56" Scale9OriginX="38" Scale9OriginY="56" Scale9Width="42" Scale9Height="60" ctype="ImageViewObjectData">
+                    <Size X="42.0000" Y="58.0000" />
                     <AnchorPoint />
-                    <Position X="-0.0002" Y="0.0003" />
+                    <Position X="-0.0002" Y="1.0003" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0000" Y="0.0000" />
-                    <PreSize X="1.0250" Y="0.9667" />
+                    <PrePosition X="0.0000" Y="0.0167" />
+                    <PreSize X="1.0500" Y="0.9667" />
                     <FileData Type="Normal" Path="art/mahjong/blue/top/outBackBg/mj_bg7.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
@@ -434,7 +434,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelDiscard" CanEdit="False" ActionTag="-1232636082" ZOrder="2" Tag="48" IconVisible="False" LeftMargin="80.0000" RightMargin="128.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelDiscard" ActionTag="-1232636082" ZOrder="2" Tag="48" IconVisible="False" LeftMargin="80.0000" RightMargin="128.0000" TopMargin="10.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="40.0000" Y="60.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="-1970920416" Tag="45" IconVisible="False" RightMargin="-2.0000" TopMargin="-2.0003" BottomMargin="0.0003" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
@@ -457,13 +457,13 @@
                     <PreSize X="1.3750" Y="1.2500" />
                     <FileData Type="Normal" Path="art/mahjong/faces/11.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgBack" CanEdit="False" Visible="False" ActionTag="392851711" Tag="47" IconVisible="False" LeftMargin="-0.0002" RightMargin="-0.9998" TopMargin="1.9997" BottomMargin="0.0003" LeftEage="38" RightEage="38" TopEage="56" BottomEage="56" Scale9OriginX="38" Scale9OriginY="56" Scale9Width="42" Scale9Height="60" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBack" ActionTag="392851711" Tag="47" IconVisible="False" LeftMargin="-0.0002" RightMargin="-0.9998" TopMargin="0.9997" BottomMargin="1.0003" LeftEage="38" RightEage="38" TopEage="56" BottomEage="56" Scale9OriginX="38" Scale9OriginY="56" Scale9Width="42" Scale9Height="60" ctype="ImageViewObjectData">
                     <Size X="41.0000" Y="58.0000" />
                     <AnchorPoint />
-                    <Position X="-0.0002" Y="0.0003" />
+                    <Position X="-0.0002" Y="1.0003" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.0000" Y="0.0000" />
+                    <PrePosition X="0.0000" Y="0.0167" />
                     <PreSize X="1.0250" Y="0.9667" />
                     <FileData Type="Normal" Path="art/mahjong/blue/top/outBackBg/mj_bg7.png" Plist="" />
                   </AbstractNodeData>
@@ -1059,7 +1059,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelOutCard" ActionTag="1641052812" ZOrder="1" Tag="108" IconVisible="False" LeftMargin="30.0000" RightMargin="139.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelOutCard" ActionTag="1641052812" ZOrder="1" Tag="108" IconVisible="False" LeftMargin="30.0000" RightMargin="139.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="31.0000" Y="53.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" ActionTag="1707654094" Tag="109" IconVisible="False" LeftMargin="-14.0000" RightMargin="1.0000" TopMargin="0.0001" BottomMargin="-0.0001" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
@@ -1082,7 +1082,7 @@
                     <PreSize X="4.1613" Y="3.5094" />
                     <FileData Type="Normal" Path="art/mahjong/faces/11.png" Plist="" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="imgBack" Visible="False" ActionTag="762657045" Tag="111" IconVisible="False" LeftMargin="-13.0000" TopMargin="0.0001" BottomMargin="-0.0001" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="25" Scale9Height="29" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="imgBack" ActionTag="762657045" Tag="111" IconVisible="False" LeftMargin="-13.0000" TopMargin="0.0001" BottomMargin="-0.0001" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="25" Scale9Height="29" ctype="ImageViewObjectData">
                     <Size X="44.0000" Y="53.0000" />
                     <AnchorPoint />
                     <Position X="-13.0000" Y="-0.0001" />
@@ -1104,7 +1104,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="panelDiscard" CanEdit="False" ActionTag="265125167" ZOrder="2" Tag="107" IconVisible="False" LeftMargin="61.0000" RightMargin="106.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+              <AbstractNodeData Name="panelDiscard" ActionTag="265125167" ZOrder="2" Tag="107" IconVisible="False" LeftMargin="61.0000" RightMargin="106.0000" TopMargin="22.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="33.0000" Y="53.0000" />
                 <Children>
                   <AbstractNodeData Name="imgBg" CanEdit="False" ActionTag="1464433219" Tag="104" IconVisible="False" LeftMargin="-12.0000" RightMargin="1.0000" LeftEage="23" RightEage="23" TopEage="26" BottomEage="26" Scale9OriginX="23" Scale9OriginY="26" Scale9Width="26" Scale9Height="29" ctype="ImageViewObjectData">
