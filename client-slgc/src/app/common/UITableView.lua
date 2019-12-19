@@ -185,6 +185,14 @@ function UITableView:update(dt)
     self:checkAddCell()
 end
 
+function UITableView:revertZOrder(enable)
+    self._enableRevertZOrder = enable
+end
+
+function UITableView:enabledZOrder(enable)
+    self._enableZOrder = enable
+end
+
 function UITableView:dequeueCell(idx)
     if not self._queue then
         self._queue = {}
@@ -200,6 +208,11 @@ function UITableView:dequeueCell(idx)
     local data = self:getDataByIndex(idx)
     cell:setIdx(idx)
     cell:setData(data)
+    if self._enableZOrder then
+        cell:setLocalZOrder(idx)
+    elseif self._enableRevertZOrder then
+        cell:setLocalZOrder(-1 * idx)
+    end
     self._usedCell[idx] = cell
 
     if self._clickFunc then

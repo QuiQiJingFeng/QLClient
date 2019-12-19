@@ -30,6 +30,10 @@ function CardFactory:getInstance()
     return _instance
 end
 
+function CardFactory:getConvertObjList()
+    return CONVERT_TO_OBJECT
+end
+
 function CardFactory:getCardType()
     return CARD_TYPE
 end

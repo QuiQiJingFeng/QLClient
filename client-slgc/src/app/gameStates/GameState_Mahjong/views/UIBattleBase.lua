@@ -113,6 +113,17 @@ function UIBattleBase:onShow(data)
     -- end
 
     game.EventCenter:on("REFRESH_HANDLE_CARDS",handler(self,self._refreshHandleCards))
+    game.EventCenter:on("REFRESH_DISCARDS",handler(self,self._refreshDisCards))
+    
+end
+
+function UIBattleBase:_refreshDisCards(direction,datas)
+    for _, place in ipairs(self._places) do
+        if place:getDirection() == direction then
+            place:updateDisCardListDatas(datas)
+            return
+        end
+    end
 end
 
 function UIBattleBase:_refreshHandleCards(direction,datas)

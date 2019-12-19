@@ -79,7 +79,7 @@
                 <ColorVector ScaleY="1.0000" />
                 <InnerNodeSize Width="920" Height="150" />
               </AbstractNodeData>
-              <AbstractNodeData Name="tableViewDiscardBottom" ActionTag="1969682959" UserData="bottom" Tag="6373" IconVisible="False" LeftMargin="107.9379" RightMargin="108.0621" TopMargin="412.4071" BottomMargin="77.5929" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+              <AbstractNodeData Name="tableViewDiscardBottom" ActionTag="1969682959" Tag="6373" IconVisible="False" LeftMargin="107.9379" RightMargin="108.0621" TopMargin="412.4071" BottomMargin="77.5929" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
                 <Size X="920.0000" Y="150.0000" />
                 <Children>
                   <AbstractNodeData Name="item" ActionTag="-1343692290" Tag="8533" IconVisible="False" RightMargin="880.0000" TopMargin="1.9994" BottomMargin="102.0006" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">

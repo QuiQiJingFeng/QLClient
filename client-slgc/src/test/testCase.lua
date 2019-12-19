@@ -117,15 +117,6 @@ testCases[9] = {
     end
 }
 
-
---[[
-discardList = {
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-                {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
-            }
-]]
 testCases[10] = {
     name = "测试手牌显示1",
     func = function()
@@ -201,6 +192,25 @@ testCases[12] = {
             game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Right",handList)
             game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Left",handList)
             game.EventCenter:dispatch("REFRESH_HANDLE_CARDS","Bottom",handList)
+    end
+}
+
+testCases[13] = {
+    name = "测试出牌显示",
+    func = function()
+        local CART_TYPE = game.CardFactory:getInstance():getCardType()
+        local GROUP_TYPE = game.CardFactory:getInstance():getGroupType()
+        local discardList = {
+            {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+            {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+            {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+            {optype = CART_TYPE.HANDCARD,opdata = {cardValue = 5}},
+        }
+            
+            game.EventCenter:dispatch("REFRESH_DISCARDS","Top",discardList)
+            game.EventCenter:dispatch("REFRESH_DISCARDS","Right",discardList)
+            game.EventCenter:dispatch("REFRESH_DISCARDS","Left",discardList)
+            game.EventCenter:dispatch("REFRESH_DISCARDS","Bottom",discardList)
     end
 }
 

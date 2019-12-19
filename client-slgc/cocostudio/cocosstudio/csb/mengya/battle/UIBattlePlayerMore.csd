@@ -25,14 +25,14 @@
                   <AbstractNodeData Name="item" ActionTag="1579854804" Tag="206" IconVisible="False" RightMargin="458.0000" BottomMargin="64.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="40.0000" Y="46.0000" />
                     <Children>
-                      <AbstractNodeData Name="imgBg" ActionTag="1129396632" Tag="207" IconVisible="False" RightMargin="-2.0000" TopMargin="-16.0003" BottomMargin="0.0003" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
-                        <Size X="42.0000" Y="62.0000" />
+                      <AbstractNodeData Name="imgBg" ActionTag="1129396632" Tag="207" IconVisible="False" LeftMargin="1.0000" RightMargin="-1.0000" TopMargin="-16.0003" BottomMargin="0.0003" LeftEage="13" RightEage="13" TopEage="20" BottomEage="20" Scale9OriginX="13" Scale9OriginY="20" Scale9Width="16" Scale9Height="22" ctype="ImageViewObjectData">
+                        <Size X="40.0000" Y="62.0000" />
                         <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                         <Position X="21.0000" Y="31.0003" />
                         <Scale ScaleX="1.0000" ScaleY="1.0000" />
                         <CColor A="255" R="255" G="255" B="255" />
                         <PrePosition X="0.5250" Y="0.6739" />
-                        <PreSize X="1.0500" Y="1.3478" />
+                        <PreSize X="1.0000" Y="1.3478" />
                         <FileData Type="Normal" Path="art/mahjong/blue/top/outBg/mj_bg2.png" Plist="" />
                       </AbstractNodeData>
                       <AbstractNodeData Name="imgFace" ActionTag="-616833663" Tag="208" IconVisible="False" LeftMargin="-8.0977" RightMargin="-6.9023" TopMargin="-20.2627" BottomMargin="-8.7373" LeftEage="42" RightEage="42" TopEage="61" BottomEage="61" Scale9OriginX="42" Scale9OriginY="61" Scale9Width="45" Scale9Height="64" ctype="ImageViewObjectData">

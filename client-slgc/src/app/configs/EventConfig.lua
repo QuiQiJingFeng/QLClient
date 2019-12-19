@@ -25,5 +25,6 @@ EventConfig["PLACESTEPSYN"] = "PLACESTEPSYN"
 
 --刷新手牌数据
 EventConfig["REFRESH_HANDLE_CARDS"] = "REFRESH_HANDLE_CARDS"
+EventConfig["REFRESH_DISCARDS"] = "REFRESH_DISCARDS"
 
 return EventConfig

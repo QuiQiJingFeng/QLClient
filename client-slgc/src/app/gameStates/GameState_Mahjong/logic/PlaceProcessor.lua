@@ -57,4 +57,9 @@ function PlaceBase:updateHandListDatas(datas)
     self._handList:updateDatas(datas)
 end
 
+--刷新出牌数据
+function PlaceBase:updateDisCardListDatas(datas)
+    self._discardList:updateDatas(datas)
+end
+
 return PlaceBase
