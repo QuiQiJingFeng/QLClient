@@ -35,6 +35,8 @@ end
 game.Logger = require("app.common.Logger")
 -- 工具类
 game.Util = require("app.common.Util")
+--下载工具
+game.Downloader = require("app.common.Downloader")
 -- 事件中心
 game.EventCenter = require("app.common.EventCenter")
 -- 状态机
