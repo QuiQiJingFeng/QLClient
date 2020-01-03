@@ -46,13 +46,10 @@ end
 
 function UILogin:onShow(...)
     -- self:playAnimation(csbPath,"login")
-    local url = "https://lsjgame.oss-cn-hongkong.aliyuncs.com/%E5%B7%A5%E5%85%B7/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7_v2.0.5(1).zip"
+    local url = "http://127.0.0.1:8000/origin.zip"
     local savePath = "/Users/jingfeng/Desktop/QLClient/client-slgc/tools.zip"
     game.Downloader:downloadSingleFile(url,savePath,function(process) 
         print("FYD--->>process:",process)
-        if process > 30 then
-            return true
-        end
     end)
     
 end
