@@ -1,8 +1,9 @@
 local Downloader = class("Downloader")
 local LUA_CALLBACK_TYPE = {
     PROCESS = 0,
-    DOWNLOAD_FAILED = 1,
+    DOWNLOAD_FAILED = 1, --用户取消也包含在这个里面
     DOWNLOAD_SUCCESS = 2,
+    FILE_EXIST = 3,  --文件已经存在,提示用户改名或者其他操作
 }
 function Downloader:ctor()
 
@@ -12,11 +13,16 @@ end
 function Downloader:downloadSingleFile(url,savePath,processFunc)
     FYDC.excute("Downloader","createSimgleTask",url,savePath,function(type,info) 
         if type == LUA_CALLBACK_TYPE.PROCESS then
-            print("FYD::process=",info.process)
+            -- print("FYD::process=",info.data)
+            -- if info.process > 30 then
+            --     return true
+            -- end
         elseif type == LUA_CALLBACK_TYPE.DOWNLOAD_FAILED then
             print("DOWNLOAD_FAILED::errormessage=",info)
         elseif type == LUA_CALLBACK_TYPE.DOWNLOAD_SUCCESS then
             print("DOWNLOAD_SUCCESS====",info)
+        elseif type == LUA_CALLBACK_TYPE.FILE_EXIST then
+            print("FILE_EXIST====",info)
         end
     end)
 end
