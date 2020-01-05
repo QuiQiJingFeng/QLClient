@@ -26,6 +26,7 @@ function UIDownload:pushTask(task)
     task.fileName = fileName
     local wirtePath = cc.FileUtils:getInstance():getWritablePath()
     task.savePath = wirtePath .. fileName
+    print("FYD------wirtePath = ",wirtePath)
     table.insert(self._taskQueue,task)
 end
 
