@@ -112,4 +112,11 @@ UIConstant.GAME_TYPES = {
     }
 }
 
+UIConstant.DOWNLOAD_STATE = {
+    WAITE = 1,
+    STARTING = 2,
+    STOPED = 3,
+    FINISHED = 4,
+}
+
 return UIConstant

@@ -4193,6 +4193,8 @@
               <Project Name="UIHeadFrameShop.csd" Type="Layer" />
             </Folder>
             <Project Name="UICreateRoom.csd" Type="Layer" />
+            <Project Name="UIDownload.csd" Type="Layer" />
+            <Project Name="UIDownloadCreateTask.csd" Type="Layer" />
             <Project Name="UIGamePlayHelp.csd" Type="Layer" />
             <Project Name="UIHelp.csd" Type="Layer" />
             <Project Name="UILaunch.csd" Type="Layer" />

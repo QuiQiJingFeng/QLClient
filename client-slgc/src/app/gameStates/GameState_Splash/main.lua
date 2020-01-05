@@ -10,7 +10,7 @@ end
 
 function GameState_Splash:enter()
 	super.enter(self)
-	game.UIManager:getInstance():show("views.UISplash")
+	game.UIManager:getInstance():show("views.UIDownload")
 end
 
 function GameState_Splash:exit()

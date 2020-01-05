@@ -4,7 +4,7 @@
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
         <IsLastPublish Value="True" />
-        <LastRunType Value="Windows" />
+        <LastRunType Value="Mac" />
       </Value>
     </Item>
     <Item Key="PackageParamsKey">
@@ -14,7 +14,7 @@
         <LuaEncryptSign Value="" />
         <Android_PackageName Value="org.cocos.mahjong" />
         <AndroidkeyStore Value="" />
-        <AndroidVersion Value="" />
+        <AndroidVersion Value="android-19" />
         <iOS_Target Value="mahjong iOS" />
         <iOS_BundleID Value="" />
         <Platform Value="None" />
@@ -26,6 +26,16 @@
         <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="uncompress/UIUcompress.csd" />
+          <FilePathData Path="csb/mengya/UIDownload.csd" />
+          <FilePathData Path="csb/mengya/UIDownloadCreateTask.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="csb/mengya/UIDownload.csd" />
       </Value>
     </Item>
   </Properties>
