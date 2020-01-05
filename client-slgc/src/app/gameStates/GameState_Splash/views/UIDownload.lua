@@ -24,7 +24,8 @@ function UIDownload:pushTask(task)
     local list = string.split(task.url,"/")
     local fileName = list[#list]
     task.fileName = fileName
-    task.savePath = "/Users/jingfeng/Desktop/QLClient/client-slgc/download/" .. fileName
+    local wirtePath = cc.FileUtils:getInstance():getWritablePath()
+    task.savePath = wirtePath .. fileName
     table.insert(self._taskQueue,task)
 end
 
