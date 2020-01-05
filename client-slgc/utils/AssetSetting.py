@@ -11,7 +11,7 @@ class AssetSetting:
 		    {
 		        "name" : "zh-CN",
 		        "host" : "https://lsjgame.oss-cn-hongkong.aliyuncs.com/",
-		        "version" : "1.0.1",
+		        "version" : "1.0.9",
 		        "xxteKey" : "10cc4fdee2fcd047",
 		        "xxteaSign" : "gclR3cu9"
 		    },

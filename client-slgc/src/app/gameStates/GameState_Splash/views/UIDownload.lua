@@ -48,18 +48,15 @@ function UIDownload:onShow()
         {
             url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_src_app_gameStates_GameState_Mahjong_views.zip",
         },
-        -- {
-        --     url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_res.zip",
-        -- },
-        -- {
-        --     url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_res_ui_art_activity_Redpack.zip",
-        -- },
-        -- {
-        --     url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_res_ui_art_campaign_Arena.zip",
-        -- },
-        -- {
-        --     url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_src_app_gameStates_GameState_Mahjong_views.zip",
-        -- }
+        {
+            url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_res.zip",
+        },
+        {
+            url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_res_ui_art_activity_Redpack.zip",
+        },
+        {
+            url = "http://lsjgame.oss-cn-hongkong.aliyuncs.com/1.0.6/package_res_ui_art_campaign_Arena.zip",
+        }
     }
 
     for i, task in ipairs(taskQueue) do
@@ -91,6 +88,7 @@ function UIDownload:checkNextWorkTask()
         self:sortTaskQueue()
         self._listTask:refreshDatas(self._taskQueue)
         game.Downloader:downloadSingleFile(nextWorkTask.url,nextWorkTask.savePath,function(type,info) 
+            print("type,info",type,info)
             if type == LUA_CALLBACK_TYPE.PROCESS then
                 nextWorkTask.process = info.process
                 nextWorkTask.totalToDownload = info.totalToDownload

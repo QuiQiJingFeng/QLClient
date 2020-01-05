@@ -40,9 +40,14 @@ function UIDownloadItem:updateData(data)
         self._txtState:setString("已暂停")
         Util:show(self._btnRestore)
         Util:hide(self._btnStop)
+    elseif data.state == DOWNLOAD_STATE.FINISHED then
+        self._txtState:setString("已完成")
+        Util:hide(self._btnRestore)
+        Util:hide(self._btnStop)
     else
-        assert(false)
         self._txtState:setString("")
+        Util:hide(self._btnRestore)
+        Util:hide(self._btnStop)
     end
     self._txtName:setString(data.fileName)
     if data.totalToDownload then
