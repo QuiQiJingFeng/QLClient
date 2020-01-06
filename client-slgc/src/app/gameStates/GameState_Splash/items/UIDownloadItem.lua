@@ -9,7 +9,7 @@ function UIDownloadItem:init()
     self._txtDownloadNow = Util:seekNodeByName(self,"txtDownloadNow","ccui.Text")
     self._txtState = Util:seekNodeByName(self,"txtState","ccui.Text")
 
-    self._lodingBar = Util:seekNodeByName(self,"lodingBar","ccui.LodingBar")
+    self._lodingBar = Util:seekNodeByName(self,"lodingBar","ccui.LoadingBar")
 
     self._btnRestore = Util:seekNodeByName(self,"btnRestore","ccui.Button")
     self._btnStop = Util:seekNodeByName(self,"btnStop","ccui.Button")
@@ -56,8 +56,8 @@ function UIDownloadItem:updateData(data)
         self._txtTotalFileLength:setString("")
     end
     if data.process then
-        self._txtDownloadNow:setString(string.format("已下载.1f%%",data.process))
-        self._lodingBar:setPercent(data.process);
+        self._txtDownloadNow:setString(string.format("已下载%.1f%%",data.process))
+        self._lodingBar:setPercent(tonumber(string.format("%.1f",data.process)))
     else
         self._txtDownloadNow:setString("")
     end
