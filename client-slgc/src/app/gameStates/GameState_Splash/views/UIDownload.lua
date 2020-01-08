@@ -46,7 +46,8 @@ function UIDownload:onShow()
     
     local storePath = cc.FileUtils:getInstance():getWritablePath()
     local url = "https://lsjgame.oss-cn-hongkong.aliyuncs.com/project.manifest"
-
+    self._totalSize = 0
+    self._nowSize = 0
     game.Util:sendXMLHTTPrequrest("GET",{}, url, {}, function(content)
         local manifestInfo = json.decode(content)
         local packageUrl = manifestInfo["packageUrl"]
@@ -56,14 +57,12 @@ function UIDownload:onShow()
                 url = packageUrl .. fileName,
                 md5 = asset.md5,
             }
+            self._totalSize = self._totalSize + asset.size
             self:pushTask(task)
         end
         for i = 1, MAX_THREAD do
             self:checkNextWorkTask()
         end
-    
-        self:sortTaskQueue()
-        self._listTask:updateDatas(self._taskQueue)
     end)
 end
 
@@ -81,13 +80,17 @@ function UIDownload:checkNextWorkTask()
         end
         table.insert(self._workingQueue,nextWorkTask)
         nextWorkTask.state = DOWNLOAD_STATE.STARTING
-        self:sortTaskQueue()
-        self._listTask:refreshDatas(self._taskQueue)
         game.Downloader:downloadSingleFile(nextWorkTask.url,nextWorkTask.savePath,function(type,info) 
             if type == LUA_CALLBACK_TYPE.PROCESS then
                 nextWorkTask.process = info.process
                 nextWorkTask.totalToDownload = info.totalToDownload
                 nextWorkTask.nowDownloaded = info.nowDownloaded
+                self._nowSize = 0
+                for _, task in ipairs(self._taskQueue) do
+                    local now = task.nowDownloaded or 0
+                    self._nowSize = self._nowSize + now
+                end
+                print("FYD====process = "..self._nowSize/self._totalSize)
             elseif type == LUA_CALLBACK_TYPE.DOWNLOAD_FAILED then
                 nextWorkTask.state = DOWNLOAD_STATE.STOPED
             elseif type == LUA_CALLBACK_TYPE.DOWNLOAD_SUCCESS then
@@ -104,33 +107,6 @@ function UIDownload:checkNextWorkTask()
                 -- print("FILE_EXIST====",info)
                 nextWorkTask.state = DOWNLOAD_STATE.STOPED
             end
-            self:sortTaskQueue()
-            self._listTask:refreshDatas(self._taskQueue)
-        end)
-    end
-end
-
-function UIDownload:sortTaskQueue()
-    if #self._taskQueue > 2 then
-        table.sort(self._taskQueue,function(a,b) 
-            local aValue = 1
-            if a.state == DOWNLOAD_STATE.STARTING then
-                aValue = aValue + 1000
-            elseif a.state == DOWNLOAD_STATE.WAITE then
-                aValue = aValue + 100
-            elseif a.state == DOWNLOAD_STATE.STOPED then
-                aValue = aValue + 10
-            end
-
-            local bValue = 2
-            if b.state == DOWNLOAD_STATE.STARTING then
-                bValue = bValue + 1000
-            elseif b.state == DOWNLOAD_STATE.WAITE then
-                bValue = bValue + 100
-            elseif b.state == DOWNLOAD_STATE.STOPED then
-                bValue = bValue + 10
-            end
-            return aValue > bValue
         end)
     end
 end
