@@ -7,12 +7,18 @@ local DOWNLOAD_STATE = {
     STOPED = 3,
     FINISHED = 4,
 }
-function AssetsDownloader:ctor(versionManifestPath,projectManifestPath)
+function AssetsDownloader:ctor(versionManifestPath,projectManifestPath,processFunc,finishFunc)
     self._versionManifestPath = versionManifestPath
     self._projectManifestPath = projectManifestPath
+    self._finishFunc = finishFunc
+    self._processFunc = processFunc
+    self._taskQueue = {}
+    self._workingQueue = {}
+
     self:parseCurrentVersion()
     self:parseCurrentPorjectManifest()
     self:getRemoteVersion()
+
 end
 
 function AssetsDownloader:greatorVersion(version1,version2)
@@ -25,31 +31,19 @@ function AssetsDownloader:greatorVersion(version1,version2)
     end
 end
 
-function AssetsDownloader:start(finishFunc)
-    if not self._isGreator then
-        finishFunc()
-        return
-    end
-    self._finishFunc = finishFunc
-    self._taskQueue = {}
-    self._workingQueue = {}
-    --解析远程project文件
-    self:parseProjectManifest()
-end
-
 function AssetsDownloader:pushTask(task)
     local fileUtil = cc.FileUtils:getInstance()
     local wirtePath = fileUtil:getWritablePath()
     wirtePath = string.gsub(wirtePath,"\\","/")
     local downloadPath = wirtePath .."download/"
     task.savePath = downloadPath .. task.fileName
-    fileUtil:removeDirectory(downloadPath)
     task.state = DOWNLOAD_STATE.WAITE
     table.insert(self._taskQueue,task)
 end
 
 function AssetsDownloader:parseProjectManifest()
     local url = self._remoteProjectUrl
+    print("FYD----URLL = ",url)
     game.Util:sendXMLHTTPrequrest("GET",{}, url, {}, function(content)
         local manifestInfo = json.decode(content)
         local packageUrl = manifestInfo["packageUrl"]
@@ -97,7 +91,7 @@ function AssetsDownloader:checkNextWorkTask()
     end
     if nextWorkTask then
         if #self._workingQueue >= MAX_THREAD then
-            return
+            return true
         end
         table.insert(self._workingQueue,nextWorkTask)
         nextWorkTask.state = DOWNLOAD_STATE.STARTING
@@ -111,21 +105,35 @@ function AssetsDownloader:checkNextWorkTask()
                     local now = task.nowDownloaded or 0
                     self._nowSize = self._nowSize + now
                 end
+                if self._nowSize > self._totalSize then
+                    self._nowSize = self._totalSize
+                end
+                local process = tonumber(string.format("%.1f",(self._nowSize / self._totalSize)* 100))
+                self._processFunc(process)
             elseif type == LUA_CALLBACK_TYPE.DOWNLOAD_FAILED then
-                nextWorkTask.state = DOWNLOAD_STATE.STOPED
+                release_print("文件下载失败:",info.url," msg:",info.errormessage)
+                self:checkNextWorkTask()
             elseif type == LUA_CALLBACK_TYPE.DOWNLOAD_SUCCESS then
                 nextWorkTask.state = DOWNLOAD_STATE.FINISHED
+                nextWorkTask.process = 1
+                nextWorkTask.totalToDownload = nextWorkTask.size
+                nextWorkTask.nowDownloaded = nextWorkTask.size
+
                 local index = table.indexof(self._workingQueue,nextWorkTask)
                 if index then
                     table.remove(self._workingQueue,index)
-                    self:checkNextWorkTask()
+                    if self:checkNextWorkTask() then
+                        self._finishFunc()
+                    end
                     print("finish:",info.url)
                 else
                     assert(false,"NOT FIND WORKING TASK")
                 end
             elseif type == LUA_CALLBACK_TYPE.FILE_EXIST then
-                -- print("FILE_EXIST====",info)
                 nextWorkTask.state = DOWNLOAD_STATE.STOPED
+                nextWorkTask.process = 1
+                nextWorkTask.totalToDownload = nextWorkTask.size
+                nextWorkTask.nowDownloaded = nextWorkTask.size
             end
         end)
     end
@@ -137,6 +145,12 @@ function AssetsDownloader:getRemoteVersion()
         local versionInfo = json.decode(content)
         local remoteVersion = versionInfo.version
         self._isGreator = self:greatorVersion(self._localVersion,remoteVersion)
+        if self._isGreator then
+            self._finishFunc(true)
+        else
+            --解析远程project文件
+            self:parseProjectManifest()
+        end
     end)
 end
 

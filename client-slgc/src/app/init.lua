@@ -35,6 +35,8 @@ end
 game.Logger = require("app.common.Logger")
 -- 工具类
 game.Util = require("app.common.Util")
+--下载工具
+game.Downloader = require("app.common.Downloader")
 -- 事件中心
 game.EventCenter = require("app.common.EventCenter")
 -- 状态机
@@ -61,7 +63,8 @@ game.UIMessageBoxMgr = require("app.common.UIMessageBoxMgr")
 --网络
 game.NetWork = require("app.network.Connection").new()
 game.HeartBeatPacketHandler = require("app.network.HeartBeatPacketHandler").new()
-
+--下载
+game.AssetsDownloader = require("app.common.AssetsDownloader")
 -- 通用UI组件
 -- 重用列表(支持水平、竖直方向)
 game.UITableView = require("app.common.UITableView")
