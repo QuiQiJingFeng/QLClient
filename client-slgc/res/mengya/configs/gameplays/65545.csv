@@ -1,6 +1,0 @@
-id,name,type,setting
-number,string,string,string
-1,局数：,group,10001|10002
-2,人数：,group,720898|720897
-3,先手：,group,786433|786434|786435
-4,玩法：,option,851969|851970|851971
