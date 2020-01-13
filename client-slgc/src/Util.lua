@@ -1001,4 +1001,29 @@ function Util:encodeURL(s)
     return string.gsub(s, " ", "+")
 end
 
+function Util:convertStrFileSize(size)
+    local level1 = 1024
+    local level2 = 1024 * level1
+    local level3 = 1024 * level2
+    local list = {}
+    --G
+    list[1] = math.floor(size / level3)
+    if list[1] then
+        return string.format("%.2G",(size / level3))
+    end
+    --M
+    list[2] = math.floor( size / level2)
+    if list[2] then
+        return string.format("%.2M",(size / level2))
+    end
+    --k
+    list[3] = math.floor(size / level1)
+    if list[3] then
+        return string.format("%.2K",(size / level2))
+    end
+    --B
+    list[4] = size
+    return string.format("%.2B",size)
+end
+
 return Util
