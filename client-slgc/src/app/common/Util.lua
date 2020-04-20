@@ -995,6 +995,99 @@ function Util:shaderLight(node,pos,lightColor,lightRange)
     end
 end
 
+-- 高斯模糊效果
+-- blurRadius 模糊半径  sampleNum 采样个数
+function Util:shaderBlur(node,blurRadius,sampleNum)
+	local vertDefaultSource = [[
+        attribute vec4 a_position;
+        attribute vec2 a_texCoord;
+        attribute vec4 a_color;
+
+        #ifdef GL_ES
+        varying lowp vec4 v_fragmentColor;
+        varying mediump vec2 v_texCoord;
+        #else
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+        #endif
+
+        void main()
+        {
+            gl_Position = CC_PMatrix * a_position;
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+        precision mediump float;
+        #endif
+        
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+        
+        uniform vec2 resolution;
+        uniform float blurRadius;
+        uniform float sampleNum;
+        
+        vec4 blur(vec2);
+        
+        void main(void)
+        {
+            vec4 col = blur(v_texCoord); //* v_fragmentColor.rgb;
+            gl_FragColor = vec4(col) * v_fragmentColor;
+        }
+        
+        vec4 blur(vec2 p)
+        {
+            if (blurRadius > 0.0 && sampleNum > 1.0)
+            {
+                vec4 col = vec4(0);
+                vec2 unit = 1.0 / resolution.xy;
+                
+                float r = blurRadius;
+                float sampleStep = r / sampleNum;
+                
+                float count = 0.0;
+                
+                for(float x = -r; x < r; x += sampleStep)
+                {
+                    for(float y = -r; y < r; y += sampleStep)
+                    {
+                        float weight = (r - abs(x)) * (r - abs(y));
+                        col += texture2D(CC_Texture0, p + vec2(x * unit.x, y * unit.y)) * weight;
+                        count += weight;
+                    }
+                }
+                
+                return col / count;
+            }
+            
+            return texture2D(CC_Texture0, p);
+        }
+        
+    ]]
+
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+      
+        
+    local programState  = cc.GLProgramState:create(pProgram)
+    local size = node:getContentSize()
+    programState:setUniformVec2("resolution",cc.vec3(size.width,size.height));
+    programState:setUniformFloat("blurRadius",blurRadius or 10)
+    programState:setUniformFloat("sampleNum",sampleNum or 10)
+
+
+    node:setGLProgramState(programState)
+end
+
+
 function Util:shaderGray(node)
     local vertDefaultSource = [[
         attribute vec4 a_position; 
