@@ -8,16 +8,6 @@ local TEXT_ALIGN = {
     ["right"] = 2
 }
 
-local function convertColor(s)
-    local l = string.len(s)
-    if l == 7 then
-        return cc.c3b(tonumber(string.sub(s, 2, 3), 16), tonumber(string.sub(s, 4, 5), 16), tonumber(string.sub(s, 6, 7), 16))
-    elseif l == 9 then
-        return cc.c3b(tonumber(string.sub(s, 2, 3), 16), tonumber(string.sub(s, 4, 5), 16), tonumber(string.sub(s, 6, 7), 16)), tonumber(string.sub(s, 8, 9), 16)
-    end
-    assert(false, "invalid color foramt")
-    return cc.WHITE
-end
 --[[
     
     左对齐,文本占一整行
@@ -33,7 +23,7 @@ function UIXMLText:ctor(delegate,propertyMap,value)
         self:setFontSize(propertyMap.size)
     end
     if propertyMap.color then
-        self:setTextColor(convertColor(propertyMap.color))
+        self:setTextColor(game.Util:convertColor(propertyMap.color))
     end
 
     --对齐方式

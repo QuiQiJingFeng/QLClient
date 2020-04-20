@@ -1001,4 +1001,21 @@ function Util:encodeURL(s)
     return string.gsub(s, " ", "+")
 end
 
+function Util:convertColor(s)
+    local l = string.len(s)
+    if l == 7 then
+        return cc.c3b(tonumber(string.sub(s, 2, 3), 16), tonumber(string.sub(s, 4, 5), 16), tonumber(string.sub(s, 6, 7), 16))
+    elseif l == 9 then
+        return cc.c3b(tonumber(string.sub(s, 2, 3), 16), tonumber(string.sub(s, 4, 5), 16), tonumber(string.sub(s, 6, 7), 16)), tonumber(string.sub(s, 8, 9), 16)
+    end
+    assert(false, "invalid color foramt")
+    return cc.WHITE
+end
+
+function Util:convertPosToTarget(node,targetNode,pos)
+    local worldPos = node:convertToWorldSpace(pos)
+    local targetPos = targetNode:convertToNodeSpace(worldPos)
+    return targetPos
+end
+
 return Util
