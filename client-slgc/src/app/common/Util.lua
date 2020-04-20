@@ -1276,11 +1276,10 @@ function Util:imageShader(node,lightColor,angle,lightWidth,durationTime,preDelay
     --当前时间
     programState:setUniformFloat("_Time",0)
     local delt = 0
-    
-    function node:updateDeltTime(dt)
+    node:scheduleUpdateWithPriorityLua(function(dt) 
         delt = delt + dt
         programState:setUniformFloat("_Time",delt)
-    end
+    end,0)
  
     node:setGLProgramState(programState)
 end
