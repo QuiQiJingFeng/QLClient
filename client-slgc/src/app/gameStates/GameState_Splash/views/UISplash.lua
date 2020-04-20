@@ -19,7 +19,8 @@ function UISplash:getGradeLayerId()
 end
 
 function UISplash:onShow(...)
-    self:playAnimation(csbPath,"splash",handler(self,self._enterUpdateState))
+    -- self:playAnimation(csbPath,"splash",handler(self,self._enterUpdateState))
+ 
 end
 
 function UISplash:_enterUpdateState()

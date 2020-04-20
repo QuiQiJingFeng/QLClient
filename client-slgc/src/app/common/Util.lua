@@ -1179,6 +1179,112 @@ function Util:shaderGray(node)
 	node:setGLProgram(pProgram)
 end
 
+-- 流光效果 lightWidth(0,1)
+function Util:imageShader(node,lightColor,angle,lightWidth,durationTime,preDelayTime,lastDelayTime)
+	local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+
+        uniform vec4 _Color;
+        uniform float _Angle;
+        uniform float _Width;
+        uniform float _FlashTime;
+        uniform float _DelayTime;
+        uniform float _LoopInterval;
+        uniform vec4 _MainTex_ST;
+        uniform float _Time;
+
+        // @计算亮度
+        // @param uv 角度 宽度(x方向) 运行时间 开始时间 循环间隔
+        float flash(vec2 uv, float angle, float w, float runtime, float delay, float interval)
+        {
+            float brightness = 0;
+            float radian = 0.0174444 * angle;
+            float curtime = _Time; //当前时间
+            float starttime = floor(curtime/interval) * interval; // 本次flash开始时间
+            float passtime = curtime - starttime;//本次flash流逝时间
+            if (passtime > delay)
+            {
+                float projx = uv.y / tan(radian); // y的x投影长度
+                float br = (passtime - delay) / runtime; //底部右边界
+                float bl = br - w; // 底部左边界
+                float posr = br + projx; // 此点所在行右边界
+                float posl = bl + projx; // 此点所在行左边界
+                if (uv.x > posl && uv.x < posr)
+                {
+                    float mid = (posl + posr) * 0.5; // flash中心点
+                    brightness = 1 - abs(uv.x - mid)/(w*0.5);
+                }
+            }
+            return brightness;
+        }
+
+        void main()
+        {
+            vec4 col = texture2D(CC_Texture0, v_texCoord);
+            float bright = flash(v_texCoord, _Angle, _Width, _FlashTime, _DelayTime, _LoopInterval);
+            gl_FragColor.xyzw = col + _Color*bright * col.a;  // * step(0.5, col.a);
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+
+    local programState  = cc.GLProgramState:create(pProgram)
+    programState:setUniformVec4("_Color", lightColor or cc.vec4(1,1,1,1))
+    --角度
+    programState:setUniformFloat("_Angle",angle or 75)
+    --宽度(x方向)
+    programState:setUniformFloat("_Width",lightWidth or 0.2)
+    durationTime = durationTime or 1
+    --运行时间
+    programState:setUniformFloat("_FlashTime",durationTime)
+    preDelayTime = preDelayTime or 0
+    --延时时间
+    programState:setUniformFloat("_DelayTime",preDelayTime)
+    lastDelayTime = lastDelayTime or 0
+    --循环间隔
+    programState:setUniformFloat("_LoopInterval",durationTime + preDelayTime + lastDelayTime)
+
+    --当前时间
+    programState:setUniformFloat("_Time",0)
+    local delt = 0
+    
+    function node:updateDeltTime(dt)
+        delt = delt + dt
+        programState:setUniformFloat("_Time",delt)
+    end
+ 
+    node:setGLProgramState(programState)
+end
+
 --置灰image,sprite
 function Util:shaderImage(imageNode)
     self:shaderGray(imageNode)
