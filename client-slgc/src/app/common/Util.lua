@@ -463,110 +463,6 @@ function Util:getDistance(lat1, lng1, lat2, lng2)
 	return _s
 end
 
-function Util:shaderGray(node)
-    local vertDefaultSource = [[
-        attribute vec4 a_position; 
-        attribute vec2 a_texCoord; 
-        attribute vec4 a_color;                                                     
-        #ifdef GL_ES  
-            varying lowp vec4 v_fragmentColor;
-            varying mediump vec2 v_texCoord;
-        #else                      
-            varying vec4 v_fragmentColor; 
-            varying vec2 v_texCoord;  
-        #endif    
-        void main() 
-        {
-            gl_Position = CC_PMatrix * a_position; 
-            v_fragmentColor = a_color;
-            v_texCoord = a_texCoord;
-        }
-    ]]
-     
-    local pszFragSource = [[
-        #ifdef GL_ES
-            precision mediump float;
-        #endif
-        varying vec4 v_fragmentColor;
-        varying vec2 v_texCoord;
-        void main(void)
-        {
-            vec4 c = texture2D(CC_Texture0, v_texCoord);
-            gl_FragColor.xyz = vec3(0.4*c.r + 0.4*c.g +0.4*c.b);
-            gl_FragColor.w = c.w;
-        }
-    ]]
-
-	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
-     
-    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
-    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
-    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
-    pProgram:link()
-    pProgram:updateUniforms()
-	node:setGLProgram(pProgram)
-end
-
---置灰image,sprite
-function Util:shaderImage(imageNode)
-    self:shaderGray(imageNode)
-end
-
---取消置灰image,sprite
-function Util:shaderImage(imageNode)
-    self:removeNodeShader(imageNode)
-end
-
---置灰button
-function Util:shaderButton(buttonNode)
-    self:shaderGray(buttonNode:getRendererNormal())
-end
-
---取消置灰button
-function Util:removeShaderButton(buttonNode)
-    self:removeNodeShader(buttonNode:getRendererNormal())
-end
-
-function Util:removeNodeShader(node)
-    local vertDefaultSource = [[
-    attribute vec4 a_position; 
-    attribute vec2 a_texCoord; 
-    attribute vec4 a_color;                                                     
-    #ifdef GL_ES  
-        varying lowp vec4 v_fragmentColor;
-        varying mediump vec2 v_texCoord;
-    #else                      
-        varying vec4 v_fragmentColor; 
-        varying vec2 v_texCoord;  
-    #endif    
-    void main() 
-    {
-        gl_Position = CC_PMatrix * a_position; 
-        v_fragmentColor = a_color;
-        v_texCoord = a_texCoord;
-    }
-    ]]
-    local pszFragSource = [[
-    #ifdef GL_ES 
-        precision mediump float; 
-    #endif 
-    varying vec4 v_fragmentColor; 
-    varying vec2 v_texCoord; 
-    void main(void) 
-    { 
-        gl_FragColor = texture2D(CC_Texture0, v_texCoord); 
-    }
-    ]]
-    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
-     
-    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
-    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
-    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
-    pProgram:link()
-    pProgram:updateUniforms()
-	node:setGLProgram(pProgram)
-end
-
 -- lua base64简单处理
 -- Lua 5.1+ base64 v3.0 (c) 2009 by Alex Kloss <alexthkloss@web.de>
 -- licensed under the terms of the LGPL2
@@ -1016,6 +912,191 @@ function Util:convertPosToTarget(node,targetNode,pos)
     local worldPos = node:convertToWorldSpace(pos)
     local targetPos = targetNode:convertToNodeSpace(worldPos)
     return targetPos
+end
+
+----------------------------------------------------
+-- shader 相关
+----------------------------------------------------
+-- 模拟灯光效果
+-- pos 灯光的位置,lightColor<type:cc.vec4> 灯光的颜色  lightRange 灯光的强度(照亮范围)
+function Util:shaderLight(node,pos,lightColor,lightRange)
+	local vertDefaultSource = [[
+        attribute vec4 a_position;
+        attribute vec2 a_texCoord;
+        
+        #ifdef GL_ES
+        varying mediump vec2 v_texCoord;
+        varying mediump vec2 v_position;//将顶点的位置传给ps，用于计算该顶点与灯的距离
+        #else
+        varying vec2 v_texCoord;
+        varying vec2 v_position;
+        #endif
+        
+        void main()
+        {
+            v_position = a_position.xy;
+            gl_Position = CC_PMatrix * a_position;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+        varying lowp vec2 v_texCoord;
+        varying mediump vec2 v_position;
+        #else
+        varying vec2 v_texCoord;
+        varying vec2 v_position;
+        #endif
+        
+        uniform vec2 u_lightPosition;
+        uniform vec4 u_lightColor;
+        uniform float u_lightRange;
+        vec4 getRenderColor(vec2 texPos, vec2 lightPos, float lightRange)
+        {
+            vec2 pos = texPos - lightPos;
+            float d = length(pos);//顶点与灯的距离
+            float rgb;//相当于光强度
+            if(d>30.0)//距离大于30，在lightRange范围内，灯光离灯心越远颜色越亮的遮罩效果，下面需要对颜色进行反转以实现灯光变亮
+            rgb = (d-30)/(lightRange);
+            else//距离小于30灯光最强，为白色
+            rgb = 0.0;
+            rgb = 1.0 - clamp(rgb, 0.0, 1.0);//clamp意义为 min(max(a, b), c);将a的大小限制在b,c之间， 1-rgb是将颜色反转
+            return vec4(rgb, rgb, rgb, 1.0);
+        }
+        void main()
+        {
+            vec4 color = u_lightColor * getRenderColor(v_position, u_lightPosition, u_lightRange);//灯光颜色与灯光强度混合
+            color = clamp(color, 0.0, 1.0);
+            gl_FragColor = texture2D(CC_Texture0, v_texCoord) * color ;//纹理与灯光混合
+        }
+    ]]
+
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+    
+    local programState  = cc.GLProgramState:create(pProgram)
+    programState:setUniformVec2("u_lightPosition",pos)
+    programState:setUniformVec4("u_lightColor", lightColor or cc.vec4(1, 1, 1, 1.0))
+    programState:setUniformFloat("u_lightRange",lightRange or 100)
+    node:setGLProgramState(programState)
+    
+    function node:updateLightPos(pos)
+        programState:setUniformVec2("u_lightPosition",pos)
+    end
+    function node:updateLightColor(lightColor)
+        programState:setUniformVec4("u_lightColor", lightColor)
+    end
+    function node:updateLightRange()
+        programState:setUniformFloat("u_lightRange",lightRange)
+    end
+end
+
+function Util:shaderGray(node)
+    local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+        void main(void)
+        {
+            vec4 c = texture2D(CC_Texture0, v_texCoord);
+            gl_FragColor.xyz = vec3(0.4*c.r + 0.4*c.g +0.4*c.b);
+            gl_FragColor.w = c.w;
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+	node:setGLProgram(pProgram)
+end
+
+--置灰image,sprite
+function Util:shaderImage(imageNode)
+    self:shaderGray(imageNode)
+end
+
+--取消置灰image,sprite
+function Util:shaderImage(imageNode)
+    self:removeNodeShader(imageNode)
+end
+
+--置灰button
+function Util:shaderButton(buttonNode)
+    self:shaderGray(buttonNode:getRendererNormal())
+end
+
+--取消置灰button
+function Util:removeShaderButton(buttonNode)
+    self:removeNodeShader(buttonNode:getRendererNormal())
+end
+
+function Util:removeNodeShader(node)
+    local vertDefaultSource = [[
+    attribute vec4 a_position; 
+    attribute vec2 a_texCoord; 
+    attribute vec4 a_color;                                                     
+    #ifdef GL_ES  
+        varying lowp vec4 v_fragmentColor;
+        varying mediump vec2 v_texCoord;
+    #else                      
+        varying vec4 v_fragmentColor; 
+        varying vec2 v_texCoord;  
+    #endif    
+    void main() 
+    {
+        gl_Position = CC_PMatrix * a_position; 
+        v_fragmentColor = a_color;
+        v_texCoord = a_texCoord;
+    }
+    ]]
+    local pszFragSource = [[
+    #ifdef GL_ES 
+        precision mediump float; 
+    #endif 
+    varying vec4 v_fragmentColor; 
+    varying vec2 v_texCoord; 
+    void main(void) 
+    { 
+        gl_FragColor = texture2D(CC_Texture0, v_texCoord); 
+    }
+    ]]
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+	node:setGLProgram(pProgram)
 end
 
 return Util
