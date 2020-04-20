@@ -995,7 +995,7 @@ function Util:shaderLight(node,pos,lightColor,lightRange)
     end
 end
 
--- 高斯模糊效果
+-- 高斯模糊效果 采样周边X个相邻像素的颜色，与当前像素颜色按比例混合
 -- blurRadius 模糊半径  sampleNum 采样个数
 function Util:shaderBlur(node,blurRadius,sampleNum)
 	local vertDefaultSource = [[
@@ -1085,6 +1085,53 @@ function Util:shaderBlur(node,blurRadius,sampleNum)
 
 
     node:setGLProgramState(programState)
+end
+
+--老照片效果
+function Util:shaderOldPhoto(node)
+    local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+        void main(void)
+        {
+            vec4 c = texture2D(CC_Texture0, v_texCoord);
+            gl_FragColor.x = 0.393*c.r + 0.769*c.g + 0.189*c.b;
+            gl_FragColor.y = 0.349*c.r + 0.686*c.g + 0.168*c.b;
+            gl_FragColor.z = 0.272*c.r + 0.534*c.g + 0.131*c.b; 
+            gl_FragColor.w = c.w;
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+	node:setGLProgram(pProgram)
 end
 
 
