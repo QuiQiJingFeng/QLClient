@@ -1181,7 +1181,7 @@ function Util:shaderGray(node)
 end
 
 -- 流光效果 lightWidth(0,1)
-function Util:imageShader(node,lightColor,angle,lightWidth,durationTime,preDelayTime,lastDelayTime)
+function Util:shaderFlash(node,lightColor,angle,lightWidth,durationTime,preDelayTime,lastDelayTime)
 	local vertDefaultSource = [[
         attribute vec4 a_position; 
         attribute vec2 a_texCoord; 
@@ -1286,7 +1286,7 @@ function Util:imageShader(node,lightColor,angle,lightWidth,durationTime,preDelay
 end
 
 --马赛克效果
-function Util:imageShader(node,squareWidth,texSize)
+function Util:shaderMosaic(node,squareWidth,texSize)
 	local vertDefaultSource = [[
         attribute vec4 a_position; 
         attribute vec2 a_texCoord; 
@@ -1338,6 +1338,97 @@ function Util:imageShader(node,squareWidth,texSize)
     programState:setUniformFloat("_SquareWidth", squareWidth or 8)
     programState:setUniformVec4("_TexSize", texSize or cc.vec4(256,256,0,0))
      
+
+    node:setGLProgramState(programState)
+end
+
+--内发光
+function Util:shaderInnerGlow(node,color,factor,sampleRange,interval,texSize)
+	local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+
+        uniform vec4 _Color;
+        uniform float _Factor;
+        uniform int _SampleRange;
+        uniform vec2 _TexSize;
+        uniform vec2 _SampleInterval;
+
+        void main()
+        {   
+            int range = _SampleRange;
+            float radiusX = _SampleInterval.x / _TexSize.x;
+            float radiusY = _SampleInterval.y / _TexSize.y;
+            float inner = 0;
+            float outter = 0;
+            int count = 0;
+            for (int k = -range; k <= range; ++k)
+            {
+                for (int j = -range; j <= range; ++j)
+                {
+                    vec4 m = texture2D(CC_Texture0, vec2(v_texCoord.x + k*radiusX , v_texCoord.y + j*radiusY));
+                    outter += 1 - m.a;
+                    inner += m.a;
+                    count += 1;
+                }
+            }
+            inner /= count;
+            outter /= count;
+            
+            vec4 col = texture2D(CC_Texture0, v_texCoord) * v_fragmentColor;
+            float out_alpha = max(col.a, inner);
+            float in_alpha = min(out_alpha, outter);
+            col.rgb = col.rgb + in_alpha * _Factor * _Color.a * _Color.rgb;
+            gl_FragColor = col;
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+
+    local programState  = cc.GLProgramState:create(pProgram)
+    programState:setUniformVec4("_Color", color or cc.vec4(1,0,1,1))
+    programState:setUniformFloat("_Factor",factor or 1)
+    programState:setUniformInt("_SampleRange",sampleRange or 7)
+    programState:setUniformVec2("_SampleInterval",interval or cc.p(1,1))
+    programState:setUniformVec2("_TexSize",texSize or cc.p(256,256))
+
+    function node:updateColor(color)
+        programState:setUniformVec4("_Color", color)
+    end
+    function node:updateFactor(factor)
+        programState:setUniformFloat("_Factor",factor)
+    end
+    function node:updateSampleRange(sampleRange)
+        programState:setUniformFloat("_SampleRange",sampleRange)
+    end
 
     node:setGLProgramState(programState)
 end
