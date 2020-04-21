@@ -401,7 +401,8 @@ function Util:saveNodeToPng(node, callback, name, size)
     end
 
     -- 创建renderTexture
-    local render = cc.RenderTexture:create(size.width, size.height)
+    -- fix:https://blog.csdn.net/themagickeyjianan/article/details/78500467
+    local render = cc.RenderTexture:create(size.width, size.height,cc.TEXTURE2_D_PIXEL_FORMAT_RGB_A8888, 0x88F0)
     localNode:setPosition(cc.p(size.width / 2, size.height / 2))
     -- 绘制
     render:begin()
