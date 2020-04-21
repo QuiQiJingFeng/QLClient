@@ -1285,6 +1285,63 @@ function Util:imageShader(node,lightColor,angle,lightWidth,durationTime,preDelay
     node:setGLProgramState(programState)
 end
 
+--马赛克效果
+function Util:imageShader(node,squareWidth,texSize)
+	local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+
+        uniform float _SquareWidth;
+        uniform vec4 _TexSize;
+
+        void main()
+        {
+            float pixelX = int(v_texCoord.x * _TexSize.x / _SquareWidth) * _SquareWidth;
+            float pixelY = int(v_texCoord.y * _TexSize.y / _SquareWidth) * _SquareWidth;
+            vec2 uv = vec2(pixelX / _TexSize.x, pixelY / _TexSize.y);
+            vec4 col = texture2D(CC_Texture0, uv);
+            gl_FragColor = col;
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+
+    local programState  = cc.GLProgramState:create(pProgram)
+    programState:setUniformFloat("_SquareWidth", squareWidth or 8)
+    programState:setUniformVec4("_TexSize", texSize or cc.vec4(256,256,0,0))
+     
+
+    node:setGLProgramState(programState)
+end
+
 --置灰image,sprite
 function Util:shaderImage(imageNode)
     self:shaderGray(imageNode)
