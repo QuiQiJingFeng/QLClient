@@ -1433,6 +1433,176 @@ function Util:shaderInnerGlow(node,color,factor,sampleRange,interval,texSize)
     node:setGLProgramState(programState)
 end
 
+--圆角效果
+local function shaderRound(node,corner)
+	local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+
+        uniform float _corner;
+        float fmod(float a,float b)
+        {
+            return (a / b) - floor(a / b);
+        }
+
+        float step(float a,float x)
+        {
+            if (x < a)
+            {
+                return 0;
+            }else{
+                return 1;
+            }
+        }
+
+        float length(float x,float y)
+        {
+            return sqrt(x*x + y*y);
+        }
+
+        void main()
+        {   
+            vec4 col = texture2D(CC_Texture0, v_texCoord) * v_fragmentColor;
+            
+            // 坐标系左移一半,求的UV坐标系上的点
+            vec2 uv = v_texCoord.xy - vec2(0.5,0.5);
+            float centerDist = 0.5 - _corner;
+            vec2 reduce = abs(uv) - vec2(centerDist,centerDist);
+            float rx = reduce.x;
+            float ry = reduce.y;
+            float mx = step(centerDist, abs(uv.x));
+            float my = step(centerDist, abs(uv.y));
+            float alpha = 1 - mx*my* step(_corner, length(vec2(rx,ry)));
+            
+            col.a *= alpha;
+            
+            gl_FragColor = col;
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+
+    local programState  = cc.GLProgramState:create(pProgram)
+    programState:setUniformFloat("_corner",corner or 0.1)
+
+    node:setGLProgramState(programState)
+end
+
+--调整饱和度
+function Util:shaderSaturation(node,satIncrement)
+	local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+
+        uniform float _SatIncrement;
+        
+        float lerp(float a, float b, float w) {
+            return a + w*(b-a);
+        }
+        void main()
+        {  
+            vec4 col = texture2D(CC_Texture0, v_texCoord);
+            float rgbmax = max(col.r, max(col.g, col.b));
+            float rgbmin = min(col.r, min(col.g, col.b));
+            float delta = rgbmax - rgbmin;
+            if (delta == 0)
+            {
+                gl_FragColor = col;
+            }
+            else{
+                float value = (rgbmax + rgbmin);
+                float light = value / 2;
+                float cmp = step(light, 0.5);
+                float sat = lerp(delta/(2-value), delta/value, cmp);
+                if (_SatIncrement >= 0)
+                {
+                    cmp = step(1, _SatIncrement + sat);
+                    float a = lerp(1-_SatIncrement, sat, cmp);
+                    a = 1/a - 1;
+                    col.r = col.r + (col.r - light) * a;
+                    col.g = col.g + (col.g - light) * a;
+                    col.b = col.b + (col.b - light) * a;
+                }
+                else
+                {
+                    float a = _SatIncrement;
+                    col.r = light + (col.r - light) * (1+a);
+                    col.g = light + (col.g - light) * (1+a);
+                    col.b = light + (col.b - light) * (1+a);
+                }
+                gl_FragColor = col;
+            } 
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+
+    local programState  = cc.GLProgramState:create(pProgram)
+    programState:setUniformFloat("_SatIncrement",satIncrement or 0)
+
+    function node:updateSatIncrement(satIncrement)
+        programState:setUniformFloat("_SatIncrement",satIncrement)
+    end
+ 
+    node:setGLProgramState(programState)
+end
+
 --置灰image,sprite
 function Util:shaderImage(imageNode)
     self:shaderGray(imageNode)
