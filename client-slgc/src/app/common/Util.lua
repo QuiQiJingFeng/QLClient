@@ -1603,6 +1603,91 @@ function Util:shaderSaturation(node,satIncrement)
     node:setGLProgramState(programState)
 end
 
+--按照HSV调整颜色 H 色度  S 饱和度 V 亮度
+function Util:shaderHSV(node,hsv)
+	local vertDefaultSource = [[
+        attribute vec4 a_position; 
+        attribute vec2 a_texCoord; 
+        attribute vec4 a_color;                                                     
+        #ifdef GL_ES  
+            varying lowp vec4 v_fragmentColor;
+            varying mediump vec2 v_texCoord;
+        #else                      
+            varying vec4 v_fragmentColor; 
+            varying vec2 v_texCoord;  
+        #endif    
+        void main() 
+        {
+            gl_Position = CC_PMatrix * a_position; 
+            v_fragmentColor = a_color;
+            v_texCoord = a_texCoord;
+        }
+    ]]
+     
+    local pszFragSource = [[
+        #ifdef GL_ES
+            precision mediump float;
+        #endif
+        varying vec4 v_fragmentColor;
+        varying vec2 v_texCoord;
+
+        uniform vec3 _HSV;
+
+        float lerp(float a, float b, float w) {
+            return a + w*(b-a);
+        }
+
+        vec4 lerp(vec4 a, vec4 b, float w) {
+            return a + w*(b-a);
+        }
+
+        vec3 lerp(vec3 a, vec3 b, float w) {
+            return a + w*(b-a);
+        }
+
+        vec3 frac(vec3 a)
+        {
+            return a - floor(a);
+        }
+
+        vec3 rgb2hsv(vec3 c) {
+            vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+            vec4 p = lerp(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g)); 
+            vec4 q = lerp(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r)); 
+            float d = q.x - min(q.w, q.y);
+            float e = 1.0e-10;
+            return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x); 
+        }
+        vec3 hsv2rgb(vec3 c) {
+            vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+            vec3 p = abs(frac(c.xxx + K.xyz) * 6.0 - K.www);
+            return c.z * lerp(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y); 
+        }
+        
+        void main()
+        {  
+            vec4 col = texture2D(CC_Texture0, v_texCoord);
+            vec3 c_hsv = rgb2hsv(col.rgb); // Convert to HSV
+            c_hsv *= _HSV;
+            vec3 c_rgb = hsv2rgb(c_hsv); // Red in RGB
+            gl_FragColor = vec4(c_rgb, 1);
+        }
+    ]]
+
+	local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource,pszFragSource)
+     
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION,cc.VERTEX_ATTRIB_POSITION)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR,cc.VERTEX_ATTRIB_COLOR)
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD,cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)
+    pProgram:link()
+    pProgram:updateUniforms()
+
+    local programState  = cc.GLProgramState:create(pProgram)
+    programState:setUniformVec3("_HSV",hsv or cc.vec3(1,1,1))
+ 
+    node:setGLProgramState(programState)
+end
+
 --置灰image,sprite
 function Util:shaderImage(imageNode)
     self:shaderGray(imageNode)
