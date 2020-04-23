@@ -1603,7 +1603,7 @@ function Util:shaderSaturation(node,satIncrement)
     node:setGLProgramState(programState)
 end
 
---按照HSV调整颜色 H 色度  S 饱和度 V 亮度
+--按照HSV调整颜色 H(-1,1) 色度 S(-1,1)  饱和度 V(-1,1) 亮度
 function Util:shaderHSV(node,hsv)
 	local vertDefaultSource = [[
         attribute vec4 a_position; 
@@ -1668,7 +1668,7 @@ function Util:shaderHSV(node,hsv)
         {  
             vec4 col = texture2D(CC_Texture0, v_texCoord);
             vec3 c_hsv = rgb2hsv(col.rgb); // Convert to HSV
-            c_hsv *= _HSV;
+            c_hsv += _HSV;
             vec3 c_rgb = hsv2rgb(c_hsv); // Red in RGB
             gl_FragColor = vec4(c_rgb, 1);
         }
